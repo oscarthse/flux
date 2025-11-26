@@ -13,7 +13,18 @@ Everything is built around simple, explainable, low-data-tolerant models with th
 
 ---
 
-## 🧱 1. Tech Stack (Full Breakdown)
+## 💡 1. Product Philosophy & Business Value
+
+Flux is not just a technical tool; it is a **profitability engine** for independent restaurants.
+
+*   **Resilience to Messy Data**: Unlike enterprise tools that break without perfect data, Flux thrives on the incomplete, inconsistent reality of small business operations.
+*   **Actionable Intelligence**: We don't just show charts; we give clear **"Buy" / "Don't Buy"** signals (FluxSharpe) that directly impact the bottom line.
+*   **Zero-Friction Onboarding**: Designed to deliver value from Day 1 with minimal configuration.
+*   **Direct ROI**: Reduces food waste (over-ordering) and labor costs (over-staffing) while preventing revenue loss (stockouts).
+
+---
+
+## 🧱 2. Tech Stack (Full Breakdown)
 
 ### Backend / Analytics
 *   **Python 3.12+**
@@ -57,55 +68,55 @@ Everything is built around simple, explainable, low-data-tolerant models with th
 flowchart TD
 
 %% FRONTEND
-A1[Restaurant Owner\nDashboard UI<br>(Streamlit / React)] -->|HTTPS| B1
+A1["Restaurant Owner\nDashboard UI<br>(Streamlit / React)"] -->|HTTPS| B1
 
 %% API LAYER
-B1[FastAPI Backend<br>/api/*] --> B2[Auth & Permissions]
-B1 --> B3[Forecasting Router]
-B1 --> B4[Inventory Router]
-B1 --> B5[Staffing Router]
-B1 --> B6[Upload Router]
+B1["FastAPI Backend<br>/api/*"] --> B2["Auth & Permissions"]
+B1 --> B3["Forecasting Router"]
+B1 --> B4["Inventory Router"]
+B1 --> B5["Staffing Router"]
+B1 --> B6["Upload Router"]
 
 %% SERVICES
-B3 --> C1[Forecasting Service]
-B4 --> C2[Inventory Service]
-B5 --> C3[Staffing Service]
-B6 --> C4[ETL / Ingestion Service]
+B3 --> C1["Forecasting Service"]
+B4 --> C2["Inventory Service"]
+B5 --> C3["Staffing Service"]
+B6 --> C4["ETL / Ingestion Service"]
 
 %% DATA SOURCES
-C4 --> D1[(Postgres\nsales_transactions)]
-C4 --> D2[(Postgres\nmenu_items)]
-C4 --> D3[(Postgres\ningredients)]
-C4 --> D4[(Postgres\nrecipes)]
-C4 --> D5[(Postgres\ndaily_sales_summary)]
-C4 --> D6[(Postgres\nweather_data)]
-C4 --> D7[(Postgres\nevent_calendar)]
+C4 --> D1[("Postgres\nsales_transactions")]
+C4 --> D2[("Postgres\nmenu_items")]
+C4 --> D3[("Postgres\ningredients")]
+C4 --> D4[("Postgres\nrecipes")]
+C4 --> D5[("Postgres\ndaily_sales_summary")]
+C4 --> D6[("Postgres\nweather_data")]
+C4 --> D7[("Postgres\nevent_calendar")]
 
 %% ANALYTICS ENGINE
-C1 --> E1[SARIMA Model]
-C1 --> E2[Bayesian Hierarchical Model]
-C1 --> E3[Prophet / ETS Fallback]
-C1 --> E4[Demand Uncertainty Module]
+C1 --> E1["SARIMA Model"]
+C1 --> E2["Bayesian Hierarchical Model"]
+C1 --> E3["Prophet / ETS Fallback"]
+C1 --> E4["Demand Uncertainty Module"]
 
-C2 --> E5[Monte Carlo Simulations]
-C2 --> E6[Newsvendor Optimizer]
-C2 --> E7[FluxSharpe Scorer]
+C2 --> E5["Monte Carlo Simulations"]
+C2 --> E6["Newsvendor Optimizer"]
+C2 --> E7["FluxSharpe Scorer"]
 
-C3 --> E8[Rule-Based Staffing Model]
-C3 --> E9[ILP Optimizer\n(OR-Tools)]
+C3 --> E8["Rule-Based Staffing Model"]
+C3 --> E9["ILP Optimizer\n(OR-Tools)"]
 
 %% OUTPUTS WRITTEN BACK
-E1 --> D8[(Postgres\nforecast_results)]
+E1 --> D8[("Postgres\nforecast_results")]
 E2 --> D8
 E3 --> D8
-E7 --> D9[(Postgres\ninventory_recommendations)]
-E9 --> D10[(Postgres\nstaffing_plans)]
+E7 --> D9[("Postgres\ninventory_recommendations")]
+E9 --> D10[("Postgres\nstaffing_plans")]
 
 %% BACKGROUND JOBS
-subgraph S[Scheduled Jobs (Cron / Celery)]
-    S1[Nightly Forecast Job]
-    S2[Inventory Update Job]
-    S3[Staffing Update Job]
+subgraph S["Scheduled Jobs (Cron / Celery)"]
+    S1["Nightly Forecast Job"]
+    S2["Inventory Update Job"]
+    S3["Staffing Update Job"]
 end
 
 S1 --> C1
@@ -113,7 +124,7 @@ S2 --> C2
 S3 --> C3
 
 %% CACHING
-C1 --> R1[(Redis Cache)]
+C1 --> R1[("Redis Cache")]
 C2 --> R1
 C3 --> R1
 ```
