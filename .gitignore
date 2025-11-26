@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Data
+output_data/
+postgres_data/
+.pytest_cache/

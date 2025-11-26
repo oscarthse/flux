@@ -1,6 +1,36 @@
 # ⭐ Flux: Technical and Modeling Deep Dive
 
-**A fully end-to-end architecture and system design overview**
+**A fully end-to-end architecture and system design## Quick Start
+
+The easiest way to run the full simulation pipeline is using `make`:
+
+```bash
+# 1. Install Dependencies
+make install
+
+# 2. Start Database, Run Simulation, Ingest Data, and Verify
+make all
+```
+
+### Individual Commands
+
+*   `make up`: Start PostgreSQL (Docker).
+*   `make sim`: Run the restaurant simulator (generates CSVs in `output_data/`).
+*   `make etl`: Ingest CSVs into the database.
+*   `make verify`: Run verification queries.
+*   `make test`: Run the test suite.
+
+## Repository Structure
+
+*   `src/restaurant_simulator/`: Core simulation logic (Python).
+*   `src/etl/`: ETL scripts for data ingestion.
+*   `scripts/`: Utility scripts (`run_sim.py`, `verify_db.py`).
+*   `tests/`: Unit and integration tests.
+*   `output_data/`: Generated CSV files (ignored by git).
+*   `schema.sql`: Database schema definition.
+*   `docker-compose.yml`: Local database configuration.
+
+## Project Overview**
 
 Flux is a modular, event-driven analytics platform designed for small restaurants with inconsistent and sparse data. The system combines:
 *   **ETL & data modeling**
