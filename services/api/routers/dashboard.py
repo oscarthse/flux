@@ -40,7 +40,8 @@ async def dashboard_home(request: Request):
         HTML page with executive summary
     """
     try:
-        tenant_id = settings.DEFAULT_TENANT_ID
+        # Support X-Tenant-ID header for testing/multi-tenancy
+        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
 
         with db_service.get_connection(tenant_id=tenant_id) as conn:
             with conn.cursor() as cur:
