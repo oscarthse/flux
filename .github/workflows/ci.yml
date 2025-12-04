@@ -75,6 +75,13 @@ jobs:
         # Initialize DB schema
         psql -h localhost -U flux -d flux_test -f schema.sql
 
+        # Create application user (non-superuser) for RLS testing
+        psql -h localhost -U flux -d flux_test -c "CREATE USER flux_app WITH PASSWORD 'flux_pass';"
+        psql -h localhost -U flux -d flux_test -c "GRANT ALL PRIVILEGES ON DATABASE flux_test TO flux_app;"
+        psql -h localhost -U flux -d flux_test -c "GRANT ALL ON SCHEMA public TO flux_app;"
+        psql -h localhost -U flux -d flux_test -c "GRANT ALL ON ALL TABLES IN SCHEMA public TO flux_app;"
+        psql -h localhost -U flux -d flux_test -c "GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO flux_app;"
+
         # Run tests
         pytest tests/integration
 
