@@ -27,8 +27,8 @@ def generate_draft_orders(tenant_id: str, conn=None):
             """, (tenant_id,))
             ingredients = cur.fetchall()
 
-            # 2. Calculate Forecasted Usage per Ingredient for the next 7 days (avg daily)
-            # We use the next 7 days forecast to estimate "Daily Forecast"
+            # 2. Calculate Forecasted Usage per Ingredient
+            # Use available forecast data (not filtered by date)
             cur.execute("""
                 SELECT
                     r.ingredient_id,
@@ -36,9 +36,8 @@ def generate_draft_orders(tenant_id: str, conn=None):
                 FROM forecasts f
                 JOIN recipes r ON f.menu_item_id = r.menu_item_id
                 WHERE f.tenant_id = %s
-                  AND f.forecast_date >= CURRENT_DATE
-                  AND f.forecast_date < CURRENT_DATE + INTERVAL '7 days'
                 GROUP BY r.ingredient_id
+                LIMIT 100
             """, (tenant_id,))
             usage_map = {row[0]: row[1] for row in cur.fetchall()}
 

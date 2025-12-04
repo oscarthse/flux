@@ -9,7 +9,7 @@ from importlib import reload
 from services.api.config import Settings
 
 # Use the app user for testing RLS (superuser bypasses RLS)
-TEST_DB_URL = "postgresql://flux_app:flux_pass@localhost:5435/flux"
+TEST_DB_URL = "postgresql://flux_app:flux_pass@localhost:5432/flux"
 os.environ["DATABASE_URL"] = TEST_DB_URL
 
 # Reload the module so it picks up the new env var

@@ -3,7 +3,7 @@ Analytics API router.
 
 Handles forecasting dashboard and charts.
 """
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, Query
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from datetime import date, timedelta
@@ -29,102 +29,164 @@ async def forecast_dashboard(request: Request):
     Raises:
         HTTPException: 500 if database error occurs
     """
-    tenant_id = settings.DEFAULT_TENANT_ID
-    logger.info(f"Loading Forecasting dashboard for tenant {tenant_id}")
-
     try:
-        with db_service.get_cursor(tenant_id=tenant_id) as cur:
-            cur.execute(
-                "SELECT id, name FROM menu_items WHERE tenant_id = %s ORDER BY name",
-                (tenant_id,)
-            )
-            menu_items = [{"id": str(row[0]), "name": row[1]} for row in cur.fetchall()]
+        tenant_id = settings.DEFAULT_TENANT_ID
+        with db_service.get_connection(tenant_id=tenant_id) as conn:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    SELECT id, name
+                    FROM menu_items
+                    WHERE tenant_id = %s
+                    ORDER BY name
+                """, (tenant_id,))
+                menu_items = [{"id": row[0], "name": row[1]} for row in cur.fetchall()]
 
-        logger.info(f"Loaded {len(menu_items)} menu items")
         return templates.TemplateResponse("forecasts.html", {
             "request": request,
-            "menu_items": menu_items,
-            "tenant_name": "Demo Tenant"
+            "menu_items": menu_items
         })
 
-    except DatabaseError as e:
-        logger.error(f"Database error loading menu items: {e}")
-        raise internal_error("Failed to load menu items", details=e.details)
     except Exception as e:
-        logger.error(f"Unexpected error: {e}", exc_info=True)
-        raise internal_error("An unexpected error occurred")
+        logger.error(f"Failed to render forecast dashboard: {e}")
+        raise internal_error("Dashboard load failed", {"error": str(e)})
 
-@router.get("/forecast-chart", response_class=HTMLResponse)
-async def forecast_chart(request: Request, item_selector: str):
-    """HTMX: Render the chart for a specific item."""
-    tenant_id = request.headers.get("X-Tenant-ID")
 
-    dates = []
-    actuals = []
-    predictions = []
-    upper_bound = []
-    lower_bound = []
-    item_name = "Unknown Item"
+@router.get("/forecast-chart")
+async def forecast_chart(request: Request, menu_item_id: str = Query(...)):
+    """
+    Generate forecast chart for a specific menu item.
 
-    if tenant_id and item_selector:
-        with get_db_connection(tenant_id=tenant_id) as conn:
+    Args:
+        menu_item_id: UUID of the menu item
+
+    Returns:
+        HTML fragment with Plotly chart
+
+    Raises:
+        HTTPException: 500 if database or chart generation fails
+    """
+    try:
+        tenant_id = settings.DEFAULT_TENANT_ID
+
+        with db_service.get_connection(tenant_id=tenant_id) as conn:
             with conn.cursor() as cur:
-                # Get Item Name
-                cur.execute("SELECT name FROM menu_items WHERE id = %s", (item_selector,))
-                row = cur.fetchone()
-                if row:
-                    item_name = row[0]
-
-                # Fetch Data (Last 30 days + Next 7 days)
-                start_date = date.today() - timedelta(days=30)
-                end_date = date.today() + timedelta(days=7)
-
-                # 1. Actuals
+                # Fetch forecast data (all forecasts, not just future)
                 cur.execute("""
-                    SELECT so.timestamp::date, SUM(oli.quantity)
-                    FROM order_line_items oli
-                    JOIN sales_orders so ON oli.order_id = so.id
-                    WHERE oli.tenant_id = %s AND oli.menu_item_id = %s
-                      AND so.timestamp >= %s
-                    GROUP BY 1 ORDER BY 1
-                """, (tenant_id, item_selector, start_date))
-                actual_map = {row[0]: float(row[1]) for row in cur.fetchall()}
+                    SELECT
+                        f.forecast_date,
+                        f.predicted_quantity,
+                        mi.name as menu_name
+                    FROM forecasts f
+                    JOIN menu_items mi ON f.menu_item_id = mi.id
+                    WHERE f.menu_item_id = %s
+                      AND f.tenant_id = %s
+                    ORDER BY f.forecast_date
+                    LIMIT 100
+                """, (menu_item_id, tenant_id))
 
-                # 2. Forecasts
-                cur.execute("""
-                    SELECT forecast_date, predicted_quantity, confidence_interval_lower, confidence_interval_upper
-                    FROM forecasts
-                    WHERE tenant_id = %s AND menu_item_id = %s
-                      AND forecast_date >= %s AND forecast_date <= %s
-                    ORDER BY forecast_date
-                """, (tenant_id, item_selector, start_date, end_date))
-                forecast_rows = cur.fetchall()
-                forecast_map = {row[0]: (float(row[1]), float(row[2]), float(row[3])) for row in forecast_rows}
+                forecast_data = cur.fetchall()
 
-                # Merge Data
-                current = start_date
-                while current <= end_date:
-                    dates.append(current.strftime("%Y-%m-%d"))
-                    actuals.append(actual_map.get(current, None)) # None for gaps/future
+        if not forecast_data:
+            return HTMLResponse(f"""
+                <div class="p-4 bg-yellow-100 rounded">
+                    <p class="text-yellow-800">No forecast data found for this item.</p>
+                    <p class="text-sm text-yellow-600 mt-2">Click "Generate Forecasts" to create predictions.</p>
+                </div>
+            """)
 
-                    fc = forecast_map.get(current)
-                    if fc:
-                        predictions.append(fc[0])
-                        lower_bound.append(fc[1])
-                        upper_bound.append(fc[2])
-                    else:
-                        predictions.append(None)
-                        lower_bound.append(None)
-                        upper_bound.append(None)
+        # Prepare chart data
+        dates = [str(row[0]) for row in forecast_data]
+        quantities = [float(row[1]) for row in forecast_data]
+        menu_name = forecast_data[0][2]
 
-                    current += timedelta(days=1)
+        # Generate Plotly chart
+        import plotly.graph_objects as go
 
-    return templates.TemplateResponse("components/forecast_chart.html", {
-        "request": request,
-        "dates": dates,
-        "actuals": actuals,
-        "predictions": predictions,
-        "lower_bound": lower_bound,
-        "upper_bound": upper_bound,
-        "item_name": item_name
-    })
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(
+            x=dates,
+            y=quantities,
+            mode='lines+markers',
+            name='Predicted Demand',
+            line=dict(color='#3B82F6', width=2),
+            marker=dict(size=6)
+        ))
+
+        fig.update_layout(
+            title=f"Forecast: {menu_name}",
+            xaxis_title="Date",
+            yaxis_title="Predicted Quantity",
+            hovermode='x unified',
+            height=400
+        )
+
+        chart_html = fig.to_html(full_html=False, include_plotlyjs='cdn')
+
+        return HTMLResponse(chart_html)
+
+    except Exception as e:
+        logger.error(f"Chart generation failed: {e}", exc_info=True)
+        raise internal_error(
+            "Chart generation failed",
+            detail={
+                "message": "Chart generation failed",
+                "details": {"error": str(e)}
+            }
+        )
+
+
+@router.post("/generate-forecasts", response_class=HTMLResponse)
+async def generate_forecasts_endpoint(request: Request):
+    """
+    Generate demand forecasts from historical sales data.
+
+    Uses configured forecasting model (Prophet or moving average)
+    to analyze sales history and predict future demand.
+
+    Query Parameters:
+        model: Optional override for forecast model ('prophet' or 'moving_average')
+
+    Returns:
+        HTML fragment showing forecast summary
+
+    Raises:
+        HTTPException: 500 if generation fails
+    """
+    # Get model from query params or use default from settings
+    params = dict(request.query_params)
+    model_name = params.get('model', settings.FORECAST_MODEL)
+
+    tenant_id = settings.DEFAULT_TENANT_ID
+    logger.info(f"Generating forecasts for tenant {tenant_id} using {model_name}")
+
+    try:
+        with db_service.get_connection(tenant_id=tenant_id) as conn:
+            from services.worker.engines.forecasting import ForecastingEngine
+
+            engine = ForecastingEngine(tenant_id, conn, model_name=model_name)
+            count = engine.generate_forecasts(forecast_days=settings.FORECAST_DAYS)
+
+        logger.info(f"Successfully generated {count} forecasts using {model_name}")
+
+        return HTMLResponse(f"""
+            <div class="alert alert-success p-4 mb-4 bg-green-100 border border-green-400 rounded" role="alert">
+                <h4 class="font-bold text-green-800">✅ Forecasts Generated!</h4>
+                <p class="text-green-700">Created <strong>{count}</strong> forecasts using <code>{model_name}</code> model.</p>
+                <p class="text-sm text-green-600 mt-2">Select a menu item above to view predictions.</p>
+            </div>
+        """)
+
+    except ValueError as e:
+        # Invalid model name
+        logger.error(f"Invalid model selection: {e}")
+        raise internal_error(
+            f"Invalid model: {model_name}",
+            {"available_models": "prophet, moving_average"}
+        )
+
+    except Exception as e:
+        logger.error(f"Forecast generation failed: {e}", exc_info=True)
+        raise internal_error(
+            "Forecast generation failed",
+            {"error": str(e), "model": model_name}
+        )

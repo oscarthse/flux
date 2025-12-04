@@ -99,6 +99,11 @@ class Settings(BaseSettings):
 
     # Logging Configuration
     LOG_LEVEL: str = "INFO"
+
+    # Forecasting Configuration
+    FORECAST_MODEL: str = "prophet"  # Options: 'prophet', 'moving_average'
+    FORECAST_DAYS: int = 30
+    FORECAST_LOOKBACK: int = 28
     LOG_FORMAT: str = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 
     # Inventory Optimization Config
