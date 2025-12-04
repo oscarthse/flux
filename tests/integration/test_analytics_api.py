@@ -54,11 +54,13 @@ def test_forecast_data_json(tenant_id):
 
     # 3. Assert
     assert response.status_code == 200
-    data = response.json()
+    json_response = response.json()
+    assert json_response["status"] == "success"
+    data = json_response["data"]
+
     assert "dates" in data
-    assert "actuals" in data
-    assert "forecasts" in data
-    assert data["forecasts"][0] == 25.0
+    assert "quantities" in data
+    assert data["quantities"][0] == 25.0
 
 def test_forecast_table_html(tenant_id):
     """
