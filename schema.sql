@@ -117,31 +117,7 @@ ALTER TABLE triage_items ENABLE ROW LEVEL SECURITY;
 ALTER TABLE triage_items FORCE ROW LEVEL SECURITY;
 CREATE POLICY tenant_isolation ON triage_items USING (tenant_id = current_tenant_id());
 
--- 6. Operational Logs
-CREATE TABLE lost_sales (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    tenant_id UUID NOT NULL REFERENCES tenants(id),
-    timestamp TIMESTAMP,
-    party_size INT,
-    reason VARCHAR(50),
-    potential_revenue DECIMAL(10,2)
-);
-ALTER TABLE lost_sales ENABLE ROW LEVEL SECURITY;
-ALTER TABLE lost_sales FORCE ROW LEVEL SECURITY;
-CREATE POLICY tenant_isolation ON lost_sales USING (tenant_id = current_tenant_id());
 
-CREATE TABLE staff_schedule (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    tenant_id UUID NOT NULL REFERENCES tenants(id),
-    date DATE,
-    role VARCHAR(50),
-    count INT,
-    cost DECIMAL(10,2)
-);
-ALTER TABLE staff_schedule ENABLE ROW LEVEL SECURITY;
-ALTER TABLE staff_schedule FORCE ROW LEVEL SECURITY;
-ALTER TABLE staff_schedule FORCE ROW LEVEL SECURITY;
-CREATE POLICY tenant_isolation ON staff_schedule USING (tenant_id = current_tenant_id());
 
 -- 7. Forecasting (Engine B)
 CREATE TABLE forecasts (
