@@ -49,7 +49,7 @@ jobs:
       env:
         DATABASE_URL: postgresql://flux:flux_password@localhost:5432/flux_test
         REDIS_URL: redis://localhost:6379/0
-        DEFAULT_TENANT_ID: test-tenant-id
+        DEFAULT_TENANT_ID: a73ba506-b078-42b3-91f6-fd168c958ee2
         PYTHONPATH: .
       run: |
         pytest tests/unit --cov=services --cov-report=xml
@@ -59,7 +59,7 @@ jobs:
       env:
         DATABASE_URL: postgresql://flux:flux_password@localhost:5432/flux_test
         REDIS_URL: redis://localhost:6379/0
-        DEFAULT_TENANT_ID: test-tenant-id
+        DEFAULT_TENANT_ID: a73ba506-b078-42b3-91f6-fd168c958ee2
         PYTHONPATH: .
         PGPASSWORD: flux_password
         POSTGRES_HOST: localhost
