@@ -9,7 +9,7 @@ from contextlib import asynccontextmanager
 import dramatiq
 from dramatiq.brokers.redis import RedisBroker
 
-from services.api.routers import triage, analytics, inventory
+from services.api.routers import triage, analytics, inventory, dashboard
 from services.api.logging_config import setup_logging
 from services.api.database import db_service
 from services.api.config import settings
@@ -38,10 +38,15 @@ app = FastAPI(
 # Mount static files
 app.mount("/static", StaticFiles(directory="services/api/static"), name="static")
 
-# Include Routers
-app.include_router(triage.router)
+# Include routers
+app.include_router(dashboard.router)
 app.include_router(analytics.router)
-app.include_router(inventory.router) # Added this line
+app.include_router(inventory.router)
+
+@app.get("/")
+async def root():
+    """Redirect root to dashboard."""
+    return RedirectResponse(url="/dashboard")
 
 # Setup Dramatiq Broker
 redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")

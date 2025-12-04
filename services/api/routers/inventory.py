@@ -51,7 +51,8 @@ async def smart_order_dashboard(request: Request):
                     "line_items": []
                 })
 
-            # Fetch Line Items for each PO
+            # Organize POs with line items
+            purchase_orders = []
             for po in pos:
                 cur.execute("""
                     SELECT i.name, pli.quantity, pli.unit_price
@@ -59,27 +60,138 @@ async def smart_order_dashboard(request: Request):
                     JOIN ingredients i ON pli.ingredient_id = i.id
                     WHERE pli.po_id = %s
                 """, (po["id"],))
-                po["line_items"] = [
-                    {
-                        "ingredient_name": r[0],
-                        "quantity": float(r[1]),
-                        "unit_price": float(r[2])
-                    }
-                    for r in cur.fetchall()
-                ]
 
-        logger.info(f"Loaded {len(pos)} purchase orders")
+                po["line_items"] = [
+                    {"ingredient": row[0], "quantity": row[1], "unit_price": row[2]}
+                    for row in cur.fetchall()
+                ]
+                purchase_orders.append(po)
+
         return templates.TemplateResponse("smart_order.html", {
-            "request": request,
-            "purchase_orders": pos
+            "request": request
         })
 
-    except DatabaseError as e:
-        logger.error(f"Database error loading purchase orders: {e}")
-        raise internal_error("Failed to load purchase orders", details=e.details)
     except Exception as e:
-        logger.error(f"Unexpected error: {e}", exc_info=True)
-        raise internal_error("An unexpected error occurred")
+        logger.error(f"Dashboard rendering failed: {e}", exc_info=True)
+        raise internal_error("Dashboard load failed", {"error": str(e)})
+
+
+@router.get("/smart-order-list", response_class=HTMLResponse)
+async def smart_order_list(request: Request):
+    """
+    Return HTML fragment of purchase orders for HTMX loading.
+    """
+    tenant_id = settings.DEFAULT_TENANT_ID
+
+    try:
+        with db_service.get_cursor(tenant_id=tenant_id) as cur:
+            cur.execute("""
+                SELECT id, status, created_at, delivery_date
+                FROM purchase_orders
+                WHERE tenant_id = %s
+                ORDER BY created_at DESC
+                LIMIT 50
+            """, (tenant_id,))
+
+            pos = cur.fetchall()
+
+            if not pos:
+                return HTMLResponse("""
+                    <div class="text-center py-12">
+                        <svg class="w-16 h-16 mx-auto text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                        <p class="text-slate-600 font-medium">No Purchase Orders</p>
+                        <p class="text-sm text-slate-400 mt-2">Generate orders to see recommendations</p>
+                    </div>
+                """)
+
+            # Build PO cards HTML
+            cards_html = []
+            for po_id, status, created_at, delivery_date in pos:
+                # Fetch line items
+                cur.execute("""
+                    SELECT i.name, pli.quantity, pli.unit_price
+                    FROM po_line_items pli
+                    JOIN ingredients i ON pli.ingredient_id = i.id
+                    WHERE pli.po_id = %s
+                    ORDER BY i.name
+                """, (po_id,))
+
+                line_items = cur.fetchall()
+                total = sum(float(qty) * float(price) for _, qty, price in line_items)
+
+                status_class = {
+                    'DRAFT': 'bg-amber-100 text-amber-800',
+                    'APPROVED': 'bg-emerald-100 text-emerald-800',
+                    'SENT': 'bg-blue-100 text-blue-800'
+                }.get(status, 'bg-slate-100 text-slate-800')
+
+                # Build line items table
+                lines_html = ''.join([
+                    f"""
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-4 py-3 text-sm text-slate-900">{name}</td>
+                        <td class="px-4 py-3 text-sm text-slate-600 text-right tabular-nums">{float(qty):.2f}</td>
+                        <td class="px-4 py-3 text-sm text-slate-600 text-right tabular-nums">${float(price):.2f}</td>
+                        <td class="px-4 py-3 text-sm font-semibold text-slate-900 text-right tabular-nums">${float(qty) * float(price):.2f}</td>
+                    </tr>
+                    """
+                    for name, qty, price in line_items
+                ])
+
+                cards_html.append(f"""
+                    <div class="bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden">
+                        <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+                            <div>
+                                <div class="flex items-center space-x-3">
+                                    <h3 class="text-lg font-semibold text-slate-900">PO #{str(po_id)[:8]}</h3>
+                                    <span class="px-2.5 py-1 text-xs font-semibold rounded-full {status_class}">{status}</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-1">Created {created_at.strftime('%b %d, %Y')} • Delivery {delivery_date.strftime('%b %d, %Y')}</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-2xl font-bold text-slate-900">${total:.2f}</p>
+                                <p class="text-xs text-slate-500">{len(line_items)} items</p>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-slate-200">
+                                <thead class="bg-slate-50">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-xs font-semibold text-slate-600 uppercase">Ingredient</th>
+                                        <th class="px-4 py-3 text-right text-xs font-semibold text-slate-600 uppercase">Qty</th>
+                                        <th class="px-4 py-3 text-right text-xs font-semibold text-slate-600 uppercase">Unit Price</th>
+                                        <th class="px-4 py-3 text-right text-xs font-semibold text-slate-600 uppercase">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-slate-100">
+                                    {lines_html}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end">
+                            <button
+                                hx-post="/inventory/orders/{po_id}/approve"
+                                hx-target="#po-list"
+                                hx-swap="innerHTML"
+                                class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                                Approve Order
+                            </button>
+                        </div>
+                    </div>
+                """)
+
+            return HTMLResponse(''.join(cards_html))
+
+    except Exception as e:
+        logger.error(f"PO list generation failed: {e}", exc_info=True)
+        return HTMLResponse("""
+            <div class="text-center py-12">
+                <p class="text-rose-600 font-medium">Failed to load purchase orders</p>
+            </div>
+        """)
+
 
 @router.post("/orders/{po_id}/approve")
 async def approve_order(request: Request, po_id: str):

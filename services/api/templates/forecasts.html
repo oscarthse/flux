@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 
+{% block title %}Demand Forecasting - Flux Platform{% endblock %}
+
 {% block content %}
 <div x-data="{
     selectedItemId: '{{ initial_item_id }}',
     selectedItemName: '{{ initial_item_name }}',
+    searchQuery: '',
     loading: false,
     generating: false,
     chartData: null
@@ -11,253 +14,212 @@
     if (selectedItemId) {
         $nextTick(() => loadForecast(selectedItemId));
     }
-" class="flex h-screen bg-slate-50">
+" class="h-full overflow-hidden flex flex-col">
 
-  <!-- Sidebar Navigation -->
-  <aside class="w-80 bg-white border-r border-slate-200 flex flex-col">
-
-    <!-- Sidebar Header -->
-    <div class="p-6 border-b border-slate-200">
-      <h2 class="text-lg font-semibold text-slate-900">Menu Items</h2>
-      <p class="text-xs text-slate-500 mt-1">Select an item to view forecasts</p>
-    </div>
-
-    <!-- Search (Future Enhancement) -->
-    <div class="px-6 py-3 border-b border-slate-100">
-      <input type="text" placeholder="Search items..."
-        class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-    </div>
-
-    <!-- Menu Items List -->
-    <div class="flex-1 overflow-y-auto">
-      <nav class="p-2">
-        {% for item in menu_items %}
-        <button @click="
-                        selectedItemId = '{{ item.id }}';
-                        selectedItemName = '{{ item.name }}';
-                        loadForecast('{{ item.id }}');
-                    "
-          :class="selectedItemId === '{{ item.id }}' ? 'bg-blue-50 text-blue-900 border-blue-200' : 'text-slate-700 hover:bg-slate-50 border-transparent'"
-          class="w-full text-left px-3 py-2.5 rounded-lg mb-1 border transition-colors">
-          <div class="font-medium text-sm"
-            x-text="selectedItemId === '{{ item.id }}' ? '{{ item.name }}' : '{{ item.name }}'">{{ item.name }}</div>
-          <div class="text-xs text-slate-500 mt-0.5">{{ item.category }}</div>
-        </button>
-        {% endfor %}
-      </nav>
-    </div>
-
-    <!-- Generate Action -->
-    <div class="p-4 border-t border-slate-200">
-      <button @click="generating = true" hx-post="/analytics/generate-forecasts" hx-target="#generation-status"
-        hx-swap="innerHTML" :disabled="generating"
-        class="w-full px-4 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center space-x-2">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-        <span x-text="generating ? 'Generating...' : 'Generate Forecasts'"></span>
-      </button>
-      <div id="generation-status" class="mt-3"></div>
-    </div>
-
-  </aside>
-
-  <!-- Main Content Area -->
-  <main class="flex-1 flex flex-col overflow-hidden">
-
-    <!-- Top Bar -->
-    <header class="bg-white border-b border-slate-200 px-8 py-4">
-      <div class="flex items-center justify-between">
-        <div>
-          <h1 class="text-2xl font-bold text-slate-900" x-text="selectedItemName"></h1>
-          <p class="text-sm text-slate-500 mt-0.5">Demand forecast analysis</p>
-        </div>
-        <div class="flex items-center space-x-6 text-sm">
-          <div class="text-right">
-            <p class="text-xs text-slate-500 uppercase tracking-wide font-medium">Model</p>
-            <p class="text-sm font-semibold text-slate-900">Prophet</p>
-          </div>
-          <div class="text-right">
-            <p class="text-xs text-slate-500 uppercase tracking-wide font-medium">Period</p>
-            <p class="text-sm font-semibold text-slate-900">30 Days</p>
-          </div>
-        </div>
+  <!-- Top Control Bar -->
+  <header class="bg-white border-b border-slate-200 px-8 py-4 flex-shrink-0">
+    <div class="flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold text-slate-900">Demand Forecasting</h1>
+        <p class="text-sm text-slate-500 mt-0.5">AI-powered demand prediction with Prophet</p>
       </div>
-    </header>
-
-    <!-- Chart Area -->
-    <div class="flex-1 overflow-auto bg-white p-8">
-
-      <!-- Loading State -->
-      <div x-show="loading" class="h-full flex items-center justify-center">
-        <div class="text-center">
-          <div class="w-full max-w-4xl h-96 bg-slate-100 rounded-lg animate-pulse mb-4"></div>
-          <p class="text-sm text-slate-500">Loading forecast data...</p>
-        </div>
-      </div>
-
-      <!-- Chart Container -->
-      <div x-show="!loading" id="forecast-chart" class="w-full h-full min-h-[400px]"></div>
-
-      <!-- Empty State -->
-      <div x-show="!loading && !chartData" class="h-full flex items-center justify-center">
-        <div class="text-center">
-          <svg class="w-16 h-16 mx-auto text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      <div class="flex items-center space-x-4">
+        <button @click="generating = true" hx-post="/analytics/generate-forecasts" hx-target="#generation-status"
+          hx-swap="innerHTML" :disabled="generating"
+          class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 transition-colors flex items-center space-x-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
-          <p class="text-slate-600 font-medium">No Forecast Data</p>
-          <p class="text-sm text-slate-400 mt-2">Generate forecasts to view predictions</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Data Table Panel -->
-    <div class="bg-white border-t border-slate-200 h-80 overflow-hidden flex flex-col">
-      <div class="px-8 py-3 border-b border-slate-100 flex items-center justify-between">
-        <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wide">Forecast Details</h3>
-        <span class="text-xs text-slate-500" x-text="chartData ? chartData.total_points + ' data points' : ''"></span>
-      </div>
-      <div id="forecast-table" class="flex-1 overflow-auto" hx-get="/analytics/forecast-table"
-        hx-trigger="load from:body" :hx-vals="JSON.stringify({ menu_item_id: selectedItemId })">
-
-        <!-- Table loads here via HTMX -->
-        <div class="flex items-center justify-center h-full text-slate-400">
-          <p class="text-sm">Loading table data...</p>
-        </div>
-
+          <span x-text="generating ? 'Generating...' : 'Generate Forecasts'"></span>
+        </button>
       </div>
     </div>
+    <div id="generation-status" class="mt-3"></div>
+  </header>
 
-  </main>
+  <!-- Main 2-Column Layout: grid-cols-12 with 3/9 split -->
+  <div class="flex-1 overflow-hidden">
+    <div class="h-full grid grid-cols-12 gap-px bg-slate-200">
 
-</div>
+      <!-- Left Sidebar: Menu Items (col-span-3) -->
+      <aside class="col-span-3 bg-white flex flex-col overflow-hidden">
 
-<!-- Load Plotly from CDN -->
-<script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+        <!-- Sticky Header with Search -->
+        <div class="p-4 border-b border-slate-100 space-y-3 flex-shrink-0">
+          <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Menu Items</h3>
+          <div class="relative">
+            <input type="text" x-model="searchQuery" placeholder="Search items..."
+              class="w-full px-3 py-2 pl-9 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            <svg class="w-4 h-4 absolute left-3 top-2.5 text-slate-400" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+        </div>
 
-<script>
-  // Global forecast loading function
-  async function loadForecast(itemId) {
-    const chartContainer = document.getElementById('forecast-chart');
-    const tableContainer = document.getElementById('forecast-table');
-    const loadingState = document.querySelector('[x-show="loading"]');
+        <!-- Scrollable Menu Items List -->
+        <nav class="flex-1 overflow-y-auto p-2">
+          {% for item in menu_items %}
+          <button @click="
+                            selectedItemId = '{{ item.id }}';
+                            selectedItemName = '{{ item.name }}';
+                            loadForecast('{{ item.id }}');
+                        " x-show="'{{ item.name }}'.toLowerCase().includes(searchQuery.toLowerCase())"
+            :class="selectedItemId === '{{ item.id }}' ? 'bg-blue-50 text-blue-900 border-blue-200' : 'text-slate-700 hover:bg-slate-50 border-transparent'"
+            class="w-full text-left px-3 py-2.5 rounded-lg mb-1 border text-sm font-medium transition-colors">
+            {{ item.name }}
+          </button>
+          {% endfor %}
+        </nav>
 
-    // Show loading
-    Alpine.store('app') || {};
-    const component = Alpine.$data(document.querySelector('[x-data]'));
-    component.loading = true;
-    component.chartData = null;
+      </aside>
 
-    try {
-      // Fetch forecast data as JSON
-      const response = await fetch(`/analytics/forecast-data?menu_item_id=${itemId}`);
-      const result = await response.json();
+      <!-- Right Panel: Stacked Graph + Table (col-span-9) -->
+      <div class="col-span-9 bg-slate-50 overflow-auto">
 
-      if (result.status === 'success') {
-        component.chartData = result.data;
+        <div class="space-y-6 p-6">
 
-        // Render Plotly chart
-        const trace = {
-          x: result.data.dates,
-          y: result.data.quantities,
-          type: 'scatter',
-          mode: 'lines+markers',
-          name: 'Predicted Demand',
-          line: {
-            color: '#2563eb',
-            width: 2
-          },
-          marker: {
-            color: '#2563eb',
-            size: 6
-          },
-          hovertemplate: '<b>%{x}</b><br>Quantity: %{y:.1f}<extra></extra>'
-        };
+          <!-- Graph Section -->
+          <div class="bg-white shadow-sm rounded-lg overflow-hidden">
 
-        const layout = {
-          font: {
-            family: 'Inter, system-ui, sans-serif',
-            size: 12,
-            color: '#475569'
-          },
-          xaxis: {
-            title: 'Date',
-            gridcolor: '#f1f5f9',
-            showline: true,
-            linecolor: '#e2e8f0'
-          },
-          yaxis: {
-            title: 'Predicted Quantity',
-            gridcolor: '#f1f5f9',
-            showline: true,
-            linecolor: '#e2e8f0'
-          },
-          plot_bgcolor: '#ffffff',
-          paper_bgcolor: '#ffffff',
-          hovermode: 'x unified',
-          margin: {
-            l: 60,
-            r: 40,
-            t: 40,
-            b: 60
-          },
-          autosize: true
-        };
+            <div class="px-8 py-4 border-b border-slate-100">
+              <h2 class="text-lg font-bold text-slate-900" x-text="selectedItemName"></h2>
+              <p class="text-xs text-slate-500 mt-0.5">30-day rolling forecast</p>
+            </div>
 
-        const config = {
-          responsive: true,
-          displayModeBar: true,
-          displaylogo: false,
-          modeBarButtonsToRemove: ['lasso2d', 'select2d']
-        };
+            <div class="p-8">
+              <!-- Loading State -->
+              <div x-show="loading" class="h-96">
+                <div class="w-full h-full bg-slate-100 rounded-lg animate-pulse"></div>
+              </div>
 
-        Plotly.newPlot(chartContainer, [trace], layout, config);
+              <!-- Chart Container -->
+              <div x-show="!loading && chartData" id="forecast-chart" class="w-full" style="min-height: 400px;"></div>
 
-        // Load table via HTMX
-        htmx.ajax('GET', `/analytics/forecast-table?menu_item_id=${itemId}`, {
-          target: '#forecast-table',
-          swap: 'innerHTML'
-        });
+              <!-- Empty State -->
+              <div x-show="!loading && !chartData" class="h-96 flex items-center justify-center">
+                <div class="text-center">
+                  <svg class="w-16 h-16 mx-auto text-slate-300 mb-4" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                  <p class="text-slate-600 font-medium">No forecast data</p>
+                  <p class="text-sm text-slate-400 mt-2">Generate forecasts to view predictions</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      } else {
-        // Empty state
-        component.chartData = null;
-      }
+          <!-- Table Section -->
+          <div class="bg-white shadow-sm rounded-lg overflow-hidden">
 
-    } catch (error) {
-      console.error('Failed to load forecast:', error);
+            <div class="px-6 py-3 border-b border-slate-100">
+              <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Forecast Data</h3>
+            </div>
+
+            <div id="forecast-table" class="overflow-auto max-h-96">
+              <div class="p-6 text-center text-slate-400 text-sm">Select a menu item to view data</div>
+            </div>
+
+          </div>
+
+        </div><!-- end space-y-6 p-6 -->
+
+      </div><!-- end right column -->
+    </div>
+
+  </div>
+
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+  <script>
+    async function loadForecast(itemId) {
+      const component = Alpine.$data(document.querySelector('[x-data]'));
+      component.loading = true;
       component.chartData = null;
-    } finally {
-      component.loading = false;
-    }
-  }
 
-  // Handle HTMX events
-  document.body.addEventListener('htmx:afterRequest', function (event) {
-    if (event.detail.pathInfo.requestPath.includes('generate-forecasts')) {
-      if (event.detail.successful) {
-        // Reload current forecast after generation
+      try {
+        const response = await fetch(`/analytics/forecast-data?menu_item_id=${itemId}`);
+        const result = await response.json();
+
+        if (result.status === 'success') {
+          component.chartData = result.data;
+
+          const trace = {
+            x: result.data.dates,
+            y: result.data.quantities,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Predicted Demand',
+            line: { color: '#2563eb', width: 2.5 },
+            marker: { color: '#2563eb', size: 7 },
+            hovertemplate: '<b>%{x}</b><br>Quantity: %{y:.1f}<extra></extra>'
+          };
+
+          const layout = {
+            font: { family: 'Inter, sans-serif', size: 12, color: '#475569' },
+            xaxis: {
+              title: 'Date',
+              gridcolor: '#f1f5f9',
+              showline: true,
+              linecolor: '#e2e8f0'
+            },
+            yaxis: {
+              title: 'Predicted Quantity',
+              gridcolor: '#f1f5f9',
+              showline: true,
+              linecolor: '#e2e8f0'
+            },
+            plot_bgcolor: '#ffffff',
+            paper_bgcolor: '#ffffff',
+            hovermode: 'x unified',
+            margin: { l: 70, r: 40, t: 40, b: 60 },
+            autosize: true
+          };
+
+          Plotly.newPlot('forecast-chart', [trace], layout, {
+            responsive: true,
+            displaylogo: false,
+            displayModeBar: true
+          });
+
+          // Always load the table
+          htmx.ajax('GET', `/analytics/forecast-table?menu_item_id=${itemId}`, {
+            target: '#forecast-table',
+            swap: 'innerHTML'
+          });
+        } else {
+          // Empty state - clear table too
+          document.getElementById('forecast-table').innerHTML = '<div class="p-6 text-center text-slate-400 text-sm">No forecast data available</div>';
+        }
+
+      } catch (error) {
+        console.error('Failed to load forecast:', error);
+        component.chartData = null;
+        document.getElementById('forecast-table').innerHTML = '<div class="p-6 text-center text-rose-600 text-sm">Failed to load data</div>';
+      } finally {
+        component.loading = false;
+      }
+    }
+
+    document.body.addEventListener('htmx:afterRequest', function (event) {
+      if (event.detail.pathInfo.requestPath.includes('generate-forecasts') && event.detail.successful) {
         setTimeout(() => {
           const component = Alpine.$data(document.querySelector('[x-data]'));
           loadForecast(component.selectedItemId);
           component.generating = false;
         }, 1000);
-      } else {
-        const component = Alpine.$data(document.querySelector('[x-data]'));
-        component.generating = false;
       }
-    }
-  });
+    });
 
-  // Window resize handler for Plotly
-  window.addEventListener('resize', function () {
-    const chartContainer = document.getElementById('forecast-chart');
-    if (chartContainer && chartContainer.data) {
-      Plotly.Plots.resize(chartContainer);
-    }
-  });
-</script>
+    window.addEventListener('resize', function () {
+      const chartContainer = document.getElementById('forecast-chart');
+      if (chartContainer && chartContainer.data) {
+        Plotly.Plots.resize(chartContainer);
+      }
+    });
+  </script>
 
-{% endblock %}
+  {% endblock %}
