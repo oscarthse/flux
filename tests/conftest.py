@@ -18,6 +18,25 @@ reload(lib.flux_lib.db)
 from lib.flux_lib.db import get_db_connection
 DB_URL = TEST_DB_URL
 
+# Patch the global db_service singleton to use the test database
+# This ensures that all routers (which import db_service) use the correct pool
+from services.api.database import db_service
+from psycopg2 import pool
+
+if db_service._connection_pool:
+    try:
+        db_service._connection_pool.closeall()
+    except Exception:
+        pass
+
+# Re-initialize pool with test credentials
+db_service._connection_pool = pool.SimpleConnectionPool(
+    minconn=1,
+    maxconn=10,
+    dsn=TEST_DB_URL
+)
+
+
 
 # ============================================================================
 # Settings & Configuration
