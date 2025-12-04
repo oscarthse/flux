@@ -71,3 +71,63 @@ def test_forecast_chart_data(tenant_id):
     assert str(yesterday) in response.text # Date label
     assert "5.0" in response.text # Actuals
     assert "10.0" in response.text # Forecast
+
+def test_forecast_data_json(tenant_id):
+    """
+    Test that the forecast data endpoint returns valid JSON.
+    """
+    # 1. Setup
+    item_id = str(uuid4())
+    today = date.today()
+
+    with get_db_connection(tenant_id=tenant_id) as conn:
+        with conn.cursor() as cur:
+            cur.execute("""
+                INSERT INTO menu_items (id, tenant_id, name, price)
+                VALUES (%s, %s, 'JSON Burger', 10.00)
+            """, (item_id, tenant_id))
+
+            # Insert forecast
+            cur.execute("""
+                INSERT INTO forecasts (tenant_id, menu_item_id, forecast_date, predicted_quantity)
+                VALUES (%s, %s, %s, 25.0)
+            """, (tenant_id, item_id, today))
+
+    # 2. Action
+    response = client.get(f"/analytics/forecast-data?item_selector={item_id}", headers={"X-Tenant-ID": tenant_id})
+
+    # 3. Assert
+    assert response.status_code == 200
+    data = response.json()
+    assert "dates" in data
+    assert "actuals" in data
+    assert "forecasts" in data
+    assert data["forecasts"][0] == 25.0
+
+def test_forecast_table_html(tenant_id):
+    """
+    Test that the forecast table endpoint returns HTML fragment.
+    """
+    # 1. Setup
+    item_id = str(uuid4())
+    today = date.today()
+
+    with get_db_connection(tenant_id=tenant_id) as conn:
+        with conn.cursor() as cur:
+            cur.execute("""
+                INSERT INTO menu_items (id, tenant_id, name, price)
+                VALUES (%s, %s, 'Table Burger', 10.00)
+            """, (item_id, tenant_id))
+
+            cur.execute("""
+                INSERT INTO forecasts (tenant_id, menu_item_id, forecast_date, predicted_quantity)
+                VALUES (%s, %s, %s, 30.0)
+            """, (tenant_id, item_id, today))
+
+    # 2. Action
+    response = client.get(f"/analytics/forecast-table?item_selector={item_id}", headers={"X-Tenant-ID": tenant_id})
+
+    # 3. Assert
+    assert response.status_code == 200
+    assert "<table" in response.text
+    assert "30.0" in response.text

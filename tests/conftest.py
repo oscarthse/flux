@@ -132,11 +132,57 @@ def mock_redis():
         yield mock.return_value
 
 
+
 @pytest.fixture
 def mock_dramatiq_broker():
     """Mock Dramatiq broker for worker tests."""
     with patch('dramatiq.get_broker') as mock:
         yield mock.return_value
+
+
+@pytest.fixture
+def mock_prophet():
+    """
+    Mock Prophet class to avoid installing/running full Prophet.
+
+    Returns a MagicMock that simulates the Prophet API:
+    - fit()
+    - make_future_dataframe()
+    - predict()
+    - history attribute
+    """
+    with patch('services.worker.engines.forecasting.prophet_model.Prophet') as mock_cls:
+        # Setup the mock instance returned by Prophet()
+        mock_instance = mock_cls.return_value
+
+        # Mock fit
+        mock_instance.fit.return_value = None
+
+        # Mock make_future_dataframe
+        # Returns a dummy DataFrame with 'ds' column
+        def make_future_df(periods):
+            import pandas as pd
+            dates = pd.date_range(start='2025-01-01', periods=periods + 10) # +10 to cover history
+            return pd.DataFrame({'ds': dates})
+        mock_instance.make_future_dataframe.side_effect = make_future_df
+
+        # Mock predict
+        # Returns a DataFrame with 'ds' and 'yhat'
+        def predict(df):
+            import pandas as pd
+            df['yhat'] = 10.0 # Constant prediction
+            return df
+        mock_instance.predict.side_effect = predict
+
+        # Mock history
+        import pandas as pd
+        mock_instance.history = pd.DataFrame({
+            'ds': pd.to_datetime(['2025-01-01', '2025-01-02']),
+            'y': [10.0, 12.0]
+        })
+
+        yield mock_cls
+
 
 
 # ============================================================================
