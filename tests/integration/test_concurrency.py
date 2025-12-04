@@ -67,7 +67,8 @@ def test_concurrent_tenant_operations_isolated(tenant_id, other_tenant_id, db_co
     """Test: Concurrent operations by different tenants are isolated."""
     def operation_tenant_a():
         import psycopg2
-        conn = psycopg2.connect("postgresql://flux_app:flux_pass@localhost:5435/flux")
+        import os
+        conn = psycopg2.connect(os.environ["DATABASE_URL"])
         with conn.cursor() as cur:
             cur.execute("SET app.current_tenant_id = %s", (tenant_id,))
             cur.execute("""
@@ -79,7 +80,8 @@ def test_concurrent_tenant_operations_isolated(tenant_id, other_tenant_id, db_co
 
     def operation_tenant_b():
         import psycopg2
-        conn = psycopg2.connect("postgresql://flux_app:flux_pass@localhost:5435/flux")
+        import os
+        conn = psycopg2.connect(os.environ["DATABASE_URL"])
         with conn.cursor() as cur:
             cur.execute("SET app.current_tenant_id = %s", (other_tenant_id,))
             cur.execute("""
