@@ -24,7 +24,7 @@ def test_forecast_dashboard_render(tenant_id):
 
     # 3. Assert
     assert response.status_code == 200
-    assert "Forecasting Dashboard" in response.text
+    assert "Demand Forecasting" in response.text
     assert "Chart Burger" in response.text
 
 def test_forecast_chart_data(tenant_id):
