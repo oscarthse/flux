@@ -28,7 +28,7 @@ async def forecast_dashboard(request: Request):
     Auto-loads data for the first menu item on initial page load.
     """
     try:
-        tenant_id = settings.DEFAULT_TENANT_ID
+        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
 
         with db_service.get_connection(tenant_id=tenant_id) as conn:
             with conn.cursor() as cur:
@@ -76,7 +76,7 @@ async def forecast_dashboard(request: Request):
 
 
 @router.get("/forecast-data")
-async def forecast_data(menu_item_id: str = Query(...)):
+async def forecast_data(request: Request, menu_item_id: str = Query(...)):
     """
     Return forecast data as JSON for client-side Plotly rendering.
 
@@ -84,7 +84,7 @@ async def forecast_data(menu_item_id: str = Query(...)):
     data from presentation.
     """
     try:
-        tenant_id = settings.DEFAULT_TENANT_ID
+        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
 
         with db_service.get_connection(tenant_id=tenant_id) as conn:
             with conn.cursor() as cur:
@@ -133,12 +133,12 @@ async def forecast_data(menu_item_id: str = Query(...)):
 
 
 @router.get("/forecast-table")
-async def forecast_table(menu_item_id: str = Query(...)):
+async def forecast_table(request: Request, menu_item_id: str = Query(...)):
     """
     Generate HTML table fragment for forecast details.
     """
     try:
-        tenant_id = settings.DEFAULT_TENANT_ID
+        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
 
         with db_service.get_connection(tenant_id=tenant_id) as conn:
             with conn.cursor() as cur:
@@ -232,7 +232,7 @@ async def generate_forecasts_endpoint(request: Request):
     """
     params = dict(request.query_params)
     model_name = params.get('model', settings.FORECAST_MODEL)
-    tenant_id = settings.DEFAULT_TENANT_ID
+    tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
 
     logger.info(f"Generating forecasts for {tenant_id} using {model_name}")
 
