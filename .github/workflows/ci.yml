@@ -50,18 +50,22 @@ jobs:
         DATABASE_URL: postgresql://flux:flux_password@localhost:5432/flux_test
         REDIS_URL: redis://localhost:6379/0
         DEFAULT_TENANT_ID: test-tenant-id
+        PYTHONPATH: .
       run: |
         pytest tests/unit --cov=services --cov-report=xml
+
 
     - name: Run Integration Tests
       env:
         DATABASE_URL: postgresql://flux:flux_password@localhost:5432/flux_test
         REDIS_URL: redis://localhost:6379/0
         DEFAULT_TENANT_ID: test-tenant-id
+        PYTHONPATH: .
       run: |
         # Initialize DB schema if needed (assuming schema.sql or similar exists, or app does it)
         # For now, relying on tests to setup schema or app startup
         pytest tests/integration
+
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
