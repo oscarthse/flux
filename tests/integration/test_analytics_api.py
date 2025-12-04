@@ -50,7 +50,7 @@ def test_forecast_data_json(tenant_id):
             """, (tenant_id, item_id, today))
 
     # 2. Action
-    response = client.get(f"/analytics/forecast-data?item_selector={item_id}", headers={"X-Tenant-ID": tenant_id})
+    response = client.get(f"/analytics/forecast-data?menu_item_id={item_id}", headers={"X-Tenant-ID": tenant_id})
 
     # 3. Assert
     assert response.status_code == 200
@@ -81,7 +81,7 @@ def test_forecast_table_html(tenant_id):
             """, (tenant_id, item_id, today))
 
     # 2. Action
-    response = client.get(f"/analytics/forecast-table?item_selector={item_id}", headers={"X-Tenant-ID": tenant_id})
+    response = client.get(f"/analytics/forecast-table?menu_item_id={item_id}", headers={"X-Tenant-ID": tenant_id})
 
     # 3. Assert
     assert response.status_code == 200
