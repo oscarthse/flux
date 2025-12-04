@@ -123,12 +123,13 @@ class DatabaseService:
                 conn.rollback()
             logger.error(f"Database error: {e.pgcode} - {e.pgerror}")
             raise DatabaseError(
-                "Database operation failed",
+                f"Database operation failed: {e.pgcode} - {e.pgerror}",
                 details={
                     "error_code": e.pgcode,
                     "error_message": str(e)
                 }
-            )
+            ) from e
+
         except Exception as e:
             if conn:
                 conn.rollback()

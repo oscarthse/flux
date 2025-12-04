@@ -62,6 +62,11 @@ jobs:
         DEFAULT_TENANT_ID: test-tenant-id
         PYTHONPATH: .
         PGPASSWORD: flux_password
+        POSTGRES_HOST: localhost
+        POSTGRES_PORT: 5432
+        POSTGRES_USER: flux
+        POSTGRES_PASSWORD: flux_password
+
       run: |
         # Install postgresql-client to use psql
         sudo apt-get update
