@@ -45,6 +45,28 @@ jobs:
         pip install -r requirements.txt
         pip install ".[test]"
 
+    - name: Initialize Database
+      env:
+        PGPASSWORD: flux_password
+        POSTGRES_HOST: localhost
+        POSTGRES_PORT: 5432
+        POSTGRES_USER: flux
+        POSTGRES_PASSWORD: flux_password
+      run: |
+        # Install postgresql-client to use psql
+        sudo apt-get update
+        sudo apt-get install -y postgresql-client
+
+        # Initialize DB schema
+        psql -h localhost -U flux -d flux_test -f schema.sql
+
+        # Create application user (non-superuser) for RLS testing
+        psql -h localhost -U flux -d flux_test -c "CREATE USER flux_app WITH PASSWORD 'flux_pass';"
+        psql -h localhost -U flux -d flux_test -c "GRANT ALL PRIVILEGES ON DATABASE flux_test TO flux_app;"
+        psql -h localhost -U flux -d flux_test -c "GRANT ALL ON SCHEMA public TO flux_app;"
+        psql -h localhost -U flux -d flux_test -c "GRANT ALL ON ALL TABLES IN SCHEMA public TO flux_app;"
+        psql -h localhost -U flux -d flux_test -c "GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO flux_app;"
+
     - name: Run Unit Tests
       env:
         DATABASE_URL: postgresql://flux:flux_password@localhost:5432/flux_test
@@ -68,20 +90,6 @@ jobs:
         POSTGRES_PASSWORD: flux_password
 
       run: |
-        # Install postgresql-client to use psql
-        sudo apt-get update
-        sudo apt-get install -y postgresql-client
-
-        # Initialize DB schema
-        psql -h localhost -U flux -d flux_test -f schema.sql
-
-        # Create application user (non-superuser) for RLS testing
-        psql -h localhost -U flux -d flux_test -c "CREATE USER flux_app WITH PASSWORD 'flux_pass';"
-        psql -h localhost -U flux -d flux_test -c "GRANT ALL PRIVILEGES ON DATABASE flux_test TO flux_app;"
-        psql -h localhost -U flux -d flux_test -c "GRANT ALL ON SCHEMA public TO flux_app;"
-        psql -h localhost -U flux -d flux_test -c "GRANT ALL ON ALL TABLES IN SCHEMA public TO flux_app;"
-        psql -h localhost -U flux -d flux_test -c "GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO flux_app;"
-
         # Run tests
         pytest tests/integration
 
