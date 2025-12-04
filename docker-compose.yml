@@ -11,5 +11,40 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
 
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+  # Commented out until Dockerfiles are created
+  # api:
+  #   build:
+  #     context: ../../
+  #     dockerfile: infrastructure/local/Dockerfile.api
+  #   ports:
+  #     - "8000:8000"
+  #   environment:
+  #     - DATABASE_URL=postgresql://postgres:postgres@db:5432/flux
+  #     - REDIS_URL=redis://redis:6379/0
+  #   depends_on:
+  #     - db
+  #     - redis
+  #   volumes:
+  #     - ../../services:/app/services
+  #     - ../../lib:/app/lib
+
+  # worker:
+  #   build:
+  #     context: ../../
+  #     dockerfile: infrastructure/local/Dockerfile.worker
+  #   environment:
+  #     - DATABASE_URL=postgresql://postgres:postgres@db:5432/flux
+  #     - REDIS_URL=redis://redis:6379/0
+  #   depends_on:
+  #     - db
+  #     - redis
+  #   volumes:
+  #     - ../../services:/app/services
+  #     - ../../lib:/app/lib
+
 volumes:
   postgres_data:

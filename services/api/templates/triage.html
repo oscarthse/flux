@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <h1 class="text-2xl font-bold mb-4">Ghost Item Triage</h1>
+  <p class="mb-4 text-gray-600">Map unknown POS items to Flux recipes to ensure accurate inventory and analytics.</p>
+
+  <div id="triage-list" hx-get="/triage/list" hx-trigger="load" hx-swap="innerHTML">
+    <!-- List loads here -->
+    <div class="animate-pulse flex space-x-4">
+      <div class="flex-1 space-y-4 py-1">
+        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+        <div class="space-y-2">
+          <div class="h-4 bg-gray-200 rounded"></div>
+          <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

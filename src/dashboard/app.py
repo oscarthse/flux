@@ -16,7 +16,7 @@ st.title("⚡ Flux: Restaurant Analytics")
 
 # Sidebar
 st.sidebar.header("Navigation")
-page = st.sidebar.radio("Go to", ["Executive Summary", "Inventory Optimization", "Sales Deep Dive"])
+page = st.sidebar.radio("Go to", ["Executive Summary", "Inventory Optimization", "Sales Deep Dive", "Operations Performance"])
 
 # Database Connection
 db_gen = get_db_connection()
@@ -85,3 +85,54 @@ elif page == "Sales Deep Dive":
         st.subheader("Top Selling Items")
         top_items = df_sales.groupby('item_name')['quantity'].sum().sort_values(ascending=False).head(10)
         st.bar_chart(top_items)
+
+elif page == "Operations Performance":
+    st.header("Operations Performance")
+
+    from src.flux_api.routers.analytics import get_lost_sales_stats, get_waste_stats
+
+    # 1. Lost Sales Analysis
+    st.subheader("📉 Lost Sales Analysis")
+    lost_sales_data = get_lost_sales_stats(db)
+    df_lost = pd.DataFrame(lost_sales_data)
+
+    if not df_lost.empty:
+        total_lost_rev = df_lost['potential_revenue'].sum()
+        lost_customers = df_lost['party_size'].sum()
+
+        c1, c2 = st.columns(2)
+        c1.metric("Total Lost Revenue", f"€{total_lost_rev:,.2f}", delta_color="inverse")
+        c2.metric("Lost Customers", f"{lost_customers:,.0f}", delta_color="inverse")
+
+        # Reason Breakdown
+        st.markdown("### Reasons for Lost Sales")
+        df_reason = df_lost.groupby('reason')['potential_revenue'].sum().reset_index()
+        fig_reason = px.pie(df_reason, values='potential_revenue', names='reason', title="Lost Revenue by Reason")
+        st.plotly_chart(fig_reason, use_container_width=True)
+
+        # Time Series
+        st.markdown("### Lost Revenue Over Time")
+        df_lost['date'] = pd.to_datetime(df_lost['timestamp']).dt.date
+        df_daily_lost = df_lost.groupby('date')['potential_revenue'].sum().reset_index()
+        fig_lost_ts = px.bar(df_daily_lost, x='date', y='potential_revenue', title="Daily Lost Revenue")
+        st.plotly_chart(fig_lost_ts, use_container_width=True)
+    else:
+        st.success("No lost sales recorded!")
+
+    # 2. Waste Analysis
+    st.subheader("🗑️ Food Waste Analysis")
+    waste_data = get_waste_stats(db)
+    df_waste = pd.DataFrame(waste_data)
+
+    if not df_waste.empty:
+        total_waste_cost = df_waste['waste_cost'].sum()
+
+        st.metric("Total Waste Cost", f"€{total_waste_cost:,.2f}", delta_color="inverse")
+
+        # Top Wasted Items
+        st.markdown("### Top Wasted Ingredients (by Cost)")
+        df_top_waste = df_waste.groupby('ingredient_name')['waste_cost'].sum().sort_values(ascending=False).head(10).reset_index()
+        fig_waste = px.bar(df_top_waste, x='waste_cost', y='ingredient_name', orientation='h', title="Top 10 Ingredients by Waste Cost")
+        st.plotly_chart(fig_waste, use_container_width=True)
+    else:
+        st.success("No waste recorded!")

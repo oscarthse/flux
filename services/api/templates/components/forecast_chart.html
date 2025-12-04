@@ -1,0 +1,62 @@
+<div class="relative w-full h-full">
+  <canvas id="forecastChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  var ctx = document.getElementById('forecastChart').getContext('2d');
+  var chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: {{ dates | tojson }},
+  datasets: [
+    {
+      label: 'Actual Sales',
+      data: {{ actuals | tojson }},
+    borderColor: 'rgb(59, 130, 246)', // Blue-500
+    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+    tension: 0.1
+                },
+    {
+      label: 'Forecast',
+      data: {{ predictions | tojson }},
+    borderColor: 'rgb(16, 185, 129)', // Green-500
+    borderDash: [5, 5],
+    tension: 0.1
+                },
+    {
+      label: 'Confidence Interval',
+      data: {{ upper_bound | tojson }},
+    borderColor: 'rgba(16, 185, 129, 0.2)',
+    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+    fill: '+1', // Fill to lower bound (next dataset)
+    pointRadius: 0,
+    borderWidth: 0
+                },
+    {
+      label: 'Lower Bound',
+      data: {{ lower_bound | tojson }},
+    borderColor: 'rgba(16, 185, 129, 0.2)',
+    pointRadius: 0,
+    borderWidth: 0
+                }
+  ]
+        },
+  options: {
+    responsive: true,
+      maintainAspectRatio: false,
+        interaction: {
+      mode: 'index',
+        intersect: false,
+            },
+    plugins: {
+      title: {
+        display: true,
+          text: '{{ item_name }} - Last 30 Days + Next 7 Days'
+      },
+      filler: {
+        propagate: false
+      }
+    }
+  }
+    });
+</script>

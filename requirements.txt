@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+psycopg2-binary
+dramatiq[redis]
+pydantic
+python-dotenv
+pandas
+numpy
+jinja2
+python-multipart

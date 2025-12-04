@@ -1,7 +1,7 @@
 import random
 from datetime import date
 from .external_factors import DailyFactors
-from .config import BASE_DEMAND
+from .config import WEEKLY_DEMAND_PROFILE
 
 class ForecastSimulator:
     def __init__(self, error_margin: float = 0.15):
@@ -10,10 +10,9 @@ class ForecastSimulator:
     def predict_demand(self, target_date: date, factors: DailyFactors) -> int:
         # Calculate "Perfect" demand first
         day_of_week = target_date.weekday()
-        is_weekend = day_of_week >= 4
-        profile = BASE_DEMAND["weekend"] if is_weekend else BASE_DEMAND["weekday"]
+        daily_profile = WEEKLY_DEMAND_PROFILE.get(day_of_week, {})
 
-        base_total = sum(profile.values())
+        base_total = sum(daily_profile.values())
 
         # Apply factors (Weather, Events)
         # In reality, forecast might know events but guess weather wrong.

@@ -10,9 +10,44 @@ dependencies = [
     "pandas>=2.3.3",
     "plotly>=6.5.0",
     "psycopg2-binary>=2.9.11",
+    "pydantic-settings>=2.12.0",
     "pytest>=9.0.1",
     "scikit-learn>=1.7.2",
     "statsmodels>=0.14.5",
     "streamlit>=1.51.0",
     "uvicorn>=0.38.0",
 ]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.11.0",
+    "pytest-timeout>=2.1.0",
+    "pytest-xdist>=3.3.1",
+    "httpx>=0.24.0",
+    "faker>=19.0.0",
+]
+
+dev = [
+    "mypy>=1.5.0",
+    "ruff>=0.1.0",
+    "bandit[toml]>=1.7.5",
+    "pre-commit>=3.4.0",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests", "venv", ".venv"]
+skips = ["B101"]
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+plugins = []
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false

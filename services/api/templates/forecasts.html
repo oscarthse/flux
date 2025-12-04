@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <h1 class="text-2xl font-bold mb-4">Forecasting Dashboard</h1>
+  <p class="mb-4 text-gray-600">Compare predicted sales against actual performance to verify model accuracy.</p>
+
+  <!-- Controls -->
+  <div class="mb-6 flex gap-4">
+    <select id="item-selector"
+      class="block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+      hx-get="/analytics/forecast-chart" hx-target="#chart-container" hx-trigger="change">
+      <option value="" disabled selected>Select Menu Item</option>
+      {% for item in menu_items %}
+      <option value="{{ item.id }}">{{ item.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <!-- Chart Container -->
+  <div id="chart-container" class="w-full h-96 bg-gray-50 rounded flex items-center justify-center text-gray-400">
+    Select an item to view forecast.
+  </div>
+</div>
+{% endblock %}

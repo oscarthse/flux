@@ -139,3 +139,56 @@ def get_inventory_recommendations(db=Depends(get_db_connection)):
         })
 
     return recommendations
+
+@router.get("/sales/lost")
+def get_lost_sales_stats(db=Depends(get_db_connection)):
+    query = """
+    SELECT
+        timestamp,
+        party_size,
+        reason,
+        potential_revenue
+    FROM lost_sales
+    ORDER BY timestamp DESC
+    """
+    with db.cursor() as cur:
+        cur.execute(query)
+        data = cur.fetchall()
+
+    df = pd.DataFrame(data)
+    if df.empty:
+        return []
+
+    # Ensure numeric types
+    df['party_size'] = df['party_size'].astype(int)
+    df['potential_revenue'] = df['potential_revenue'].astype(float)
+    df['timestamp'] = df['timestamp'].astype(str)
+
+    return df.to_dict(orient="records")
+
+@router.get("/inventory/waste")
+def get_waste_stats(db=Depends(get_db_connection)):
+    query = """
+    SELECT
+        il.date,
+        i.name as ingredient_name,
+        il.waste_qty,
+        il.waste_qty * i.cost_per_unit as waste_cost
+    FROM inventory_log il
+    JOIN ingredients i ON il.ingredient_id = i.id
+    WHERE il.waste_qty > 0
+    ORDER BY il.date DESC
+    """
+    with db.cursor() as cur:
+        cur.execute(query)
+        data = cur.fetchall()
+
+    df = pd.DataFrame(data)
+    if df.empty:
+        return []
+
+    df['waste_qty'] = df['waste_qty'].astype(float)
+    df['waste_cost'] = df['waste_cost'].astype(float)
+    df['date'] = df['date'].astype(str)
+
+    return df.to_dict(orient="records")
