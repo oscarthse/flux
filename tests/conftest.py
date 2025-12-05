@@ -1,5 +1,5 @@
 import pytest
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, patch
 
 @pytest.fixture
 def mock_db_connection():
@@ -15,3 +15,11 @@ def mock_db_connection():
     mock_conn.cursor.return_value.__enter__.return_value = mock_cursor
 
     return mock_conn, mock_cursor
+
+@pytest.fixture
+def mock_prophet():
+    """
+    Fixture that mocks the Prophet class.
+    """
+    with patch("services.worker.engines.forecasting.prophet_model.Prophet") as mock:
+        yield mock
