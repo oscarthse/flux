@@ -10,6 +10,7 @@ import dramatiq
 from dramatiq.brokers.redis import RedisBroker
 
 from services.api.routers import triage, analytics, inventory, dashboard, staff, auth, ingestion, debug, account, menu
+from services.api.routers import settings as settings_router
 from services.api.logging_config import setup_logging, get_logger
 from services.api.database import db_service
 from services.api.config import settings
@@ -71,6 +72,7 @@ app.include_router(ingestion.router)
 app.include_router(debug.router)
 app.include_router(account.router)
 app.include_router(menu.router)
+app.include_router(settings_router.router)
 
 from services.api import security
 from services.api.context import tenant_context
