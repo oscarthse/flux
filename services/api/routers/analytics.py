@@ -129,10 +129,17 @@ async def forecast_data(request: Request, menu_item_id: str = Query(...)):
 
                 actual_sales = {row[0]: float(row[1]) for row in cur.fetchall()}
 
-        if not forecast_data:
-            return JSONResponse({
+        # Convert forecasts to dict for easier lookup
+        forecast_map = {row[0]: float(row[1]) for row in forecast_data}
+        menu_name = forecast_data[0][2] if forecast_data else "Menu Item"
+
+        # Union of all dates
+        all_dates = sorted(list(set(actual_sales.keys()) | set(forecast_map.keys())))
+
+        if not all_dates:
+             return JSONResponse({
                 "status": "empty",
-                "message": "No forecast data available"
+                "message": "No data available"
             })
 
         # Build aligned data structures
@@ -143,24 +150,21 @@ async def forecast_data(request: Request, menu_item_id: str = Query(...)):
         # For WMAPE calculation (only overlapping past dates)
         wmape_pairs = []
 
-        menu_name = forecast_data[0][2]
+        for d in all_dates:
+            dates.append(str(d))
 
-        for forecast_date, predicted_qty, _ in forecast_data:
-            date_str = str(forecast_date)
-            dates.append(date_str)
-            pred_val = float(predicted_qty)
+            # Prediction
+            pred_val = forecast_map.get(d)
             predictions.append(pred_val)
 
-            # Add actual if it exists and date is in the past
-            if forecast_date <= today and forecast_date in actual_sales:
-                actual_val = actual_sales[forecast_date]
-                actuals.append(actual_val)
+            # Actual
+            actual_val = actual_sales.get(d)
+            actuals.append(actual_val)
 
-                # Track for WMAPE calculation
+            # Track for WMAPE calculation
+            if pred_val is not None and actual_val is not None and d <= today:
                 wmape_pairs.append((actual_val, pred_val))
-            else:
-                # Future date or no actual data
-                actuals.append(None)
+
 
         # Calculate WMAPE and metrics
         metrics = _calculate_accuracy_metrics(wmape_pairs)

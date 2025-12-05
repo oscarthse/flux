@@ -83,7 +83,8 @@ def calculate_menu_performance(
                     mi.category,
                     mi.price
                 FROM menu_items mi
-                WHERE mi.price IS NOT NULL AND mi.price > 0
+                WHERE mi.tenant_id = %s
+                  AND mi.price IS NOT NULL AND mi.price > 0
             ),
             sales_summary AS (
                 SELECT
@@ -92,7 +93,8 @@ def calculate_menu_performance(
                     SUM(oli.quantity * oli.price_at_order) as total_revenue
                 FROM order_line_items oli
                 JOIN sales_orders so ON oli.order_id = so.id
-                WHERE so.timestamp >= NOW() - INTERVAL '%s days'
+                WHERE so.tenant_id = %s
+                  AND so.timestamp >= NOW() - make_interval(days := %s)
                 GROUP BY oli.menu_item_id
             ),
             cogs_calculation AS (
@@ -101,6 +103,7 @@ def calculate_menu_performance(
                     SUM(r.quantity * i.cost_per_unit) as unit_cogs
                 FROM recipes r
                 JOIN ingredients i ON r.ingredient_id = i.id
+                WHERE r.tenant_id = %s
                 GROUP BY r.menu_item_id
             ),
             combined AS (
@@ -130,7 +133,7 @@ def calculate_menu_performance(
                 total_margin
             FROM combined
             ORDER BY total_margin DESC, total_sold DESC
-        """, (period_days,))
+        """, (tenant_id, tenant_id, period_days, tenant_id))
 
         rows = cur.fetchall()
 
