@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology - Flux Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+  <!-- Navbar -->
+  <nav class="fixed w-full z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="/" class="flex items-center">
+          <svg class="h-8 w-8 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span class="ml-3 text-xl font-bold tracking-tight text-slate-900">Flux</span>
+        </a>
+        <div class="flex items-center space-x-6">
+          <a href="/" class="text-sm font-medium text-slate-600 hover:text-slate-900">Product</a>
+          <a href="/auth/login" class="text-sm font-medium text-slate-600 hover:text-slate-900">Log In</a>
+          <a href="/#signup"
+            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-slate-900 hover:bg-slate-800 transition-all">
+            Start Free Trial
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="pt-32 pb-20 bg-white border-b border-slate-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6">
+        The Science Behind the Suggestions.
+      </h1>
+      <p class="text-xl text-slate-600 leading-relaxed">
+        Flux isn't just a dashboard. It's a probabilistic engine that models the chaotic dynamics of a commercial
+        kitchen.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section 1: Forecasting Models -->
+      <div id="forecasting" class="mb-32">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+          <div class="prose prose-lg">
+            <div class="flex items-center space-x-3 mb-6">
+              <span
+                class="px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wide">Engine
+                A</span>
+              <h2 class="text-3xl font-bold text-slate-900 m-0">Forecasting Models</h2>
+            </div>
+            <p>
+              Flux employs a hybrid ensemble model to predict demand. We combine two primary statistical approaches:
+            </p>
+            <ul>
+              <li><strong>SARIMA:</strong> This model is excellent at capturing weekly seasonality (e.g., Fridays are
+                busier than Mondays) and long-term trends.</li>
+              <li><strong>Prophet:</strong> Developed by Facebook, this additive regression model handles outliers and
+                holiday effects robustly. It allows us to incorporate "special events" like Super Bowl Sunday or
+                Valentine's Day.</li>
+            </ul>
+          </div>
+          <!-- Visual: Code Block -->
+          <div class="bg-slate-900 rounded-xl p-6 shadow-2xl font-mono text-sm text-slate-300 overflow-x-auto">
+            <div class="flex space-x-2 mb-4">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+              <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+            </div>
+            <pre class="language-python"><code><span class="text-purple-400">from</span> flux.engine <span class="text-purple-400">import</span> Forecaster
+
+<span class="text-slate-500"># Initialize Prophet with seasonality</span>
+model = Forecaster(
+    seasonality_mode=<span class="text-green-400">'multiplicative'</span>,
+    daily_seasonality=<span class="text-blue-400">True</span>,
+    weekly_seasonality=<span class="text-blue-400">True</span>
+)
+
+<span class="text-slate-500"># Fit on historical sales data</span>
+model.fit(
+    df=sales_history,
+    regressors=[<span class="text-green-400">'rain_mm'</span>, <span class="text-green-400">'holiday_flag'</span>]
+)
+
+<span class="text-slate-500"># Generate 7-day prediction</span>
+forecast = model.predict(horizon=<span class="text-blue-400">7</span>)</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: External Regressors -->
+      <div id="regressors" class="mb-32">
+        <div class="grid md:grid-cols-2 gap-16 items-center md:flex-row-reverse">
+          <div class="order-2 md:order-1 relative">
+            <!-- Visual: Weather Card -->
+            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-8 max-w-sm mx-auto">
+              <div class="flex justify-between items-start mb-8">
+                <div>
+                  <div class="text-sm font-bold text-slate-400 uppercase">Tuesday Forecast</div>
+                  <div class="text-4xl font-bold text-slate-900">Rainy</div>
+                </div>
+                <div class="text-6xl">🌧️</div>
+              </div>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                  <span class="font-medium text-blue-900">Precipitation Probability</span>
+                  <span class="font-bold text-blue-600">85%</span>
+                </div>
+                <div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+                  <span class="font-medium text-slate-700">Impact Coefficient</span>
+                  <span class="font-bold text-red-500">-15% Covers</span>
+                </div>
+              </div>
+              <div class="mt-6 pt-6 border-t border-slate-100 text-center text-sm text-slate-500">
+                Flux automatically dampens demand.
+              </div>
+            </div>
+          </div>
+          <div class="order-1 md:order-2 prose prose-lg">
+            <div class="flex items-center space-x-3 mb-6">
+              <span
+                class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wide">Context
+                Awareness</span>
+              <h2 class="text-3xl font-bold text-slate-900 m-0">External Regressors</h2>
+            </div>
+            <p>
+              We don't just look at your sales. We ingest local weather data (Precipitation, Temperature) and Holiday
+              calendars.
+            </p>
+            <p>
+              Our Bayesian inference engine calculates the coefficient of rain on your walk-in traffic. If the forecast
+              probability of rain > 60%, Flux automatically dampens the demand prediction, ensuring you don't over-prep
+              for a washout.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Security -->
+      <div id="security" class="mb-32 bg-slate-900 rounded-3xl p-12 md:p-20 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-blue-600 rounded-full opacity-20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-purple-600 rounded-full opacity-20 blur-3xl">
+        </div>
+
+        <div class="relative z-10 grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div
+              class="inline-flex items-center px-3 py-1 rounded-full bg-blue-900/50 border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-wide mb-6">
+              Bank-Level Security
+            </div>
+            <h2 class="text-4xl font-bold mb-6">Your Data is Isolated.</h2>
+            <p class="text-lg text-slate-300 mb-6 leading-relaxed">
+              Flux uses <strong>Row Level Security (RLS)</strong> at the database level. This means that every query
+              sent to our database is automatically filtered by your unique `tenant_id`.
+            </p>
+            <p class="text-lg text-slate-300 leading-relaxed">
+              It is mathematically impossible for another restaurant to see your sales data, recipes, or staff
+              schedules.
+            </p>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <svg class="w-32 h-32 text-emerald-400 mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            <div
+              class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-4 py-2 rounded-lg font-mono text-sm font-bold">
+              AES-256 Encrypted
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Connectivity -->
+      <div id="integrations" class="mb-24">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-slate-900 mb-4">Flux connects directly to your existing tech stack.</h2>
+          <p class="text-lg text-slate-600">We support the following APIs for real-time data ingestion.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+            <div class="w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center mb-6 text-2xl">⬜</div>
+            <h3 class="font-bold text-slate-900 mb-2">Square API</h3>
+            <p class="text-sm text-slate-500">Sales, Items, Modifiers</p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+            <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6 text-2xl">🍞</div>
+            <h3 class="font-bold text-slate-900 mb-2">Toast API</h3>
+            <p class="text-sm text-slate-500">Labor Data, Sales Mix</p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+            <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 text-2xl">🍀</div>
+            <h3 class="font-bold text-slate-900 mb-2">Clover API</h3>
+            <p class="text-sm text-slate-500">Inventory, Order Management</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center not-prose">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Ready to see it in action?</h3>
+        <p class="text-slate-600 mb-8 max-w-xl mx-auto">
+          Experience the power of automated operations. No credit card required.
+        </p>
+        <a href="/#signup"
+          class="inline-flex items-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30">
+          Start Free Trial
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-12 mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+      <p>&copy; 2025 Flux Platform Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

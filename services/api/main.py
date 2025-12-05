@@ -3,17 +3,20 @@ Flux Platform API - Main application entry point.
 """
 import os
 from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 import dramatiq
 from dramatiq.brokers.redis import RedisBroker
 
-from services.api.routers import triage, analytics, inventory, dashboard
-from services.api.logging_config import setup_logging
+from services.api.routers import triage, analytics, inventory, dashboard, staff, auth
+from services.api.logging_config import setup_logging, get_logger
 from services.api.database import db_service
 from services.api.config import settings
+from fastapi.templating import Jinja2Templates
 
+logger = get_logger(__name__)
+templates = Jinja2Templates(directory="services/api/templates")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -23,10 +26,21 @@ async def lifespan(app: FastAPI):
     Handles initialization and cleanup.
     """
     # Startup
-    setup_logging()
+    try:
+        setup_logging()
+        # Ensure DB pool is ready (optional, but good for fail-fast check)
+        # db_service._ensure_pool()
+    except Exception as e:
+        print(f"Startup Error: {e}")
+        # We don't raise here so the app can still start and return 500s
+
     yield
+
     # Shutdown
-    db_service.close_all_connections()
+    try:
+        db_service.close_all_connections()
+    except Exception as e:
+        print(f"Shutdown Error: {e}")
 
 
 app = FastAPI(
@@ -39,14 +53,68 @@ app = FastAPI(
 app.mount("/static", StaticFiles(directory="services/api/static"), name="static")
 
 # Include routers
+app.include_router(auth.router)
 app.include_router(dashboard.router)
 app.include_router(analytics.router)
 app.include_router(inventory.router)
+app.include_router(staff.router)
 
-@app.get("/")
-async def root():
-    """Redirect root to dashboard."""
-    return RedirectResponse(url="/dashboard")
+from services.api import security
+from services.api.context import tenant_context
+
+@app.middleware("http")
+async def auth_middleware(request: Request, call_next):
+    # Public routes
+    if request.url.path in ["/", "/technology", "/health"] or \
+       request.url.path.startswith("/auth") or \
+       request.url.path.startswith("/static"):
+        return await call_next(request)
+
+    # Check session
+    session_token = request.cookies.get("flux_session")
+    if not session_token:
+        # Redirect to login if accessing protected route without session
+        return RedirectResponse(url="/auth/login")
+
+    try:
+        # Verify and decode signed cookie
+        payload = security.verify_session_cookie(session_token)
+        logger.info(f"Middleware DEBUG - Decoded payload: {payload}")
+
+        tenant_id = payload.get("tenant_id")
+        logger.info(f"Middleware DEBUG - Extracted tenant_id: {tenant_id}")
+
+        if not tenant_id:
+            logger.error("Auth Middleware: Missing tenant_id in session payload")
+            raise Exception("Missing tenant_id in session")
+
+        # Set ContextVar for RLS (DatabaseService will pick this up)
+        token = tenant_context.set(tenant_id)
+        logger.info(f"Middleware DEBUG - Set tenant_context to: {tenant_id}")
+
+        try:
+            response = await call_next(request)
+            return response
+        finally:
+            # Reset context after request
+            tenant_context.reset(token)
+
+    except Exception as e:
+        # Invalid signature or expired
+        logger.error(f"Auth Middleware Error: {e}")
+        return RedirectResponse(url="/auth/login")
+
+@app.get("/", response_class=HTMLResponse)
+async def root(request: Request):
+    """Serve Landing Page or Redirect to Dashboard."""
+    if request.cookies.get("user_session"):
+        return RedirectResponse(url="/dashboard")
+    return templates.TemplateResponse("landing.html", {"request": request})
+
+@app.get("/technology", response_class=HTMLResponse)
+async def technology(request: Request):
+    """Serve Technology Deep Dive Page."""
+    return templates.TemplateResponse("technology.html", {"request": request})
 
 # Setup Dramatiq Broker
 redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")

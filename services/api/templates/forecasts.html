@@ -20,8 +20,8 @@
   <header class="bg-white border-b border-slate-200 px-8 py-4 flex-shrink-0">
     <div class="flex items-center justify-between">
       <div>
-        <h1 class="text-2xl font-bold text-slate-900">Demand Forecasting</h1>
-        <p class="text-sm text-slate-500 mt-0.5">AI-powered demand prediction with Prophet</p>
+        <h1 class="text-2xl font-bold text-slate-900">Sales Prediction</h1>
+        <p class="text-sm text-slate-500 mt-0.5">See how much you'll sell next week.</p>
       </div>
       <div class="flex items-center space-x-4">
         <button @click="generating = true" hx-post="/analytics/generate-forecasts" hx-target="#generation-status"
@@ -80,12 +80,53 @@
 
         <div class="space-y-6 p-6">
 
+          <!-- Accuracy Card (NEW) -->
+          <div x-show="chartData && chartData.metrics && chartData.metrics.accuracy !== null"
+            class="bg-white shadow-sm rounded-lg p-6 mb-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Forecast Accuracy (Last 30 Days)
+                </p>
+                <div class="flex items-baseline mt-2">
+                  <span class="text-3xl font-bold text-slate-900"
+                    x-text="chartData && chartData.metrics ? chartData.metrics.accuracy + '%' : '-'"></span>
+                  <span class="ml-3 px-3 py-1 rounded-full text-sm font-bold" :class="{
+                          'bg-emerald-100 text-emerald-800': chartData && chartData.metrics && chartData.metrics.grade === 'A',
+                          'bg-blue-100 text-blue-800': chartData && chartData.metrics && chartData.metrics.grade === 'B',
+                          'bg-amber-100 text-amber-800': chartData && chartData.metrics && chartData.metrics.grade === 'C',
+                          'bg-rose-100 text-rose-800': chartData && chartData.metrics && chartData.metrics.grade === 'D'
+                        }" x-text="chartData && chartData.metrics ? 'Grade ' + chartData.metrics.grade : '-'"></span>
+                </div>
+                <p class="text-xs text-slate-500 mt-1 flex items-center space-x-2">
+                  <span class="flex items-center space-x-1">
+                    <span>Error Rate:</span>
+                    <span
+                      x-text="chartData && chartData.metrics ? (chartData.metrics.wmape * 100).toFixed(1) + '%' : '-'"></span>
+                    <span class="group relative cursor-help"
+                      title="How far off our prediction was from reality last week.">ℹ️</span>
+                  </span>
+                  <span>|</span>
+                  <span>Over/Under Prediction: <span
+                      x-text="chartData && chartData.metrics ? chartData.metrics.bias + '%' : '-'"></span></span>
+                  <span>|</span>
+                  <span x-text="chartData && chartData.metrics ? chartData.metrics.sample_size + ' days' : '-'"></span>
+                </p>
+              </div>
+              <div class="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center">
+                <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
           <!-- Graph Section -->
           <div class="bg-white shadow-sm rounded-lg overflow-hidden">
 
             <div class="px-8 py-4 border-b border-slate-100">
               <h2 class="text-lg font-bold text-slate-900" x-text="selectedItemName"></h2>
-              <p class="text-xs text-slate-500 mt-0.5">30-day rolling forecast</p>
+              <p class="text-xs text-slate-500 mt-0.5">What happened vs. What we thought</p>
             </div>
 
             <div class="p-8">
@@ -147,16 +188,32 @@
         if (result.status === 'success') {
           component.chartData = result.data;
 
-          const trace = {
+          // Trace 1: Actual Sales (past data)
+          const actualTrace = {
             x: result.data.dates,
-            y: result.data.quantities,
+            y: result.data.actuals,
             type: 'scatter',
             mode: 'lines+markers',
-            name: 'Predicted Demand',
-            line: { color: '#2563eb', width: 2.5 },
-            marker: { color: '#2563eb', size: 7 },
-            hovertemplate: '<b>%{x}</b><br>Quantity: %{y:.1f}<extra></extra>'
+            name: 'Actual Sales',
+            line: { color: '#10b981', width: 3 },
+            marker: { color: '#10b981', size: 8 },
+            hovertemplate: '<b>%{x}</b><br>Actual: %{y:.1f}<extra></extra>'
           };
+
+          // Trace 2: Predicted Demand (all dates)
+          const predTrace = {
+            x: result.data.dates,
+            y: result.data.predictions,
+            type: 'scatter',
+            mode: 'lines',
+            name: 'Predicted',
+            line: { color: '#2563eb', width: 2, dash: 'dot' },
+            hovertemplate: '<b>%{x}</b><br>Predicted: %{y:.1f}<extra></extra>'
+          };
+
+          // Find today's index for vertical line
+          const today = new Date().toISOString().split('T')[0];
+          const todayIndex = result.data.dates.findIndex(d => d === today);
 
           const layout = {
             font: { family: 'Inter, sans-serif', size: 12, color: '#475569' },
@@ -167,7 +224,7 @@
               linecolor: '#e2e8f0'
             },
             yaxis: {
-              title: 'Predicted Quantity',
+              title: 'Quantity',
               gridcolor: '#f1f5f9',
               showline: true,
               linecolor: '#e2e8f0'
@@ -176,10 +233,38 @@
             paper_bgcolor: '#ffffff',
             hovermode: 'x unified',
             margin: { l: 70, r: 40, t: 40, b: 60 },
-            autosize: true
+            autosize: true,
+            showlegend: true,
+            legend: { x: 0, y: 1.1, orientation: 'h' }
           };
 
-          Plotly.newPlot('forecast-chart', [trace], layout, {
+          // Add vertical "Today" line if today is in the data
+          if (todayIndex >= 0) {
+            layout.shapes = [{
+              type: 'line',
+              x0: result.data.dates[todayIndex],
+              x1: result.data.dates[todayIndex],
+              y0: 0,
+              y1: 1,
+              yref: 'paper',
+              line: {
+                color: '#f59e0b',
+                width: 2,
+                dash: 'dash'
+              }
+            }];
+            layout.annotations = [{
+              x: result.data.dates[todayIndex],
+              y: 1,
+              yref: 'paper',
+              text: 'Today',
+              showarrow: false,
+              font: { size: 11, color: '#f59e0b', family: 'Inter' },
+              yshift: 10
+            }];
+          }
+
+          Plotly.newPlot('forecast-chart', [actualTrace, predTrace], layout, {
             responsive: true,
             displaylogo: false,
             displayModeBar: true

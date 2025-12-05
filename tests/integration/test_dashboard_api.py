@@ -44,8 +44,9 @@ def test_dashboard_home_render(tenant_id):
     # 3. Assert
     assert response.status_code == 200
 
-    # Verify Page Title
-    assert "Flux Restaurant" in response.text
+    # Verify Page Title (Now "Dashboard - Flux Platform" from base template or similar)
+    # The template extends base.html and has block title "Dashboard - Flux Platform"
+    assert "Dashboard - Flux Platform" in response.text
 
     # Verify Revenue Metric
     # Should be $150 (150 items * $1.00)
@@ -58,8 +59,11 @@ def test_dashboard_home_render(tenant_id):
     assert "Draft Orders" in response.text
     # We can't easily assert "1" without context, but we can check if the section exists
 
-    # Verify "Orders (Next 7 Days)" or "Revenue" label is present
+    # Verify "Revenue (Next 7 Days)" label is present
     assert "Revenue (Next 7 Days)" in response.text
+
+    # Verify Model Accuracy label is present
+    assert "Model Accuracy" in response.text
 
 def test_dashboard_metrics_chart(tenant_id):
     """
@@ -87,13 +91,9 @@ def test_dashboard_metrics_chart(tenant_id):
 
     # 3. Assert
     assert response.status_code == 200
-
-    # Check for chart elements
-    assert "flex h-full" in response.text # Container
-    assert "20" in response.text # Value label
-
-    # Check Y-axis labels generation
-    assert "text-xs text-slate-500" in response.text
+    assert "dashboard-trend-chart" in response.text
+    assert "Plotly.newPlot" in response.text
+    assert "20.0" in response.text # Check for data values
 
 def test_dashboard_empty_state(tenant_id):
     """
@@ -104,4 +104,5 @@ def test_dashboard_empty_state(tenant_id):
     response = client.get("/dashboard", headers={"X-Tenant-ID": tenant_id})
 
     assert response.status_code == 200
-    assert "$0" in response.text # Zero revenue
+    assert "Dashboard - Flux Platform" in response.text
+    assert "$0.00" in response.text # Zero revenue formatted

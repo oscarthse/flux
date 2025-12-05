@@ -1,8 +1,12 @@
-.PHONY: help sim etl api worker forecasts test test-unit test-integration test-rls test-cov lint typecheck security clean-test
+.PHONY: help init-db create-user sim etl api worker forecasts test test-unit test-integration test-rls test-cov lint typecheck security clean-test init-db create-user
 
 help:
 	@echo "Flux Platform - Available Commands"
 	@echo "===================================="
+	@echo ""
+	@echo "Database:"
+	@echo "  make init-db      - Initialize database schema"
+	@echo "  make create-user  - Create test user (oscarthse@gmail.com)"
 	@echo ""
 	@echo "Data Pipeline:"
 	@echo "  make sim          - Run restaurant simulator (30 days)"
@@ -29,6 +33,13 @@ help:
 	@echo "Cleanup:"
 	@echo "  make clean-test   - Remove test artifacts"
 
+# Database
+init-db:
+	./scripts/init_db.sh
+
+create-user:
+	uv run python scripts/create_test_user.py
+
 # Data Pipeline
 sim:
 	uv run python scripts/run_sim.py
@@ -38,7 +49,7 @@ etl:
 
 # Services
 api:
-	uv run uvicorn services.api.main:app --reload --port 8000
+	uv run uvicorn services.api.main:app --reload --host 0.0.0.0 --port 8000
 
 worker:
 	uv run python services/worker/run_worker.py

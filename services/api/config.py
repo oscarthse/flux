@@ -96,6 +96,7 @@ class Settings(BaseSettings):
     API_PORT: int = 8000
     API_DEBUG: bool = True
     API_RELOAD: bool = True
+    SECRET_KEY: str = "dev-secret-key-change-in-prod"
 
     # Logging Configuration
     LOG_LEVEL: str = "INFO"

@@ -78,16 +78,20 @@ async def forecast_dashboard(request: Request):
 @router.get("/forecast-data")
 async def forecast_data(request: Request, menu_item_id: str = Query(...)):
     """
-    Return forecast data as JSON for client-side Plotly rendering.
+    Return forecast data with actual sales comparison and accuracy metrics.
 
-    This solves the HTMX + Plotly script execution issue by separating
-    data from presentation.
+    Returns JSON with:
+    - predictions: List of forecasted quantities
+    - actuals: List of actual sales (null for future dates)
+    - metrics: WMAPE, accuracy %, grade
     """
     try:
         tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+        today = date.today()
 
         with db_service.get_connection(tenant_id=tenant_id) as conn:
             with conn.cursor() as cur:
+                # Get forecasts (past 30 days + future 30 days)
                 cur.execute("""
                     SELECT
                         f.forecast_date,
@@ -97,11 +101,27 @@ async def forecast_data(request: Request, menu_item_id: str = Query(...)):
                     JOIN menu_items mi ON f.menu_item_id = mi.id
                     WHERE f.menu_item_id = %s
                       AND f.tenant_id = %s
+                      AND f.forecast_date >= CURRENT_DATE - INTERVAL '30 days'
                     ORDER BY f.forecast_date
-                    LIMIT 100
                 """, (menu_item_id, tenant_id))
 
                 forecast_data = cur.fetchall()
+
+                # Get actual sales (past 60 days to ensure coverage)
+                cur.execute("""
+                    SELECT
+                        DATE(so.timestamp) as sale_date,
+                        SUM(oli.quantity) as actual_quantity
+                    FROM sales_orders so
+                    JOIN order_line_items oli ON so.id = oli.order_id
+                    WHERE oli.menu_item_id = %s
+                      AND so.tenant_id = %s
+                      AND so.timestamp >= CURRENT_DATE - INTERVAL '60 days'
+                    GROUP BY DATE(so.timestamp)
+                    ORDER BY sale_date
+                """, (menu_item_id, tenant_id))
+
+                actual_sales = {row[0]: float(row[1]) for row in cur.fetchall()}
 
         if not forecast_data:
             return JSONResponse({
@@ -109,18 +129,45 @@ async def forecast_data(request: Request, menu_item_id: str = Query(...)):
                 "message": "No forecast data available"
             })
 
-        # Structure data for Plotly
-        dates = [str(row[0]) for row in forecast_data]
-        quantities = [float(row[1]) for row in forecast_data]
+        # Build aligned data structures
+        dates = []
+        predictions = []
+        actuals = []
+
+        # For WMAPE calculation (only overlapping past dates)
+        wmape_pairs = []
+
         menu_name = forecast_data[0][2]
+
+        for forecast_date, predicted_qty, _ in forecast_data:
+            date_str = str(forecast_date)
+            dates.append(date_str)
+            pred_val = float(predicted_qty)
+            predictions.append(pred_val)
+
+            # Add actual if it exists and date is in the past
+            if forecast_date <= today and forecast_date in actual_sales:
+                actual_val = actual_sales[forecast_date]
+                actuals.append(actual_val)
+
+                # Track for WMAPE calculation
+                wmape_pairs.append((actual_val, pred_val))
+            else:
+                # Future date or no actual data
+                actuals.append(None)
+
+        # Calculate WMAPE and metrics
+        metrics = _calculate_accuracy_metrics(wmape_pairs)
 
         return JSONResponse({
             "status": "success",
             "data": {
                 "dates": dates,
-                "quantities": quantities,
+                "predictions": predictions,
+                "actuals": actuals,
                 "menu_name": menu_name,
-                "total_points": len(dates)
+                "total_points": len(dates),
+                "metrics": metrics
             }
         })
 
@@ -130,6 +177,61 @@ async def forecast_data(request: Request, menu_item_id: str = Query(...)):
             "status": "error",
             "message": "Failed to load forecast data"
         }, status_code=500)
+
+
+def _calculate_accuracy_metrics(pairs: list) -> dict:
+    """
+    Calculate WMAPE and accuracy grade from (actual, predicted) pairs.
+
+    Returns dict with wmape, accuracy, grade, bias.
+    """
+    if not pairs or len(pairs) == 0:
+        return {
+            "wmape": None,
+            "accuracy": None,
+            "grade": "N/A",
+            "bias": None,
+            "sample_size": 0
+        }
+
+    total_actual = sum(actual for actual, _ in pairs)
+    total_error = sum(abs(actual - pred) for actual, pred in pairs)
+    total_pred = sum(pred for _, pred in pairs)
+
+    # Handle division by zero
+    if total_actual == 0:
+        return {
+            "wmape": None,
+            "accuracy": None,
+            "grade": "N/A",
+            "bias": None,
+            "sample_size": len(pairs)
+        }
+
+    # WMAPE = Sum(|Actual - Predicted|) / Sum(Actual)
+    wmape = total_error / total_actual
+    accuracy = max(0.0, (1.0 - wmape) * 100.0)  # Convert to percentage
+
+    # Bias = (Sum(Predicted) - Sum(Actual)) / Sum(Actual)
+    bias = (total_pred - total_actual) / total_actual * 100.0
+
+    # Determine grade
+    if wmape < 0.10:
+        grade = "A"
+    elif wmape < 0.20:
+        grade = "B"
+    elif wmape < 0.30:
+        grade = "C"
+    else:
+        grade = "D"
+
+    return {
+        "wmape": round(wmape, 3),
+        "accuracy": round(accuracy, 1),
+        "grade": grade,
+        "bias": round(bias, 1),
+        "sample_size": len(pairs)
+    }
 
 
 @router.get("/forecast-table")
@@ -274,3 +376,77 @@ async def generate_forecasts_endpoint(request: Request):
                 </div>
             </div>
         """, status_code=500)
+
+
+# ==================== Menu Engineering Matrix ====================
+
+@router.get("/menu-matrix", response_class=HTMLResponse)
+async def menu_matrix_dashboard(request: Request, period: str = Query("30")):
+    """
+    Render the Menu Engineering Matrix dashboard (Kasavana & Smith).
+
+    Provides menu profitability analysis with classification into:
+    - Stars (High Margin, High Volume)
+    - Plowhorses (Low Margin, High Volume)
+    - Puzzles (High Margin, Low Volume)
+    - Dogs (Low Margin, Low Volume)
+    """
+    try:
+        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+        period_days = int(period)
+
+        return templates.TemplateResponse("analytics/menu_matrix.html", {
+            "request": request,
+            "period": period_days
+        })
+
+    except Exception as e:
+        logger.error(f"Menu matrix dashboard failed: {e}", exc_info=True)
+        raise internal_error("Failed to load menu matrix", {"error": str(e)})
+
+
+@router.get("/menu-matrix-data")
+async def get_menu_matrix_data(
+    request: Request,
+    period: int = Query(30),
+    sort_by: str = Query("margin", regex="^(margin|volume|name|classification)$")
+):
+    """
+    Get menu performance data for the matrix visualization.
+
+    Returns classified menu items with COGS, margins, and strategic insights.
+    """
+    try:
+        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+
+        with db_service.get_connection(tenant_id=tenant_id) as conn:
+            from services.worker.engines.menu_analytics import calculate_menu_performance
+
+            items, portfolio_metrics = calculate_menu_performance(tenant_id, period, conn)
+
+        # Sort items
+        if sort_by == "margin":
+            items.sort(key=lambda x: x.unit_margin, reverse=True)
+        elif sort_by == "volume":
+            items.sort(key=lambda x: x.sales_volume, reverse=True)
+        elif sort_by == "name":
+            items.sort(key=lambda x: x.item_name)
+        elif sort_by == "classification":
+            # Sort by classification priority: Star > Plowhorse > Puzzle > Dog
+            class_order = {"Star": 0, "Plowhorse": 1, "Puzzle": 2, "Dog": 3}
+            items.sort(key=lambda x: class_order.get(x.classification, 4))
+
+        return JSONResponse({
+            "status": "success",
+            "data": {
+                "items": [item.to_dict() for item in items],
+                "portfolio": portfolio_metrics
+            }
+        })
+
+    except Exception as e:
+        logger.error(f"Menu matrix data fetch failed: {e}", exc_info=True)
+        return JSONResponse({
+            "status": "error",
+            "message": "Failed to calculate menu performance"
+        }, status_code=500)

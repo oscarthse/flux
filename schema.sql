@@ -11,11 +11,34 @@ CREATE TABLE tenants (
     created_at TIMESTAMP DEFAULT NOW()
 );
 
+CREATE TABLE users (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    tenant_id UUID NOT NULL REFERENCES tenants(id),
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    full_name VARCHAR(100),
+    role VARCHAR(50) DEFAULT 'owner', -- owner, manager, chef
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+ALTER TABLE users ENABLE ROW LEVEL SECURITY;
+CREATE POLICY tenant_isolation ON users USING (tenant_id = current_tenant_id());
+
+-- Secure User Lookup (Bypasses RLS for Login)
+CREATE OR REPLACE FUNCTION get_user_by_email(p_email TEXT)
+RETURNS TABLE (id UUID, tenant_id UUID, password_hash VARCHAR)
+SECURITY DEFINER
+AS $$
+BEGIN
+    RETURN QUERY SELECT u.id, u.tenant_id, u.password_hash FROM users u WHERE u.email = p_email;
+END;
+$$ LANGUAGE plpgsql;
+
 -- Helper function for RLS
 -- Usage: SET LOCAL app.current_tenant_id = 'uuid';
 CREATE OR REPLACE FUNCTION current_tenant_id() RETURNS UUID AS $$
 BEGIN
-    RETURN current_setting('app.current_tenant_id')::UUID;
+    RETURN current_setting('app.current_tenant')::UUID;
 EXCEPTION
     WHEN OTHERS THEN RETURN NULL;
 END;

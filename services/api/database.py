@@ -12,6 +12,7 @@ from psycopg2.extras import RealDictCursor
 
 from services.api.config import settings
 from services.api.exceptions import DatabaseError
+from services.api.context import tenant_context
 
 logger = logging.getLogger(__name__)
 
@@ -68,6 +69,11 @@ class DatabaseService:
 
     def __init__(self):
         """Initialize connection pool if not already initialized."""
+        # Lazy initialization - do nothing here
+        pass
+
+    def _ensure_pool(self):
+        """Ensure connection pool is initialized."""
         if self._connection_pool is None:
             try:
                 self._connection_pool = pool.SimpleConnectionPool(
@@ -86,33 +92,31 @@ class DatabaseService:
     @contextmanager
     def get_connection(
         self,
-        tenant_id: Optional[str] = None
+        tenant_id: Optional[str] = None,
+        use_rls: bool = True
     ) -> Generator:
         """
-        Get a database connection from the pool with optional tenant context.
+        Get a database connection from the pool.
 
         Args:
-            tenant_id: Tenant ID for RLS. Uses default if not provided.
-
-        Yields:
-            Database connection
-
-        Raises:
-            DatabaseError: If unable to get connection
-
-        Example:
-            with db_service.get_connection(tenant_id="123") as conn:
-                with conn.cursor() as cur:
-                    cur.execute("SELECT * FROM menu_items WHERE tenant_id = %s", (tenant_id,))
+            tenant_id: Explicit tenant ID to set.
+            use_rls: If False, ignores global context and does not set RLS.
         """
+        self._ensure_pool()
         conn = None
         try:
             conn = self._connection_pool.getconn()
 
-            # Set tenant context for RLS if enabled
-            if settings.ENABLE_RLS and tenant_id:
+            # Determine tenant_id: Argument takes precedence, then ContextVar (if use_rls is True)
+            current_tenant = tenant_id
+            if use_rls and not current_tenant:
+                current_tenant = tenant_context.get()
+
+            # Set tenant context for RLS if enabled and we have a tenant
+            if settings.ENABLE_RLS and current_tenant:
                 with conn.cursor() as cur:
-                    cur.execute("SET app.current_tenant_id = %s", (tenant_id,))
+                    # Using app.current_tenant as requested
+                    cur.execute("SET app.current_tenant = %s", (current_tenant,))
 
             yield conn
 
@@ -144,7 +148,7 @@ class DatabaseService:
                 if settings.ENABLE_RLS:
                     try:
                         with conn.cursor() as cur:
-                            cur.execute("RESET app.current_tenant_id")
+                            cur.execute("RESET app.current_tenant")
                     except:
                         pass
 

@@ -1,51 +1,118 @@
-{% for po in purchase_orders %}
-<div class="bg-white shadow rounded-lg overflow-hidden">
-  <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center bg-gray-50">
-    <div>
-      <h3 class="text-lg font-medium text-gray-900">PO #{{ po.id|string|truncate(8, True, '') }}</h3>
-      <p class="text-sm text-gray-500">Created: {{ po.created_at.strftime('%Y-%m-%d') }} | Delivery: {{
-        po.delivery_date }}</p>
+{% if purchase_orders %}
+<div class="space-y-6">
+  {% for po in purchase_orders %}
+  <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden transition-all hover:shadow-md">
+
+    <!-- PO Header -->
+    <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+      <div class="flex items-center space-x-4">
+        <div class="flex flex-col">
+          <div class="flex items-center space-x-3">
+            <h3 class="text-lg font-semibold text-slate-900 tracking-tight">PO #{{ po.id|string|truncate(8, True, '') }}
+            </h3>
+            {% if po.status == 'draft' %}
+            <span
+              class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+              Draft
+            </span>
+            {% elif po.status == 'ordered' %}
+            <span
+              class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+              Ordered
+            </span>
+            {% else %}
+            <span
+              class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+              {{ po.status|title }}
+            </span>
+            {% endif %}
+          </div>
+          <div class="flex items-center space-x-2 mt-1 text-xs text-slate-500">
+            <span>Created {{ po.created_at.strftime('%b %d') }}</span>
+            <span>&bull;</span>
+            <span>Delivery {{ po.delivery_date.strftime('%b %d') }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-right">
+        <div class="text-xl font-bold text-slate-900">${{ "%.2f"|format(po.total_value) }}</div>
+        <div class="text-xs text-slate-500">{{ po.line_items|length }} items</div>
+      </div>
     </div>
-    <div class="flex items-center space-x-4">
-      <span
-        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full
-                    {% if po.status == 'draft' %}bg-yellow-100 text-yellow-800{% else %}bg-green-100 text-green-800{% endif %}">
-        {{ po.status|upper }}
-      </span>
-      {% if po.status == 'draft' %}
-      <button hx-post="/inventory/orders/{{ po.id }}/approve" hx-target="#po-list" hx-swap="innerHTML"
-        class="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700">
-        Approve Order
+
+    <!-- Line Items -->
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y divide-slate-100">
+        <thead class="bg-slate-50">
+          <tr>
+            <th scope="col"
+              class="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider w-1/3">Ingredient
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">
+              Reasoning</th>
+            <th scope="col" class="px-6 py-3 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">
+              Qty</th>
+            <th scope="col" class="px-6 py-3 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">
+              Unit Cost</th>
+            <th scope="col" class="px-6 py-3 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">
+              Total</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-slate-100">
+          {% for item in po.line_items %}
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="px-6 py-3 whitespace-nowrap text-sm font-medium text-slate-900">
+              {{ item.ingredient_name }}
+            </td>
+            <td class="px-6 py-3 text-sm text-slate-600">
+              <span
+                class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-rose-50 text-rose-700 border border-rose-100">
+                {{ item.reason|safe }}
+              </span>
+            </td>
+            <td class="px-6 py-3 whitespace-nowrap text-sm text-slate-600 text-right tabular-nums">
+              {{ "%.2f"|format(item.quantity) }}
+            </td>
+            <td class="px-6 py-3 whitespace-nowrap text-sm text-slate-600 text-right tabular-nums">
+              ${{ "%.2f"|format(item.unit_price) }}
+            </td>
+            <td class="px-6 py-3 whitespace-nowrap text-sm font-medium text-slate-900 text-right tabular-nums">
+              ${{ "%.2f"|format(item.total) }}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Actions -->
+    {% if po.status == 'draft' %}
+    <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-end items-center space-x-4">
+      <span class="text-xs text-slate-500 italic">Review quantities before approving</span>
+      <button hx-post="/inventory/orders/{{ po.id }}/approve" hx-target="#procurement-content" hx-swap="innerHTML"
+        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+        Approve & Send to Supplier
       </button>
-      {% endif %}
     </div>
+    {% endif %}
   </div>
-  <div class="px-6 py-4">
-    <table class="min-w-full divide-y divide-gray-200">
-      <thead>
-        <tr>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ingredient</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unit Cost</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
-        </tr>
-      </thead>
-      <tbody class="bg-white divide-y divide-gray-200">
-        {% for item in po['line_items'] %}
-        <tr>
-          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ item.ingredient_name }}</td>
-          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ item.quantity }}</td>
-          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${{ item.unit_price }}</td>
-          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${{ "%.2f"|format(item.quantity *
-            item.unit_price) }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+  {% endfor %}
 </div>
 {% else %}
-<div class="text-center py-12">
-  <p class="text-gray-500">No active purchase orders found.</p>
+<div class="text-center py-16 bg-white rounded-xl border border-slate-200 border-dashed">
+  <svg class="mx-auto h-12 w-12 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+  </svg>
+  <h3 class="mt-2 text-sm font-medium text-slate-900">No draft orders</h3>
+  <p class="mt-1 text-sm text-slate-500">Run optimization to generate new purchase orders.</p>
+  <div class="mt-6">
+    <button @click="generating = true" hx-post="/inventory/generate" hx-target="#procurement-content"
+      hx-swap="innerHTML"
+      class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+      Run Optimization
+    </button>
+  </div>
 </div>
-{% endfor %}
+{% endif %}
