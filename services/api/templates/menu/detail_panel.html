@@ -1,0 +1,134 @@
+<div class="animate-fade-in">
+  <!-- Header -->
+  <div class="flex justify-between items-start mb-8">
+    <div>
+      <div class="flex items-center gap-3 mb-1">
+        <h1 class="text-2xl font-bold text-slate-900">{{ item.name }}</h1>
+        <span
+          class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200">
+          {{ item.category }}
+        </span>
+      </div>
+      <p class="text-slate-500 text-sm">ID: <span class="font-mono text-xs">{{ item.id }}</span></p>
+    </div>
+    <div class="text-right">
+      <div class="text-3xl font-bold text-slate-900">${{ "%.2f"|format(item.price) }}</div>
+      <div class="text-sm text-slate-500">Unit Price</div>
+    </div>
+  </div>
+
+  <!-- KPI Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+    <!-- Sales Volume -->
+    <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="text-sm font-medium text-slate-500">Units Sold (30d)</h3>
+        <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+      </div>
+      <div class="text-2xl font-bold text-slate-900">{{ item.total_units_sold }}</div>
+      <div class="text-xs text-slate-400 mt-1">Peak Day: <span class="font-medium text-slate-600">{{ item.peak_day
+          }}</span></div>
+    </div>
+
+    <!-- Revenue -->
+    <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="text-sm font-medium text-slate-500">Revenue (30d)</h3>
+        <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <div class="text-2xl font-bold text-slate-900">${{ "%.2f"|format(item.total_revenue) }}</div>
+      <div class="text-xs text-slate-400 mt-1">Contribution to Total Sales</div>
+    </div>
+
+    <!-- Profitability -->
+    <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="text-sm font-medium text-slate-500">Profit Margin</h3>
+        <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+      </div>
+      <div class="text-2xl font-bold text-slate-900">{{ "%.1f"|format(item.margin_percent) }}%</div>
+      <div class="text-xs text-slate-400 mt-1">Cost: ${{ "%.2f"|format(item.total_cost) }} / unit</div>
+    </div>
+  </div>
+
+  <!-- Ingredient Audit -->
+  <div class="bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden mb-8">
+    <div class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex justify-between items-center">
+      <h3 class="font-semibold text-slate-800">Ingredient Audit Trail</h3>
+      <span class="text-xs text-slate-500">Live Inventory Status</span>
+    </div>
+
+    <table class="min-w-full divide-y divide-slate-200">
+      <thead class="bg-slate-50">
+        <tr>
+          <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Ingredient</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Qty / Item</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Cost</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Stock Health</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-slate-200">
+        {% for ing in item.ingredients %}
+        <tr>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm font-medium text-slate-900">{{ ing.name }}</div>
+            <div class="text-xs text-slate-500 font-mono">{{ ing.id[:8] }}...</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">
+            {{ ing.quantity_needed }} {{ ing.unit }}
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">
+            ${{ "%.3f"|format(ing.cost) }}
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            {% if ing.stock_health_status == 'healthy' %}
+            <span
+              class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>
+              Healthy ({{ "%.1f"|format(ing.days_left) }} days)
+            </span>
+            {% elif ing.stock_health_status == 'warning' %}
+            <span
+              class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mr-1.5"></span>
+              Warning ({{ "%.1f"|format(ing.days_left) }} days)
+            </span>
+            {% elif ing.stock_health_status == 'critical' %}
+            <span
+              class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-100 text-rose-800">
+              <span class="w-1.5 h-1.5 rounded-full bg-rose-500 mr-1.5"></span>
+              Critical ({{ "%.1f"|format(ing.days_left) }} days)
+            </span>
+            {% else %}
+            <span
+              class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800">
+              Dormant
+            </span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Action Footer -->
+  <div class="flex justify-end">
+    <a href="/history/item/{{ item.id }}"
+      class="inline-flex items-center px-4 py-2 border border-slate-300 shadow-sm text-sm font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+      <svg class="w-4 h-4 mr-2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+      </svg>
+      View Full Sales History Ledger
+    </a>
+  </div>
+</div>

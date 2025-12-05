@@ -133,7 +133,7 @@ def calculate_revenue_risk_bulk(
 
     return results
 
-def calculate_inventory_health(tenant_id: str, conn) -> List[InventoryHealth]:
+def calculate_inventory_health(tenant_id: str, conn, ingredient_ids: Optional[List[str]] = None) -> List[InventoryHealth]:
     """
     Single Source of Truth for Inventory Logic.
     Used by both the API (Dashboard) and the Worker (Order Gen).
@@ -142,19 +142,27 @@ def calculate_inventory_health(tenant_id: str, conn) -> List[InventoryHealth]:
 
     with conn.cursor() as cur:
         # 1. Fetch Ingredients
-        cur.execute("""
+        query_ingredients = """
             SELECT
                 i.id, i.name, i.lead_time_days, i.cost_per_unit, i.unit,
                 COALESCE(SUM(ib.remaining_quantity), 0) as current_stock
             FROM ingredients i
             LEFT JOIN inventory_batches ib ON i.id = ib.ingredient_id AND ib.remaining_quantity > 0
             WHERE i.tenant_id = %s
-            GROUP BY i.id
-        """, (tenant_id,))
+        """
+        params_ingredients = [tenant_id]
+
+        if ingredient_ids:
+            query_ingredients += " AND i.id = ANY(%s::uuid[])"
+            params_ingredients.append(ingredient_ids)
+
+        query_ingredients += " GROUP BY i.id"
+
+        cur.execute(query_ingredients, tuple(params_ingredients))
         ingredients = cur.fetchall()
 
         # 2. Fetch Forecasts (Next 14 Days)
-        cur.execute("""
+        query_forecasts = """
             SELECT
                 r.ingredient_id,
                 f.forecast_date,
@@ -165,9 +173,16 @@ def calculate_inventory_health(tenant_id: str, conn) -> List[InventoryHealth]:
             JOIN menu_items m ON f.menu_item_id = m.id
             WHERE f.tenant_id = %s
               AND f.forecast_date BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '13 days'
-            GROUP BY r.ingredient_id, f.forecast_date
-            ORDER BY f.forecast_date
-        """, (tenant_id,))
+        """
+        params_forecasts = [tenant_id]
+
+        if ingredient_ids:
+            query_forecasts += " AND r.ingredient_id = ANY(%s::uuid[])"
+            params_forecasts.append(ingredient_ids)
+
+        query_forecasts += " GROUP BY r.ingredient_id, f.forecast_date ORDER BY f.forecast_date"
+
+        cur.execute(query_forecasts, tuple(params_forecasts))
 
         forecast_rows = cur.fetchall()
 
