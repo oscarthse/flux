@@ -21,7 +21,6 @@ async def upload_page(request: Request):
 
 from services.api.context import tenant_context
 
-from services.worker.engines.forecasting import ForecastingEngine
 from datetime import date, timedelta
 
 from fastapi import BackgroundTasks
@@ -31,6 +30,7 @@ def run_forecasting_job(tenant_id: str):
     try:
         with db_service.get_connection(tenant_id=tenant_id) as conn:
             # Use the engine to generate forecasts for next 7 days
+            from services.worker.engines.forecasting import ForecastingEngine
             engine = ForecastingEngine(tenant_id, conn, model_name='moving_average')
             engine.generate_forecasts(forecast_days=7)
         logger.info(f"Background forecasting completed for tenant {tenant_id}")

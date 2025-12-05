@@ -756,7 +756,6 @@ requires-dist = [
     { name = "statsmodels", specifier = ">=0.14.5" },
     { name = "streamlit", specifier = ">=1.51.0" },
     { name = "uvicorn", specifier = ">=0.24.0" },
-    { name = "uvicorn", specifier = ">=0.38.0" },
 ]
 provides-extras = ["test", "dev"]
 
