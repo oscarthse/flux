@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Account Details - Flux Platform{% endblock %}
+
+{% block content %}
+<div class="p-8 max-w-4xl mx-auto">
+  <h1 class="text-2xl font-bold text-slate-900 mb-6">Account Details</h1>
+
+  <div class="bg-white shadow rounded-lg overflow-hidden border border-slate-200">
+    <div class="px-6 py-5 border-b border-slate-200 bg-slate-50">
+      <h3 class="text-lg leading-6 font-medium text-slate-900">Profile Information</h3>
+      <p class="mt-1 max-w-2xl text-sm text-slate-500">Your personal and restaurant details.</p>
+    </div>
+    <div class="px-6 py-6 space-y-6">
+
+      <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
+        <div>
+          <label class="block text-sm font-medium text-slate-500">Restaurant Name</label>
+          <div class="mt-1 text-lg font-medium text-slate-900">{{ tenant_name }}</div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-500">Email Address</label>
+          <div class="mt-1 text-lg font-medium text-slate-900">{{ user_email }}</div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-500">Restaurant ID</label>
+          <div class="mt-1 text-sm text-slate-900 font-mono bg-slate-100 px-2 py-1 rounded inline-block">{{ tenant_id }}
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-500">User ID</label>
+          <div class="mt-1 text-sm text-slate-900 font-mono bg-slate-100 px-2 py-1 rounded inline-block">{{ user_id }}
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-slate-200">
+        <h4 class="text-sm font-medium text-slate-900 mb-4">Actions</h4>
+        <div class="flex space-x-4">
+          <form action="/auth/logout" method="post">
+            <button type="submit"
+              class="inline-flex items-center px-4 py-2 border border-slate-300 shadow-sm text-sm font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+              Sign Out
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

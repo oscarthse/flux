@@ -9,7 +9,7 @@ from contextlib import asynccontextmanager
 import dramatiq
 from dramatiq.brokers.redis import RedisBroker
 
-from services.api.routers import triage, analytics, inventory, dashboard, staff, auth, ingestion, debug
+from services.api.routers import triage, analytics, inventory, dashboard, staff, auth, ingestion, debug, account
 from services.api.logging_config import setup_logging, get_logger
 from services.api.database import db_service
 from services.api.config import settings
@@ -60,6 +60,7 @@ app.include_router(inventory.router)
 app.include_router(staff.router)
 app.include_router(ingestion.router)
 app.include_router(debug.router)
+app.include_router(account.router)
 
 from services.api import security
 from services.api.context import tenant_context
@@ -93,6 +94,28 @@ async def auth_middleware(request: Request, call_next):
         # Set ContextVar for RLS (DatabaseService will pick this up)
         token = tenant_context.set(tenant_id)
         logger.info(f"Middleware DEBUG - Set tenant_context to: {tenant_id}")
+
+        # Fetch User and Tenant details for UI
+        try:
+            from services.api.database import db_service
+            with db_service.get_connection(tenant_id=tenant_id) as conn:
+                with conn.cursor() as cur:
+                    # Get User Email
+                    user_id = payload.get("user_id")
+                    cur.execute("SELECT email FROM users WHERE id = %s", (user_id,))
+                    user_row = cur.fetchone()
+                    request.state.user_email = user_row[0] if user_row else "Unknown User"
+                    request.state.user_id = user_id
+
+                    # Get Tenant Name
+                    cur.execute("SELECT name FROM tenants WHERE id = %s", (tenant_id,))
+                    tenant_row = cur.fetchone()
+                    request.state.tenant_name = tenant_row[0] if tenant_row else "Unknown Restaurant"
+                    request.state.tenant_id = tenant_id
+        except Exception as e:
+            logger.error(f"Failed to fetch user details: {e}")
+            request.state.user_email = "User"
+            request.state.tenant_name = "Restaurant"
 
         try:
             response = await call_next(request)

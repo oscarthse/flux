@@ -144,7 +144,7 @@ async def login(
             "error": "Login failed"
         })
 
-@router.get("/logout")
+@router.api_route("/logout", methods=["GET", "POST"])
 async def logout():
     response = RedirectResponse(url="/", status_code=303)
     response.delete_cookie("flux_session")
