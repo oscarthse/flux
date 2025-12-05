@@ -151,9 +151,12 @@ async def technology(request: Request):
     return templates.TemplateResponse("technology.html", {"request": request})
 
 # Setup Dramatiq Broker
-redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
-broker = RedisBroker(url=redis_url)
-dramatiq.set_broker(broker)
+try:
+    redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+    broker = RedisBroker(url=redis_url)
+    dramatiq.set_broker(broker)
+except Exception as e:
+    logger.warning(f"Failed to initialize Redis broker: {e}. Background tasks will not work.")
 
 @app.get("/health")
 def health_check():
