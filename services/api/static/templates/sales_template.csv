@@ -1,0 +1,6 @@
+order_id,timestamp,menu_item_name,quantity,price_at_order
+ORD-001,2025-12-01 12:30:00,Classic Burger,2,12.00
+ORD-001,2025-12-01 12:30:00,Fries,2,4.50
+ORD-001,2025-12-01 12:30:00,Soda,2,2.50
+ORD-002,2025-12-01 13:15:00,Cheeseburger,1,13.50
+ORD-002,2025-12-01 13:15:00,Fries,1,4.50

@@ -1,0 +1,6 @@
+id,name,category,cost_per_unit,unit,supplier
+,Burger Bun,Bread,0.50,piece,Bakery Corp
+,Beef Patty,Meat,1.50,piece,Meat Suppliers
+,Lettuce,Produce,0.10,leaf,Farm Fresh
+,Tomato,Produce,0.15,slice,Farm Fresh
+,Ketchup,Condiments,0.05,oz,Sauce Co
