@@ -1,13 +1,10 @@
 import pytest
-from fastapi.testclient import TestClient
 from services.api.main import app
 from lib.flux_lib.db import get_db_connection
 from uuid import uuid4
 from datetime import date, timedelta
 
-client = TestClient(app)
-
-def test_dashboard_home_render(tenant_id):
+def test_dashboard_home_render(client, tenant_id):
     """
     Test that the dashboard homepage renders with metrics.
     Ensures data is properly seeded and retrieved.
@@ -59,13 +56,13 @@ def test_dashboard_home_render(tenant_id):
     assert "Draft Orders" in response.text
     # We can't easily assert "1" without context, but we can check if the section exists
 
-    # Verify "Revenue (Next 7 Days)" label is present
-    assert "Revenue (Next 7 Days)" in response.text
+    # Verify "Projected Sales (Next 7 Days)" label is present
+    assert "Projected Sales (Next 7 Days)" in response.text
 
     # Verify Model Accuracy label is present
     assert "Model Accuracy" in response.text
 
-def test_dashboard_metrics_chart(tenant_id):
+def test_dashboard_metrics_chart(client, tenant_id):
     """
     Test that the metrics chart endpoint returns valid HTML.
     """
@@ -95,7 +92,7 @@ def test_dashboard_metrics_chart(tenant_id):
     assert "Plotly.newPlot" in response.text
     assert "20.0" in response.text # Check for data values
 
-def test_dashboard_empty_state(tenant_id):
+def test_dashboard_empty_state(client, tenant_id):
     """
     Test dashboard behavior with no data.
     """

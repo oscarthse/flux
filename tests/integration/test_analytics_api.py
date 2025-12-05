@@ -1,13 +1,10 @@
 import pytest
-from fastapi.testclient import TestClient
 from services.api.main import app
 from lib.flux_lib.db import get_db_connection
 from uuid import uuid4
 from datetime import date, timedelta
 
-client = TestClient(app)
-
-def test_forecast_dashboard_render(tenant_id):
+def test_forecast_dashboard_render(client, tenant_id):
     """
     Test that the dashboard renders with the item selector.
     """
@@ -20,6 +17,8 @@ def test_forecast_dashboard_render(tenant_id):
             """, (str(uuid4()), tenant_id))
 
     # 2. Action: GET /analytics/forecasts
+    # Note: client already has cookie, but we also pass X-Tenant-ID if the endpoint needs it explicitly
+    # (though middleware sets context from cookie, some endpoints might check header as fallback or override)
     response = client.get("/analytics/forecasts", headers={"X-Tenant-ID": tenant_id})
 
     # 3. Assert
@@ -28,7 +27,7 @@ def test_forecast_dashboard_render(tenant_id):
     assert "Chart Burger" in response.text
 
 
-def test_forecast_data_json(tenant_id):
+def test_forecast_data_json(client, tenant_id):
     """
     Test that the forecast data endpoint returns valid JSON.
     """
@@ -59,10 +58,11 @@ def test_forecast_data_json(tenant_id):
     data = json_response["data"]
 
     assert "dates" in data
-    assert "quantities" in data
-    assert data["quantities"][0] == 25.0
+    assert "dates" in data
+    assert "predictions" in data
+    assert data["predictions"][0] == 25.0
 
-def test_forecast_table_html(tenant_id):
+def test_forecast_table_html(client, tenant_id):
     """
     Test that the forecast table endpoint returns HTML fragment.
     """

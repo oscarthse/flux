@@ -14,7 +14,7 @@ def get_db_connection(tenant_id=None):
     try:
         if tenant_id:
             with conn.cursor() as cur:
-                cur.execute(f"SET app.current_tenant_id = '{tenant_id}';")
+                cur.execute(f"SET app.current_tenant = '{tenant_id}';")
         yield conn
         conn.commit()
     except Exception:
