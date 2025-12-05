@@ -9,7 +9,7 @@ from contextlib import asynccontextmanager
 import dramatiq
 from dramatiq.brokers.redis import RedisBroker
 
-from services.api.routers import triage, analytics, inventory, dashboard, staff, auth
+from services.api.routers import triage, analytics, inventory, dashboard, staff, auth, ingestion, debug
 from services.api.logging_config import setup_logging, get_logger
 from services.api.database import db_service
 from services.api.config import settings
@@ -58,6 +58,8 @@ app.include_router(dashboard.router)
 app.include_router(analytics.router)
 app.include_router(inventory.router)
 app.include_router(staff.router)
+app.include_router(ingestion.router)
+app.include_router(debug.router)
 
 from services.api import security
 from services.api.context import tenant_context

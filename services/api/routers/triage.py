@@ -21,8 +21,8 @@ async def triage_page(request: Request):
 @router.get("/list", response_class=HTMLResponse)
 async def list_triage_items(request: Request):
     """HTMX: Fetch list of pending ghost items."""
-    # TODO: Get real tenant_id from auth
-    tenant_id = request.headers.get("X-Tenant-ID")
+    from services.api.context import tenant_context
+    tenant_id = tenant_context.get()
 
     items = []
     if tenant_id:
@@ -58,7 +58,8 @@ async def resolve_item(
     action: str = Form(...)
 ):
     """HTMX: Resolve a ghost item (Map/Ignore/Create)."""
-    tenant_id = request.headers.get("X-Tenant-ID")
+    from services.api.context import tenant_context
+    tenant_id = tenant_context.get()
 
     if tenant_id:
         with get_db_connection(tenant_id=tenant_id) as conn:

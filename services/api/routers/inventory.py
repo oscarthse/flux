@@ -168,7 +168,10 @@ async def redirect_smart_order():
 @router.get("/", response_class=HTMLResponse)
 async def inventory_dashboard(request: Request):
     """Render the main Inventory ERP Dashboard."""
-    tenant_id = settings.DEFAULT_TENANT_ID
+    from services.api.context import tenant_context
+    tenant_id = tenant_context.get()
+    if not tenant_id:
+        return HTMLResponse("<div>Error: Not authenticated</div>", status_code=401)
 
     try:
         with db_service.get_connection(tenant_id=tenant_id) as conn:
@@ -212,7 +215,10 @@ async def inventory_dashboard(request: Request):
 @router.post("/generate")
 async def trigger_optimization(request: Request):
     """Run optimization and return updated PO list (HTMX)."""
-    tenant_id = settings.DEFAULT_TENANT_ID
+    from services.api.context import tenant_context
+    tenant_id = tenant_context.get()
+    if not tenant_id:
+        return HTMLResponse("<div>Error: Not authenticated</div>", status_code=401)
 
     try:
         with db_service.get_connection(tenant_id=tenant_id) as conn:
@@ -235,7 +241,10 @@ async def trigger_optimization(request: Request):
 @router.post("/orders/{po_id}/approve")
 async def approve_order(request: Request, po_id: str):
     """Approve PO and return updated list."""
-    tenant_id = settings.DEFAULT_TENANT_ID
+    from services.api.context import tenant_context
+    tenant_id = tenant_context.get()
+    if not tenant_id:
+        return HTMLResponse("<div>Error: Not authenticated</div>", status_code=401)
 
     try:
         with db_service.get_connection(tenant_id=tenant_id) as conn:

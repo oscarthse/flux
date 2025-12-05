@@ -10,13 +10,17 @@ logger = get_logger(__name__)
 router = APIRouter(prefix="/dashboard", tags=["dashboard"])
 templates = Jinja2Templates(directory="services/api/templates")
 
+from services.api.context import tenant_context
+
 @router.get("/", response_class=HTMLResponse)
 async def get_dashboard(request: Request):
     """
     Render the main dashboard with comprehensive metrics.
     """
     try:
-        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+        tenant_id = tenant_context.get()
+        if not tenant_id:
+            return HTMLResponse("<div>Error: Not authenticated</div>", status_code=401)
 
         with db_service.get_connection(tenant_id=tenant_id) as conn:
             with conn.cursor() as cur:
@@ -77,7 +81,7 @@ async def get_dashboard(request: Request):
                             r.ingredient_id,
                             SUM(fd.total_predicted_qty * r.quantity) as required_qty
                         FROM future_demand fd
-                        JOIN recipes r ON fd.menu_item_id = r.menu_item_id
+                        JOIN recipes r ON fd.menu_item_id = r.menu_item_id AND r.tenant_id = %s
                         GROUP BY r.ingredient_id
                     ),
                     current_stock AS (
@@ -99,9 +103,9 @@ async def get_dashboard(request: Request):
                         ) as financial_impact
                     FROM ingredient_demand id
                     LEFT JOIN current_stock cs ON id.ingredient_id = cs.ingredient_id
-                    JOIN ingredients i ON id.ingredient_id = i.id
+                    JOIN ingredients i ON id.ingredient_id = i.id AND i.tenant_id = %s
                     WHERE COALESCE(cs.total_stock, 0) < id.required_qty
-                """, (tenant_id, tenant_id))
+                """, (tenant_id, tenant_id, tenant_id, tenant_id))
 
                 stock_row = cur.fetchone()
                 low_stock_count = stock_row[0] or 0
@@ -117,12 +121,12 @@ async def get_dashboard(request: Request):
                     )
                     SELECT COALESCE(SUM(f.predicted_quantity * mi.price), 0)
                     FROM forecasts f
-                    JOIN menu_items mi ON f.menu_item_id = mi.id
+                    JOIN menu_items mi ON f.menu_item_id = mi.id AND mi.tenant_id = %s
                     CROSS JOIN forecast_start fs
                     WHERE f.tenant_id = %s
                       AND f.forecast_date >= fs.start_date
                       AND f.forecast_date < fs.start_date + INTERVAL '7 days'
-                """, (tenant_id, tenant_id))
+                """, (tenant_id, tenant_id, tenant_id))
                 revenue_forecast = cur.fetchone()[0]
 
                 # 4. Draft Orders & Estimated Savings (Value of Draft POs)
@@ -175,7 +179,9 @@ async def get_dashboard_chart(request: Request):
     Renders a Plotly chart of aggregated daily forecast demand.
     """
     try:
-        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+        tenant_id = tenant_context.get()
+        if not tenant_id:
+            return HTMLResponse("<div>Error: Not authenticated</div>", status_code=401)
 
         with db_service.get_connection(tenant_id=tenant_id) as conn:
             with conn.cursor() as cur:
@@ -276,7 +282,9 @@ async def get_dashboard_stats(request: Request, settings=Depends(get_settings)):
     2. Low Stock Alerts: Ingredients where current stock < predicted demand (next 7 days).
     3. Financial Impact: Cost to replenish the low stock ingredients.
     """
-    tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+    tenant_id = tenant_context.get()
+    if not tenant_id:
+        return {"error": "Not authenticated"}
 
     with db_service.get_connection(tenant_id=tenant_id) as conn:
         with conn.cursor() as cur:
@@ -343,7 +351,7 @@ async def get_dashboard_stats(request: Request, settings=Depends(get_settings)):
                         r.ingredient_id,
                         SUM(fd.total_predicted_qty * r.quantity) as required_qty
                     FROM future_demand fd
-                    JOIN recipes r ON fd.menu_item_id = r.menu_item_id
+                    JOIN recipes r ON fd.menu_item_id = r.menu_item_id AND r.tenant_id = %s
                     GROUP BY r.ingredient_id
                 ),
                 current_stock AS (
@@ -365,9 +373,9 @@ async def get_dashboard_stats(request: Request, settings=Depends(get_settings)):
                     ) as financial_impact
                 FROM ingredient_demand id
                 LEFT JOIN current_stock cs ON id.ingredient_id = cs.ingredient_id
-                JOIN ingredients i ON id.ingredient_id = i.id
+                JOIN ingredients i ON id.ingredient_id = i.id AND i.tenant_id = %s
                 WHERE COALESCE(cs.total_stock, 0) < id.required_qty
-            """, (tenant_id, tenant_id))
+            """, (tenant_id, tenant_id, tenant_id, tenant_id))
 
             stock_row = cur.fetchone()
             low_stock_count = stock_row[0] or 0

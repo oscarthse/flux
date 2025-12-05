@@ -81,7 +81,11 @@ async def staff_dashboard(
 
     Shows staffing requirements, actual schedule, and cost analysis.
     """
-    tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+
+    from services.api.context import tenant_context
+    tenant_id = tenant_context.get()
+    if not tenant_id:
+        return HTMLResponse("<div>Error: Not authenticated</div>", status_code=401)
 
     if target_date is None:
         target_date = date.today()
@@ -158,7 +162,11 @@ async def get_requirements(
     settings=Depends(get_settings)
 ):
     """Get calculated staffing requirements for a date."""
-    tenant_id = settings.DEFAULT_TENANT_ID
+
+    from services.api.context import tenant_context
+    tenant_id = tenant_context.get()
+    if not tenant_id:
+        return JSONResponse({"error": "Not authenticated"}, status_code=401)
 
     try:
         with db_service.get_connection(tenant_id=tenant_id) as conn:

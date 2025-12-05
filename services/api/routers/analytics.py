@@ -20,6 +20,8 @@ router = APIRouter(prefix="/analytics", tags=["analytics"])
 templates = Jinja2Templates(directory="services/api/templates")
 
 
+from services.api.context import tenant_context
+
 @router.get("/forecasts", response_class=HTMLResponse)
 async def forecast_dashboard(request: Request):
     """
@@ -28,7 +30,9 @@ async def forecast_dashboard(request: Request):
     Auto-loads data for the first menu item on initial page load.
     """
     try:
-        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+        tenant_id = tenant_context.get()
+        if not tenant_id:
+            return HTMLResponse("<div>Error: Not authenticated</div>", status_code=401)
 
         with db_service.get_connection(tenant_id=tenant_id) as conn:
             with conn.cursor() as cur:
@@ -86,7 +90,9 @@ async def forecast_data(request: Request, menu_item_id: str = Query(...)):
     - metrics: WMAPE, accuracy %, grade
     """
     try:
-        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+        tenant_id = tenant_context.get()
+        if not tenant_id:
+            return JSONResponse({"error": "Not authenticated"}, status_code=401)
         today = date.today()
 
         with db_service.get_connection(tenant_id=tenant_id) as conn:
@@ -234,13 +240,18 @@ def _calculate_accuracy_metrics(pairs: list) -> dict:
     }
 
 
+
+
+
 @router.get("/forecast-table")
 async def forecast_table(request: Request, menu_item_id: str = Query(...)):
     """
     Generate HTML table fragment for forecast details.
     """
     try:
-        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+        tenant_id = tenant_context.get()
+        if not tenant_id:
+            return HTMLResponse("<div>Error: Not authenticated</div>", status_code=401)
 
         with db_service.get_connection(tenant_id=tenant_id) as conn:
             with conn.cursor() as cur:
@@ -334,7 +345,9 @@ async def generate_forecasts_endpoint(request: Request):
     """
     params = dict(request.query_params)
     model_name = params.get('model', settings.FORECAST_MODEL)
-    tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+    tenant_id = tenant_context.get()
+    if not tenant_id:
+        return JSONResponse({"error": "Not authenticated"}, status_code=401)
 
     logger.info(f"Generating forecasts for {tenant_id} using {model_name}")
 
@@ -392,7 +405,9 @@ async def menu_matrix_dashboard(request: Request, period: str = Query("30")):
     - Dogs (Low Margin, Low Volume)
     """
     try:
-        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+        tenant_id = tenant_context.get()
+        if not tenant_id:
+            return JSONResponse({"error": "Not authenticated"}, status_code=401)
         period_days = int(period)
 
         return templates.TemplateResponse("analytics/menu_matrix.html", {
@@ -417,7 +432,9 @@ async def get_menu_matrix_data(
     Returns classified menu items with COGS, margins, and strategic insights.
     """
     try:
-        tenant_id = request.headers.get("X-Tenant-ID", settings.DEFAULT_TENANT_ID)
+        tenant_id = tenant_context.get()
+        if not tenant_id:
+            return JSONResponse({"error": "Not authenticated"}, status_code=401)
 
         with db_service.get_connection(tenant_id=tenant_id) as conn:
             from services.worker.engines.menu_analytics import calculate_menu_performance

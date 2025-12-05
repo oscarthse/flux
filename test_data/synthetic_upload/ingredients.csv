@@ -1,0 +1,11 @@
+name,cost_per_unit,unit,par_level,reorder_threshold,lead_time_days,shelf_life_days
+Burger Bun,0.50,piece,200,50,2,7
+Beef Patty,1.50,piece,200,50,2,5
+Cheddar Cheese,0.30,slice,200,50,3,30
+Lettuce,0.10,leaf,100,20,1,5
+Tomato,0.15,slice,100,20,1,5
+Fries,0.80,portion,300,80,3,365
+Ketchup,0.05,oz,500,100,5,180
+Soda Syrup,0.20,oz,500,50,5,180
+Chicken Wings,2.00,lb,100,30,2,5
+BBQ Sauce,0.10,oz,200,50,5,180
