@@ -32,6 +32,8 @@ class IngredientAudit(BaseModel):
     stock_health_status: str # 'healthy', 'warning', 'critical'
     days_left: float
     cost: float
+    usage_explanation: str
+    risk_explanation: str
 
 class MenuDetailView(BaseModel):
     id: str
@@ -199,7 +201,9 @@ async def get_menu_details(request: Request, menu_item_id: str):
                     current_stock=health.current_stock if health else 0,
                     stock_health_status=health.status if health else "unknown",
                     days_left=health.days_until_runout if health else 0,
-                    cost=r_data['cost']
+                    cost=r_data['cost'],
+                    usage_explanation=health.usage_explanation if health else "No data",
+                    risk_explanation=health.risk_explanation if health else "No data"
                 ))
 
             margin_percent = ((price - total_cost) / price * 100) if price > 0 else 0

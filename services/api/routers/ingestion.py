@@ -41,8 +41,10 @@ def run_forecasting_job(tenant_id: str):
 async def handle_upload(
     request: Request,
     background_tasks: BackgroundTasks,
-    file: UploadFile = File(...),
-    type: str = Form(...)
+    ingredients_file: UploadFile = File(None),
+    menu_file: UploadFile = File(None),
+    recipes_file: UploadFile = File(None),
+    sales_file: UploadFile = File(None)
 ):
     # Get tenant_id from context (set by auth middleware)
     tenant_id = tenant_context.get()
@@ -50,19 +52,20 @@ async def handle_upload(
     if not tenant_id:
         return JSONResponse(status_code=400, content={"error": "Tenant ID missing from session context"})
 
-    content = await file.read()
-    decoded = content.decode('utf-8')
-    reader = csv.DictReader(io.StringIO(decoded))
-
-    rows = list(reader)
     errors = []
-    processed_count = 0
+    total_processed = 0
 
     try:
         with db_service.get_connection(tenant_id=tenant_id) as conn:
             with conn.cursor() as cur:
 
-                if type == "ingredients":
+                # Process Ingredients
+                if ingredients_file and ingredients_file.filename:
+                    processed_count = 0
+                    content = await ingredients_file.read()
+                    decoded = content.decode('utf-8')
+                    reader = csv.DictReader(io.StringIO(decoded))
+                    rows = list(reader)
                     for row in rows:
                         try:
                             data = IngredientRow(**row)
@@ -95,13 +98,19 @@ async def handle_upload(
 
                             processed_count += 1
                         except Exception as e:
-                            errors.append(f"Row {processed_count+1}: {str(e)}")
+                            errors.append(f"Ingredients row {processed_count+1}: {str(e)}")
+                    total_processed += processed_count
 
-                elif type == "menu":
+                # Process Menu
+                if menu_file and menu_file.filename:
+                    processed_count = 0
+                    content = await menu_file.read()
+                    decoded = content.decode('utf-8')
+                    reader = csv.DictReader(io.StringIO(decoded))
+                    rows = list(reader)
                     for row in rows:
                         try:
                             data = MenuRow(**row)
-                            # Use name as external_id for CSV imports to prevent duplicates
                             cur.execute("""
                                 INSERT INTO menu_items (tenant_id, external_id, name, category, price)
                                 VALUES (%s, %s, %s, %s, %s)
@@ -112,31 +121,29 @@ async def handle_upload(
                             """, (tenant_id, data.name, data.name, data.category, data.price))
                             processed_count += 1
                         except Exception as e:
-                            errors.append(f"Row {processed_count+1}: {str(e)}")
+                            errors.append(f"Menu row {processed_count+1}: {str(e)}")
+                    total_processed += processed_count
 
-                elif type == "recipes":
-                    # Wipe and Replace Strategy for Recipes
-                    # But only for items in the CSV? Or all recipes?
-                    # Safer to just insert/update.
-                    # Schema: PK (tenant_id, menu_item_id, ingredient_id)
-
+                # Process Recipes
+                if recipes_file and recipes_file.filename:
+                    processed_count = 0
+                    content = await recipes_file.read()
+                    decoded = content.decode('utf-8')
+                    reader = csv.DictReader(io.StringIO(decoded))
+                    rows = list(reader)
                     for row in rows:
                         try:
                             data = RecipeRow(**row)
-
-                            # Resolve IDs
                             cur.execute("SELECT id FROM menu_items WHERE tenant_id = %s AND name = %s", (tenant_id, data.menu_item))
                             mi = cur.fetchone()
                             if not mi:
                                 errors.append(f"Menu Item not found: {data.menu_item}")
                                 continue
-
                             cur.execute("SELECT id FROM ingredients WHERE tenant_id = %s AND name = %s", (tenant_id, data.ingredient))
                             ing = cur.fetchone()
                             if not ing:
                                 errors.append(f"Ingredient not found: {data.ingredient}")
                                 continue
-
                             cur.execute("""
                                 INSERT INTO recipes (tenant_id, menu_item_id, ingredient_id, quantity)
                                 VALUES (%s, %s, %s, %s)
@@ -145,48 +152,48 @@ async def handle_upload(
                             """, (tenant_id, mi[0], ing[0], data.quantity))
                             processed_count += 1
                         except Exception as e:
-                            errors.append(f"Row {processed_count+1}: {str(e)}")
+                            errors.append(f"Recipes row {processed_count+1}: {str(e)}")
+                    total_processed += processed_count
 
-                elif type == "sales":
+                # Process Sales
+                if sales_file and sales_file.filename:
+                    processed_count = 0
+                    content = await sales_file.read()
+                    decoded = content.decode('utf-8')
+                    reader = csv.DictReader(io.StringIO(decoded))
+                    rows = list(reader)
                     for row in rows:
                         try:
                             data = SalesRow(**row)
-
-                            # Resolve Menu Item
                             cur.execute("SELECT id FROM menu_items WHERE tenant_id = %s AND name = %s", (tenant_id, data.menu_item))
                             mi = cur.fetchone()
                             if not mi:
                                 errors.append(f"Menu Item not found: {data.menu_item}")
                                 continue
-
-                            # Insert Historical Sale
                             cur.execute("""
                                 INSERT INTO sales_orders (tenant_id, timestamp, total_amount, status)
                                 VALUES (%s, %s, 0, 'completed')
                                 RETURNING id
                             """, (tenant_id, data.date))
                             order_id = cur.fetchone()[0]
-
                             cur.execute("""
                                 INSERT INTO order_line_items (tenant_id, order_id, menu_item_id, quantity, price_at_order)
                                 VALUES (%s, %s, %s, %s, 0)
                             """, (tenant_id, order_id, mi[0], data.quantity))
-
                             processed_count += 1
                         except Exception as e:
-                            errors.append(f"Row {processed_count+1}: {str(e)}")
+                            errors.append(f"Sales row {processed_count+1}: {str(e)}")
+                    total_processed += processed_count
 
-                    # DEMO MAGIC: Trigger Forecasting after sales upload
-                    # Generate forecasts for next 7 days in background
+                    # Trigger Forecasting after sales upload
                     if processed_count > 0:
                         background_tasks.add_task(run_forecasting_job, tenant_id)
-
 
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
 
     return JSONResponse(content={
         "status": "success" if not errors else "partial_success",
-        "processed": processed_count,
+        "processed": total_processed,
         "errors": errors
     })

@@ -90,23 +90,53 @@
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
             {% if ing.stock_health_status == 'healthy' %}
-            <span
-              class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>
-              Healthy ({{ "%.1f"|format(ing.days_left) }} days)
-            </span>
+            <div class="group relative inline-block">
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 cursor-help">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>
+                Healthy ({{ "%.1f"|format(ing.days_left) }} days)
+              </span>
+              <!-- Tooltip -->
+              <div
+                class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 p-2 bg-slate-800 text-white text-xs rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 text-center">
+                This ingredient is Healthy because {{ ing.usage_explanation }}. {{ ing.risk_explanation }}
+                <div
+                  class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-slate-800">
+                </div>
+              </div>
+            </div>
             {% elif ing.stock_health_status == 'warning' %}
-            <span
-              class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
-              <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mr-1.5"></span>
-              Warning ({{ "%.1f"|format(ing.days_left) }} days)
-            </span>
+            <div class="group relative inline-block">
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800 cursor-help">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mr-1.5"></span>
+                Warning ({{ "%.1f"|format(ing.days_left) }} days)
+              </span>
+              <!-- Tooltip -->
+              <div
+                class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 p-2 bg-slate-800 text-white text-xs rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 text-center">
+                This ingredient is Warning because {{ ing.usage_explanation }}. {{ ing.risk_explanation }}
+                <div
+                  class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-slate-800">
+                </div>
+              </div>
+            </div>
             {% elif ing.stock_health_status == 'critical' %}
-            <span
-              class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-100 text-rose-800">
-              <span class="w-1.5 h-1.5 rounded-full bg-rose-500 mr-1.5"></span>
-              Critical ({{ "%.1f"|format(ing.days_left) }} days)
-            </span>
+            <div class="group relative inline-block">
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-100 text-rose-800 cursor-help">
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-500 mr-1.5"></span>
+                Critical ({{ "%.1f"|format(ing.days_left) }} days)
+              </span>
+              <!-- Tooltip -->
+              <div
+                class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 p-2 bg-slate-800 text-white text-xs rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 text-center">
+                This ingredient is Critical because {{ ing.usage_explanation }}. {{ ing.risk_explanation }}
+                <div
+                  class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-slate-800">
+                </div>
+              </div>
+            </div>
             {% else %}
             <span
               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800">

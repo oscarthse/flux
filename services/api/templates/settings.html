@@ -11,15 +11,16 @@
 
   <!-- Reusable Tooltip Component -->
   <template id="tooltip-icon">
-    <div class="group relative inline-block ml-1.5 align-middle" x-data>
+    <div class="group relative inline-block ml-1.5 align-middle"
+      x-data="{ text: $el.parentElement.getAttribute('data-tooltip') }">
       <svg class="w-4 h-4 text-slate-400 cursor-help hover:text-blue-500 transition-colors" fill="none"
         stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
       <div
-        class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 p-3 bg-slate-800 text-white text-xs rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 text-center pointer-events-none">
-        <span x-text="$el.parentElement.getAttribute('data-tooltip')"></span>
+        class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-96 p-4 bg-slate-800 text-white text-xs rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 text-center pointer-events-none leading-relaxed">
+        <span x-text="text"></span>
         <div
           class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-slate-800">
         </div>
@@ -42,7 +43,7 @@
           </div>
           <div class="text-left">
             <h2 class="text-lg font-medium text-slate-900">Forecasting & Data Integrity</h2>
-            <p class="text-xs text-slate-500">Control the AI model's inputs and freshness</p>
+            <p class="text-xs text-slate-500">Control the forecasting engine's inputs and freshness</p>
           </div>
         </div>
         <svg class="w-5 h-5 text-slate-400 transform transition-transform duration-200"
@@ -59,7 +60,7 @@
             <label class="block text-sm font-medium text-slate-700 mb-1">
               Default Model
               <span
-                data-tooltip="Choose between Prophet (advanced time series, best for seasonality) or Moving Average (fast, simple baseline)."
+                data-tooltip="This setting determines which mathematical method we use to predict your future sales. 'Prophet' is designed to understand complex patterns like holidays and seasons, making it great for most restaurants. 'Moving Average' is simpler and just looks at recent trends to smooth out day-to-day bumps."
                 x-html="document.getElementById('tooltip-icon').innerHTML"></span>
             </label>
             <select name="value" hx-patch="/settings/update" hx-vals='{"field": "forecasting_model"}'
@@ -77,7 +78,8 @@
           <div>
             <label class="block text-sm font-medium text-slate-700 mb-1">
               Prediction Horizon (Days)
-              <span data-tooltip="This determines the timeframe for your purchase orders. 7-30 days is standard."
+              <span
+                data-tooltip="This tells the system how far into the future to look when suggesting orders. A 30-day horizon is standard and helps you plan monthly budgets. Shorter horizons (like 7 days) keep things tighter but might miss upcoming busy periods, while longer ones help with long-term planning."
                 x-html="document.getElementById('tooltip-icon').innerHTML"></span>
             </label>
             <input type="number" name="value" value="{{ settings.prediction_horizon_days }}" hx-patch="/settings/update"
@@ -91,7 +93,7 @@
             <label class="block text-sm font-medium text-slate-700 mb-1">
               Historical Lookback (Days)
               <span
-                data-tooltip="A longer lookback (e.g., 365 days) helps detect annual seasonality, but requires more processing time."
+                data-tooltip="This controls how much past data we analyze to find patterns. We recommend 365 days so the system can 'remember' what happened this time last year (like holiday rushes). Using less data makes the system react faster to recent changes but it might forget annual trends."
                 x-html="document.getElementById('tooltip-icon').innerHTML"></span>
             </label>
             <input type="number" name="value" value="{{ settings.historical_lookback_days }}"
@@ -105,7 +107,8 @@
           <div>
             <label class="block text-sm font-medium text-slate-700 mb-1">
               Data Recency Alert (Days)
-              <span data-tooltip="If sales data is older than this threshold, the forecasts are unreliable."
+              <span
+                data-tooltip="We need fresh data to make good predictions. If your sales data is older than this number of days (e.g., 3 days), we'll warn you. This prevents the system from making suggestions based on old news, ensuring your orders match what's actually happening in the restaurant right now."
                 x-html="document.getElementById('tooltip-icon').innerHTML"></span>
             </label>
             <input type="number" name="value" value="{{ settings.data_recency_alert_days }}" hx-patch="/settings/update"

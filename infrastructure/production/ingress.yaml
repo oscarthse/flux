@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: flux-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+spec:
+  rules:
+    - host: fluxanalytics.eu
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: flux-api-service
+                port:
+                  number: 80

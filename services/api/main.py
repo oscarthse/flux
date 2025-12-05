@@ -144,7 +144,7 @@ async def auth_middleware(request: Request, call_next):
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
     """Serve Landing Page or Redirect to Dashboard."""
-    if request.cookies.get("user_session"):
+    if request.cookies.get("flux_session"):
         return RedirectResponse(url="/dashboard")
     return templates.TemplateResponse("landing.html", {"request": request})
 
