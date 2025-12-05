@@ -31,9 +31,9 @@ async def list_triage_items(request: Request):
                 cur.execute("""
                     SELECT id, external_id, external_name, source, detected_at
                     FROM triage_items
-                    WHERE status = 'pending'
+                    WHERE status = 'pending' AND tenant_id = %s
                     ORDER BY detected_at DESC
-                """)
+                """, (tenant_id,))
                 rows = cur.fetchall()
                 items = [
                     {
@@ -66,8 +66,8 @@ async def resolve_item(
             with conn.cursor() as cur:
                 if action == "ignore":
                     cur.execute("""
-                        UPDATE triage_items SET status = 'ignored' WHERE id = %s
-                    """, (triage_id,))
+                        UPDATE triage_items SET status = 'ignored' WHERE id = %s AND tenant_id = %s
+                    """, (triage_id, tenant_id))
                 # TODO: Implement 'map' and 'create' logic
 
     # Re-render the list

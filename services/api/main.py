@@ -49,6 +49,15 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+from slowapi import _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
+from slowapi.middleware import SlowAPIMiddleware
+from services.api.limiter import limiter
+
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+app.add_middleware(SlowAPIMiddleware)
+
 # Mount static files
 app.mount("/static", StaticFiles(directory="services/api/static"), name="static")
 

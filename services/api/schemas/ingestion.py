@@ -19,27 +19,27 @@ class CategoryEnum(str, Enum):
     OTHER = "Other"
 
 class IngredientRow(BaseModel):
-    name: str
+    name: str = Field(..., max_length=100)
     cost_per_unit: Decimal = Field(..., ge=0)
-    unit: str
+    unit: str = Field(..., max_length=20)
     par_level: Decimal = Field(..., ge=0)
     reorder_threshold: Decimal = Field(..., ge=0)
     lead_time_days: int = Field(..., ge=0)
     shelf_life_days: int = Field(..., ge=0)
 
 class MenuRow(BaseModel):
-    name: str
-    category: Optional[str] = "Other"
+    name: str = Field(..., max_length=100)
+    category: Optional[str] = Field("Other", max_length=50)
     price: Decimal = Field(..., ge=0)
 
 class RecipeRow(BaseModel):
-    menu_item: str
-    ingredient: str
+    menu_item: str = Field(..., max_length=100)
+    ingredient: str = Field(..., max_length=100)
     quantity: Decimal = Field(..., gt=0)
 
 class SalesRow(BaseModel):
     date: date
-    menu_item: str
+    menu_item: str = Field(..., max_length=100)
     quantity: int = Field(..., ge=0)
 
 class ValidationResult(BaseModel):

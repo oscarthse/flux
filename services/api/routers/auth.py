@@ -4,6 +4,7 @@ from fastapi.templating import Jinja2Templates
 from services.api.database import db_service
 from services.api.logging_config import get_logger
 from services.api import security, seeding
+from services.api.limiter import limiter
 import uuid
 
 logger = get_logger(__name__)
@@ -22,6 +23,7 @@ async def signup_page(request: Request):
 from services.api.config import settings
 
 @router.post("/signup")
+@limiter.limit("5/minute")
 async def signup(
     request: Request,
     restaurant_name: str = Form(...),
@@ -77,7 +79,7 @@ async def signup(
             key="flux_session",
             value=token,
             httponly=True,
-            secure=False, # FORCE FALSE as requested for debugging
+            secure=not settings.API_DEBUG,
             samesite="lax",
             max_age=86400 * 14
         )
@@ -91,6 +93,7 @@ async def signup(
         })
 
 @router.post("/login")
+@limiter.limit("5/minute")
 async def login(
     request: Request,
     email: str = Form(...),
@@ -126,7 +129,7 @@ async def login(
                         key="flux_session",
                         value=token,
                         httponly=True,
-                        secure=False, # FORCE FALSE as requested
+                        secure=not settings.API_DEBUG,
                         samesite="lax",
                         max_age=86400 * 14
                     )
