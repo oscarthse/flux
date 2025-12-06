@@ -1,0 +1,385 @@
+{% extends "base.html" %}
+
+{% block title %}Flux | Orientation{% endblock %}
+
+{% block extra_head %}
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+  rel="stylesheet">
+<!-- PapaParse -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+<style>
+  /* Scoped Variables for Onboarding Module */
+  .onboarding-wrapper {
+    --bg: #FAFAFA;
+    --text-main: #1A1A1A;
+    --text-muted: #666;
+    --accent: #2C3E50;
+    --success: #27AE60;
+    --error: #C0392B;
+    --border: #E0E0E0;
+    --card-bg: #FFFFFF;
+
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    min-height: 100%;
+    padding-bottom: 4rem;
+  }
+
+  /* Reset H-tags inside wrapper to avoid Tailwind conflicts */
+  .onboarding-wrapper h1,
+  .onboarding-wrapper h2,
+  .onboarding-wrapper h3,
+  .onboarding-wrapper h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    margin-top: 0;
+    color: var(--text-main);
+  }
+
+  .onboarding-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+  }
+
+  /* Typography */
+  .headline {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .subheadline {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 600px;
+    margin-bottom: 4rem;
+  }
+
+  .section-header {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+
+  /* Sections */
+  .step-section {
+    margin-bottom: 6rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .step-section.active {
+    opacity: 1;
+    pointer-events: all;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .step-section.completed {
+    opacity: 1;
+    border-color: var(--success);
+    background: #F8FCF9;
+  }
+
+  .step-section.completed::after {
+    content: "✓ Completed";
+    display: block;
+    margin-top: 1rem;
+    color: var(--success);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  /* Inputs */
+  .editorial-input {
+    border: none;
+    border-bottom: 2px solid var(--border);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    background: transparent;
+    width: 100%;
+    padding: 0.5rem 0;
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .editorial-input:focus {
+    border-bottom-color: var(--accent);
+    /* Remove default outline */
+    box-shadow: none;
+    ring: 0;
+  }
+
+  .input-message {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    min-height: 1.5rem;
+    font-style: italic;
+  }
+
+  .input-message.success {
+    color: var(--success);
+  }
+
+  .input-message.error {
+    color: var(--error);
+  }
+
+  /* Dropzones */
+  .dropzone {
+    border: 2px dashed var(--border);
+    padding: 3rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #FAFAFA;
+  }
+
+  .dropzone:hover {
+    border-color: var(--accent);
+    background: white;
+  }
+
+  .dropzone-label {
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .dropzone-sub {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  /* Modal for Mapping */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Better overlay */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal {
+    background: white;
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    border-radius: 8px;
+  }
+
+  .mapping-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+  }
+
+  .mapping-row label {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .modal select {
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    border-radius: 4px;
+  }
+
+  /* Terminal Output */
+  #discovery-log {
+    background: #111;
+    color: #0F0;
+    font-family: 'Courier New', monospace;
+    padding: 1.5rem;
+    border-radius: 4px;
+    height: 300px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    display: none;
+  }
+
+  .log-entry {
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background: var(--text-main);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    border-radius: 4px;
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="onboarding-wrapper">
+  <div class="onboarding-container">
+    <div class="header-section">
+      <h1 class="headline">Let's define the soul of<br>your restaurant.</h1>
+      <p class="subheadline">To optimize profit, we must first understand the physics of your kitchen. We operate on a
+        Zero-Trust data policy to ensure perfect accuracy.</p>
+    </div>
+
+    <!-- Prologue -->
+    <div id="step-0" class="step-section active">
+      <div class="section-header">
+        <span>00.</span>
+        <h3>The Prologue</h3>
+      </div>
+      <p class="section-desc">We cross-reference your location with hyper-local weather patterns to predict footfall.
+      </p>
+
+      <input type="text" id="city-input" class="editorial-input" placeholder="Start by typing your City..."
+        autocomplete="off">
+      <div id="weather-msg" class="input-message"></div>
+    </div>
+
+    <!-- Step 1: Ingredients -->
+    <div id="step-1" class="step-section">
+      <div class="section-header">
+        <span>01.</span>
+        <h3>The Foundation</h3>
+      </div>
+      <p class="section-desc">To calculate profit, we first need to know the cost of your raw materials. Upload your
+        Ingredients list.</p>
+
+      <div class="dropzone" id="drop-ingredients">
+        <div class="dropzone-label">Drop Ingredients CSV</div>
+        <div class="dropzone-sub">Required: Name, Cost, Unit, Par Level</div>
+      </div>
+      <div id="msg-ingredients" class="input-message"></div>
+    </div>
+
+    <!-- Step 2: Menu -->
+    <div id="step-2" class="step-section">
+      <div class="section-header">
+        <span>02.</span>
+        <h3>The Offering</h3>
+      </div>
+      <p class="section-desc">What do you sell to the public? Upload your Menu Items.</p>
+
+      <div class="dropzone" id="drop-menu">
+        <div class="dropzone-label">Drop Menu CSV</div>
+        <div class="dropzone-sub">Required: Name, Price</div>
+      </div>
+      <div id="msg-menu" class="input-message"></div>
+    </div>
+
+    <!-- Step 3: Recipes -->
+    <div id="step-3" class="step-section">
+      <div class="section-header">
+        <span>03.</span>
+        <h3>The Connection</h3>
+      </div>
+      <p class="section-desc">A Burger is a Bun + Meat. Link your menu to your ingredients.</p>
+
+      <div class="dropzone" id="drop-recipes">
+        <div class="dropzone-label">Drop Recipes CSV</div>
+        <div class="dropzone-sub">Required: Menu Item, Ingredient, Quantity</div>
+      </div>
+      <div id="msg-recipes" class="input-message"></div>
+    </div>
+
+    <!-- Step 4: History -->
+    <div id="step-4" class="step-section">
+      <div class="section-header">
+        <span>04.</span>
+        <h3>The History</h3>
+      </div>
+      <p class="section-desc">To predict the future, we must read the past. Minimum 7 days required.</p>
+
+      <div class="dropzone" id="drop-sales">
+        <div class="dropzone-label">Drop Sales Log CSV</div>
+        <div class="dropzone-sub">Required: Date, Menu Item, Quantity</div>
+      </div>
+      <div id="msg-sales" class="input-message"></div>
+    </div>
+
+    <!-- The Magic -->
+    <div id="step-magic" class="step-section" style="border: none; background: transparent;">
+      <button id="btn-calibrate" class="btn-primary" disabled>Initialize Calibration Engine</button>
+      <div id="discovery-log"></div>
+    </div>
+
+  </div>
+
+  <!-- Mapping Modal -->
+  <div id="mapping-modal" class="modal-overlay">
+    <div class="modal">
+      <h3>Map Columns</h3>
+      <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">We couldn't match some columns automatically.
+        Please tell us which column matches our requirements.</p>
+
+      <div id="mapping-container"></div>
+
+      <div style="margin-top: 2rem; text-align: right;">
+        <button class="btn-primary" id="btn-confirm-mapping">Confirm Mapping</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/onboarding.js"></script>
+{% endblock %}

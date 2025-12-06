@@ -1,0 +1,221 @@
+date,menu_item,quantity
+2024-10-07,Margherita Pizza,15
+2024-10-07,Pepperoni Pizza,12
+2024-10-07,Spaghetti Carbonara,18
+2024-10-07,Caesar Salad,10
+2024-10-07,Tiramisu,8
+2024-10-08,Margherita Pizza,14
+2024-10-08,Lasagna,10
+2024-10-08,Caprese Salad,7
+2024-10-08,Panna Cotta,6
+2024-10-08,Bruschetta,9
+2024-10-09,Pepperoni Pizza,16
+2024-10-09,Spaghetti Carbonara,20
+2024-10-09,Caesar Salad,12
+2024-10-09,Tiramisu,10
+2024-10-09,BBQ Wings,11
+2024-10-10,Margherita Pizza,17
+2024-10-10,Lasagna,12
+2024-10-10,Caprese Salad,8
+2024-10-10,Panna Cotta,7
+2024-10-10,Bruschetta,10
+2024-10-11,Pepperoni Pizza,18
+2024-10-11,Spaghetti Carbonara,22
+2024-10-11,Caesar Salad,13
+2024-10-11,Tiramisu,11
+2024-10-11,BBQ Wings,12
+2024-10-14,Margherita Pizza,19
+2024-10-14,Lasagna,13
+2024-10-14,Caprese Salad,9
+2024-10-14,Panna Cotta,8
+2024-10-14,Bruschetta,11
+2024-10-15,Pepperoni Pizza,20
+2024-10-15,Spaghetti Carbonara,24
+2024-10-15,Caesar Salad,14
+2024-10-15,Tiramisu,12
+2024-10-15,BBQ Wings,13
+2024-10-16,Margherita Pizza,21
+2024-10-16,Lasagna,14
+2024-10-16,Caprese Salad,10
+2024-10-16,Panna Cotta,9
+2024-10-16,Bruschetta,12
+2024-10-17,Pepperoni Pizza,22
+2024-10-17,Spaghetti Carbonara,26
+2024-10-17,Caesar Salad,15
+2024-10-17,Tiramisu,13
+2024-10-17,BBQ Wings,14
+2024-10-18,Margherita Pizza,23
+2024-10-18,Lasagna,15
+2024-10-18,Caprese Salad,11
+2024-10-18,Panna Cotta,10
+2024-10-18,Bruschetta,13
+2024-10-21,Pepperoni Pizza,24
+2024-10-21,Spaghetti Carbonara,28
+2024-10-21,Caesar Salad,16
+2024-10-21,Tiramisu,14
+2024-10-21,BBQ Wings,15
+2024-10-22,Margherita Pizza,25
+2024-10-22,Lasagna,16
+2024-10-22,Caprese Salad,12
+2024-10-22,Panna Cotta,11
+2024-10-22,Bruschetta,14
+2024-10-23,Pepperoni Pizza,26
+2024-10-23,Spaghetti Carbonara,30
+2024-10-23,Caesar Salad,17
+2024-10-23,Tiramisu,15
+2024-10-23,BBQ Wings,16
+2024-10-24,Margherita Pizza,27
+2024-10-24,Lasagna,17
+2024-10-24,Caprese Salad,13
+2024-10-24,Panna Cotta,12
+2024-10-24,Bruschetta,15
+2024-10-25,Pepperoni Pizza,28
+2024-10-25,Spaghetti Carbonara,32
+2024-10-25,Caesar Salad,18
+2024-10-25,Tiramisu,16
+2024-10-25,BBQ Wings,17
+2024-10-28,Margherita Pizza,29
+2024-10-28,Lasagna,18
+2024-10-28,Caprese Salad,14
+2024-10-28,Panna Cotta,13
+2024-10-28,Bruschetta,16
+2024-10-29,Pepperoni Pizza,30
+2024-10-29,Spaghetti Carbonara,34
+2024-10-29,Caesar Salad,19
+2024-10-29,Tiramisu,17
+2024-10-29,BBQ Wings,18
+2024-10-30,Margherita Pizza,31
+2024-10-30,Lasagna,19
+2024-10-30,Caprese Salad,15
+2024-10-30,Panna Cotta,14
+2024-10-30,Bruschetta,17
+2024-10-31,Pepperoni Pizza,32
+2024-10-31,Spaghetti Carbonara,36
+2024-10-31,Caesar Salad,20
+2024-10-31,Tiramisu,18
+2024-10-31,BBQ Wings,19
+2024-11-01,Margherita Pizza,33
+2024-11-01,Lasagna,20
+2024-11-01,Caprese Salad,16
+2024-11-01,Panna Cotta,15
+2024-11-01,Bruschetta,18
+2024-11-04,Pepperoni Pizza,34
+2024-11-04,Spaghetti Carbonara,38
+2024-11-04,Caesar Salad,21
+2024-11-04,Tiramisu,19
+2024-11-04,BBQ Wings,20
+2024-11-05,Margherita Pizza,35
+2024-11-05,Lasagna,21
+2024-11-05,Caprese Salad,17
+2024-11-05,Panna Cotta,16
+2024-11-05,Bruschetta,19
+2024-11-06,Pepperoni Pizza,36
+2024-11-06,Spaghetti Carbonara,40
+2024-11-06,Caesar Salad,22
+2024-11-06,Tiramisu,20
+2024-11-06,BBQ Wings,21
+2024-11-07,Margherita Pizza,37
+2024-11-07,Lasagna,22
+2024-11-07,Caprese Salad,18
+2024-11-07,Panna Cotta,17
+2024-11-07,Bruschetta,20
+2024-11-08,Pepperoni Pizza,38
+2024-11-08,Spaghetti Carbonara,42
+2024-11-08,Caesar Salad,23
+2024-11-08,Tiramisu,21
+2024-11-08,BBQ Wings,22
+2024-11-11,Margherita Pizza,39
+2024-11-11,Lasagna,23
+2024-11-11,Caprese Salad,19
+2024-11-11,Panna Cotta,18
+2024-11-11,Bruschetta,21
+2024-11-12,Pepperoni Pizza,40
+2024-11-12,Spaghetti Carbonara,44
+2024-11-12,Caesar Salad,24
+2024-11-12,Tiramisu,22
+2024-11-12,BBQ Wings,23
+2024-11-13,Margherita Pizza,41
+2024-11-13,Lasagna,24
+2024-11-13,Caprese Salad,20
+2024-11-13,Panna Cotta,19
+2024-11-13,Bruschetta,22
+2024-11-14,Pepperoni Pizza,42
+2024-11-14,Spaghetti Carbonara,46
+2024-11-14,Caesar Salad,25
+2024-11-14,Tiramisu,23
+2024-11-14,BBQ Wings,24
+2024-11-15,Margherita Pizza,43
+2024-11-15,Lasagna,25
+2024-11-15,Caprese Salad,21
+2024-11-15,Panna Cotta,20
+2024-11-15,Bruschetta,23
+2024-11-18,Pepperoni Pizza,44
+2024-11-18,Spaghetti Carbonara,48
+2024-11-18,Caesar Salad,26
+2024-11-18,Tiramisu,24
+2024-11-18,BBQ Wings,25
+2024-11-19,Margherita Pizza,45
+2024-11-19,Lasagna,26
+2024-11-19,Caprese Salad,22
+2024-11-19,Panna Cotta,21
+2024-11-19,Bruschetta,24
+2024-11-20,Pepperoni Pizza,46
+2024-11-20,Spaghetti Carbonara,50
+2024-11-20,Caesar Salad,27
+2024-11-20,Tiramisu,25
+2024-11-20,BBQ Wings,26
+2024-11-21,Margherita Pizza,47
+2024-11-21,Lasagna,27
+2024-11-21,Caprese Salad,23
+2024-11-21,Panna Cotta,22
+2024-11-21,Bruschetta,25
+2024-11-22,Pepperoni Pizza,48
+2024-11-22,Spaghetti Carbonara,52
+2024-11-22,Caesar Salad,28
+2024-11-22,Tiramisu,26
+2024-11-22,BBQ Wings,27
+2024-11-25,Margherita Pizza,49
+2024-11-25,Lasagna,28
+2024-11-25,Caprese Salad,24
+2024-11-25,Panna Cotta,23
+2024-11-25,Bruschetta,26
+2024-11-26,Pepperoni Pizza,50
+2024-11-26,Spaghetti Carbonara,54
+2024-11-26,Caesar Salad,29
+2024-11-26,Tiramisu,27
+2024-11-26,BBQ Wings,28
+2024-11-27,Margherita Pizza,51
+2024-11-27,Lasagna,29
+2024-11-27,Caprese Salad,25
+2024-11-27,Panna Cotta,24
+2024-11-27,Bruschetta,27
+2024-11-28,Pepperoni Pizza,52
+2024-11-28,Spaghetti Carbonara,56
+2024-11-28,Caesar Salad,30
+2024-11-28,Tiramisu,28
+2024-11-28,BBQ Wings,29
+2024-11-29,Margherita Pizza,53
+2024-11-29,Lasagna,30
+2024-11-29,Caprese Salad,26
+2024-11-29,Panna Cotta,25
+2024-11-29,Bruschetta,28
+2024-12-02,Pepperoni Pizza,54
+2024-12-02,Spaghetti Carbonara,58
+2024-12-02,Caesar Salad,31
+2024-12-02,Tiramisu,29
+2024-12-02,BBQ Wings,30
+2024-12-03,Margherita Pizza,55
+2024-12-03,Lasagna,31
+2024-12-03,Caprese Salad,27
+2024-12-03,Panna Cotta,26
+2024-12-03,Bruschetta,29
+2024-12-04,Pepperoni Pizza,56
+2024-12-04,Spaghetti Carbonara,60
+2024-12-04,Caesar Salad,32
+2024-12-04,Tiramisu,30
+2024-12-04,BBQ Wings,31
+2024-12-05,Margherita Pizza,57
+2024-12-05,Lasagna,32
+2024-12-05,Caprese Salad,28
+2024-12-05,Panna Cotta,27
+2024-12-05,Bruschetta,30

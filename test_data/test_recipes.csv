@@ -1,0 +1,45 @@
+menu_item,ingredient,quantity
+Margherita Pizza,Pizza Dough,0.25
+Margherita Pizza,Tomato Sauce,0.08
+Margherita Pizza,Mozzarella Cheese,0.15
+Margherita Pizza,Basil,0.01
+Margherita Pizza,Olive Oil,0.02
+Pepperoni Pizza,Pizza Dough,0.25
+Pepperoni Pizza,Tomato Sauce,0.08
+Pepperoni Pizza,Mozzarella Cheese,0.15
+Pepperoni Pizza,Pepperoni,0.1
+Spaghetti Carbonara,Pasta (Dry),0.2
+Spaghetti Carbonara,Eggs,0.17
+Spaghetti Carbonara,Bacon,0.08
+Spaghetti Carbonara,Parmesan Cheese,0.03
+Spaghetti Carbonara,Olive Oil,0.02
+Lasagna,Pasta (Dry),0.2
+Lasagna,Ground Beef,0.15
+Lasagna,Tomato Sauce,0.12
+Lasagna,Mozzarella Cheese,0.1
+Lasagna,Ricotta Cheese,0.1
+Lasagna,Parmesan Cheese,0.03
+Lasagna,Onions,0.05
+Lasagna,Garlic,0.01
+Caesar Salad,Lettuce,0.15
+Caesar Salad,Parmesan Cheese,0.02
+Caesar Salad,Breadcrumbs,0.03
+Caesar Salad,Garlic,0.005
+Caesar Salad,Olive Oil,0.03
+Caprese Salad,Mozzarella Cheese,0.12
+Caprese Salad,Tomato Sauce,0.05
+Caprese Salad,Basil,0.01
+Caprese Salad,Olive Oil,0.02
+Tiramisu,Mascarpone,0.15
+Tiramisu,Eggs,0.08
+Tiramisu,Heavy Cream,0.1
+Panna Cotta,Heavy Cream,0.2
+Panna Cotta,Mascarpone,0.08
+Bruschetta,Pizza Dough,0.1
+Bruschetta,Tomato Sauce,0.06
+Bruschetta,Garlic,0.01
+Bruschetta,Basil,0.005
+Bruschetta,Olive Oil,0.02
+BBQ Wings,Chicken Breast,0.3
+BBQ Wings,Garlic,0.01
+BBQ Wings,Olive Oil,0.02

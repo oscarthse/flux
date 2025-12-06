@@ -1,6 +1,9 @@
 from fastapi import APIRouter, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
+import logging
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/account", tags=["account"])
 templates = Jinja2Templates(directory="services/api/templates")
@@ -29,7 +32,7 @@ async def account_page(request: Request):
                     cur.execute("SELECT full_name, email, role FROM users WHERE tenant_id = %s", (tenant_id,))
                     team = [{"name": r[0], "email": r[1], "role": r[2]} for r in cur.fetchall()]
         except Exception as e:
-            print(f"Error fetching account data: {e}")
+            logger.error(f"Error fetching account data: {e}")
 
     return templates.TemplateResponse("account.html", {
         "request": request,

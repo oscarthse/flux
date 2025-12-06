@@ -1,0 +1,21 @@
+name,category,cost_per_unit,unit,par_level,reorder_threshold,lead_time_days,shelf_life_days
+Tomato Sauce,Sauce,2.50,liter,50,20,3,90
+Mozzarella Cheese,Cheese,8.00,kg,30,10,2,14
+Pizza Dough,Dough,1.20,kg,100,40,1,7
+Pepperoni,Meat,12.00,kg,15,5,3,21
+Lettuce,Vegetables,3.50,kg,20,8,1,5
+Parmesan Cheese,Cheese,15.00,kg,10,4,3,60
+Eggs,Dairy,4.50,dozen,30,12,2,21
+Pasta (Dry),Dry Goods,2.80,kg,80,30,7,365
+Heavy Cream,Dairy,3.20,liter,25,10,2,14
+Mascarpone,Dairy,9.50,kg,8,3,3,14
+Olive Oil,Oil,8.50,liter,20,8,7,180
+Garlic,Vegetables,2.00,kg,5,2,3,30
+Basil,Herbs,12.00,kg,2,1,1,7
+Chicken Breast,Meat,7.50,kg,25,10,2,7
+Ground Beef,Meat,6.80,kg,30,12,2,7
+Onions,Vegetables,1.50,kg,15,6,3,30
+Bacon,Meat,9.00,kg,12,5,3,21
+Ricotta Cheese,Cheese,5.50,kg,15,6,3,14
+Breadcrumbs,Dry Goods,3.00,kg,10,4,7,90
+White Wine,Alcohol,8.00,liter,12,5,7,365

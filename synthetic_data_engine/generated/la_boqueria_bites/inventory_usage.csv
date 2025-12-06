@@ -1,0 +1,4700 @@
+date,ingredient,quantity_used
+2025-01-01,Wine Bottle (Red),15.75
+2025-01-01,Rice (Bomba),61.206
+2025-01-01,Seafood Mix,105.0
+2025-01-01,Olive Oil,24.25
+2025-01-01,Sangria Mix,80.0
+2025-01-01,Coffee Beans,1.6362
+2025-01-01,Chicken,12.019
+2025-01-01,Potatoes,18.786
+2025-01-01,Lettuce,3.7
+2025-01-01,Beer Keg (30L),41.1
+2025-01-01,Eggs,63.0
+2025-01-01,Onions,2.1
+2025-01-01,Beef Steak,0.9
+2025-01-02,Beer Keg (30L),39.6
+2025-01-02,Rice (Bomba),65.2965
+2025-01-02,Seafood Mix,112.55
+2025-01-02,Olive Oil,25.9
+2025-01-02,Coffee Beans,1.621
+2025-01-02,Sangria Mix,106.0
+2025-01-02,Wine Bottle (Red),14.25
+2025-01-02,Beef Steak,0.6
+2025-01-02,Potatoes,16.564
+2025-01-02,Chicken,9.797
+2025-01-02,Lettuce,2.7
+2025-01-02,Eggs,57.0
+2025-01-02,Onions,1.9
+2025-01-03,Rice (Bomba),67.569
+2025-01-03,Seafood Mix,116.5
+2025-01-03,Olive Oil,26.4
+2025-01-03,Beer Keg (30L),43.2
+2025-01-03,Sangria Mix,107.0
+2025-01-03,Wine Bottle (Red),20.25
+2025-01-03,Coffee Beans,1.6665
+2025-01-03,Chicken,9.494
+2025-01-03,Potatoes,13.938
+2025-01-03,Lettuce,2.6
+2025-01-03,Eggs,54.0
+2025-01-03,Onions,1.8
+2025-01-04,Rice (Bomba),67.872
+2025-01-04,Seafood Mix,116.4
+2025-01-04,Olive Oil,26.65
+2025-01-04,Wine Bottle (Red),16.2
+2025-01-04,Beer Keg (30L),43.2
+2025-01-04,Sangria Mix,108.0
+2025-01-04,Coffee Beans,1.621
+2025-01-04,Chicken,11.615
+2025-01-04,Potatoes,18.382
+2025-01-04,Lettuce,3.3
+2025-01-04,Eggs,63.0
+2025-01-04,Onions,2.1
+2025-01-04,Beef Steak,0.9
+2025-01-05,Wine Bottle (Red),20.25
+2025-01-05,Sangria Mix,106.0
+2025-01-05,Rice (Bomba),66.054
+2025-01-05,Seafood Mix,113.6
+2025-01-05,Olive Oil,25.95
+2025-01-05,Beer Keg (30L),39.0
+2025-01-05,Coffee Beans,1.7574
+2025-01-05,Chicken,10.504
+2025-01-05,Potatoes,16.766
+2025-01-05,Lettuce,3.2
+2025-01-05,Eggs,51.0
+2025-01-05,Onions,1.7
+2025-01-05,Beef Steak,0.6
+2025-01-06,Rice (Bomba),47.4195
+2025-01-06,Seafood Mix,83.05
+2025-01-06,Olive Oil,19.55
+2025-01-06,Coffee Beans,1.4241
+2025-01-06,Sangria Mix,87.0
+2025-01-06,Wine Bottle (Red),12.3
+2025-01-06,Beer Keg (30L),33.3
+2025-01-06,Chicken,5.757
+2025-01-06,Potatoes,11.716
+2025-01-06,Lettuce,1.9
+2025-01-06,Eggs,48.0
+2025-01-06,Onions,1.6
+2025-01-06,Beef Steak,0.6
+2025-01-07,Rice (Bomba),34.239
+2025-01-07,Seafood Mix,58.7
+2025-01-07,Olive Oil,13.6
+2025-01-07,Sangria Mix,53.0
+2025-01-07,Coffee Beans,0.9393
+2025-01-07,Wine Bottle (Red),8.4
+2025-01-07,Beer Keg (30L),21.6
+2025-01-07,Chicken,5.858
+2025-01-07,Potatoes,10.1
+2025-01-07,Lettuce,1.8
+2025-01-07,Eggs,30.0
+2025-01-07,Onions,1.0
+2025-01-08,Wine Bottle (Red),13.95
+2025-01-08,Rice (Bomba),57.267
+2025-01-08,Seafood Mix,96.7
+2025-01-08,Olive Oil,21.1
+2025-01-08,Beer Keg (30L),41.4
+2025-01-08,Coffee Beans,1.0757
+2025-01-08,Sangria Mix,102.0
+2025-01-08,Chicken,8.585
+2025-01-08,Potatoes,11.615
+2025-01-08,Lettuce,2.7
+2025-01-08,Eggs,39.0
+2025-01-08,Onions,1.3
+2025-01-08,Beef Steak,0.9
+2025-01-09,Sangria Mix,118.0
+2025-01-09,Rice (Bomba),59.994
+2025-01-09,Seafood Mix,102.6
+2025-01-09,Olive Oil,23.7
+2025-01-09,Coffee Beans,1.7725
+2025-01-09,Wine Bottle (Red),15.45
+2025-01-09,Beer Keg (30L),43.2
+2025-01-09,Chicken,9.393
+2025-01-09,Potatoes,17.271
+2025-01-09,Lettuce,2.7
+2025-01-09,Eggs,63.0
+2025-01-09,Onions,2.1
+2025-01-09,Beef Steak,0.9
+2025-01-10,Rice (Bomba),64.0845
+2025-01-10,Seafood Mix,109.75
+2025-01-10,Olive Oil,26.15
+2025-01-10,Sangria Mix,113.0
+2025-01-10,Coffee Beans,2.0149
+2025-01-10,Beer Keg (30L),37.5
+2025-01-10,Wine Bottle (Red),17.1
+2025-01-10,Chicken,6.464
+2025-01-10,Potatoes,19.594
+2025-01-10,Lettuce,2.0
+2025-01-10,Eggs,102.0
+2025-01-10,Onions,3.4
+2025-01-10,Beef Steak,0.9
+2025-01-11,Sangria Mix,111.0
+2025-01-11,Rice (Bomba),64.236
+2025-01-11,Seafood Mix,109.2
+2025-01-11,Olive Oil,24.9
+2025-01-11,Beer Keg (30L),47.1
+2025-01-11,Coffee Beans,1.9089
+2025-01-11,Wine Bottle (Red),13.8
+2025-01-11,Chicken,9.999
+2025-01-11,Potatoes,16.968
+2025-01-11,Lettuce,2.5
+2025-01-11,Eggs,66.0
+2025-01-11,Onions,2.2
+2025-01-11,Beef Steak,0.3
+2025-01-12,Rice (Bomba),65.751
+2025-01-12,Seafood Mix,111.7
+2025-01-12,Olive Oil,25.3
+2025-01-12,Beer Keg (30L),42.3
+2025-01-12,Sangria Mix,130.0
+2025-01-12,Coffee Beans,1.8937
+2025-01-12,Wine Bottle (Red),14.55
+2025-01-12,Chicken,9.595
+2025-01-12,Potatoes,16.564
+2025-01-12,Lettuce,2.9
+2025-01-12,Eggs,66.0
+2025-01-12,Onions,2.2
+2025-01-12,Beef Steak,0.6
+2025-01-13,Rice (Bomba),60.4485
+2025-01-13,Seafood Mix,103.15
+2025-01-13,Olive Oil,23.45
+2025-01-13,Coffee Beans,1.2877
+2025-01-13,Wine Bottle (Red),14.7
+2025-01-13,Sangria Mix,103.0
+2025-01-13,Beer Keg (30L),37.5
+2025-01-13,Chicken,8.181
+2025-01-13,Potatoes,14.948
+2025-01-13,Lettuce,2.3
+2025-01-13,Eggs,60.0
+2025-01-13,Onions,2.0
+2025-01-13,Beef Steak,1.2
+2025-01-14,Rice (Bomba),71.0535
+2025-01-14,Seafood Mix,122.85
+2025-01-14,Olive Oil,28.1
+2025-01-14,Beer Keg (30L),48.6
+2025-01-14,Coffee Beans,1.515
+2025-01-14,Sangria Mix,114.0
+2025-01-14,Wine Bottle (Red),18.15
+2025-01-14,Chicken,10.908
+2025-01-14,Potatoes,16.968
+2025-01-14,Lettuce,3.2
+2025-01-14,Eggs,63.0
+2025-01-14,Onions,2.1
+2025-01-14,Beef Steak,1.2
+2025-01-15,Rice (Bomba),66.357
+2025-01-15,Seafood Mix,112.7
+2025-01-15,Olive Oil,25.65
+2025-01-15,Wine Bottle (Red),17.4
+2025-01-15,Beer Keg (30L),46.5
+2025-01-15,Coffee Beans,1.6665
+2025-01-15,Sangria Mix,99.0
+2025-01-15,Chicken,9.393
+2025-01-15,Potatoes,17.877
+2025-01-15,Lettuce,2.7
+2025-01-15,Beef Steak,0.9
+2025-01-15,Eggs,54.0
+2025-01-15,Onions,1.8
+2025-01-16,Beer Keg (30L),36.6
+2025-01-16,Wine Bottle (Red),12.75
+2025-01-16,Rice (Bomba),53.025
+2025-01-16,Seafood Mix,90.5
+2025-01-16,Olive Oil,20.65
+2025-01-16,Sangria Mix,92.0
+2025-01-16,Coffee Beans,1.4998
+2025-01-16,Chicken,6.363
+2025-01-16,Potatoes,12.322
+2025-01-16,Lettuce,2.1
+2025-01-16,Eggs,63.0
+2025-01-16,Onions,2.1
+2025-01-16,Beef Steak,0.3
+2025-01-17,Rice (Bomba),58.3275
+2025-01-17,Seafood Mix,100.05
+2025-01-17,Olive Oil,22.75
+2025-01-17,Chicken,6.565
+2025-01-17,Potatoes,13.534
+2025-01-17,Lettuce,1.9
+2025-01-17,Beer Keg (30L),35.7
+2025-01-17,Wine Bottle (Red),13.35
+2025-01-17,Sangria Mix,101.0
+2025-01-17,Coffee Beans,1.3635
+2025-01-17,Eggs,42.0
+2025-01-17,Onions,1.4
+2025-01-17,Beef Steak,1.5
+2025-01-18,Beer Keg (30L),35.1
+2025-01-18,Rice (Bomba),53.1765
+2025-01-18,Seafood Mix,92.15
+2025-01-18,Olive Oil,21.4
+2025-01-18,Wine Bottle (Red),15.0
+2025-01-18,Coffee Beans,1.4544
+2025-01-18,Sangria Mix,78.0
+2025-01-18,Chicken,5.858
+2025-01-18,Potatoes,12.221
+2025-01-18,Lettuce,1.8
+2025-01-18,Eggs,60.0
+2025-01-18,Onions,2.0
+2025-01-18,Beef Steak,0.6
+2025-01-19,Rice (Bomba),59.994
+2025-01-19,Seafood Mix,103.0
+2025-01-19,Olive Oil,23.55
+2025-01-19,Wine Bottle (Red),16.05
+2025-01-19,Coffee Beans,1.5301
+2025-01-19,Beer Keg (30L),37.8
+2025-01-19,Sangria Mix,101.0
+2025-01-19,Chicken,9.595
+2025-01-19,Potatoes,15.352
+2025-01-19,Lettuce,2.9
+2025-01-19,Eggs,51.0
+2025-01-19,Onions,1.7
+2025-01-19,Beef Steak,0.3
+2025-01-20,Wine Bottle (Red),16.65
+2025-01-20,Rice (Bomba),56.5095
+2025-01-20,Seafood Mix,95.85
+2025-01-20,Olive Oil,21.3
+2025-01-20,Sangria Mix,107.0
+2025-01-20,Coffee Beans,1.7725
+2025-01-20,Beer Keg (30L),43.2
+2025-01-20,Chicken,7.676
+2025-01-20,Potatoes,12.625
+2025-01-20,Lettuce,2.4
+2025-01-20,Eggs,36.0
+2025-01-20,Onions,1.2
+2025-01-20,Beef Steak,0.9
+2025-01-21,Rice (Bomba),52.2675
+2025-01-21,Seafood Mix,89.65
+2025-01-21,Olive Oil,20.45
+2025-01-21,Coffee Beans,1.1665
+2025-01-21,Beer Keg (30L),35.7
+2025-01-21,Wine Bottle (Red),13.2
+2025-01-21,Sangria Mix,92.0
+2025-01-21,Chicken,6.767
+2025-01-21,Potatoes,12.12
+2025-01-21,Lettuce,1.7
+2025-01-21,Eggs,36.0
+2025-01-21,Onions,1.2
+2025-01-22,Sangria Mix,108.0
+2025-01-22,Coffee Beans,1.4089
+2025-01-22,Rice (Bomba),64.842
+2025-01-22,Seafood Mix,111.8
+2025-01-22,Olive Oil,26.25
+2025-01-22,Wine Bottle (Red),16.65
+2025-01-22,Beer Keg (30L),28.2
+2025-01-22,Chicken,6.868
+2025-01-22,Potatoes,17.776
+2025-01-22,Lettuce,1.6
+2025-01-22,Eggs,57.0
+2025-01-22,Onions,1.9
+2025-01-22,Beef Steak,0.9
+2025-01-23,Rice (Bomba),41.208
+2025-01-23,Seafood Mix,69.8
+2025-01-23,Olive Oil,15.4
+2025-01-23,Wine Bottle (Red),8.7
+2025-01-23,Coffee Beans,1.212
+2025-01-23,Beer Keg (30L),26.7
+2025-01-23,Sangria Mix,57.0
+2025-01-23,Chicken,6.464
+2025-01-23,Potatoes,9.09
+2025-01-23,Lettuce,2.0
+2025-01-23,Eggs,36.0
+2025-01-23,Onions,1.2
+2025-01-23,Beef Steak,0.9
+2025-01-24,Wine Bottle (Red),18.15
+2025-01-24,Rice (Bomba),66.357
+2025-01-24,Seafood Mix,113.3
+2025-01-24,Olive Oil,25.45
+2025-01-24,Sangria Mix,133.0
+2025-01-24,Coffee Beans,1.5756
+2025-01-24,Beer Keg (30L),43.5
+2025-01-24,Chicken,10.706
+2025-01-24,Potatoes,15.554
+2025-01-24,Lettuce,3.0
+2025-01-24,Eggs,51.0
+2025-01-24,Onions,1.7
+2025-01-24,Beef Steak,0.6
+2025-01-25,Beer Keg (30L),41.1
+2025-01-25,Sangria Mix,104.0
+2025-01-25,Rice (Bomba),59.2365
+2025-01-25,Seafood Mix,101.95
+2025-01-25,Olive Oil,24.0
+2025-01-25,Coffee Beans,1.8634
+2025-01-25,Wine Bottle (Red),16.05
+2025-01-25,Chicken,12.221
+2025-01-25,Potatoes,20.2
+2025-01-25,Lettuce,3.9
+2025-01-25,Eggs,81.0
+2025-01-25,Onions,2.7
+2025-01-25,Beef Steak,0.9
+2025-01-26,Wine Bottle (Red),15.0
+2025-01-26,Coffee Beans,1.8331
+2025-01-26,Rice (Bomba),74.3865
+2025-01-26,Seafood Mix,128.95
+2025-01-26,Olive Oil,30.2
+2025-01-26,Beer Keg (30L),49.8
+2025-01-26,Sangria Mix,118.0
+2025-01-26,Chicken,7.272
+2025-01-26,Potatoes,18.483
+2025-01-26,Lettuce,2.0
+2025-01-26,Eggs,66.0
+2025-01-26,Onions,2.2
+2025-01-26,Beef Steak,0.9
+2025-01-27,Rice (Bomba),34.542
+2025-01-27,Seafood Mix,60.8
+2025-01-27,Olive Oil,15.15
+2025-01-27,Coffee Beans,0.8484
+2025-01-27,Wine Bottle (Red),7.35
+2025-01-27,Sangria Mix,60.0
+2025-01-27,Beer Keg (30L),20.1
+2025-01-27,Chicken,4.444
+2025-01-27,Potatoes,13.231
+2025-01-27,Lettuce,1.2
+2025-01-27,Eggs,48.0
+2025-01-27,Onions,1.6
+2025-01-27,Beef Steak,1.2
+2025-01-28,Beer Keg (30L),39.9
+2025-01-28,Rice (Bomba),64.9935
+2025-01-28,Seafood Mix,111.25
+2025-01-28,Olive Oil,25.35
+2025-01-28,Wine Bottle (Red),16.95
+2025-01-28,Coffee Beans,1.6816
+2025-01-28,Sangria Mix,108.0
+2025-01-28,Chicken,9.898
+2025-01-28,Potatoes,16.564
+2025-01-28,Lettuce,3.0
+2025-01-28,Eggs,54.0
+2025-01-28,Onions,1.8
+2025-01-28,Beef Steak,0.6
+2025-01-29,Rice (Bomba),65.448
+2025-01-29,Seafood Mix,114.0
+2025-01-29,Olive Oil,27.45
+2025-01-29,Coffee Beans,1.924
+2025-01-29,Wine Bottle (Red),17.55
+2025-01-29,Sangria Mix,125.0
+2025-01-29,Beer Keg (30L),40.2
+2025-01-29,Chicken,9.292
+2025-01-29,Potatoes,20.301
+2025-01-29,Lettuce,2.4
+2025-01-29,Eggs,96.0
+2025-01-29,Onions,3.2
+2025-01-29,Beef Steak,0.6
+2025-01-30,Rice (Bomba),60.903
+2025-01-30,Seafood Mix,103.7
+2025-01-30,Olive Oil,23.25
+2025-01-30,Beer Keg (30L),36.6
+2025-01-30,Wine Bottle (Red),15.75
+2025-01-30,Coffee Beans,1.3332
+2025-01-30,Sangria Mix,108.0
+2025-01-30,Chicken,8.08
+2025-01-30,Potatoes,13.433
+2025-01-30,Lettuce,2.4
+2025-01-30,Eggs,48.0
+2025-01-30,Onions,1.6
+2025-01-30,Beef Steak,0.6
+2025-01-31,Coffee Beans,1.6362
+2025-01-31,Sangria Mix,110.0
+2025-01-31,Rice (Bomba),56.8125
+2025-01-31,Seafood Mix,98.35
+2025-01-31,Olive Oil,23.55
+2025-01-31,Wine Bottle (Red),12.15
+2025-01-31,Beer Keg (30L),34.8
+2025-01-31,Chicken,7.979
+2025-01-31,Potatoes,18.988
+2025-01-31,Lettuce,2.5
+2025-01-31,Eggs,66.0
+2025-01-31,Onions,2.2
+2025-01-31,Beef Steak,1.2
+2025-02-01,Rice (Bomba),69.2355
+2025-02-01,Seafood Mix,118.65
+2025-02-01,Olive Oil,28.2
+2025-02-01,Coffee Beans,1.7271
+2025-02-01,Wine Bottle (Red),15.45
+2025-02-01,Sangria Mix,111.0
+2025-02-01,Beer Keg (30L),44.1
+2025-02-01,Eggs,84.0
+2025-02-01,Potatoes,23.331
+2025-02-01,Onions,2.8
+2025-02-01,Chicken,9.999
+2025-02-01,Lettuce,2.5
+2025-02-01,Beef Steak,1.2
+2025-02-02,Rice (Bomba),55.9035
+2025-02-02,Seafood Mix,94.85
+2025-02-02,Olive Oil,21.3
+2025-02-02,Beer Keg (30L),37.5
+2025-02-02,Coffee Beans,1.3483
+2025-02-02,Sangria Mix,112.0
+2025-02-02,Wine Bottle (Red),10.8
+2025-02-02,Chicken,11.312
+2025-02-02,Potatoes,15.958
+2025-02-02,Lettuce,3.2
+2025-02-02,Eggs,45.0
+2025-02-02,Onions,1.5
+2025-02-02,Beef Steak,1.2
+2025-02-03,Rice (Bomba),61.3575
+2025-02-03,Seafood Mix,107.25
+2025-02-03,Olive Oil,25.3
+2025-02-03,Beer Keg (30L),38.1
+2025-02-03,Wine Bottle (Red),16.35
+2025-02-03,Coffee Beans,1.4998
+2025-02-03,Sangria Mix,115.0
+2025-02-03,Chicken,8.787
+2025-02-03,Potatoes,15.857
+2025-02-03,Lettuce,2.5
+2025-02-03,Eggs,72.0
+2025-02-03,Onions,2.4
+2025-02-03,Beef Steak,0.3
+2025-02-04,Rice (Bomba),35.148
+2025-02-04,Seafood Mix,60.8
+2025-02-04,Olive Oil,14.6
+2025-02-04,Beer Keg (30L),23.4
+2025-02-04,Coffee Beans,0.8333
+2025-02-04,Wine Bottle (Red),9.3
+2025-02-04,Sangria Mix,76.0
+2025-02-04,Chicken,4.444
+2025-02-04,Potatoes,11.615
+2025-02-04,Lettuce,1.2
+2025-02-04,Eggs,39.0
+2025-02-04,Onions,1.3
+2025-02-04,Beef Steak,0.6
+2025-02-05,Rice (Bomba),57.873
+2025-02-05,Seafood Mix,98.5
+2025-02-05,Olive Oil,22.5
+2025-02-05,Sangria Mix,98.0
+2025-02-05,Wine Bottle (Red),15.45
+2025-02-05,Coffee Beans,1.9089
+2025-02-05,Beer Keg (30L),39.6
+2025-02-05,Chicken,5.151
+2025-02-05,Potatoes,13.433
+2025-02-05,Lettuce,1.3
+2025-02-05,Eggs,69.0
+2025-02-05,Onions,2.3
+2025-02-05,Beef Steak,1.5
+2025-02-06,Rice (Bomba),34.845
+2025-02-06,Seafood Mix,59.9
+2025-02-06,Olive Oil,13.75
+2025-02-06,Wine Bottle (Red),9.0
+2025-02-06,Beer Keg (30L),24.0
+2025-02-06,Coffee Beans,0.8333
+2025-02-06,Sangria Mix,43.0
+2025-02-06,Chicken,5.555
+2025-02-06,Potatoes,9.09
+2025-02-06,Lettuce,1.7
+2025-02-06,Beef Steak,0.6
+2025-02-06,Eggs,39.0
+2025-02-06,Onions,1.3
+2025-02-07,Rice (Bomba),62.115
+2025-02-07,Seafood Mix,106.5
+2025-02-07,Olive Oil,24.05
+2025-02-07,Wine Bottle (Red),15.9
+2025-02-07,Coffee Beans,1.7574
+2025-02-07,Beer Keg (30L),40.5
+2025-02-07,Sangria Mix,108.0
+2025-02-07,Chicken,9.494
+2025-02-07,Potatoes,14.241
+2025-02-07,Lettuce,2.6
+2025-02-07,Eggs,36.0
+2025-02-07,Onions,1.2
+2025-02-08,Beer Keg (30L),49.2
+2025-02-08,Coffee Beans,1.7119
+2025-02-08,Wine Bottle (Red),21.0
+2025-02-08,Rice (Bomba),63.327
+2025-02-08,Seafood Mix,108.5
+2025-02-08,Olive Oil,24.5
+2025-02-08,Sangria Mix,98.0
+2025-02-08,Potatoes,14.948
+2025-02-08,Beef Steak,2.1
+2025-02-08,Chicken,8.484
+2025-02-08,Lettuce,2.4
+2025-02-08,Eggs,48.0
+2025-02-08,Onions,1.6
+2025-02-09,Rice (Bomba),59.2365
+2025-02-09,Seafood Mix,103.15
+2025-02-09,Olive Oil,23.95
+2025-02-09,Beer Keg (30L),33.6
+2025-02-09,Sangria Mix,105.0
+2025-02-09,Wine Bottle (Red),15.3
+2025-02-09,Coffee Beans,1.4544
+2025-02-09,Chicken,9.09
+2025-02-09,Potatoes,14.544
+2025-02-09,Lettuce,2.6
+2025-02-09,Eggs,60.0
+2025-02-09,Onions,2.0
+2025-02-09,Beef Steak,0.6
+2025-02-10,Rice (Bomba),63.4785
+2025-02-10,Seafood Mix,108.15
+2025-02-10,Olive Oil,24.3
+2025-02-10,Sangria Mix,101.0
+2025-02-10,Wine Bottle (Red),13.05
+2025-02-10,Beer Keg (30L),37.5
+2025-02-10,Coffee Beans,1.515
+2025-02-10,Chicken,9.898
+2025-02-10,Potatoes,15.756
+2025-02-10,Lettuce,3.0
+2025-02-10,Beef Steak,1.2
+2025-02-10,Eggs,45.0
+2025-02-10,Onions,1.5
+2025-02-11,Rice (Bomba),35.9055
+2025-02-11,Seafood Mix,61.85
+2025-02-11,Olive Oil,15.15
+2025-02-11,Wine Bottle (Red),8.25
+2025-02-11,Sangria Mix,68.0
+2025-02-11,Coffee Beans,1.0302
+2025-02-11,Beer Keg (30L),22.8
+2025-02-11,Chicken,4.646
+2025-02-11,Potatoes,13.332
+2025-02-11,Lettuce,1.4
+2025-02-11,Eggs,60.0
+2025-02-11,Onions,2.0
+2025-02-11,Beef Steak,0.3
+2025-02-12,Sangria Mix,103.0
+2025-02-12,Rice (Bomba),67.569
+2025-02-12,Seafood Mix,114.9
+2025-02-12,Olive Oil,25.25
+2025-02-12,Wine Bottle (Red),18.3
+2025-02-12,Coffee Beans,1.6513
+2025-02-12,Beer Keg (30L),42.6
+2025-02-12,Chicken,10.706
+2025-02-12,Potatoes,13.837
+2025-02-12,Lettuce,3.4
+2025-02-12,Beef Steak,1.2
+2025-02-12,Eggs,48.0
+2025-02-12,Onions,1.6
+2025-02-13,Rice (Bomba),59.994
+2025-02-13,Seafood Mix,103.4
+2025-02-13,Olive Oil,25.15
+2025-02-13,Wine Bottle (Red),18.6
+2025-02-13,Sangria Mix,106.0
+2025-02-13,Coffee Beans,1.4847
+2025-02-13,Beer Keg (30L),41.4
+2025-02-13,Chicken,8.08
+2025-02-13,Potatoes,21.513
+2025-02-13,Lettuce,2.0
+2025-02-13,Eggs,90.0
+2025-02-13,Onions,3.0
+2025-02-13,Beef Steak,0.6
+2025-02-14,Sangria Mix,119.0
+2025-02-14,Beer Keg (30L),42.3
+2025-02-14,Wine Bottle (Red),18.15
+2025-02-14,Coffee Beans,2.0907
+2025-02-14,Rice (Bomba),64.842
+2025-02-14,Seafood Mix,114.8
+2025-02-14,Olive Oil,27.7
+2025-02-14,Potatoes,21.311
+2025-02-14,Chicken,10.706
+2025-02-14,Lettuce,3.4
+2025-02-14,Beef Steak,2.4
+2025-02-14,Eggs,57.0
+2025-02-14,Onions,1.9
+2025-02-15,Beer Keg (30L),18.6
+2025-02-15,Sangria Mix,47.0
+2025-02-15,Wine Bottle (Red),9.75
+2025-02-15,Rice (Bomba),36.966
+2025-02-15,Seafood Mix,63.6
+2025-02-15,Olive Oil,14.75
+2025-02-15,Coffee Beans,0.9545
+2025-02-15,Chicken,3.535
+2025-02-15,Potatoes,8.484
+2025-02-15,Eggs,39.0
+2025-02-15,Onions,1.3
+2025-02-15,Lettuce,0.9
+2025-02-16,Rice (Bomba),62.721
+2025-02-16,Seafood Mix,109.3
+2025-02-16,Olive Oil,26.45
+2025-02-16,Coffee Beans,1.3938
+2025-02-16,Sangria Mix,122.0
+2025-02-16,Beer Keg (30L),45.9
+2025-02-16,Wine Bottle (Red),16.5
+2025-02-16,Chicken,7.777
+2025-02-16,Potatoes,20.806
+2025-02-16,Lettuce,2.3
+2025-02-16,Eggs,81.0
+2025-02-16,Onions,2.7
+2025-02-16,Beef Steak,1.8
+2025-02-17,Sangria Mix,103.0
+2025-02-17,Coffee Beans,1.6513
+2025-02-17,Rice (Bomba),65.9025
+2025-02-17,Seafood Mix,111.35
+2025-02-17,Olive Oil,24.45
+2025-02-17,Beer Keg (30L),43.5
+2025-02-17,Wine Bottle (Red),16.95
+2025-02-17,Chicken,8.383
+2025-02-17,Potatoes,12.726
+2025-02-17,Lettuce,2.1
+2025-02-17,Eggs,42.0
+2025-02-17,Onions,1.4
+2025-02-17,Beef Steak,0.6
+2025-02-18,Coffee Beans,0.9848
+2025-02-18,Wine Bottle (Red),9.75
+2025-02-18,Rice (Bomba),33.7845
+2025-02-18,Seafood Mix,58.35
+2025-02-18,Olive Oil,13.7
+2025-02-18,Sangria Mix,55.0
+2025-02-18,Beer Keg (30L),21.6
+2025-02-18,Chicken,6.06
+2025-02-18,Potatoes,10.706
+2025-02-18,Lettuce,1.6
+2025-02-18,Eggs,27.0
+2025-02-18,Onions,0.9
+2025-02-18,Beef Steak,0.3
+2025-02-19,Rice (Bomba),52.2675
+2025-02-19,Seafood Mix,90.25
+2025-02-19,Olive Oil,20.75
+2025-02-19,Sangria Mix,95.0
+2025-02-19,Wine Bottle (Red),15.75
+2025-02-19,Beer Keg (30L),33.9
+2025-02-19,Coffee Beans,1.4544
+2025-02-19,Chicken,6.06
+2025-02-19,Potatoes,12.12
+2025-02-19,Lettuce,2.0
+2025-02-19,Eggs,36.0
+2025-02-19,Onions,1.2
+2025-02-19,Beef Steak,0.3
+2025-02-20,Wine Bottle (Red),10.65
+2025-02-20,Rice (Bomba),43.935
+2025-02-20,Seafood Mix,75.3
+2025-02-20,Olive Oil,16.8
+2025-02-20,Coffee Beans,1.0151
+2025-02-20,Beer Keg (30L),23.1
+2025-02-20,Sangria Mix,62.0
+2025-02-20,Chicken,4.141
+2025-02-20,Potatoes,6.969
+2025-02-20,Lettuce,1.1
+2025-02-20,Eggs,33.0
+2025-02-20,Onions,1.1
+2025-02-21,Rice (Bomba),60.1455
+2025-02-21,Seafood Mix,103.25
+2025-02-21,Olive Oil,24.35
+2025-02-21,Sangria Mix,94.0
+2025-02-21,Beer Keg (30L),47.4
+2025-02-21,Wine Bottle (Red),19.65
+2025-02-21,Coffee Beans,1.5907
+2025-02-21,Chicken,6.464
+2025-02-21,Potatoes,17.069
+2025-02-21,Lettuce,1.6
+2025-02-21,Eggs,87.0
+2025-02-21,Onions,2.9
+2025-02-21,Beef Steak,1.2
+2025-02-22,Rice (Bomba),62.8725
+2025-02-22,Seafood Mix,107.95
+2025-02-22,Olive Oil,24.65
+2025-02-22,Sangria Mix,94.0
+2025-02-22,Coffee Beans,1.5756
+2025-02-22,Beer Keg (30L),35.4
+2025-02-22,Wine Bottle (Red),18.45
+2025-02-22,Chicken,6.262
+2025-02-22,Potatoes,13.433
+2025-02-22,Lettuce,1.8
+2025-02-22,Eggs,57.0
+2025-02-22,Onions,1.9
+2025-02-22,Beef Steak,0.6
+2025-02-23,Sangria Mix,112.0
+2025-02-23,Beer Keg (30L),34.8
+2025-02-23,Wine Bottle (Red),15.45
+2025-02-23,Rice (Bomba),59.8425
+2025-02-23,Seafood Mix,101.35
+2025-02-23,Olive Oil,23.05
+2025-02-23,Coffee Beans,1.5604
+2025-02-23,Chicken,6.969
+2025-02-23,Potatoes,15.352
+2025-02-23,Lettuce,2.3
+2025-02-23,Eggs,54.0
+2025-02-23,Onions,1.8
+2025-02-23,Beef Steak,0.6
+2025-02-24,Rice (Bomba),62.115
+2025-02-24,Seafood Mix,106.7
+2025-02-24,Olive Oil,23.9
+2025-02-24,Beer Keg (30L),35.1
+2025-02-24,Sangria Mix,94.0
+2025-02-24,Wine Bottle (Red),14.1
+2025-02-24,Coffee Beans,1.6968
+2025-02-24,Beef Steak,0.9
+2025-02-24,Potatoes,13.433
+2025-02-24,Chicken,9.797
+2025-02-24,Lettuce,2.7
+2025-02-24,Eggs,39.0
+2025-02-24,Onions,1.3
+2025-02-25,Beer Keg (30L),37.8
+2025-02-25,Sangria Mix,126.0
+2025-02-25,Rice (Bomba),64.6905
+2025-02-25,Seafood Mix,110.35
+2025-02-25,Olive Oil,25.5
+2025-02-25,Coffee Beans,1.4544
+2025-02-25,Wine Bottle (Red),16.35
+2025-02-25,Chicken,7.272
+2025-02-25,Potatoes,16.261
+2025-02-25,Lettuce,2.0
+2025-02-25,Eggs,78.0
+2025-02-25,Onions,2.6
+2025-02-26,Wine Bottle (Red),14.85
+2025-02-26,Coffee Beans,1.3483
+2025-02-26,Beer Keg (30L),32.4
+2025-02-26,Rice (Bomba),52.722
+2025-02-26,Seafood Mix,90.0
+2025-02-26,Olive Oil,21.0
+2025-02-26,Sangria Mix,86.0
+2025-02-26,Chicken,9.595
+2025-02-26,Potatoes,17.675
+2025-02-26,Lettuce,2.5
+2025-02-26,Eggs,45.0
+2025-02-26,Onions,1.5
+2025-02-26,Beef Steak,0.6
+2025-02-27,Coffee Beans,1.6968
+2025-02-27,Sangria Mix,130.0
+2025-02-27,Rice (Bomba),65.2965
+2025-02-27,Seafood Mix,110.95
+2025-02-27,Olive Oil,24.7
+2025-02-27,Wine Bottle (Red),19.65
+2025-02-27,Beer Keg (30L),41.1
+2025-02-27,Chicken,10.201
+2025-02-27,Potatoes,14.948
+2025-02-27,Lettuce,3.1
+2025-02-27,Eggs,45.0
+2025-02-27,Onions,1.5
+2025-02-27,Beef Steak,0.6
+2025-02-28,Sangria Mix,113.0
+2025-02-28,Coffee Beans,1.8483
+2025-02-28,Rice (Bomba),70.902
+2025-02-28,Seafood Mix,122.8
+2025-02-28,Olive Oil,29.4
+2025-02-28,Wine Bottle (Red),13.8
+2025-02-28,Beer Keg (30L),45.0
+2025-02-28,Chicken,8.787
+2025-02-28,Potatoes,21.311
+2025-02-28,Lettuce,2.5
+2025-02-28,Eggs,99.0
+2025-02-28,Onions,3.3
+2025-02-28,Beef Steak,0.3
+2025-03-01,Rice (Bomba),54.6915
+2025-03-01,Seafood Mix,95.45
+2025-03-01,Olive Oil,22.5
+2025-03-01,Wine Bottle (Red),17.55
+2025-03-01,Coffee Beans,1.3029
+2025-03-01,Beer Keg (30L),30.6
+2025-03-01,Sangria Mix,107.0
+2025-03-01,Chicken,8.08
+2025-03-01,Potatoes,14.847
+2025-03-01,Lettuce,2.4
+2025-03-01,Eggs,54.0
+2025-03-01,Onions,1.8
+2025-03-01,Beef Steak,0.3
+2025-03-02,Rice (Bomba),37.7235
+2025-03-02,Seafood Mix,63.85
+2025-03-02,Olive Oil,14.6
+2025-03-02,Sangria Mix,64.0
+2025-03-02,Coffee Beans,0.8636
+2025-03-02,Beer Keg (30L),17.7
+2025-03-02,Wine Bottle (Red),9.75
+2025-03-02,Chicken,3.131
+2025-03-02,Potatoes,9.696
+2025-03-02,Lettuce,0.9
+2025-03-02,Eggs,33.0
+2025-03-02,Onions,1.1
+2025-03-02,Beef Steak,0.9
+2025-03-03,Coffee Beans,1.3483
+2025-03-03,Rice (Bomba),50.601
+2025-03-03,Seafood Mix,85.9
+2025-03-03,Olive Oil,19.75
+2025-03-03,Beer Keg (30L),28.5
+2025-03-03,Sangria Mix,81.0
+2025-03-03,Wine Bottle (Red),15.75
+2025-03-03,Chicken,5.05
+2025-03-03,Potatoes,12.827
+2025-03-03,Lettuce,1.4
+2025-03-03,Eggs,60.0
+2025-03-03,Onions,2.0
+2025-03-03,Beef Steak,0.6
+2025-03-04,Rice (Bomba),66.054
+2025-03-04,Seafood Mix,113.4
+2025-03-04,Olive Oil,26.2
+2025-03-04,Sangria Mix,106.0
+2025-03-04,Beer Keg (30L),46.5
+2025-03-04,Wine Bottle (Red),18.0
+2025-03-04,Coffee Beans,1.7725
+2025-03-04,Chicken,11.918
+2025-03-04,Potatoes,20.2
+2025-03-04,Lettuce,3.4
+2025-03-04,Beef Steak,1.8
+2025-03-04,Eggs,60.0
+2025-03-04,Onions,2.0
+2025-03-05,Wine Bottle (Red),15.0
+2025-03-05,Rice (Bomba),58.176
+2025-03-05,Seafood Mix,100.6
+2025-03-05,Olive Oil,23.95
+2025-03-05,Coffee Beans,1.5301
+2025-03-05,Beer Keg (30L),42.9
+2025-03-05,Sangria Mix,111.0
+2025-03-05,Chicken,7.777
+2025-03-05,Potatoes,18.18
+2025-03-05,Lettuce,2.3
+2025-03-05,Eggs,69.0
+2025-03-05,Onions,2.3
+2025-03-05,Beef Steak,0.9
+2025-03-06,Rice (Bomba),64.9935
+2025-03-06,Seafood Mix,110.65
+2025-03-06,Olive Oil,24.95
+2025-03-06,Coffee Beans,1.6665
+2025-03-06,Wine Bottle (Red),17.55
+2025-03-06,Sangria Mix,108.0
+2025-03-06,Beer Keg (30L),39.6
+2025-03-06,Eggs,63.0
+2025-03-06,Potatoes,15.655
+2025-03-06,Onions,2.1
+2025-03-06,Chicken,9.292
+2025-03-06,Lettuce,2.4
+2025-03-06,Beef Steak,1.5
+2025-03-07,Rice (Bomba),51.6615
+2025-03-07,Seafood Mix,90.25
+2025-03-07,Olive Oil,20.95
+2025-03-07,Sangria Mix,73.0
+2025-03-07,Wine Bottle (Red),15.0
+2025-03-07,Beer Keg (30L),33.0
+2025-03-07,Coffee Beans,1.4392
+2025-03-07,Chicken,7.777
+2025-03-07,Potatoes,12.726
+2025-03-07,Lettuce,2.3
+2025-03-07,Eggs,42.0
+2025-03-07,Onions,1.4
+2025-03-07,Beef Steak,0.9
+2025-03-08,Rice (Bomba),40.4505
+2025-03-08,Seafood Mix,67.95
+2025-03-08,Olive Oil,15.15
+2025-03-08,Sangria Mix,55.0
+2025-03-08,Wine Bottle (Red),9.9
+2025-03-08,Beer Keg (30L),24.9
+2025-03-08,Coffee Beans,0.8484
+2025-03-08,Chicken,4.545
+2025-03-08,Potatoes,9.393
+2025-03-08,Lettuce,1.5
+2025-03-08,Eggs,45.0
+2025-03-08,Onions,1.5
+2025-03-08,Beef Steak,0.9
+2025-03-09,Rice (Bomba),48.6315
+2025-03-09,Seafood Mix,83.85
+2025-03-09,Olive Oil,19.25
+2025-03-09,Beer Keg (30L),37.5
+2025-03-09,Coffee Beans,1.0908
+2025-03-09,Sangria Mix,93.0
+2025-03-09,Wine Bottle (Red),12.45
+2025-03-09,Chicken,7.474
+2025-03-09,Potatoes,12.524
+2025-03-09,Lettuce,2.2
+2025-03-09,Eggs,42.0
+2025-03-09,Onions,1.4
+2025-03-09,Beef Steak,0.9
+2025-03-10,Beer Keg (30L),42.3
+2025-03-10,Rice (Bomba),60.4485
+2025-03-10,Seafood Mix,103.55
+2025-03-10,Olive Oil,23.85
+2025-03-10,Wine Bottle (Red),13.8
+2025-03-10,Sangria Mix,106.0
+2025-03-10,Coffee Beans,1.7119
+2025-03-10,Chicken,9.898
+2025-03-10,Potatoes,16.16
+2025-03-10,Lettuce,3.0
+2025-03-10,Eggs,84.0
+2025-03-10,Onions,2.8
+2025-03-10,Beef Steak,0.6
+2025-03-11,Coffee Beans,1.5453
+2025-03-11,Beer Keg (30L),35.1
+2025-03-11,Sangria Mix,91.0
+2025-03-11,Rice (Bomba),60.1455
+2025-03-11,Seafood Mix,102.05
+2025-03-11,Olive Oil,22.7
+2025-03-11,Wine Bottle (Red),13.8
+2025-03-11,Chicken,9.797
+2025-03-11,Potatoes,14.14
+2025-03-11,Lettuce,3.1
+2025-03-11,Eggs,39.0
+2025-03-11,Onions,1.3
+2025-03-11,Beef Steak,0.3
+2025-03-12,Beer Keg (30L),32.7
+2025-03-12,Coffee Beans,1.3332
+2025-03-12,Sangria Mix,85.0
+2025-03-12,Rice (Bomba),58.479
+2025-03-12,Seafood Mix,99.7
+2025-03-12,Olive Oil,22.35
+2025-03-12,Wine Bottle (Red),14.4
+2025-03-12,Eggs,54.0
+2025-03-12,Potatoes,11.413
+2025-03-12,Onions,1.8
+2025-03-12,Beef Steak,0.3
+2025-03-12,Chicken,6.565
+2025-03-12,Lettuce,1.9
+2025-03-13,Beer Keg (30L),20.1
+2025-03-13,Rice (Bomba),34.6935
+2025-03-13,Seafood Mix,60.45
+2025-03-13,Olive Oil,14.15
+2025-03-13,Wine Bottle (Red),7.95
+2025-03-13,Coffee Beans,0.7878
+2025-03-13,Sangria Mix,54.0
+2025-03-13,Potatoes,7.979
+2025-03-13,Eggs,33.0
+2025-03-13,Onions,1.1
+2025-03-13,Chicken,3.434
+2025-03-13,Lettuce,1.0
+2025-03-13,Beef Steak,0.3
+2025-03-14,Rice (Bomba),71.6595
+2025-03-14,Seafood Mix,120.05
+2025-03-14,Olive Oil,26.55
+2025-03-14,Beer Keg (30L),39.9
+2025-03-14,Coffee Beans,2.1058
+2025-03-14,Wine Bottle (Red),17.25
+2025-03-14,Sangria Mix,130.0
+2025-03-14,Chicken,11.615
+2025-03-14,Potatoes,19.089
+2025-03-14,Lettuce,3.3
+2025-03-14,Eggs,45.0
+2025-03-14,Onions,1.5
+2025-03-14,Beef Steak,1.5
+2025-03-15,Coffee Beans,1.1514
+2025-03-15,Beer Keg (30L),23.7
+2025-03-15,Rice (Bomba),37.572
+2025-03-15,Seafood Mix,64.0
+2025-03-15,Olive Oil,14.2
+2025-03-15,Sangria Mix,55.0
+2025-03-15,Wine Bottle (Red),9.9
+2025-03-15,Chicken,3.636
+2025-03-15,Potatoes,6.868
+2025-03-15,Lettuce,1.2
+2025-03-15,Beef Steak,0.3
+2025-03-15,Eggs,18.0
+2025-03-15,Onions,0.6
+2025-03-16,Rice (Bomba),47.7225
+2025-03-16,Seafood Mix,82.75
+2025-03-16,Olive Oil,19.3
+2025-03-16,Sangria Mix,85.0
+2025-03-16,Beer Keg (30L),33.3
+2025-03-16,Chicken,6.868
+2025-03-16,Potatoes,12.827
+2025-03-16,Lettuce,2.0
+2025-03-16,Coffee Beans,1.3332
+2025-03-16,Wine Bottle (Red),15.9
+2025-03-16,Eggs,42.0
+2025-03-16,Onions,1.4
+2025-03-16,Beef Steak,0.6
+2025-03-17,Sangria Mix,98.0
+2025-03-17,Rice (Bomba),67.872
+2025-03-17,Seafood Mix,113.2
+2025-03-17,Olive Oil,24.75
+2025-03-17,Wine Bottle (Red),20.25
+2025-03-17,Coffee Beans,1.6968
+2025-03-17,Beer Keg (30L),37.2
+2025-03-17,Chicken,10.605
+2025-03-17,Potatoes,15.958
+2025-03-17,Lettuce,3.1
+2025-03-17,Eggs,45.0
+2025-03-17,Onions,1.5
+2025-03-18,Rice (Bomba),77.4165
+2025-03-18,Seafood Mix,134.95
+2025-03-18,Olive Oil,31.5
+2025-03-18,Sangria Mix,122.0
+2025-03-18,Coffee Beans,1.5756
+2025-03-18,Beer Keg (30L),39.3
+2025-03-18,Wine Bottle (Red),17.4
+2025-03-18,Chicken,9.797
+2025-03-18,Potatoes,18.786
+2025-03-18,Lettuce,2.7
+2025-03-18,Eggs,63.0
+2025-03-18,Onions,2.1
+2025-03-18,Beef Steak,0.6
+2025-03-19,Rice (Bomba),67.4175
+2025-03-19,Seafood Mix,114.65
+2025-03-19,Olive Oil,26.0
+2025-03-19,Coffee Beans,1.9392
+2025-03-19,Beer Keg (30L),47.4
+2025-03-19,Wine Bottle (Red),18.45
+2025-03-19,Sangria Mix,121.0
+2025-03-19,Chicken,8.181
+2025-03-19,Potatoes,17.776
+2025-03-19,Lettuce,2.3
+2025-03-19,Beef Steak,2.7
+2025-03-19,Eggs,51.0
+2025-03-19,Onions,1.7
+2025-03-20,Coffee Beans,1.106
+2025-03-20,Rice (Bomba),50.904
+2025-03-20,Seafood Mix,87.0
+2025-03-20,Olive Oil,19.9
+2025-03-20,Sangria Mix,84.0
+2025-03-20,Wine Bottle (Red),10.35
+2025-03-20,Beer Keg (30L),27.9
+2025-03-20,Chicken,7.777
+2025-03-20,Potatoes,14.241
+2025-03-20,Lettuce,1.9
+2025-03-20,Eggs,27.0
+2025-03-20,Onions,0.9
+2025-03-20,Beef Steak,0.9
+2025-03-21,Rice (Bomba),53.7825
+2025-03-21,Seafood Mix,91.15
+2025-03-21,Olive Oil,20.7
+2025-03-21,Coffee Beans,1.4847
+2025-03-21,Sangria Mix,88.0
+2025-03-21,Beer Keg (30L),26.4
+2025-03-21,Wine Bottle (Red),12.15
+2025-03-21,Eggs,45.0
+2025-03-21,Potatoes,13.736
+2025-03-21,Onions,1.5
+2025-03-21,Chicken,6.565
+2025-03-21,Lettuce,1.9
+2025-03-21,Beef Steak,0.6
+2025-03-22,Coffee Beans,1.4544
+2025-03-22,Rice (Bomba),57.4185
+2025-03-22,Seafood Mix,96.95
+2025-03-22,Olive Oil,22.65
+2025-03-22,Sangria Mix,110.0
+2025-03-22,Beer Keg (30L),41.1
+2025-03-22,Wine Bottle (Red),12.75
+2025-03-22,Chicken,8.787
+2025-03-22,Potatoes,18.584
+2025-03-22,Eggs,90.0
+2025-03-22,Onions,3.0
+2025-03-22,Lettuce,2.5
+2025-03-22,Beef Steak,0.3
+2025-03-23,Rice (Bomba),69.8415
+2025-03-23,Seafood Mix,118.65
+2025-03-23,Olive Oil,26.35
+2025-03-23,Coffee Beans,1.4847
+2025-03-23,Beer Keg (30L),42.3
+2025-03-23,Wine Bottle (Red),19.35
+2025-03-23,Sangria Mix,125.0
+2025-03-23,Chicken,9.494
+2025-03-23,Potatoes,14.746
+2025-03-23,Lettuce,2.6
+2025-03-23,Beef Steak,0.6
+2025-03-23,Eggs,42.0
+2025-03-23,Onions,1.4
+2025-03-24,Sangria Mix,91.0
+2025-03-24,Rice (Bomba),48.177
+2025-03-24,Seafood Mix,82.1
+2025-03-24,Olive Oil,18.35
+2025-03-24,Beer Keg (30L),38.4
+2025-03-24,Wine Bottle (Red),13.8
+2025-03-24,Coffee Beans,1.4392
+2025-03-24,Chicken,7.676
+2025-03-24,Potatoes,10.908
+2025-03-24,Lettuce,2.4
+2025-03-24,Eggs,45.0
+2025-03-24,Onions,1.5
+2025-03-24,Beef Steak,0.6
+2025-03-25,Beer Keg (30L),43.5
+2025-03-25,Sangria Mix,105.0
+2025-03-25,Coffee Beans,1.3635
+2025-03-25,Wine Bottle (Red),18.45
+2025-03-25,Rice (Bomba),66.963
+2025-03-25,Seafood Mix,112.9
+2025-03-25,Olive Oil,24.9
+2025-03-25,Chicken,8.383
+2025-03-25,Potatoes,14.14
+2025-03-25,Lettuce,2.5
+2025-03-25,Beef Steak,0.6
+2025-03-25,Eggs,42.0
+2025-03-25,Onions,1.4
+2025-03-26,Rice (Bomba),64.6905
+2025-03-26,Seafood Mix,109.35
+2025-03-26,Olive Oil,24.2
+2025-03-26,Wine Bottle (Red),12.3
+2025-03-26,Beer Keg (30L),36.0
+2025-03-26,Sangria Mix,103.0
+2025-03-26,Coffee Beans,1.4089
+2025-03-26,Chicken,8.585
+2025-03-26,Potatoes,12.928
+2025-03-26,Lettuce,2.3
+2025-03-26,Eggs,57.0
+2025-03-26,Onions,1.9
+2025-03-27,Beer Keg (30L),42.0
+2025-03-27,Wine Bottle (Red),16.35
+2025-03-27,Rice (Bomba),59.085
+2025-03-27,Seafood Mix,103.7
+2025-03-27,Olive Oil,24.05
+2025-03-27,Sangria Mix,112.0
+2025-03-27,Chicken,8.787
+2025-03-27,Potatoes,13.332
+2025-03-27,Lettuce,2.5
+2025-03-27,Coffee Beans,1.5301
+2025-03-27,Eggs,39.0
+2025-03-27,Onions,1.3
+2025-03-27,Beef Steak,0.3
+2025-03-28,Beer Keg (30L),34.5
+2025-03-28,Rice (Bomba),59.8425
+2025-03-28,Seafood Mix,104.35
+2025-03-28,Olive Oil,25.25
+2025-03-28,Wine Bottle (Red),16.8
+2025-03-28,Coffee Beans,1.621
+2025-03-28,Sangria Mix,94.0
+2025-03-28,Chicken,8.08
+2025-03-28,Potatoes,19.897
+2025-03-28,Lettuce,2.4
+2025-03-28,Eggs,81.0
+2025-03-28,Onions,2.7
+2025-03-28,Beef Steak,1.5
+2025-03-29,Rice (Bomba),51.9645
+2025-03-29,Seafood Mix,88.55
+2025-03-29,Olive Oil,19.9
+2025-03-29,Beer Keg (30L),25.8
+2025-03-29,Coffee Beans,1.3483
+2025-03-29,Wine Bottle (Red),16.2
+2025-03-29,Sangria Mix,82.0
+2025-03-29,Chicken,7.373
+2025-03-29,Potatoes,12.221
+2025-03-29,Lettuce,2.3
+2025-03-29,Eggs,36.0
+2025-03-29,Onions,1.2
+2025-03-29,Beef Steak,0.6
+2025-03-30,Sangria Mix,124.0
+2025-03-30,Rice (Bomba),71.3565
+2025-03-30,Seafood Mix,121.35
+2025-03-30,Olive Oil,27.9
+2025-03-30,Wine Bottle (Red),18.0
+2025-03-30,Coffee Beans,2.0755
+2025-03-30,Beer Keg (30L),42.3
+2025-03-30,Chicken,12.12
+2025-03-30,Potatoes,20.907
+2025-03-30,Lettuce,3.6
+2025-03-30,Beef Steak,1.2
+2025-03-30,Eggs,96.0
+2025-03-30,Onions,3.2
+2025-03-31,Rice (Bomba),61.9635
+2025-03-31,Seafood Mix,104.45
+2025-03-31,Olive Oil,24.05
+2025-03-31,Wine Bottle (Red),12.9
+2025-03-31,Coffee Beans,1.4392
+2025-03-31,Sangria Mix,86.0
+2025-03-31,Beer Keg (30L),33.6
+2025-03-31,Chicken,6.161
+2025-03-31,Potatoes,17.17
+2025-03-31,Lettuce,1.9
+2025-03-31,Eggs,72.0
+2025-03-31,Onions,2.4
+2025-03-31,Beef Steak,0.6
+2025-04-01,Beer Keg (30L),21.0
+2025-04-01,Rice (Bomba),35.148
+2025-04-01,Seafood Mix,61.0
+2025-04-01,Olive Oil,13.95
+2025-04-01,Wine Bottle (Red),11.1
+2025-04-01,Coffee Beans,0.8787
+2025-04-01,Sangria Mix,67.0
+2025-04-01,Chicken,5.757
+2025-04-01,Potatoes,7.979
+2025-04-01,Lettuce,1.5
+2025-04-01,Eggs,24.0
+2025-04-01,Onions,0.8
+2025-04-02,Rice (Bomba),62.418
+2025-04-02,Seafood Mix,106.0
+2025-04-02,Olive Oil,23.9
+2025-04-02,Coffee Beans,1.6968
+2025-04-02,Wine Bottle (Red),14.25
+2025-04-02,Beer Keg (30L),38.7
+2025-04-02,Sangria Mix,103.0
+2025-04-02,Chicken,7.878
+2025-04-02,Potatoes,14.443
+2025-04-02,Lettuce,2.2
+2025-04-02,Eggs,57.0
+2025-04-02,Onions,1.9
+2025-04-02,Beef Steak,0.6
+2025-04-03,Sangria Mix,52.0
+2025-04-03,Rice (Bomba),28.179
+2025-04-03,Seafood Mix,49.5
+2025-04-03,Olive Oil,11.7
+2025-04-03,Coffee Beans,0.6212
+2025-04-03,Wine Bottle (Red),8.25
+2025-04-03,Beer Keg (30L),16.2
+2025-04-03,Chicken,3.737
+2025-04-03,Potatoes,7.272
+2025-04-03,Lettuce,1.1
+2025-04-03,Beef Steak,0.9
+2025-04-03,Eggs,36.0
+2025-04-03,Onions,1.2
+2025-04-04,Coffee Beans,1.7271
+2025-04-04,Sangria Mix,111.0
+2025-04-04,Rice (Bomba),66.8115
+2025-04-04,Seafood Mix,113.25
+2025-04-04,Olive Oil,25.6
+2025-04-04,Beer Keg (30L),44.4
+2025-04-04,Wine Bottle (Red),18.0
+2025-04-04,Chicken,11.11
+2025-04-04,Potatoes,17.978
+2025-04-04,Lettuce,3.0
+2025-04-04,Eggs,75.0
+2025-04-04,Onions,2.5
+2025-04-04,Beef Steak,1.5
+2025-04-05,Wine Bottle (Red),11.85
+2025-04-05,Beer Keg (30L),24.3
+2025-04-05,Sangria Mix,65.0
+2025-04-05,Rice (Bomba),40.4505
+2025-04-05,Seafood Mix,70.35
+2025-04-05,Olive Oil,16.3
+2025-04-05,Chicken,4.646
+2025-04-05,Potatoes,9.696
+2025-04-05,Lettuce,1.4
+2025-04-05,Coffee Beans,1.212
+2025-04-05,Eggs,39.0
+2025-04-05,Onions,1.3
+2025-04-05,Beef Steak,1.5
+2025-04-06,Rice (Bomba),40.4505
+2025-04-06,Seafood Mix,69.55
+2025-04-06,Olive Oil,15.8
+2025-04-06,Wine Bottle (Red),9.9
+2025-04-06,Sangria Mix,49.0
+2025-04-06,Coffee Beans,0.909
+2025-04-06,Beer Keg (30L),24.0
+2025-04-06,Potatoes,7.878
+2025-04-06,Beef Steak,0.9
+2025-04-06,Chicken,3.939
+2025-04-06,Lettuce,0.9
+2025-04-06,Eggs,45.0
+2025-04-06,Onions,1.5
+2025-04-07,Beer Keg (30L),35.7
+2025-04-07,Rice (Bomba),63.63
+2025-04-07,Seafood Mix,109.4
+2025-04-07,Olive Oil,26.3
+2025-04-07,Wine Bottle (Red),14.85
+2025-04-07,Coffee Beans,1.4392
+2025-04-07,Sangria Mix,130.0
+2025-04-07,Chicken,10.302
+2025-04-07,Potatoes,22.927
+2025-04-07,Lettuce,3.0
+2025-04-07,Eggs,105.0
+2025-04-07,Onions,3.5
+2025-04-07,Beef Steak,1.5
+2025-04-08,Rice (Bomba),34.542
+2025-04-08,Seafood Mix,59.2
+2025-04-08,Olive Oil,14.05
+2025-04-08,Beer Keg (30L),25.5
+2025-04-08,Sangria Mix,73.0
+2025-04-08,Coffee Beans,1.0454
+2025-04-08,Wine Bottle (Red),9.9
+2025-04-08,Chicken,11.413
+2025-04-08,Potatoes,15.756
+2025-04-08,Lettuce,2.7
+2025-04-08,Beef Steak,1.5
+2025-04-08,Eggs,51.0
+2025-04-08,Onions,1.7
+2025-04-09,Rice (Bomba),53.7825
+2025-04-09,Seafood Mix,92.55
+2025-04-09,Olive Oil,21.8
+2025-04-09,Wine Bottle (Red),12.6
+2025-04-09,Coffee Beans,1.4695
+2025-04-09,Beer Keg (30L),35.4
+2025-04-09,Sangria Mix,91.0
+2025-04-09,Chicken,9.393
+2025-04-09,Potatoes,17.271
+2025-04-09,Lettuce,2.7
+2025-04-09,Eggs,60.0
+2025-04-09,Onions,2.0
+2025-04-09,Beef Steak,0.3
+2025-04-10,Rice (Bomba),58.782
+2025-04-10,Seafood Mix,102.0
+2025-04-10,Olive Oil,23.9
+2025-04-10,Wine Bottle (Red),13.95
+2025-04-10,Coffee Beans,1.5604
+2025-04-10,Chicken,11.009
+2025-04-10,Potatoes,17.978
+2025-04-10,Lettuce,3.1
+2025-04-10,Beer Keg (30L),42.0
+2025-04-10,Sangria Mix,79.0
+2025-04-10,Eggs,48.0
+2025-04-10,Onions,1.6
+2025-04-10,Beef Steak,0.6
+2025-04-11,Rice (Bomba),72.5685
+2025-04-11,Seafood Mix,123.95
+2025-04-11,Olive Oil,28.25
+2025-04-11,Beer Keg (30L),47.1
+2025-04-11,Wine Bottle (Red),18.0
+2025-04-11,Coffee Beans,1.8937
+2025-04-11,Sangria Mix,122.0
+2025-04-11,Chicken,8.989
+2025-04-11,Potatoes,16.968
+2025-04-11,Lettuce,2.7
+2025-04-11,Eggs,72.0
+2025-04-11,Onions,2.4
+2025-04-11,Beef Steak,0.3
+2025-04-12,Rice (Bomba),32.724
+2025-04-12,Seafood Mix,56.4
+2025-04-12,Olive Oil,13.25
+2025-04-12,Sangria Mix,71.0
+2025-04-12,Beer Keg (30L),24.3
+2025-04-12,Wine Bottle (Red),10.65
+2025-04-12,Coffee Beans,0.7424
+2025-04-12,Chicken,5.151
+2025-04-12,Potatoes,9.595
+2025-04-12,Lettuce,1.7
+2025-04-12,Eggs,48.0
+2025-04-12,Onions,1.6
+2025-04-12,Beef Steak,0.3
+2025-04-13,Sangria Mix,113.0
+2025-04-13,Coffee Beans,1.6513
+2025-04-13,Beer Keg (30L),32.7
+2025-04-13,Rice (Bomba),55.2975
+2025-04-13,Seafood Mix,94.85
+2025-04-13,Olive Oil,22.65
+2025-04-13,Wine Bottle (Red),16.05
+2025-04-13,Chicken,6.06
+2025-04-13,Potatoes,17.675
+2025-04-13,Lettuce,1.6
+2025-04-13,Eggs,75.0
+2025-04-13,Onions,2.5
+2025-04-13,Beef Steak,0.9
+2025-04-14,Rice (Bomba),54.237
+2025-04-14,Seafood Mix,92.3
+2025-04-14,Olive Oil,21.3
+2025-04-14,Sangria Mix,100.0
+2025-04-14,Wine Bottle (Red),16.95
+2025-04-14,Beer Keg (30L),29.4
+2025-04-14,Coffee Beans,1.6968
+2025-04-14,Chicken,7.272
+2025-04-14,Potatoes,15.251
+2025-04-14,Lettuce,2.4
+2025-04-14,Eggs,51.0
+2025-04-14,Onions,1.7
+2025-04-15,Rice (Bomba),54.0855
+2025-04-15,Seafood Mix,92.45
+2025-04-15,Olive Oil,21.85
+2025-04-15,Wine Bottle (Red),14.85
+2025-04-15,Coffee Beans,1.6059
+2025-04-15,Beer Keg (30L),34.2
+2025-04-15,Sangria Mix,86.0
+2025-04-15,Chicken,8.282
+2025-04-15,Potatoes,16.867
+2025-04-15,Lettuce,2.2
+2025-04-15,Eggs,87.0
+2025-04-15,Onions,2.9
+2025-04-16,Wine Bottle (Red),13.2
+2025-04-16,Coffee Beans,1.4998
+2025-04-16,Rice (Bomba),59.2365
+2025-04-16,Seafood Mix,101.75
+2025-04-16,Olive Oil,22.9
+2025-04-16,Sangria Mix,101.0
+2025-04-16,Beer Keg (30L),32.7
+2025-04-16,Chicken,8.383
+2025-04-16,Potatoes,12.827
+2025-04-16,Lettuce,2.1
+2025-04-16,Beef Steak,1.2
+2025-04-16,Eggs,42.0
+2025-04-16,Onions,1.4
+2025-04-17,Coffee Beans,0.7424
+2025-04-17,Sangria Mix,60.0
+2025-04-17,Wine Bottle (Red),9.45
+2025-04-17,Rice (Bomba),30.4515
+2025-04-17,Seafood Mix,52.25
+2025-04-17,Olive Oil,12.2
+2025-04-17,Beer Keg (30L),18.9
+2025-04-17,Chicken,6.666
+2025-04-17,Potatoes,11.009
+2025-04-17,Lettuce,2.2
+2025-04-17,Eggs,48.0
+2025-04-17,Onions,1.6
+2025-04-17,Beef Steak,1.8
+2025-04-18,Rice (Bomba),39.39
+2025-04-18,Seafood Mix,67.2
+2025-04-18,Olive Oil,15.2
+2025-04-18,Beer Keg (30L),22.2
+2025-04-18,Coffee Beans,1.0151
+2025-04-18,Sangria Mix,53.0
+2025-04-18,Wine Bottle (Red),9.3
+2025-04-18,Chicken,7.171
+2025-04-18,Potatoes,10.908
+2025-04-18,Lettuce,2.1
+2025-04-18,Beef Steak,1.2
+2025-04-18,Eggs,36.0
+2025-04-18,Onions,1.2
+2025-04-19,Wine Bottle (Red),18.15
+2025-04-19,Rice (Bomba),64.0845
+2025-04-19,Seafood Mix,107.95
+2025-04-19,Olive Oil,24.0
+2025-04-19,Beer Keg (30L),44.4
+2025-04-19,Sangria Mix,112.0
+2025-04-19,Coffee Beans,1.5604
+2025-04-19,Chicken,9.09
+2025-04-19,Potatoes,14.847
+2025-04-19,Lettuce,2.6
+2025-04-19,Eggs,60.0
+2025-04-19,Onions,2.0
+2025-04-19,Beef Steak,0.6
+2025-04-20,Beer Keg (30L),36.3
+2025-04-20,Sangria Mix,88.0
+2025-04-20,Rice (Bomba),62.418
+2025-04-20,Seafood Mix,107.2
+2025-04-20,Olive Oil,24.4
+2025-04-20,Coffee Beans,1.6513
+2025-04-20,Wine Bottle (Red),16.8
+2025-04-20,Chicken,8.686
+2025-04-20,Potatoes,14.746
+2025-04-20,Lettuce,2.2
+2025-04-20,Eggs,60.0
+2025-04-20,Onions,2.0
+2025-04-20,Beef Steak,1.5
+2025-04-21,Wine Bottle (Red),9.9
+2025-04-21,Sangria Mix,49.0
+2025-04-21,Rice (Bomba),39.5415
+2025-04-21,Seafood Mix,68.05
+2025-04-21,Olive Oil,16.2
+2025-04-21,Coffee Beans,0.8939
+2025-04-21,Beer Keg (30L),17.7
+2025-04-21,Potatoes,11.615
+2025-04-21,Eggs,48.0
+2025-04-21,Onions,1.6
+2025-04-21,Beef Steak,0.6
+2025-04-21,Chicken,3.333
+2025-04-21,Lettuce,1.1
+2025-04-22,Coffee Beans,1.6362
+2025-04-22,Beer Keg (30L),34.5
+2025-04-22,Rice (Bomba),66.963
+2025-04-22,Seafood Mix,116.3
+2025-04-22,Olive Oil,27.0
+2025-04-22,Sangria Mix,103.0
+2025-04-22,Wine Bottle (Red),15.9
+2025-04-22,Chicken,8.484
+2025-04-22,Potatoes,16.968
+2025-04-22,Lettuce,2.4
+2025-04-22,Eggs,60.0
+2025-04-22,Onions,2.0
+2025-04-22,Beef Steak,2.1
+2025-04-23,Beer Keg (30L),67.8
+2025-04-23,Wine Bottle (Red),26.55
+2025-04-23,Rice (Bomba),110.292
+2025-04-23,Seafood Mix,185.0
+2025-04-23,Olive Oil,40.1
+2025-04-23,Coffee Beans,2.8179
+2025-04-23,Sangria Mix,178.0
+2025-04-23,Chicken,11.817
+2025-04-23,Potatoes,18.887
+2025-04-23,Lettuce,3.9
+2025-04-23,Eggs,69.0
+2025-04-23,Onions,2.3
+2025-04-24,Rice (Bomba),52.116
+2025-04-24,Seafood Mix,88.8
+2025-04-24,Olive Oil,19.9
+2025-04-24,Wine Bottle (Red),12.9
+2025-04-24,Sangria Mix,91.0
+2025-04-24,Beer Keg (30L),31.8
+2025-04-24,Coffee Beans,1.4998
+2025-04-24,Chicken,5.555
+2025-04-24,Potatoes,10.1
+2025-04-24,Lettuce,1.3
+2025-04-24,Eggs,36.0
+2025-04-24,Onions,1.2
+2025-04-25,Coffee Beans,1.3938
+2025-04-25,Rice (Bomba),64.539
+2025-04-25,Seafood Mix,109.7
+2025-04-25,Olive Oil,24.8
+2025-04-25,Beer Keg (30L),41.1
+2025-04-25,Wine Bottle (Red),16.2
+2025-04-25,Sangria Mix,117.0
+2025-04-25,Chicken,10.1
+2025-04-25,Potatoes,16.261
+2025-04-25,Lettuce,2.8
+2025-04-25,Eggs,63.0
+2025-04-25,Onions,2.1
+2025-04-25,Beef Steak,0.6
+2025-04-26,Rice (Bomba),56.358
+2025-04-26,Seafood Mix,95.6
+2025-04-26,Olive Oil,21.8
+2025-04-26,Wine Bottle (Red),16.95
+2025-04-26,Beer Keg (30L),37.2
+2025-04-26,Sangria Mix,94.0
+2025-04-26,Coffee Beans,1.3332
+2025-04-26,Chicken,10.605
+2025-04-26,Potatoes,16.362
+2025-04-26,Lettuce,2.7
+2025-04-26,Beef Steak,0.3
+2025-04-26,Eggs,60.0
+2025-04-26,Onions,2.0
+2025-04-27,Rice (Bomba),63.7815
+2025-04-27,Seafood Mix,109.25
+2025-04-27,Olive Oil,24.9
+2025-04-27,Coffee Beans,1.4998
+2025-04-27,Beer Keg (30L),34.8
+2025-04-27,Wine Bottle (Red),14.85
+2025-04-27,Sangria Mix,90.0
+2025-04-27,Chicken,10.1
+2025-04-27,Potatoes,16.362
+2025-04-27,Lettuce,2.8
+2025-04-27,Beef Steak,0.9
+2025-04-27,Eggs,57.0
+2025-04-27,Onions,1.9
+2025-04-28,Rice (Bomba),34.6935
+2025-04-28,Seafood Mix,59.65
+2025-04-28,Olive Oil,13.65
+2025-04-28,Beer Keg (30L),21.0
+2025-04-28,Sangria Mix,57.0
+2025-04-28,Wine Bottle (Red),9.75
+2025-04-28,Coffee Beans,0.8636
+2025-04-28,Chicken,4.141
+2025-04-28,Potatoes,7.373
+2025-04-28,Lettuce,1.1
+2025-04-28,Eggs,39.0
+2025-04-28,Onions,1.3
+2025-04-29,Rice (Bomba),54.54
+2025-04-29,Seafood Mix,91.8
+2025-04-29,Olive Oil,20.4
+2025-04-29,Sangria Mix,95.0
+2025-04-29,Coffee Beans,1.515
+2025-04-29,Beer Keg (30L),36.3
+2025-04-29,Wine Bottle (Red),14.25
+2025-04-29,Chicken,6.565
+2025-04-29,Potatoes,12.12
+2025-04-29,Lettuce,1.5
+2025-04-29,Eggs,42.0
+2025-04-29,Onions,1.4
+2025-04-29,Beef Steak,0.6
+2025-04-30,Sangria Mix,137.0
+2025-04-30,Coffee Beans,2.2573
+2025-04-30,Rice (Bomba),77.4165
+2025-04-30,Seafood Mix,132.35
+2025-04-30,Olive Oil,30.2
+2025-04-30,Beer Keg (30L),49.2
+2025-04-30,Wine Bottle (Red),19.05
+2025-04-30,Chicken,11.716
+2025-04-30,Potatoes,19.594
+2025-04-30,Lettuce,3.6
+2025-04-30,Eggs,75.0
+2025-04-30,Onions,2.5
+2025-04-30,Beef Steak,0.3
+2025-05-01,Rice (Bomba),40.4505
+2025-05-01,Seafood Mix,68.75
+2025-05-01,Olive Oil,15.05
+2025-05-01,Sangria Mix,58.0
+2025-05-01,Wine Bottle (Red),7.8
+2025-05-01,Beer Keg (30L),27.6
+2025-05-01,Coffee Beans,1.0454
+2025-05-01,Chicken,4.646
+2025-05-01,Potatoes,7.171
+2025-05-01,Lettuce,1.4
+2025-05-01,Eggs,15.0
+2025-05-01,Onions,0.5
+2025-05-01,Beef Steak,0.6
+2025-05-02,Rice (Bomba),43.632
+2025-05-02,Seafood Mix,74.2
+2025-05-02,Olive Oil,17.1
+2025-05-02,Sangria Mix,63.0
+2025-05-02,Beer Keg (30L),22.2
+2025-05-02,Wine Bottle (Red),10.35
+2025-05-02,Coffee Beans,1.2726
+2025-05-02,Chicken,6.262
+2025-05-02,Potatoes,11.918
+2025-05-02,Lettuce,1.8
+2025-05-02,Eggs,54.0
+2025-05-02,Onions,1.8
+2025-05-03,Sangria Mix,97.0
+2025-05-03,Rice (Bomba),55.9035
+2025-05-03,Seafood Mix,95.05
+2025-05-03,Olive Oil,21.15
+2025-05-03,Beer Keg (30L),38.1
+2025-05-03,Coffee Beans,1.3332
+2025-05-03,Wine Bottle (Red),12.3
+2025-05-03,Chicken,7.171
+2025-05-03,Potatoes,11.514
+2025-05-03,Lettuce,2.1
+2025-05-03,Eggs,42.0
+2025-05-03,Onions,1.4
+2025-05-03,Beef Steak,0.6
+2025-05-04,Wine Bottle (Red),14.25
+2025-05-04,Rice (Bomba),59.5395
+2025-05-04,Seafood Mix,102.65
+2025-05-04,Olive Oil,24.65
+2025-05-04,Coffee Beans,1.5301
+2025-05-04,Sangria Mix,91.0
+2025-05-04,Beer Keg (30L),36.0
+2025-05-04,Chicken,10.605
+2025-05-04,Potatoes,20.907
+2025-05-04,Lettuce,2.7
+2025-05-04,Eggs,87.0
+2025-05-04,Onions,2.9
+2025-05-04,Beef Steak,0.3
+2025-05-05,Rice (Bomba),56.5095
+2025-05-05,Seafood Mix,99.05
+2025-05-05,Olive Oil,23.95
+2025-05-05,Beer Keg (30L),44.4
+2025-05-05,Sangria Mix,107.0
+2025-05-05,Coffee Beans,1.7877
+2025-05-05,Wine Bottle (Red),16.5
+2025-05-05,Chicken,11.413
+2025-05-05,Potatoes,20.402
+2025-05-05,Lettuce,3.1
+2025-05-05,Eggs,60.0
+2025-05-05,Onions,2.0
+2025-05-05,Beef Steak,0.9
+2025-05-06,Sangria Mix,97.0
+2025-05-06,Rice (Bomba),76.962
+2025-05-06,Seafood Mix,131.0
+2025-05-06,Olive Oil,30.45
+2025-05-06,Wine Bottle (Red),20.1
+2025-05-06,Beer Keg (30L),40.2
+2025-05-06,Coffee Beans,2.0149
+2025-05-06,Chicken,10.807
+2025-05-06,Potatoes,23.23
+2025-05-06,Lettuce,3.3
+2025-05-06,Eggs,93.0
+2025-05-06,Onions,3.1
+2025-05-06,Beef Steak,1.2
+2025-05-07,Wine Bottle (Red),14.85
+2025-05-07,Rice (Bomba),59.691
+2025-05-07,Seafood Mix,103.7
+2025-05-07,Olive Oil,24.95
+2025-05-07,Coffee Beans,1.3938
+2025-05-07,Beer Keg (30L),33.6
+2025-05-07,Sangria Mix,96.0
+2025-05-07,Eggs,90.0
+2025-05-07,Potatoes,17.069
+2025-05-07,Onions,3.0
+2025-05-07,Chicken,5.454
+2025-05-07,Lettuce,1.4
+2025-05-07,Beef Steak,0.9
+2025-05-08,Rice (Bomba),71.6595
+2025-05-08,Seafood Mix,123.65
+2025-05-08,Olive Oil,28.5
+2025-05-08,Coffee Beans,1.7725
+2025-05-08,Sangria Mix,129.0
+2025-05-08,Beer Keg (30L),45.3
+2025-05-08,Wine Bottle (Red),18.15
+2025-05-08,Chicken,9.09
+2025-05-08,Potatoes,18.685
+2025-05-08,Lettuce,3.0
+2025-05-08,Beef Steak,2.1
+2025-05-08,Eggs,54.0
+2025-05-08,Onions,1.8
+2025-05-09,Rice (Bomba),55.449
+2025-05-09,Seafood Mix,93.1
+2025-05-09,Olive Oil,20.55
+2025-05-09,Beer Keg (30L),35.1
+2025-05-09,Wine Bottle (Red),12.75
+2025-05-09,Sangria Mix,81.0
+2025-05-09,Coffee Beans,1.318
+2025-05-09,Eggs,42.0
+2025-05-09,Potatoes,12.625
+2025-05-09,Onions,1.4
+2025-05-09,Chicken,7.878
+2025-05-09,Lettuce,2.2
+2025-05-09,Beef Steak,0.3
+2025-05-10,Rice (Bomba),60.903
+2025-05-10,Seafood Mix,104.5
+2025-05-10,Olive Oil,23.2
+2025-05-10,Beer Keg (30L),33.0
+2025-05-10,Sangria Mix,90.0
+2025-05-10,Wine Bottle (Red),15.45
+2025-05-10,Coffee Beans,1.5453
+2025-05-10,Chicken,5.959
+2025-05-10,Potatoes,9.494
+2025-05-10,Lettuce,1.7
+2025-05-10,Eggs,30.0
+2025-05-10,Onions,1.0
+2025-05-11,Wine Bottle (Red),14.25
+2025-05-11,Coffee Beans,1.318
+2025-05-11,Rice (Bomba),48.3285
+2025-05-11,Seafood Mix,86.35
+2025-05-11,Olive Oil,21.35
+2025-05-11,Sangria Mix,94.0
+2025-05-11,Beer Keg (30L),36.3
+2025-05-11,Chicken,7.272
+2025-05-11,Potatoes,15.655
+2025-05-11,Lettuce,2.0
+2025-05-11,Eggs,69.0
+2025-05-11,Onions,2.3
+2025-05-11,Beef Steak,0.9
+2025-05-12,Rice (Bomba),64.0845
+2025-05-12,Seafood Mix,109.15
+2025-05-12,Olive Oil,25.25
+2025-05-12,Coffee Beans,1.5301
+2025-05-12,Sangria Mix,115.0
+2025-05-12,Beer Keg (30L),40.2
+2025-05-12,Wine Bottle (Red),16.2
+2025-05-12,Chicken,8.888
+2025-05-12,Potatoes,17.675
+2025-05-12,Lettuce,2.4
+2025-05-12,Eggs,75.0
+2025-05-12,Onions,2.5
+2025-05-13,Wine Bottle (Red),8.4
+2025-05-13,Rice (Bomba),37.572
+2025-05-13,Seafood Mix,63.6
+2025-05-13,Olive Oil,14.6
+2025-05-13,Beer Keg (30L),24.9
+2025-05-13,Sangria Mix,50.0
+2025-05-13,Coffee Beans,1.0151
+2025-05-13,Chicken,6.767
+2025-05-13,Potatoes,11.514
+2025-05-13,Lettuce,1.7
+2025-05-13,Eggs,48.0
+2025-05-13,Onions,1.6
+2025-05-13,Beef Steak,0.6
+2025-05-14,Sangria Mix,126.0
+2025-05-14,Rice (Bomba),67.7205
+2025-05-14,Seafood Mix,116.35
+2025-05-14,Olive Oil,26.4
+2025-05-14,Wine Bottle (Red),17.85
+2025-05-14,Coffee Beans,1.6059
+2025-05-14,Beer Keg (30L),39.3
+2025-05-14,Chicken,10.1
+2025-05-14,Potatoes,15.857
+2025-05-14,Lettuce,2.8
+2025-05-14,Eggs,36.0
+2025-05-14,Onions,1.2
+2025-05-15,Sangria Mix,82.0
+2025-05-15,Rice (Bomba),39.996
+2025-05-15,Seafood Mix,69.0
+2025-05-15,Olive Oil,16.3
+2025-05-15,Wine Bottle (Red),7.05
+2025-05-15,Coffee Beans,1.106
+2025-05-15,Beer Keg (30L),24.6
+2025-05-15,Eggs,60.0
+2025-05-15,Potatoes,11.11
+2025-05-15,Onions,2.0
+2025-05-15,Chicken,4.242
+2025-05-15,Lettuce,1.4
+2025-05-15,Beef Steak,0.9
+2025-05-16,Rice (Bomba),55.6005
+2025-05-16,Seafood Mix,96.55
+2025-05-16,Olive Oil,22.5
+2025-05-16,Sangria Mix,96.0
+2025-05-16,Wine Bottle (Red),17.1
+2025-05-16,Beer Keg (30L),36.6
+2025-05-16,Coffee Beans,1.4695
+2025-05-16,Chicken,10.504
+2025-05-16,Potatoes,15.554
+2025-05-16,Lettuce,2.8
+2025-05-16,Eggs,69.0
+2025-05-16,Onions,2.3
+2025-05-16,Beef Steak,0.9
+2025-05-17,Rice (Bomba),29.997
+2025-05-17,Seafood Mix,52.7
+2025-05-17,Olive Oil,12.5
+2025-05-17,Coffee Beans,0.7424
+2025-05-17,Sangria Mix,60.0
+2025-05-17,Wine Bottle (Red),5.7
+2025-05-17,Beer Keg (30L),21.6
+2025-05-17,Chicken,4.343
+2025-05-17,Potatoes,8.585
+2025-05-17,Lettuce,1.3
+2025-05-17,Eggs,33.0
+2025-05-17,Onions,1.1
+2025-05-17,Beef Steak,1.2
+2025-05-18,Sangria Mix,63.0
+2025-05-18,Beer Keg (30L),24.3
+2025-05-18,Rice (Bomba),40.299
+2025-05-18,Seafood Mix,68.5
+2025-05-18,Olive Oil,15.15
+2025-05-18,Coffee Beans,0.8939
+2025-05-18,Wine Bottle (Red),9.75
+2025-05-18,Chicken,5.454
+2025-05-18,Potatoes,7.676
+2025-05-18,Lettuce,1.8
+2025-05-18,Eggs,33.0
+2025-05-18,Onions,1.1
+2025-05-19,Rice (Bomba),63.7815
+2025-05-19,Seafood Mix,107.05
+2025-05-19,Olive Oil,23.4
+2025-05-19,Wine Bottle (Red),17.25
+2025-05-19,Sangria Mix,101.0
+2025-05-19,Coffee Beans,1.7422
+2025-05-19,Beer Keg (30L),43.8
+2025-05-19,Chicken,6.868
+2025-05-19,Potatoes,11.615
+2025-05-19,Lettuce,2.0
+2025-05-19,Eggs,48.0
+2025-05-19,Onions,1.6
+2025-05-20,Rice (Bomba),55.2975
+2025-05-20,Seafood Mix,95.45
+2025-05-20,Olive Oil,22.3
+2025-05-20,Beer Keg (30L),33.0
+2025-05-20,Wine Bottle (Red),14.25
+2025-05-20,Sangria Mix,83.0
+2025-05-20,Coffee Beans,1.2574
+2025-05-20,Potatoes,14.948
+2025-05-20,Chicken,7.474
+2025-05-20,Lettuce,2.2
+2025-05-20,Beef Steak,0.6
+2025-05-20,Eggs,63.0
+2025-05-20,Onions,2.1
+2025-05-21,Rice (Bomba),38.6325
+2025-05-21,Seafood Mix,67.55
+2025-05-21,Olive Oil,15.5
+2025-05-21,Sangria Mix,79.0
+2025-05-21,Wine Bottle (Red),7.05
+2025-05-21,Beer Keg (30L),21.0
+2025-05-21,Coffee Beans,0.8787
+2025-05-21,Chicken,4.343
+2025-05-21,Potatoes,7.979
+2025-05-21,Lettuce,1.3
+2025-05-21,Beef Steak,0.6
+2025-05-21,Eggs,12.0
+2025-05-21,Onions,0.4
+2025-05-22,Rice (Bomba),66.357
+2025-05-22,Seafood Mix,113.7
+2025-05-22,Olive Oil,26.25
+2025-05-22,Beer Keg (30L),46.5
+2025-05-22,Wine Bottle (Red),17.1
+2025-05-22,Coffee Beans,1.9089
+2025-05-22,Sangria Mix,119.0
+2025-05-22,Chicken,12.221
+2025-05-22,Potatoes,19.493
+2025-05-22,Lettuce,3.5
+2025-05-22,Eggs,66.0
+2025-05-22,Onions,2.2
+2025-05-22,Beef Steak,0.3
+2025-05-23,Rice (Bomba),65.751
+2025-05-23,Seafood Mix,114.3
+2025-05-23,Olive Oil,27.05
+2025-05-23,Wine Bottle (Red),13.2
+2025-05-23,Sangria Mix,110.0
+2025-05-23,Coffee Beans,1.6059
+2025-05-23,Beer Keg (30L),29.7
+2025-05-23,Potatoes,16.766
+2025-05-23,Chicken,5.555
+2025-05-23,Eggs,75.0
+2025-05-23,Onions,2.5
+2025-05-23,Lettuce,1.7
+2025-05-23,Beef Steak,1.2
+2025-05-24,Sangria Mix,95.0
+2025-05-24,Beer Keg (30L),39.0
+2025-05-24,Rice (Bomba),58.479
+2025-05-24,Seafood Mix,100.9
+2025-05-24,Olive Oil,23.85
+2025-05-24,Coffee Beans,1.5301
+2025-05-24,Wine Bottle (Red),15.0
+2025-05-24,Chicken,8.484
+2025-05-24,Potatoes,17.675
+2025-05-24,Lettuce,2.8
+2025-05-24,Eggs,66.0
+2025-05-24,Onions,2.2
+2025-05-25,Rice (Bomba),54.3885
+2025-05-25,Seafood Mix,93.15
+2025-05-25,Olive Oil,21.8
+2025-05-25,Beer Keg (30L),36.9
+2025-05-25,Coffee Beans,1.5907
+2025-05-25,Sangria Mix,80.0
+2025-05-25,Wine Bottle (Red),14.7
+2025-05-25,Chicken,8.989
+2025-05-25,Potatoes,17.574
+2025-05-25,Lettuce,2.7
+2025-05-25,Beef Steak,1.2
+2025-05-25,Eggs,63.0
+2025-05-25,Onions,2.1
+2025-05-26,Rice (Bomba),66.2055
+2025-05-26,Seafood Mix,113.25
+2025-05-26,Olive Oil,25.9
+2025-05-26,Wine Bottle (Red),14.7
+2025-05-26,Beer Keg (30L),43.2
+2025-05-26,Sangria Mix,101.0
+2025-05-26,Coffee Beans,1.4847
+2025-05-26,Chicken,9.898
+2025-05-26,Potatoes,17.271
+2025-05-26,Lettuce,3.0
+2025-05-26,Eggs,66.0
+2025-05-26,Onions,2.2
+2025-05-26,Beef Steak,0.9
+2025-05-27,Beer Keg (30L),34.8
+2025-05-27,Rice (Bomba),63.7815
+2025-05-27,Seafood Mix,108.45
+2025-05-27,Olive Oil,24.95
+2025-05-27,Sangria Mix,116.0
+2025-05-27,Wine Bottle (Red),17.4
+2025-05-27,Coffee Beans,1.621
+2025-05-27,Chicken,11.11
+2025-05-27,Potatoes,19.998
+2025-05-27,Lettuce,3.0
+2025-05-27,Beef Steak,1.8
+2025-05-27,Eggs,66.0
+2025-05-27,Onions,2.2
+2025-05-28,Beer Keg (30L),39.9
+2025-05-28,Rice (Bomba),68.0235
+2025-05-28,Seafood Mix,116.65
+2025-05-28,Olive Oil,26.85
+2025-05-28,Wine Bottle (Red),16.65
+2025-05-28,Coffee Beans,1.924
+2025-05-28,Sangria Mix,112.0
+2025-05-28,Chicken,8.989
+2025-05-28,Potatoes,18.079
+2025-05-28,Lettuce,2.7
+2025-05-28,Beef Steak,1.2
+2025-05-28,Eggs,57.0
+2025-05-28,Onions,1.9
+2025-05-29,Coffee Beans,1.3332
+2025-05-29,Sangria Mix,71.0
+2025-05-29,Wine Bottle (Red),12.15
+2025-05-29,Rice (Bomba),52.116
+2025-05-29,Seafood Mix,90.0
+2025-05-29,Olive Oil,20.55
+2025-05-29,Beer Keg (30L),33.0
+2025-05-29,Chicken,8.787
+2025-05-29,Potatoes,13.332
+2025-05-29,Lettuce,2.9
+2025-05-29,Eggs,45.0
+2025-05-29,Onions,1.5
+2025-05-29,Beef Steak,1.2
+2025-05-30,Rice (Bomba),64.3875
+2025-05-30,Seafood Mix,111.05
+2025-05-30,Olive Oil,26.4
+2025-05-30,Coffee Beans,1.7877
+2025-05-30,Beer Keg (30L),31.8
+2025-05-30,Wine Bottle (Red),18.0
+2025-05-30,Sangria Mix,112.0
+2025-05-30,Chicken,9.595
+2025-05-30,Potatoes,19.897
+2025-05-30,Lettuce,2.9
+2025-05-30,Eggs,96.0
+2025-05-30,Onions,3.2
+2025-05-30,Beef Steak,0.3
+2025-05-31,Coffee Beans,1.9998
+2025-05-31,Sangria Mix,119.0
+2025-05-31,Wine Bottle (Red),23.4
+2025-05-31,Rice (Bomba),71.205
+2025-05-31,Seafood Mix,122.3
+2025-05-31,Olive Oil,28.7
+2025-05-31,Beer Keg (30L),45.9
+2025-05-31,Chicken,6.666
+2025-05-31,Potatoes,18.18
+2025-05-31,Lettuce,1.8
+2025-05-31,Eggs,102.0
+2025-05-31,Onions,3.4
+2025-05-31,Beef Steak,0.6
+2025-06-01,Beer Keg (30L),30.0
+2025-06-01,Coffee Beans,1.4392
+2025-06-01,Rice (Bomba),53.1765
+2025-06-01,Seafood Mix,90.55
+2025-06-01,Olive Oil,20.6
+2025-06-01,Wine Bottle (Red),16.8
+2025-06-01,Sangria Mix,117.0
+2025-06-01,Chicken,7.979
+2025-06-01,Potatoes,14.039
+2025-06-01,Lettuce,2.5
+2025-06-01,Beef Steak,0.9
+2025-06-01,Eggs,54.0
+2025-06-01,Onions,1.8
+2025-06-02,Sangria Mix,103.0
+2025-06-02,Rice (Bomba),52.5705
+2025-06-02,Seafood Mix,89.95
+2025-06-02,Olive Oil,20.15
+2025-06-02,Coffee Beans,1.3483
+2025-06-02,Wine Bottle (Red),14.25
+2025-06-02,Chicken,9.191
+2025-06-02,Potatoes,12.827
+2025-06-02,Lettuce,2.5
+2025-06-02,Beer Keg (30L),34.8
+2025-06-02,Eggs,27.0
+2025-06-02,Onions,0.9
+2025-06-02,Beef Steak,0.9
+2025-06-03,Rice (Bomba),66.963
+2025-06-03,Seafood Mix,114.9
+2025-06-03,Olive Oil,26.3
+2025-06-03,Sangria Mix,109.0
+2025-06-03,Wine Bottle (Red),15.6
+2025-06-03,Coffee Beans,1.3938
+2025-06-03,Beer Keg (30L),37.5
+2025-06-03,Potatoes,15.453
+2025-06-03,Beef Steak,0.6
+2025-06-03,Chicken,7.878
+2025-06-03,Lettuce,2.6
+2025-06-03,Eggs,69.0
+2025-06-03,Onions,2.3
+2025-06-04,Beer Keg (30L),38.7
+2025-06-04,Wine Bottle (Red),14.55
+2025-06-04,Rice (Bomba),61.6605
+2025-06-04,Seafood Mix,107.75
+2025-06-04,Olive Oil,26.1
+2025-06-04,Sangria Mix,107.0
+2025-06-04,Coffee Beans,1.4241
+2025-06-04,Chicken,8.686
+2025-06-04,Potatoes,20.099
+2025-06-04,Lettuce,2.2
+2025-06-04,Eggs,66.0
+2025-06-04,Onions,2.2
+2025-06-04,Beef Steak,0.3
+2025-06-05,Rice (Bomba),67.569
+2025-06-05,Seafood Mix,114.7
+2025-06-05,Olive Oil,25.8
+2025-06-05,Beer Keg (30L),42.6
+2025-06-05,Sangria Mix,113.0
+2025-06-05,Wine Bottle (Red),17.7
+2025-06-05,Coffee Beans,1.5756
+2025-06-05,Chicken,11.817
+2025-06-05,Potatoes,18.685
+2025-06-05,Lettuce,3.5
+2025-06-05,Beef Steak,2.1
+2025-06-05,Eggs,57.0
+2025-06-05,Onions,1.9
+2025-06-06,Rice (Bomba),62.2665
+2025-06-06,Seafood Mix,109.15
+2025-06-06,Olive Oil,25.75
+2025-06-06,Beer Keg (30L),36.6
+2025-06-06,Wine Bottle (Red),17.7
+2025-06-06,Sangria Mix,100.0
+2025-06-06,Coffee Beans,1.6362
+2025-06-06,Chicken,10.1
+2025-06-06,Potatoes,17.473
+2025-06-06,Lettuce,2.4
+2025-06-06,Beef Steak,1.2
+2025-06-06,Eggs,51.0
+2025-06-06,Onions,1.7
+2025-06-07,Rice (Bomba),40.1475
+2025-06-07,Seafood Mix,67.65
+2025-06-07,Olive Oil,14.85
+2025-06-07,Sangria Mix,65.0
+2025-06-07,Beer Keg (30L),22.5
+2025-06-07,Coffee Beans,0.8636
+2025-06-07,Wine Bottle (Red),9.45
+2025-06-07,Chicken,7.07
+2025-06-07,Potatoes,9.09
+2025-06-07,Lettuce,1.8
+2025-06-07,Eggs,24.0
+2025-06-07,Onions,0.8
+2025-06-08,Rice (Bomba),29.694
+2025-06-08,Seafood Mix,51.4
+2025-06-08,Olive Oil,12.6
+2025-06-08,Beer Keg (30L),20.1
+2025-06-08,Wine Bottle (Red),7.2
+2025-06-08,Sangria Mix,49.0
+2025-06-08,Coffee Beans,0.6969
+2025-06-08,Chicken,4.949
+2025-06-08,Potatoes,11.514
+2025-06-08,Lettuce,1.5
+2025-06-08,Eggs,48.0
+2025-06-08,Onions,1.6
+2025-06-08,Beef Steak,0.3
+2025-06-09,Wine Bottle (Red),14.85
+2025-06-09,Rice (Bomba),58.6305
+2025-06-09,Seafood Mix,101.55
+2025-06-09,Olive Oil,24.1
+2025-06-09,Sangria Mix,99.0
+2025-06-09,Coffee Beans,1.4847
+2025-06-09,Beer Keg (30L),34.5
+2025-06-09,Chicken,7.575
+2025-06-09,Potatoes,18.079
+2025-06-09,Lettuce,2.5
+2025-06-09,Eggs,72.0
+2025-06-09,Onions,2.4
+2025-06-09,Beef Steak,1.8
+2025-06-10,Coffee Beans,1.4392
+2025-06-10,Rice (Bomba),50.904
+2025-06-10,Seafood Mix,85.6
+2025-06-10,Olive Oil,18.45
+2025-06-10,Wine Bottle (Red),17.25
+2025-06-10,Sangria Mix,87.0
+2025-06-10,Beer Keg (30L),38.4
+2025-06-10,Chicken,8.888
+2025-06-10,Potatoes,10.403
+2025-06-10,Lettuce,2.8
+2025-06-10,Eggs,30.0
+2025-06-10,Onions,1.0
+2025-06-10,Beef Steak,0.6
+2025-06-11,Sangria Mix,111.0
+2025-06-11,Wine Bottle (Red),18.45
+2025-06-11,Rice (Bomba),64.0845
+2025-06-11,Seafood Mix,110.75
+2025-06-11,Olive Oil,25.65
+2025-06-11,Beer Keg (30L),38.7
+2025-06-11,Coffee Beans,1.6362
+2025-06-11,Potatoes,13.837
+2025-06-11,Eggs,63.0
+2025-06-11,Onions,2.1
+2025-06-11,Chicken,5.454
+2025-06-11,Lettuce,1.8
+2025-06-11,Beef Steak,0.3
+2025-06-12,Beer Keg (30L),33.9
+2025-06-12,Coffee Beans,1.1968
+2025-06-12,Rice (Bomba),60.1455
+2025-06-12,Seafood Mix,102.05
+2025-06-12,Olive Oil,23.5
+2025-06-12,Sangria Mix,100.0
+2025-06-12,Wine Bottle (Red),15.0
+2025-06-12,Chicken,6.868
+2025-06-12,Potatoes,16.059
+2025-06-12,Lettuce,2.0
+2025-06-12,Eggs,72.0
+2025-06-12,Onions,2.4
+2025-06-12,Beef Steak,0.6
+2025-06-13,Sangria Mix,116.0
+2025-06-13,Wine Bottle (Red),13.2
+2025-06-13,Rice (Bomba),58.9335
+2025-06-13,Seafood Mix,99.85
+2025-06-13,Olive Oil,22.6
+2025-06-13,Coffee Beans,1.4544
+2025-06-13,Beer Keg (30L),35.7
+2025-06-13,Potatoes,13.534
+2025-06-13,Chicken,5.959
+2025-06-13,Lettuce,1.7
+2025-06-13,Eggs,45.0
+2025-06-13,Onions,1.5
+2025-06-14,Rice (Bomba),71.0535
+2025-06-14,Seafood Mix,119.65
+2025-06-14,Olive Oil,26.0
+2025-06-14,Wine Bottle (Red),15.75
+2025-06-14,Sangria Mix,101.0
+2025-06-14,Beer Keg (30L),38.4
+2025-06-14,Coffee Beans,1.8634
+2025-06-14,Chicken,8.888
+2025-06-14,Potatoes,13.029
+2025-06-14,Lettuce,2.8
+2025-06-14,Beef Steak,0.6
+2025-06-14,Eggs,42.0
+2025-06-14,Onions,1.4
+2025-06-15,Rice (Bomba),61.9635
+2025-06-15,Seafood Mix,106.45
+2025-06-15,Olive Oil,24.85
+2025-06-15,Coffee Beans,1.7877
+2025-06-15,Beer Keg (30L),39.0
+2025-06-15,Wine Bottle (Red),13.5
+2025-06-15,Sangria Mix,113.0
+2025-06-15,Chicken,9.191
+2025-06-15,Potatoes,18.584
+2025-06-15,Lettuce,2.5
+2025-06-15,Eggs,72.0
+2025-06-15,Onions,2.4
+2025-06-15,Beef Steak,1.8
+2025-06-16,Coffee Beans,1.7119
+2025-06-16,Rice (Bomba),58.9335
+2025-06-16,Seafood Mix,100.45
+2025-06-16,Olive Oil,23.55
+2025-06-16,Beer Keg (30L),46.2
+2025-06-16,Wine Bottle (Red),13.8
+2025-06-16,Sangria Mix,98.0
+2025-06-16,Chicken,11.211
+2025-06-16,Potatoes,20.604
+2025-06-16,Lettuce,2.9
+2025-06-16,Eggs,60.0
+2025-06-16,Onions,2.0
+2025-06-16,Beef Steak,0.6
+2025-06-17,Beer Keg (30L),51.6
+2025-06-17,Wine Bottle (Red),16.35
+2025-06-17,Rice (Bomba),73.4775
+2025-06-17,Seafood Mix,125.45
+2025-06-17,Olive Oil,28.85
+2025-06-17,Coffee Beans,1.7119
+2025-06-17,Sangria Mix,140.0
+2025-06-17,Chicken,9.898
+2025-06-17,Potatoes,19.897
+2025-06-17,Lettuce,3.0
+2025-06-17,Eggs,69.0
+2025-06-17,Onions,2.3
+2025-06-17,Beef Steak,0.9
+2025-06-18,Rice (Bomba),66.2055
+2025-06-18,Seafood Mix,114.85
+2025-06-18,Olive Oil,27.3
+2025-06-18,Wine Bottle (Red),14.55
+2025-06-18,Beer Keg (30L),30.0
+2025-06-18,Coffee Beans,1.6362
+2025-06-18,Sangria Mix,128.0
+2025-06-18,Chicken,6.565
+2025-06-18,Potatoes,19.594
+2025-06-18,Lettuce,1.9
+2025-06-18,Eggs,57.0
+2025-06-18,Onions,1.9
+2025-06-18,Beef Steak,1.8
+2025-06-19,Wine Bottle (Red),13.8
+2025-06-19,Sangria Mix,111.0
+2025-06-19,Coffee Beans,1.3029
+2025-06-19,Beer Keg (30L),43.8
+2025-06-19,Rice (Bomba),57.873
+2025-06-19,Seafood Mix,98.3
+2025-06-19,Olive Oil,21.95
+2025-06-19,Chicken,8.585
+2025-06-19,Potatoes,13.332
+2025-06-19,Lettuce,2.7
+2025-06-19,Eggs,51.0
+2025-06-19,Onions,1.7
+2025-06-19,Beef Steak,0.9
+2025-06-20,Wine Bottle (Red),11.7
+2025-06-20,Rice (Bomba),47.874
+2025-06-20,Seafood Mix,81.0
+2025-06-20,Olive Oil,18.55
+2025-06-20,Beer Keg (30L),35.1
+2025-06-20,Coffee Beans,1.2574
+2025-06-20,Sangria Mix,73.0
+2025-06-20,Chicken,5.656
+2025-06-20,Potatoes,13.13
+2025-06-20,Lettuce,1.2
+2025-06-20,Eggs,27.0
+2025-06-20,Onions,0.9
+2025-06-21,Sangria Mix,101.0
+2025-06-21,Rice (Bomba),49.2375
+2025-06-21,Seafood Mix,83.25
+2025-06-21,Olive Oil,17.85
+2025-06-21,Coffee Beans,1.212
+2025-06-21,Beer Keg (30L),28.5
+2025-06-21,Wine Bottle (Red),9.0
+2025-06-21,Chicken,5.252
+2025-06-21,Potatoes,6.969
+2025-06-21,Lettuce,1.6
+2025-06-21,Eggs,15.0
+2025-06-21,Onions,0.5
+2025-06-21,Beef Steak,0.6
+2025-06-22,Beer Keg (30L),30.3
+2025-06-22,Sangria Mix,88.0
+2025-06-22,Rice (Bomba),48.48
+2025-06-22,Seafood Mix,81.8
+2025-06-22,Olive Oil,18.25
+2025-06-22,Wine Bottle (Red),13.2
+2025-06-22,Coffee Beans,1.3938
+2025-06-22,Chicken,7.272
+2025-06-22,Potatoes,12.726
+2025-06-22,Lettuce,2.0
+2025-06-22,Eggs,33.0
+2025-06-22,Onions,1.1
+2025-06-22,Beef Steak,1.5
+2025-06-23,Rice (Bomba),67.569
+2025-06-23,Seafood Mix,115.7
+2025-06-23,Olive Oil,27.05
+2025-06-23,Coffee Beans,1.7422
+2025-06-23,Beer Keg (30L),42.3
+2025-06-23,Sangria Mix,113.0
+2025-06-23,Wine Bottle (Red),15.3
+2025-06-23,Chicken,16.665
+2025-06-23,Potatoes,24.341
+2025-06-23,Lettuce,4.7
+2025-06-23,Eggs,90.0
+2025-06-23,Onions,3.0
+2025-06-23,Beef Steak,0.9
+2025-06-24,Rice (Bomba),70.296
+2025-06-24,Seafood Mix,119.8
+2025-06-24,Olive Oil,28.1
+2025-06-24,Sangria Mix,97.0
+2025-06-24,Coffee Beans,1.9695
+2025-06-24,Beer Keg (30L),43.5
+2025-06-24,Wine Bottle (Red),17.85
+2025-06-24,Chicken,11.817
+2025-06-24,Potatoes,22.927
+2025-06-24,Lettuce,3.1
+2025-06-24,Eggs,99.0
+2025-06-24,Onions,3.3
+2025-06-24,Beef Steak,0.9
+2025-06-25,Rice (Bomba),40.4505
+2025-06-25,Seafood Mix,69.35
+2025-06-25,Olive Oil,16.25
+2025-06-25,Sangria Mix,54.0
+2025-06-25,Wine Bottle (Red),9.75
+2025-06-25,Coffee Beans,0.909
+2025-06-25,Beer Keg (30L),30.6
+2025-06-25,Chicken,5.656
+2025-06-25,Potatoes,11.918
+2025-06-25,Lettuce,1.6
+2025-06-25,Eggs,48.0
+2025-06-25,Onions,1.6
+2025-06-25,Beef Steak,0.3
+2025-06-26,Wine Bottle (Red),14.7
+2025-06-26,Rice (Bomba),67.4175
+2025-06-26,Seafood Mix,114.85
+2025-06-26,Olive Oil,25.4
+2025-06-26,Beer Keg (30L),36.6
+2025-06-26,Coffee Beans,1.5756
+2025-06-26,Sangria Mix,115.0
+2025-06-26,Potatoes,13.231
+2025-06-26,Chicken,8.585
+2025-06-26,Lettuce,2.7
+2025-06-26,Eggs,36.0
+2025-06-26,Onions,1.2
+2025-06-26,Beef Steak,0.9
+2025-06-27,Beer Keg (30L),37.5
+2025-06-27,Coffee Beans,1.4847
+2025-06-27,Wine Bottle (Red),12.3
+2025-06-27,Sangria Mix,98.0
+2025-06-27,Rice (Bomba),54.9945
+2025-06-27,Seafood Mix,95.35
+2025-06-27,Olive Oil,21.6
+2025-06-27,Chicken,9.09
+2025-06-27,Potatoes,12.423
+2025-06-27,Lettuce,2.6
+2025-06-27,Eggs,30.0
+2025-06-27,Onions,1.0
+2025-06-27,Beef Steak,0.9
+2025-06-28,Beer Keg (30L),40.5
+2025-06-28,Rice (Bomba),68.9325
+2025-06-28,Seafood Mix,119.55
+2025-06-28,Olive Oil,27.55
+2025-06-28,Wine Bottle (Red),17.25
+2025-06-28,Coffee Beans,1.8786
+2025-06-28,Sangria Mix,116.0
+2025-06-28,Chicken,10.1
+2025-06-28,Potatoes,17.574
+2025-06-28,Lettuce,3.2
+2025-06-28,Eggs,36.0
+2025-06-28,Onions,1.2
+2025-06-28,Beef Steak,0.9
+2025-06-29,Rice (Bomba),57.7215
+2025-06-29,Seafood Mix,100.05
+2025-06-29,Olive Oil,23.8
+2025-06-29,Coffee Beans,1.7271
+2025-06-29,Sangria Mix,111.0
+2025-06-29,Wine Bottle (Red),14.55
+2025-06-29,Beer Keg (30L),32.7
+2025-06-29,Potatoes,17.978
+2025-06-29,Chicken,9.595
+2025-06-29,Lettuce,2.5
+2025-06-29,Eggs,75.0
+2025-06-29,Onions,2.5
+2025-06-29,Beef Steak,0.3
+2025-06-30,Sangria Mix,111.0
+2025-06-30,Rice (Bomba),62.115
+2025-06-30,Seafood Mix,107.7
+2025-06-30,Olive Oil,25.5
+2025-06-30,Wine Bottle (Red),12.9
+2025-06-30,Coffee Beans,1.4847
+2025-06-30,Beer Keg (30L),39.6
+2025-06-30,Beef Steak,2.1
+2025-06-30,Potatoes,17.473
+2025-06-30,Chicken,6.161
+2025-06-30,Lettuce,1.9
+2025-06-30,Eggs,75.0
+2025-06-30,Onions,2.5
+2025-07-01,Coffee Beans,1.0454
+2025-07-01,Rice (Bomba),55.6005
+2025-07-01,Seafood Mix,95.75
+2025-07-01,Olive Oil,21.8
+2025-07-01,Sangria Mix,102.0
+2025-07-01,Beer Keg (30L),39.0
+2025-07-01,Wine Bottle (Red),11.85
+2025-07-01,Eggs,54.0
+2025-07-01,Potatoes,14.645
+2025-07-01,Onions,1.8
+2025-07-01,Chicken,11.413
+2025-07-01,Lettuce,3.1
+2025-07-01,Beef Steak,0.6
+2025-07-02,Wine Bottle (Red),14.7
+2025-07-02,Rice (Bomba),56.661
+2025-07-02,Seafood Mix,97.5
+2025-07-02,Olive Oil,23.6
+2025-07-02,Coffee Beans,1.2877
+2025-07-02,Sangria Mix,80.0
+2025-07-02,Beer Keg (30L),41.7
+2025-07-02,Chicken,8.08
+2025-07-02,Potatoes,19.392
+2025-07-02,Lettuce,2.4
+2025-07-02,Eggs,102.0
+2025-07-02,Onions,3.4
+2025-07-03,Rice (Bomba),48.177
+2025-07-03,Seafood Mix,83.7
+2025-07-03,Olive Oil,19.9
+2025-07-03,Coffee Beans,1.0908
+2025-07-03,Wine Bottle (Red),13.5
+2025-07-03,Sangria Mix,76.0
+2025-07-03,Beer Keg (30L),27.6
+2025-07-03,Chicken,9.797
+2025-07-03,Potatoes,16.564
+2025-07-03,Lettuce,2.3
+2025-07-03,Beef Steak,0.9
+2025-07-03,Eggs,48.0
+2025-07-03,Onions,1.6
+2025-07-04,Coffee Beans,1.4392
+2025-07-04,Rice (Bomba),62.115
+2025-07-04,Seafood Mix,107.3
+2025-07-04,Olive Oil,25.0
+2025-07-04,Sangria Mix,109.0
+2025-07-04,Wine Bottle (Red),17.55
+2025-07-04,Chicken,6.868
+2025-07-04,Potatoes,16.16
+2025-07-04,Lettuce,2.0
+2025-07-04,Beer Keg (30L),37.5
+2025-07-04,Eggs,42.0
+2025-07-04,Onions,1.4
+2025-07-04,Beef Steak,0.6
+2025-07-05,Beer Keg (30L),33.6
+2025-07-05,Rice (Bomba),61.6605
+2025-07-05,Seafood Mix,107.35
+2025-07-05,Olive Oil,24.95
+2025-07-05,Coffee Beans,1.4241
+2025-07-05,Sangria Mix,116.0
+2025-07-05,Wine Bottle (Red),15.3
+2025-07-05,Potatoes,16.16
+2025-07-05,Beef Steak,1.5
+2025-07-05,Chicken,8.383
+2025-07-05,Lettuce,2.5
+2025-07-05,Eggs,36.0
+2025-07-05,Onions,1.2
+2025-07-06,Sangria Mix,118.0
+2025-07-06,Rice (Bomba),63.7815
+2025-07-06,Seafood Mix,109.25
+2025-07-06,Olive Oil,25.15
+2025-07-06,Wine Bottle (Red),19.05
+2025-07-06,Coffee Beans,1.9089
+2025-07-06,Beer Keg (30L),42.3
+2025-07-06,Chicken,6.767
+2025-07-06,Potatoes,15.554
+2025-07-06,Lettuce,2.1
+2025-07-06,Eggs,72.0
+2025-07-06,Onions,2.4
+2025-07-06,Beef Steak,1.2
+2025-07-07,Beer Keg (30L),43.2
+2025-07-07,Coffee Beans,1.6665
+2025-07-07,Rice (Bomba),65.5995
+2025-07-07,Seafood Mix,112.45
+2025-07-07,Olive Oil,25.45
+2025-07-07,Sangria Mix,101.0
+2025-07-07,Wine Bottle (Red),14.85
+2025-07-07,Chicken,11.211
+2025-07-07,Potatoes,17.473
+2025-07-07,Lettuce,2.9
+2025-07-07,Eggs,45.0
+2025-07-07,Onions,1.5
+2025-07-07,Beef Steak,2.4
+2025-07-08,Beer Keg (30L),35.7
+2025-07-08,Rice (Bomba),51.6615
+2025-07-08,Seafood Mix,88.05
+2025-07-08,Olive Oil,20.3
+2025-07-08,Coffee Beans,1.6665
+2025-07-08,Wine Bottle (Red),15.6
+2025-07-08,Sangria Mix,100.0
+2025-07-08,Chicken,6.969
+2025-07-08,Potatoes,14.746
+2025-07-08,Lettuce,2.3
+2025-07-08,Eggs,51.0
+2025-07-08,Onions,1.7
+2025-07-08,Beef Steak,0.9
+2025-07-09,Rice (Bomba),69.084
+2025-07-09,Seafood Mix,118.2
+2025-07-09,Olive Oil,27.35
+2025-07-09,Coffee Beans,1.6968
+2025-07-09,Wine Bottle (Red),19.65
+2025-07-09,Sangria Mix,111.0
+2025-07-09,Beer Keg (30L),45.0
+2025-07-09,Chicken,12.625
+2025-07-09,Potatoes,21.109
+2025-07-09,Lettuce,3.5
+2025-07-09,Beef Steak,0.3
+2025-07-09,Eggs,60.0
+2025-07-09,Onions,2.0
+2025-07-10,Rice (Bomba),51.207
+2025-07-10,Seafood Mix,86.9
+2025-07-10,Olive Oil,19.55
+2025-07-10,Coffee Beans,1.4847
+2025-07-10,Beer Keg (30L),33.0
+2025-07-10,Wine Bottle (Red),14.25
+2025-07-10,Sangria Mix,102.0
+2025-07-10,Chicken,8.585
+2025-07-10,Potatoes,13.332
+2025-07-10,Lettuce,2.3
+2025-07-10,Eggs,57.0
+2025-07-10,Onions,1.9
+2025-07-10,Beef Steak,1.5
+2025-07-11,Rice (Bomba),65.145
+2025-07-11,Seafood Mix,112.9
+2025-07-11,Olive Oil,26.85
+2025-07-11,Coffee Beans,1.6816
+2025-07-11,Sangria Mix,104.0
+2025-07-11,Wine Bottle (Red),16.5
+2025-07-11,Beer Keg (30L),38.4
+2025-07-11,Chicken,7.676
+2025-07-11,Potatoes,18.786
+2025-07-11,Lettuce,2.0
+2025-07-11,Beef Steak,0.9
+2025-07-11,Eggs,81.0
+2025-07-11,Onions,2.7
+2025-07-12,Rice (Bomba),60.7515
+2025-07-12,Seafood Mix,102.85
+2025-07-12,Olive Oil,23.15
+2025-07-12,Sangria Mix,101.0
+2025-07-12,Coffee Beans,1.8028
+2025-07-12,Beer Keg (30L),41.4
+2025-07-12,Wine Bottle (Red),15.0
+2025-07-12,Chicken,8.282
+2025-07-12,Potatoes,15.15
+2025-07-12,Lettuce,2.2
+2025-07-12,Eggs,54.0
+2025-07-12,Onions,1.8
+2025-07-12,Beef Steak,1.2
+2025-07-13,Rice (Bomba),64.236
+2025-07-13,Seafood Mix,111.4
+2025-07-13,Olive Oil,26.8
+2025-07-13,Beer Keg (30L),37.2
+2025-07-13,Wine Bottle (Red),13.95
+2025-07-13,Coffee Beans,1.515
+2025-07-13,Sangria Mix,90.0
+2025-07-13,Chicken,5.353
+2025-07-13,Potatoes,18.483
+2025-07-13,Lettuce,1.5
+2025-07-13,Eggs,87.0
+2025-07-13,Onions,2.9
+2025-07-13,Beef Steak,0.6
+2025-07-14,Rice (Bomba),62.115
+2025-07-14,Seafood Mix,106.3
+2025-07-14,Olive Oil,24.4
+2025-07-14,Sangria Mix,89.0
+2025-07-14,Coffee Beans,1.5907
+2025-07-14,Wine Bottle (Red),15.3
+2025-07-14,Beer Keg (30L),36.0
+2025-07-14,Chicken,11.11
+2025-07-14,Potatoes,17.271
+2025-07-14,Lettuce,3.0
+2025-07-14,Beef Steak,0.9
+2025-07-14,Eggs,75.0
+2025-07-14,Onions,2.5
+2025-07-15,Sangria Mix,56.0
+2025-07-15,Rice (Bomba),37.1175
+2025-07-15,Seafood Mix,64.45
+2025-07-15,Olive Oil,15.15
+2025-07-15,Beer Keg (30L),18.3
+2025-07-15,Wine Bottle (Red),8.1
+2025-07-15,Coffee Beans,1.0302
+2025-07-15,Chicken,3.131
+2025-07-15,Potatoes,8.888
+2025-07-15,Lettuce,0.9
+2025-07-15,Eggs,36.0
+2025-07-15,Onions,1.2
+2025-07-15,Beef Steak,0.3
+2025-07-16,Rice (Bomba),55.6005
+2025-07-16,Seafood Mix,96.35
+2025-07-16,Olive Oil,22.85
+2025-07-16,Coffee Beans,1.5604
+2025-07-16,Beer Keg (30L),41.4
+2025-07-16,Wine Bottle (Red),15.75
+2025-07-16,Sangria Mix,117.0
+2025-07-16,Chicken,7.373
+2025-07-16,Potatoes,15.554
+2025-07-16,Lettuce,1.9
+2025-07-16,Eggs,72.0
+2025-07-16,Onions,2.4
+2025-07-17,Sangria Mix,113.0
+2025-07-17,Rice (Bomba),61.3575
+2025-07-17,Seafood Mix,105.45
+2025-07-17,Olive Oil,24.2
+2025-07-17,Wine Bottle (Red),16.65
+2025-07-17,Beer Keg (30L),42.3
+2025-07-17,Coffee Beans,1.5604
+2025-07-17,Chicken,7.171
+2025-07-17,Potatoes,14.241
+2025-07-17,Lettuce,2.1
+2025-07-17,Eggs,60.0
+2025-07-17,Onions,2.0
+2025-07-17,Beef Steak,0.6
+2025-07-18,Rice (Bomba),50.904
+2025-07-18,Seafood Mix,88.2
+2025-07-18,Olive Oil,20.55
+2025-07-18,Beer Keg (30L),31.5
+2025-07-18,Coffee Beans,1.1211
+2025-07-18,Sangria Mix,86.0
+2025-07-18,Wine Bottle (Red),13.05
+2025-07-18,Chicken,7.777
+2025-07-18,Potatoes,13.635
+2025-07-18,Lettuce,2.3
+2025-07-18,Eggs,60.0
+2025-07-18,Onions,2.0
+2025-07-18,Beef Steak,0.9
+2025-07-19,Coffee Beans,1.621
+2025-07-19,Rice (Bomba),66.2055
+2025-07-19,Seafood Mix,113.85
+2025-07-19,Olive Oil,26.75
+2025-07-19,Sangria Mix,93.0
+2025-07-19,Wine Bottle (Red),15.0
+2025-07-19,Beer Keg (30L),44.7
+2025-07-19,Chicken,10.807
+2025-07-19,Potatoes,20.907
+2025-07-19,Lettuce,2.9
+2025-07-19,Beef Steak,1.2
+2025-07-19,Eggs,75.0
+2025-07-19,Onions,2.5
+2025-07-20,Rice (Bomba),62.2665
+2025-07-20,Seafood Mix,104.95
+2025-07-20,Olive Oil,23.15
+2025-07-20,Beer Keg (30L),37.2
+2025-07-20,Wine Bottle (Red),19.5
+2025-07-20,Coffee Beans,2.1513
+2025-07-20,Sangria Mix,115.0
+2025-07-20,Chicken,13.231
+2025-07-20,Potatoes,16.766
+2025-07-20,Eggs,42.0
+2025-07-20,Onions,1.4
+2025-07-20,Lettuce,3.7
+2025-07-20,Beef Steak,0.9
+2025-07-21,Sangria Mix,99.0
+2025-07-21,Rice (Bomba),54.54
+2025-07-21,Seafood Mix,93.0
+2025-07-21,Olive Oil,20.7
+2025-07-21,Coffee Beans,1.2877
+2025-07-21,Beer Keg (30L),27.9
+2025-07-21,Wine Bottle (Red),12.75
+2025-07-21,Eggs,30.0
+2025-07-21,Potatoes,9.898
+2025-07-21,Onions,1.0
+2025-07-21,Chicken,5.353
+2025-07-21,Lettuce,1.5
+2025-07-21,Beef Steak,0.3
+2025-07-22,Coffee Beans,1.6665
+2025-07-22,Beer Keg (30L),39.9
+2025-07-22,Wine Bottle (Red),17.85
+2025-07-22,Rice (Bomba),68.6295
+2025-07-22,Seafood Mix,116.25
+2025-07-22,Olive Oil,26.05
+2025-07-22,Sangria Mix,135.0
+2025-07-22,Chicken,7.777
+2025-07-22,Potatoes,15.251
+2025-07-22,Lettuce,2.3
+2025-07-22,Eggs,63.0
+2025-07-22,Onions,2.1
+2025-07-22,Beef Steak,1.2
+2025-07-23,Rice (Bomba),51.813
+2025-07-23,Seafood Mix,88.9
+2025-07-23,Olive Oil,20.65
+2025-07-23,Coffee Beans,1.318
+2025-07-23,Beer Keg (30L),28.2
+2025-07-23,Sangria Mix,97.0
+2025-07-23,Wine Bottle (Red),16.8
+2025-07-23,Chicken,7.07
+2025-07-23,Potatoes,14.544
+2025-07-23,Lettuce,1.8
+2025-07-23,Eggs,51.0
+2025-07-23,Onions,1.7
+2025-07-23,Beef Steak,0.9
+2025-07-24,Rice (Bomba),64.0845
+2025-07-24,Seafood Mix,109.55
+2025-07-24,Olive Oil,24.5
+2025-07-24,Wine Bottle (Red),17.1
+2025-07-24,Beer Keg (30L),34.5
+2025-07-24,Sangria Mix,111.0
+2025-07-24,Coffee Beans,1.4847
+2025-07-24,Eggs,51.0
+2025-07-24,Potatoes,12.524
+2025-07-24,Onions,1.7
+2025-07-24,Chicken,8.383
+2025-07-24,Lettuce,2.5
+2025-07-25,Wine Bottle (Red),15.9
+2025-07-25,Sangria Mix,106.0
+2025-07-25,Rice (Bomba),61.509
+2025-07-25,Seafood Mix,104.9
+2025-07-25,Olive Oil,24.85
+2025-07-25,Coffee Beans,1.8786
+2025-07-25,Beer Keg (30L),40.2
+2025-07-25,Chicken,11.11
+2025-07-25,Potatoes,22.321
+2025-07-25,Lettuce,3.0
+2025-07-25,Eggs,72.0
+2025-07-25,Onions,2.4
+2025-07-25,Beef Steak,0.6
+2025-07-26,Rice (Bomba),62.721
+2025-07-26,Seafood Mix,106.5
+2025-07-26,Olive Oil,24.65
+2025-07-26,Coffee Beans,1.1817
+2025-07-26,Sangria Mix,116.0
+2025-07-26,Wine Bottle (Red),14.4
+2025-07-26,Beer Keg (30L),37.5
+2025-07-26,Chicken,8.888
+2025-07-26,Potatoes,18.281
+2025-07-26,Lettuce,2.8
+2025-07-26,Eggs,90.0
+2025-07-26,Onions,3.0
+2025-07-26,Beef Steak,0.9
+2025-07-27,Beer Keg (30L),52.5
+2025-07-27,Rice (Bomba),72.2655
+2025-07-27,Seafood Mix,123.65
+2025-07-27,Olive Oil,29.0
+2025-07-27,Wine Bottle (Red),17.25
+2025-07-27,Coffee Beans,1.5907
+2025-07-27,Sangria Mix,129.0
+2025-07-27,Chicken,9.595
+2025-07-27,Potatoes,21.008
+2025-07-27,Lettuce,2.9
+2025-07-27,Eggs,105.0
+2025-07-27,Onions,3.5
+2025-07-27,Beef Steak,0.6
+2025-07-28,Coffee Beans,1.3029
+2025-07-28,Rice (Bomba),52.8735
+2025-07-28,Seafood Mix,89.85
+2025-07-28,Olive Oil,20.15
+2025-07-28,Sangria Mix,100.0
+2025-07-28,Wine Bottle (Red),13.35
+2025-07-28,Beer Keg (30L),29.4
+2025-07-28,Chicken,7.676
+2025-07-28,Potatoes,12.827
+2025-07-28,Lettuce,2.4
+2025-07-28,Eggs,33.0
+2025-07-28,Onions,1.1
+2025-07-28,Beef Steak,0.6
+2025-07-29,Rice (Bomba),63.4785
+2025-07-29,Seafood Mix,109.35
+2025-07-29,Olive Oil,25.9
+2025-07-29,Sangria Mix,109.0
+2025-07-29,Coffee Beans,1.9543
+2025-07-29,Wine Bottle (Red),16.05
+2025-07-29,Beer Keg (30L),40.8
+2025-07-29,Chicken,8.585
+2025-07-29,Potatoes,19.392
+2025-07-29,Lettuce,2.3
+2025-07-29,Eggs,87.0
+2025-07-29,Onions,2.9
+2025-07-29,Beef Steak,1.2
+2025-07-30,Rice (Bomba),62.5695
+2025-07-30,Seafood Mix,105.85
+2025-07-30,Olive Oil,23.65
+2025-07-30,Coffee Beans,1.6665
+2025-07-30,Sangria Mix,112.0
+2025-07-30,Beer Keg (30L),42.6
+2025-07-30,Wine Bottle (Red),12.75
+2025-07-30,Chicken,8.282
+2025-07-30,Potatoes,14.342
+2025-07-30,Lettuce,2.2
+2025-07-30,Beef Steak,0.6
+2025-07-30,Eggs,48.0
+2025-07-30,Onions,1.6
+2025-07-31,Wine Bottle (Red),13.8
+2025-07-31,Coffee Beans,1.5604
+2025-07-31,Rice (Bomba),65.448
+2025-07-31,Seafood Mix,113.6
+2025-07-31,Olive Oil,27.35
+2025-07-31,Beer Keg (30L),45.3
+2025-07-31,Sangria Mix,103.0
+2025-07-31,Chicken,7.979
+2025-07-31,Potatoes,19.897
+2025-07-31,Lettuce,2.1
+2025-07-31,Eggs,102.0
+2025-07-31,Onions,3.4
+2025-07-31,Beef Steak,0.6
+2025-08-01,Rice (Bomba),54.237
+2025-08-01,Seafood Mix,93.7
+2025-08-01,Olive Oil,22.05
+2025-08-01,Wine Bottle (Red),16.35
+2025-08-01,Coffee Beans,1.4241
+2025-08-01,Beer Keg (30L),33.6
+2025-08-01,Sangria Mix,103.0
+2025-08-01,Chicken,5.252
+2025-08-01,Potatoes,13.736
+2025-08-01,Lettuce,1.6
+2025-08-01,Eggs,63.0
+2025-08-01,Onions,2.1
+2025-08-02,Rice (Bomba),51.3585
+2025-08-02,Seafood Mix,89.55
+2025-08-02,Olive Oil,21.15
+2025-08-02,Coffee Beans,1.2877
+2025-08-02,Sangria Mix,86.0
+2025-08-02,Wine Bottle (Red),12.75
+2025-08-02,Beer Keg (30L),31.2
+2025-08-02,Potatoes,14.342
+2025-08-02,Chicken,6.262
+2025-08-02,Lettuce,1.8
+2025-08-02,Beef Steak,0.9
+2025-08-02,Eggs,36.0
+2025-08-02,Onions,1.2
+2025-08-03,Rice (Bomba),64.842
+2025-08-03,Seafood Mix,110.4
+2025-08-03,Olive Oil,24.75
+2025-08-03,Sangria Mix,104.0
+2025-08-03,Wine Bottle (Red),14.85
+2025-08-03,Coffee Beans,1.7271
+2025-08-03,Beer Keg (30L),48.0
+2025-08-03,Chicken,10.1
+2025-08-03,Potatoes,15.352
+2025-08-03,Lettuce,3.2
+2025-08-03,Eggs,51.0
+2025-08-03,Onions,1.7
+2025-08-03,Beef Steak,0.6
+2025-08-04,Rice (Bomba),71.6595
+2025-08-04,Seafood Mix,123.85
+2025-08-04,Olive Oil,29.15
+2025-08-04,Wine Bottle (Red),17.85
+2025-08-04,Sangria Mix,125.0
+2025-08-04,Coffee Beans,1.3635
+2025-08-04,Beer Keg (30L),46.2
+2025-08-04,Chicken,9.393
+2025-08-04,Potatoes,20.907
+2025-08-04,Lettuce,2.7
+2025-08-04,Eggs,75.0
+2025-08-04,Onions,2.5
+2025-08-04,Beef Steak,1.5
+2025-08-05,Sangria Mix,82.0
+2025-08-05,Coffee Beans,1.4392
+2025-08-05,Beer Keg (30L),33.9
+2025-08-05,Rice (Bomba),53.1765
+2025-08-05,Seafood Mix,92.95
+2025-08-05,Olive Oil,23.05
+2025-08-05,Wine Bottle (Red),15.45
+2025-08-05,Chicken,9.999
+2025-08-05,Potatoes,21.008
+2025-08-05,Lettuce,2.9
+2025-08-05,Eggs,96.0
+2025-08-05,Onions,3.2
+2025-08-05,Beef Steak,0.3
+2025-08-06,Beer Keg (30L),34.5
+2025-08-06,Sangria Mix,98.0
+2025-08-06,Rice (Bomba),49.389
+2025-08-06,Seafood Mix,85.3
+2025-08-06,Olive Oil,19.85
+2025-08-06,Coffee Beans,1.1817
+2025-08-06,Wine Bottle (Red),13.35
+2025-08-06,Chicken,8.484
+2025-08-06,Potatoes,14.241
+2025-08-06,Lettuce,2.4
+2025-08-06,Eggs,54.0
+2025-08-06,Onions,1.8
+2025-08-06,Beef Steak,0.9
+2025-08-07,Coffee Beans,1.621
+2025-08-07,Sangria Mix,103.0
+2025-08-07,Wine Bottle (Red),14.85
+2025-08-07,Rice (Bomba),59.2365
+2025-08-07,Seafood Mix,102.55
+2025-08-07,Olive Oil,23.6
+2025-08-07,Beer Keg (30L),37.8
+2025-08-07,Chicken,7.272
+2025-08-07,Potatoes,13.736
+2025-08-07,Lettuce,2.0
+2025-08-07,Beef Steak,0.9
+2025-08-07,Eggs,45.0
+2025-08-07,Onions,1.5
+2025-08-08,Beer Keg (30L),38.4
+2025-08-08,Wine Bottle (Red),16.95
+2025-08-08,Rice (Bomba),66.054
+2025-08-08,Seafood Mix,114.2
+2025-08-08,Olive Oil,26.55
+2025-08-08,Sangria Mix,101.0
+2025-08-08,Coffee Beans,1.5453
+2025-08-08,Beef Steak,1.2
+2025-08-08,Potatoes,16.968
+2025-08-08,Chicken,8.989
+2025-08-08,Lettuce,2.3
+2025-08-08,Eggs,75.0
+2025-08-08,Onions,2.5
+2025-08-09,Rice (Bomba),61.812
+2025-08-09,Seafood Mix,108.4
+2025-08-09,Olive Oil,26.15
+2025-08-09,Coffee Beans,1.6059
+2025-08-09,Sangria Mix,104.0
+2025-08-09,Beer Keg (30L),44.4
+2025-08-09,Wine Bottle (Red),16.5
+2025-08-09,Chicken,12.019
+2025-08-09,Potatoes,20.705
+2025-08-09,Lettuce,3.7
+2025-08-09,Eggs,84.0
+2025-08-09,Onions,2.8
+2025-08-09,Beef Steak,0.3
+2025-08-10,Sangria Mix,90.0
+2025-08-10,Rice (Bomba),49.086
+2025-08-10,Seafood Mix,84.8
+2025-08-10,Olive Oil,19.65
+2025-08-10,Coffee Beans,1.3029
+2025-08-10,Wine Bottle (Red),11.7
+2025-08-10,Beer Keg (30L),32.7
+2025-08-10,Eggs,54.0
+2025-08-10,Potatoes,13.231
+2025-08-10,Onions,1.8
+2025-08-10,Chicken,8.686
+2025-08-10,Lettuce,2.6
+2025-08-11,Wine Bottle (Red),18.3
+2025-08-11,Beer Keg (30L),48.3
+2025-08-11,Rice (Bomba),71.6595
+2025-08-11,Seafood Mix,122.45
+2025-08-11,Olive Oil,27.75
+2025-08-11,Coffee Beans,1.7574
+2025-08-11,Sangria Mix,115.0
+2025-08-11,Chicken,9.696
+2025-08-11,Potatoes,17.17
+2025-08-11,Lettuce,3.2
+2025-08-11,Eggs,60.0
+2025-08-11,Onions,2.0
+2025-08-11,Beef Steak,0.9
+2025-08-12,Wine Bottle (Red),18.75
+2025-08-12,Sangria Mix,80.0
+2025-08-12,Rice (Bomba),63.1755
+2025-08-12,Seafood Mix,109.65
+2025-08-12,Olive Oil,26.25
+2025-08-12,Beer Keg (30L),46.5
+2025-08-12,Coffee Beans,1.5756
+2025-08-12,Chicken,10.1
+2025-08-12,Potatoes,20.705
+2025-08-12,Lettuce,3.2
+2025-08-12,Eggs,75.0
+2025-08-12,Onions,2.5
+2025-08-12,Beef Steak,0.3
+2025-08-13,Rice (Bomba),56.358
+2025-08-13,Seafood Mix,96.2
+2025-08-13,Olive Oil,21.55
+2025-08-13,Coffee Beans,1.3029
+2025-08-13,Sangria Mix,93.0
+2025-08-13,Beer Keg (30L),37.5
+2025-08-13,Wine Bottle (Red),13.5
+2025-08-13,Chicken,12.221
+2025-08-13,Potatoes,15.756
+2025-08-13,Lettuce,3.9
+2025-08-13,Beef Steak,0.6
+2025-08-13,Eggs,27.0
+2025-08-13,Onions,0.9
+2025-08-14,Rice (Bomba),66.054
+2025-08-14,Seafood Mix,112.4
+2025-08-14,Olive Oil,26.25
+2025-08-14,Wine Bottle (Red),17.1
+2025-08-14,Sangria Mix,103.0
+2025-08-14,Beer Keg (30L),42.6
+2025-08-14,Coffee Beans,1.8937
+2025-08-14,Chicken,9.797
+2025-08-14,Potatoes,21.412
+2025-08-14,Lettuce,3.1
+2025-08-14,Eggs,69.0
+2025-08-14,Onions,2.3
+2025-08-14,Beef Steak,0.9
+2025-08-15,Rice (Bomba),61.206
+2025-08-15,Seafood Mix,104.4
+2025-08-15,Olive Oil,23.6
+2025-08-15,Coffee Beans,1.7119
+2025-08-15,Wine Bottle (Red),16.5
+2025-08-15,Beer Keg (30L),38.7
+2025-08-15,Sangria Mix,116.0
+2025-08-15,Chicken,7.777
+2025-08-15,Potatoes,14.039
+2025-08-15,Lettuce,2.3
+2025-08-15,Eggs,57.0
+2025-08-15,Onions,1.9
+2025-08-15,Beef Steak,0.9
+2025-08-16,Rice (Bomba),58.6305
+2025-08-16,Seafood Mix,101.35
+2025-08-16,Olive Oil,23.7
+2025-08-16,Wine Bottle (Red),16.35
+2025-08-16,Coffee Beans,1.2726
+2025-08-16,Beer Keg (30L),33.0
+2025-08-16,Chicken,6.565
+2025-08-16,Potatoes,16.261
+2025-08-16,Lettuce,1.9
+2025-08-16,Sangria Mix,88.0
+2025-08-16,Eggs,42.0
+2025-08-16,Onions,1.4
+2025-08-16,Beef Steak,1.5
+2025-08-17,Beer Keg (30L),33.6
+2025-08-17,Sangria Mix,92.0
+2025-08-17,Rice (Bomba),50.1465
+2025-08-17,Seafood Mix,87.55
+2025-08-17,Olive Oil,21.25
+2025-08-17,Coffee Beans,1.515
+2025-08-17,Wine Bottle (Red),12.3
+2025-08-17,Chicken,9.191
+2025-08-17,Potatoes,18.18
+2025-08-17,Lettuce,2.1
+2025-08-17,Eggs,60.0
+2025-08-17,Onions,2.0
+2025-08-17,Beef Steak,0.9
+2025-08-18,Wine Bottle (Red),16.2
+2025-08-18,Rice (Bomba),69.8415
+2025-08-18,Seafood Mix,119.65
+2025-08-18,Olive Oil,27.0
+2025-08-18,Sangria Mix,103.0
+2025-08-18,Coffee Beans,1.818
+2025-08-18,Beer Keg (30L),43.2
+2025-08-18,Chicken,7.07
+2025-08-18,Potatoes,14.342
+2025-08-18,Lettuce,2.2
+2025-08-18,Eggs,57.0
+2025-08-18,Onions,1.9
+2025-08-18,Beef Steak,1.5
+2025-08-19,Rice (Bomba),75.2955
+2025-08-19,Seafood Mix,128.05
+2025-08-19,Olive Oil,29.2
+2025-08-19,Wine Bottle (Red),22.65
+2025-08-19,Coffee Beans,1.7877
+2025-08-19,Beer Keg (30L),48.3
+2025-08-19,Sangria Mix,115.0
+2025-08-19,Eggs,84.0
+2025-08-19,Potatoes,16.867
+2025-08-19,Onions,2.8
+2025-08-19,Chicken,6.969
+2025-08-19,Lettuce,1.9
+2025-08-19,Beef Steak,0.6
+2025-08-20,Wine Bottle (Red),17.1
+2025-08-20,Rice (Bomba),70.296
+2025-08-20,Seafood Mix,119.2
+2025-08-20,Olive Oil,26.8
+2025-08-20,Beer Keg (30L),33.9
+2025-08-20,Sangria Mix,102.0
+2025-08-20,Coffee Beans,1.5907
+2025-08-20,Chicken,6.06
+2025-08-20,Potatoes,14.544
+2025-08-20,Lettuce,1.6
+2025-08-20,Eggs,72.0
+2025-08-20,Onions,2.4
+2025-08-20,Beef Steak,1.5
+2025-08-21,Sangria Mix,105.0
+2025-08-21,Rice (Bomba),61.812
+2025-08-21,Seafood Mix,105.8
+2025-08-21,Olive Oil,24.65
+2025-08-21,Wine Bottle (Red),14.1
+2025-08-21,Beer Keg (30L),38.1
+2025-08-21,Coffee Beans,1.5453
+2025-08-21,Chicken,9.191
+2025-08-21,Potatoes,18.584
+2025-08-21,Lettuce,2.9
+2025-08-21,Eggs,63.0
+2025-08-21,Onions,2.1
+2025-08-21,Beef Steak,0.6
+2025-08-22,Sangria Mix,124.0
+2025-08-22,Coffee Beans,1.5756
+2025-08-22,Wine Bottle (Red),17.25
+2025-08-22,Rice (Bomba),53.7825
+2025-08-22,Seafood Mix,92.55
+2025-08-22,Olive Oil,21.75
+2025-08-22,Beer Keg (30L),36.0
+2025-08-22,Potatoes,16.766
+2025-08-22,Chicken,8.989
+2025-08-22,Lettuce,2.7
+2025-08-22,Eggs,54.0
+2025-08-22,Onions,1.8
+2025-08-23,Sangria Mix,103.0
+2025-08-23,Rice (Bomba),62.5695
+2025-08-23,Seafood Mix,106.65
+2025-08-23,Olive Oil,23.9
+2025-08-23,Wine Bottle (Red),17.4
+2025-08-23,Beer Keg (30L),37.2
+2025-08-23,Coffee Beans,1.5301
+2025-08-23,Chicken,6.363
+2025-08-23,Potatoes,12.625
+2025-08-23,Lettuce,2.1
+2025-08-23,Eggs,42.0
+2025-08-23,Onions,1.4
+2025-08-23,Beef Steak,0.6
+2025-08-24,Wine Bottle (Red),16.05
+2025-08-24,Rice (Bomba),52.8735
+2025-08-24,Seafood Mix,90.65
+2025-08-24,Olive Oil,20.6
+2025-08-24,Coffee Beans,1.818
+2025-08-24,Beer Keg (30L),31.8
+2025-08-24,Sangria Mix,87.0
+2025-08-24,Chicken,7.474
+2025-08-24,Potatoes,12.827
+2025-08-24,Lettuce,2.2
+2025-08-24,Beef Steak,0.9
+2025-08-24,Eggs,42.0
+2025-08-24,Onions,1.4
+2025-08-25,Rice (Bomba),68.478
+2025-08-25,Seafood Mix,117.4
+2025-08-25,Olive Oil,26.75
+2025-08-25,Wine Bottle (Red),20.85
+2025-08-25,Coffee Beans,1.8331
+2025-08-25,Beer Keg (30L),41.7
+2025-08-25,Sangria Mix,123.0
+2025-08-25,Chicken,10.504
+2025-08-25,Potatoes,16.867
+2025-08-25,Lettuce,2.8
+2025-08-25,Eggs,54.0
+2025-08-25,Onions,1.8
+2025-08-25,Beef Steak,0.3
+2025-08-26,Rice (Bomba),64.0845
+2025-08-26,Seafood Mix,109.95
+2025-08-26,Olive Oil,25.4
+2025-08-26,Sangria Mix,104.0
+2025-08-26,Coffee Beans,1.5756
+2025-08-26,Beer Keg (30L),40.8
+2025-08-26,Wine Bottle (Red),14.85
+2025-08-26,Chicken,9.393
+2025-08-26,Potatoes,17.978
+2025-08-26,Lettuce,3.1
+2025-08-26,Beef Steak,1.8
+2025-08-26,Eggs,75.0
+2025-08-26,Onions,2.5
+2025-08-27,Rice (Bomba),65.145
+2025-08-27,Seafood Mix,112.1
+2025-08-27,Olive Oil,26.15
+2025-08-27,Coffee Beans,1.6665
+2025-08-27,Wine Bottle (Red),15.45
+2025-08-27,Sangria Mix,98.0
+2025-08-27,Beer Keg (30L),33.6
+2025-08-27,Chicken,6.767
+2025-08-27,Potatoes,16.867
+2025-08-27,Lettuce,1.7
+2025-08-27,Eggs,72.0
+2025-08-27,Onions,2.4
+2025-08-27,Beef Steak,1.2
+2025-08-28,Rice (Bomba),57.57
+2025-08-28,Seafood Mix,98.2
+2025-08-28,Olive Oil,22.6
+2025-08-28,Coffee Beans,1.3938
+2025-08-28,Wine Bottle (Red),13.8
+2025-08-28,Sangria Mix,96.0
+2025-08-28,Beer Keg (30L),38.1
+2025-08-28,Chicken,7.777
+2025-08-28,Potatoes,15.049
+2025-08-28,Lettuce,2.3
+2025-08-28,Eggs,69.0
+2025-08-28,Onions,2.3
+2025-08-28,Beef Steak,0.3
+2025-08-29,Rice (Bomba),61.9635
+2025-08-29,Seafood Mix,106.25
+2025-08-29,Olive Oil,24.85
+2025-08-29,Beer Keg (30L),40.5
+2025-08-29,Coffee Beans,1.7574
+2025-08-29,Wine Bottle (Red),16.5
+2025-08-29,Sangria Mix,103.0
+2025-08-29,Chicken,8.08
+2025-08-29,Potatoes,18.382
+2025-08-29,Lettuce,2.4
+2025-08-29,Eggs,66.0
+2025-08-29,Onions,2.2
+2025-08-29,Beef Steak,1.2
+2025-08-30,Rice (Bomba),50.7525
+2025-08-30,Seafood Mix,86.35
+2025-08-30,Olive Oil,19.4
+2025-08-30,Wine Bottle (Red),12.9
+2025-08-30,Coffee Beans,1.4695
+2025-08-30,Sangria Mix,102.0
+2025-08-30,Beer Keg (30L),35.7
+2025-08-30,Chicken,8.282
+2025-08-30,Potatoes,12.625
+2025-08-30,Lettuce,2.6
+2025-08-30,Eggs,48.0
+2025-08-30,Onions,1.6
+2025-08-30,Beef Steak,0.9
+2025-08-31,Sangria Mix,112.0
+2025-08-31,Coffee Beans,1.4089
+2025-08-31,Rice (Bomba),59.994
+2025-08-31,Seafood Mix,101.4
+2025-08-31,Olive Oil,22.7
+2025-08-31,Wine Bottle (Red),16.5
+2025-08-31,Beer Keg (30L),35.4
+2025-08-31,Chicken,7.878
+2025-08-31,Potatoes,14.746
+2025-08-31,Lettuce,2.6
+2025-08-31,Beef Steak,0.6
+2025-08-31,Eggs,36.0
+2025-08-31,Onions,1.2
+2025-09-01,Sangria Mix,103.0
+2025-09-01,Rice (Bomba),63.024
+2025-09-01,Seafood Mix,109.2
+2025-09-01,Olive Oil,25.7
+2025-09-01,Wine Bottle (Red),14.55
+2025-09-01,Coffee Beans,1.6059
+2025-09-01,Beer Keg (30L),38.1
+2025-09-01,Chicken,5.555
+2025-09-01,Potatoes,16.362
+2025-09-01,Lettuce,1.7
+2025-09-01,Eggs,54.0
+2025-09-01,Onions,1.8
+2025-09-01,Beef Steak,0.9
+2025-09-02,Beer Keg (30L),34.2
+2025-09-02,Rice (Bomba),55.9035
+2025-09-02,Seafood Mix,96.25
+2025-09-02,Olive Oil,22.4
+2025-09-02,Wine Bottle (Red),15.15
+2025-09-02,Coffee Beans,1.5907
+2025-09-02,Sangria Mix,103.0
+2025-09-02,Chicken,10.807
+2025-09-02,Potatoes,17.069
+2025-09-02,Lettuce,3.3
+2025-09-02,Eggs,60.0
+2025-09-02,Onions,2.0
+2025-09-02,Beef Steak,0.3
+2025-09-03,Wine Bottle (Red),8.1
+2025-09-03,Rice (Bomba),38.6325
+2025-09-03,Seafood Mix,67.95
+2025-09-03,Olive Oil,16.15
+2025-09-03,Sangria Mix,66.0
+2025-09-03,Beer Keg (30L),24.3
+2025-09-03,Coffee Beans,0.9545
+2025-09-03,Potatoes,8.686
+2025-09-03,Chicken,3.434
+2025-09-03,Lettuce,1.0
+2025-09-03,Eggs,42.0
+2025-09-03,Onions,1.4
+2025-09-04,Sangria Mix,117.0
+2025-09-04,Rice (Bomba),74.235
+2025-09-04,Seafood Mix,127.5
+2025-09-04,Olive Oil,29.25
+2025-09-04,Wine Bottle (Red),15.0
+2025-09-04,Beer Keg (30L),42.0
+2025-09-04,Coffee Beans,2.121
+2025-09-04,Chicken,6.161
+2025-09-04,Potatoes,15.15
+2025-09-04,Lettuce,1.9
+2025-09-04,Eggs,75.0
+2025-09-04,Onions,2.5
+2025-09-05,Wine Bottle (Red),7.2
+2025-09-05,Coffee Beans,0.7121
+2025-09-05,Rice (Bomba),33.4815
+2025-09-05,Seafood Mix,59.05
+2025-09-05,Olive Oil,14.65
+2025-09-05,Beer Keg (30L),24.6
+2025-09-05,Sangria Mix,54.0
+2025-09-05,Chicken,8.282
+2025-09-05,Potatoes,14.039
+2025-09-05,Lettuce,2.2
+2025-09-05,Eggs,45.0
+2025-09-05,Onions,1.5
+2025-09-06,Coffee Beans,1.1514
+2025-09-06,Rice (Bomba),33.1785
+2025-09-06,Seafood Mix,57.75
+2025-09-06,Olive Oil,13.9
+2025-09-06,Beer Keg (30L),25.5
+2025-09-06,Sangria Mix,53.0
+2025-09-06,Chicken,8.383
+2025-09-06,Potatoes,13.029
+2025-09-06,Lettuce,2.5
+2025-09-06,Wine Bottle (Red),5.4
+2025-09-06,Eggs,42.0
+2025-09-06,Onions,1.4
+2025-09-06,Beef Steak,0.3
+2025-09-07,Wine Bottle (Red),9.3
+2025-09-07,Rice (Bomba),23.7855
+2025-09-07,Seafood Mix,40.65
+2025-09-07,Olive Oil,10.0
+2025-09-07,Sangria Mix,51.0
+2025-09-07,Coffee Beans,0.6363
+2025-09-07,Beer Keg (30L),22.8
+2025-09-07,Chicken,6.969
+2025-09-07,Potatoes,11.918
+2025-09-07,Lettuce,1.9
+2025-09-07,Eggs,57.0
+2025-09-07,Onions,1.9
+2025-09-07,Beef Steak,0.9
+2025-09-08,Sangria Mix,61.0
+2025-09-08,Wine Bottle (Red),9.9
+2025-09-08,Coffee Beans,1.2271
+2025-09-08,Beer Keg (30L),20.1
+2025-09-08,Rice (Bomba),41.0565
+2025-09-08,Seafood Mix,68.75
+2025-09-08,Olive Oil,15.3
+2025-09-08,Chicken,4.545
+2025-09-08,Potatoes,9.696
+2025-09-08,Lettuce,1.1
+2025-09-08,Eggs,27.0
+2025-09-08,Onions,0.9
+2025-09-08,Beef Steak,0.3
+2025-09-09,Rice (Bomba),74.3865
+2025-09-09,Seafood Mix,126.95
+2025-09-09,Olive Oil,28.55
+2025-09-09,Coffee Beans,1.6665
+2025-09-09,Sangria Mix,129.0
+2025-09-09,Beer Keg (30L),46.5
+2025-09-09,Wine Bottle (Red),16.35
+2025-09-09,Chicken,11.918
+2025-09-09,Potatoes,17.978
+2025-09-09,Lettuce,3.4
+2025-09-09,Eggs,54.0
+2025-09-09,Onions,1.8
+2025-09-09,Beef Steak,0.9
+2025-09-10,Wine Bottle (Red),18.6
+2025-09-10,Sangria Mix,113.0
+2025-09-10,Beer Keg (30L),37.5
+2025-09-10,Rice (Bomba),66.66
+2025-09-10,Seafood Mix,114.6
+2025-09-10,Olive Oil,26.75
+2025-09-10,Coffee Beans,1.515
+2025-09-10,Chicken,7.272
+2025-09-10,Potatoes,17.372
+2025-09-10,Lettuce,2.4
+2025-09-10,Eggs,75.0
+2025-09-10,Onions,2.5
+2025-09-10,Beef Steak,0.3
+2025-09-11,Rice (Bomba),80.1435
+2025-09-11,Seafood Mix,139.65
+2025-09-11,Olive Oil,34.05
+2025-09-11,Coffee Beans,2.0907
+2025-09-11,Beer Keg (30L),50.1
+2025-09-11,Sangria Mix,128.0
+2025-09-11,Wine Bottle (Red),20.4
+2025-09-11,Chicken,9.797
+2025-09-11,Potatoes,27.169
+2025-09-11,Lettuce,2.7
+2025-09-11,Eggs,123.0
+2025-09-11,Onions,4.1
+2025-09-11,Beef Steak,2.1
+2025-09-12,Coffee Beans,1.318
+2025-09-12,Rice (Bomba),59.691
+2025-09-12,Seafood Mix,102.3
+2025-09-12,Olive Oil,23.8
+2025-09-12,Wine Bottle (Red),16.65
+2025-09-12,Beer Keg (30L),37.5
+2025-09-12,Sangria Mix,92.0
+2025-09-12,Potatoes,16.968
+2025-09-12,Chicken,8.888
+2025-09-12,Lettuce,2.8
+2025-09-12,Eggs,72.0
+2025-09-12,Onions,2.4
+2025-09-12,Beef Steak,0.3
+2025-09-13,Beer Keg (30L),28.2
+2025-09-13,Wine Bottle (Red),13.8
+2025-09-13,Rice (Bomba),56.055
+2025-09-13,Seafood Mix,95.3
+2025-09-13,Olive Oil,21.15
+2025-09-13,Sangria Mix,92.0
+2025-09-13,Coffee Beans,1.1665
+2025-09-13,Chicken,6.06
+2025-09-13,Potatoes,10.403
+2025-09-13,Lettuce,2.0
+2025-09-13,Eggs,42.0
+2025-09-13,Onions,1.4
+2025-09-13,Beef Steak,0.3
+2025-09-14,Wine Bottle (Red),15.0
+2025-09-14,Rice (Bomba),63.63
+2025-09-14,Seafood Mix,110.8
+2025-09-14,Olive Oil,25.8
+2025-09-14,Coffee Beans,1.4392
+2025-09-14,Sangria Mix,101.0
+2025-09-14,Beer Keg (30L),32.1
+2025-09-14,Chicken,9.09
+2025-09-14,Potatoes,15.655
+2025-09-14,Lettuce,3.0
+2025-09-14,Eggs,63.0
+2025-09-14,Onions,2.1
+2025-09-14,Beef Steak,0.3
+2025-09-15,Rice (Bomba),38.784
+2025-09-15,Seafood Mix,65.0
+2025-09-15,Olive Oil,14.3
+2025-09-15,Sangria Mix,67.0
+2025-09-15,Beer Keg (30L),22.5
+2025-09-15,Coffee Beans,1.1665
+2025-09-15,Wine Bottle (Red),11.4
+2025-09-15,Chicken,7.575
+2025-09-15,Potatoes,10.504
+2025-09-15,Lettuce,2.1
+2025-09-15,Eggs,24.0
+2025-09-15,Onions,0.8
+2025-09-15,Beef Steak,0.6
+2025-09-16,Rice (Bomba),38.0265
+2025-09-16,Seafood Mix,64.35
+2025-09-16,Olive Oil,14.2
+2025-09-16,Beer Keg (30L),29.4
+2025-09-16,Sangria Mix,53.0
+2025-09-16,Coffee Beans,0.8787
+2025-09-16,Wine Bottle (Red),9.0
+2025-09-16,Chicken,7.07
+2025-09-16,Potatoes,10.1
+2025-09-16,Lettuce,1.8
+2025-09-16,Eggs,15.0
+2025-09-16,Onions,0.5
+2025-09-16,Beef Steak,1.5
+2025-09-17,Rice (Bomba),77.871
+2025-09-17,Seafood Mix,131.5
+2025-09-17,Olive Oil,29.15
+2025-09-17,Sangria Mix,138.0
+2025-09-17,Beer Keg (30L),45.3
+2025-09-17,Wine Bottle (Red),18.9
+2025-09-17,Coffee Beans,2.121
+2025-09-17,Chicken,8.787
+2025-09-17,Potatoes,16.059
+2025-09-17,Lettuce,2.5
+2025-09-17,Eggs,60.0
+2025-09-17,Onions,2.0
+2025-09-17,Beef Steak,0.9
+2025-09-18,Rice (Bomba),52.8735
+2025-09-18,Seafood Mix,90.85
+2025-09-18,Olive Oil,21.25
+2025-09-18,Beer Keg (30L),36.3
+2025-09-18,Wine Bottle (Red),13.2
+2025-09-18,Coffee Beans,1.4392
+2025-09-18,Sangria Mix,104.0
+2025-09-18,Chicken,8.383
+2025-09-18,Potatoes,16.362
+2025-09-18,Lettuce,2.1
+2025-09-18,Eggs,48.0
+2025-09-18,Onions,1.6
+2025-09-18,Beef Steak,0.9
+2025-09-19,Sangria Mix,40.0
+2025-09-19,Wine Bottle (Red),7.5
+2025-09-19,Rice (Bomba),28.6335
+2025-09-19,Seafood Mix,48.85
+2025-09-19,Olive Oil,11.25
+2025-09-19,Coffee Beans,0.9545
+2025-09-19,Beer Keg (30L),15.6
+2025-09-19,Potatoes,7.171
+2025-09-19,Eggs,27.0
+2025-09-19,Onions,0.9
+2025-09-19,Chicken,3.03
+2025-09-19,Lettuce,0.6
+2025-09-19,Beef Steak,0.3
+2025-09-20,Rice (Bomba),48.177
+2025-09-20,Seafood Mix,83.1
+2025-09-20,Olive Oil,18.9
+2025-09-20,Coffee Beans,1.2271
+2025-09-20,Wine Bottle (Red),11.85
+2025-09-20,Beer Keg (30L),26.4
+2025-09-20,Sangria Mix,76.0
+2025-09-20,Chicken,6.666
+2025-09-20,Potatoes,10.908
+2025-09-20,Lettuce,2.2
+2025-09-20,Beef Steak,0.9
+2025-09-20,Eggs,42.0
+2025-09-20,Onions,1.4
+2025-09-21,Rice (Bomba),56.964
+2025-09-21,Seafood Mix,97.8
+2025-09-21,Olive Oil,22.4
+2025-09-21,Coffee Beans,1.4847
+2025-09-21,Sangria Mix,87.0
+2025-09-21,Wine Bottle (Red),16.35
+2025-09-21,Beer Keg (30L),32.4
+2025-09-21,Chicken,3.636
+2025-09-21,Potatoes,11.211
+2025-09-21,Lettuce,1.2
+2025-09-21,Beef Steak,0.9
+2025-09-21,Eggs,63.0
+2025-09-21,Onions,2.1
+2025-09-22,Rice (Bomba),60.1455
+2025-09-22,Seafood Mix,103.05
+2025-09-22,Olive Oil,23.4
+2025-09-22,Coffee Beans,1.3332
+2025-09-22,Wine Bottle (Red),14.1
+2025-09-22,Sangria Mix,101.0
+2025-09-22,Beer Keg (30L),40.2
+2025-09-22,Chicken,7.777
+2025-09-22,Potatoes,14.645
+2025-09-22,Lettuce,2.3
+2025-09-22,Beef Steak,1.5
+2025-09-22,Eggs,42.0
+2025-09-22,Onions,1.4
+2025-09-23,Coffee Beans,1.4544
+2025-09-23,Rice (Bomba),57.267
+2025-09-23,Seafood Mix,100.1
+2025-09-23,Olive Oil,23.55
+2025-09-23,Beer Keg (30L),30.9
+2025-09-23,Wine Bottle (Red),12.75
+2025-09-23,Sangria Mix,94.0
+2025-09-23,Chicken,6.464
+2025-09-23,Potatoes,14.443
+2025-09-23,Lettuce,2.0
+2025-09-23,Eggs,54.0
+2025-09-23,Onions,1.8
+2025-09-23,Beef Steak,1.2
+2025-09-24,Rice (Bomba),75.75
+2025-09-24,Seafood Mix,129.2
+2025-09-24,Olive Oil,29.4
+2025-09-24,Coffee Beans,2.2573
+2025-09-24,Beer Keg (30L),42.3
+2025-09-24,Sangria Mix,119.0
+2025-09-24,Wine Bottle (Red),17.1
+2025-09-24,Potatoes,17.069
+2025-09-24,Chicken,7.777
+2025-09-24,Lettuce,2.3
+2025-09-24,Eggs,75.0
+2025-09-24,Onions,2.5
+2025-09-24,Beef Steak,0.9
+2025-09-25,Beer Keg (30L),50.7
+2025-09-25,Rice (Bomba),68.6295
+2025-09-25,Seafood Mix,118.05
+2025-09-25,Olive Oil,27.6
+2025-09-25,Wine Bottle (Red),17.55
+2025-09-25,Chicken,12.827
+2025-09-25,Potatoes,22.826
+2025-09-25,Lettuce,3.7
+2025-09-25,Coffee Beans,1.9998
+2025-09-25,Sangria Mix,120.0
+2025-09-25,Eggs,57.0
+2025-09-25,Onions,1.9
+2025-09-25,Beef Steak,1.5
+2025-09-26,Rice (Bomba),48.6315
+2025-09-26,Seafood Mix,81.85
+2025-09-26,Olive Oil,18.15
+2025-09-26,Beer Keg (30L),30.0
+2025-09-26,Coffee Beans,1.2574
+2025-09-26,Sangria Mix,80.0
+2025-09-26,Wine Bottle (Red),11.1
+2025-09-26,Chicken,4.646
+2025-09-26,Potatoes,9.797
+2025-09-26,Lettuce,1.4
+2025-09-26,Eggs,33.0
+2025-09-26,Onions,1.1
+2025-09-27,Wine Bottle (Red),18.6
+2025-09-27,Rice (Bomba),63.7815
+2025-09-27,Seafood Mix,107.85
+2025-09-27,Olive Oil,24.1
+2025-09-27,Beer Keg (30L),38.7
+2025-09-27,Sangria Mix,120.0
+2025-09-27,Coffee Beans,1.3938
+2025-09-27,Chicken,9.696
+2025-09-27,Potatoes,15.251
+2025-09-27,Lettuce,2.4
+2025-09-27,Eggs,54.0
+2025-09-27,Onions,1.8
+2025-09-27,Beef Steak,0.6
+2025-09-28,Rice (Bomba),58.0245
+2025-09-28,Seafood Mix,98.35
+2025-09-28,Olive Oil,21.6
+2025-09-28,Coffee Beans,1.3786
+2025-09-28,Wine Bottle (Red),16.95
+2025-09-28,Sangria Mix,104.0
+2025-09-28,Beer Keg (30L),40.8
+2025-09-28,Chicken,9.595
+2025-09-28,Potatoes,12.423
+2025-09-28,Lettuce,2.9
+2025-09-28,Beef Steak,0.9
+2025-09-28,Eggs,42.0
+2025-09-28,Onions,1.4
+2025-09-29,Rice (Bomba),70.7505
+2025-09-29,Seafood Mix,120.75
+2025-09-29,Olive Oil,27.6
+2025-09-29,Coffee Beans,1.8331
+2025-09-29,Sangria Mix,106.0
+2025-09-29,Wine Bottle (Red),17.55
+2025-09-29,Beer Keg (30L),49.2
+2025-09-29,Chicken,9.494
+2025-09-29,Potatoes,18.887
+2025-09-29,Lettuce,3.0
+2025-09-29,Eggs,60.0
+2025-09-29,Onions,2.0
+2025-09-29,Beef Steak,1.5
+2025-09-30,Wine Bottle (Red),10.05
+2025-09-30,Rice (Bomba),47.7225
+2025-09-30,Seafood Mix,81.95
+2025-09-30,Olive Oil,19.45
+2025-09-30,Sangria Mix,76.0
+2025-09-30,Coffee Beans,1.2877
+2025-09-30,Beer Keg (30L),27.6
+2025-09-30,Chicken,7.373
+2025-09-30,Potatoes,16.261
+2025-09-30,Lettuce,1.9
+2025-09-30,Beef Steak,0.9
+2025-09-30,Eggs,51.0
+2025-09-30,Onions,1.7
+2025-10-01,Rice (Bomba),60.1455
+2025-10-01,Seafood Mix,104.85
+2025-10-01,Olive Oil,24.9
+2025-10-01,Sangria Mix,103.0
+2025-10-01,Chicken,8.383
+2025-10-01,Potatoes,17.574
+2025-10-01,Lettuce,2.5
+2025-10-01,Beer Keg (30L),40.5
+2025-10-01,Wine Bottle (Red),17.25
+2025-10-01,Coffee Beans,1.3332
+2025-10-01,Eggs,57.0
+2025-10-01,Onions,1.9
+2025-10-01,Beef Steak,0.6
+2025-10-02,Beer Keg (30L),50.7
+2025-10-02,Rice (Bomba),70.296
+2025-10-02,Seafood Mix,119.6
+2025-10-02,Olive Oil,26.5
+2025-10-02,Sangria Mix,123.0
+2025-10-02,Coffee Beans,1.6665
+2025-10-02,Wine Bottle (Red),19.05
+2025-10-02,Chicken,9.494
+2025-10-02,Potatoes,14.746
+2025-10-02,Lettuce,3.0
+2025-10-02,Beef Steak,1.2
+2025-10-02,Eggs,42.0
+2025-10-02,Onions,1.4
+2025-10-03,Beer Keg (30L),16.5
+2025-10-03,Rice (Bomba),32.2695
+2025-10-03,Seafood Mix,56.45
+2025-10-03,Olive Oil,13.4
+2025-10-03,Wine Bottle (Red),10.8
+2025-10-03,Sangria Mix,53.0
+2025-10-03,Coffee Beans,0.7424
+2025-10-03,Eggs,36.0
+2025-10-03,Potatoes,8.787
+2025-10-03,Onions,1.2
+2025-10-03,Chicken,3.939
+2025-10-03,Lettuce,1.3
+2025-10-03,Beef Steak,0.6
+2025-10-04,Rice (Bomba),36.663
+2025-10-04,Seafood Mix,61.9
+2025-10-04,Olive Oil,14.2
+2025-10-04,Coffee Beans,0.8787
+2025-10-04,Beer Keg (30L),27.0
+2025-10-04,Sangria Mix,55.0
+2025-10-04,Wine Bottle (Red),8.1
+2025-10-04,Potatoes,11.413
+2025-10-04,Chicken,7.272
+2025-10-04,Lettuce,2.0
+2025-10-04,Eggs,51.0
+2025-10-04,Onions,1.7
+2025-10-05,Coffee Beans,1.4089
+2025-10-05,Rice (Bomba),66.357
+2025-10-05,Seafood Mix,112.5
+2025-10-05,Olive Oil,25.5
+2025-10-05,Sangria Mix,103.0
+2025-10-05,Wine Bottle (Red),13.05
+2025-10-05,Beer Keg (30L),37.8
+2025-10-05,Chicken,9.595
+2025-10-05,Potatoes,18.079
+2025-10-05,Lettuce,2.5
+2025-10-05,Eggs,63.0
+2025-10-05,Onions,2.1
+2025-10-05,Beef Steak,2.1
+2025-10-06,Rice (Bomba),36.8145
+2025-10-06,Seafood Mix,61.75
+2025-10-06,Olive Oil,13.3
+2025-10-06,Sangria Mix,65.0
+2025-10-06,Beer Keg (30L),18.3
+2025-10-06,Coffee Beans,0.8636
+2025-10-06,Wine Bottle (Red),8.1
+2025-10-06,Chicken,3.838
+2025-10-06,Potatoes,6.161
+2025-10-06,Lettuce,1.0
+2025-10-06,Eggs,24.0
+2025-10-06,Onions,0.8
+2025-10-06,Beef Steak,0.9
+2025-10-07,Beer Keg (30L),33.3
+2025-10-07,Coffee Beans,1.3635
+2025-10-07,Rice (Bomba),52.116
+2025-10-07,Seafood Mix,91.2
+2025-10-07,Olive Oil,22.05
+2025-10-07,Sangria Mix,75.0
+2025-10-07,Wine Bottle (Red),16.8
+2025-10-07,Chicken,8.181
+2025-10-07,Potatoes,17.574
+2025-10-07,Lettuce,1.9
+2025-10-07,Eggs,63.0
+2025-10-07,Onions,2.1
+2025-10-07,Beef Steak,1.5
+2025-10-08,Rice (Bomba),56.8125
+2025-10-08,Seafood Mix,95.95
+2025-10-08,Olive Oil,21.95
+2025-10-08,Wine Bottle (Red),13.05
+2025-10-08,Sangria Mix,89.0
+2025-10-08,Beer Keg (30L),37.5
+2025-10-08,Coffee Beans,1.2726
+2025-10-08,Chicken,7.272
+2025-10-08,Potatoes,14.746
+2025-10-08,Lettuce,2.4
+2025-10-08,Eggs,84.0
+2025-10-08,Onions,2.8
+2025-10-09,Sangria Mix,94.0
+2025-10-09,Rice (Bomba),53.4795
+2025-10-09,Seafood Mix,91.65
+2025-10-09,Olive Oil,21.8
+2025-10-09,Coffee Beans,1.4695
+2025-10-09,Wine Bottle (Red),13.95
+2025-10-09,Beer Keg (30L),36.9
+2025-10-09,Chicken,9.595
+2025-10-09,Potatoes,18.382
+2025-10-09,Lettuce,2.9
+2025-10-09,Eggs,93.0
+2025-10-09,Onions,3.1
+2025-10-09,Beef Steak,0.6
+2025-10-10,Rice (Bomba),34.0875
+2025-10-10,Seafood Mix,59.65
+2025-10-10,Olive Oil,14.1
+2025-10-10,Sangria Mix,54.0
+2025-10-10,Beer Keg (30L),23.7
+2025-10-10,Wine Bottle (Red),11.4
+2025-10-10,Coffee Beans,0.9848
+2025-10-10,Chicken,6.363
+2025-10-10,Potatoes,11.11
+2025-10-10,Lettuce,1.7
+2025-10-10,Eggs,27.0
+2025-10-10,Onions,0.9
+2025-10-10,Beef Steak,1.5
+2025-10-11,Coffee Beans,1.318
+2025-10-11,Beer Keg (30L),25.5
+2025-10-11,Wine Bottle (Red),13.35
+2025-10-11,Rice (Bomba),49.389
+2025-10-11,Seafood Mix,84.9
+2025-10-11,Olive Oil,19.6
+2025-10-11,Sangria Mix,84.0
+2025-10-11,Chicken,7.777
+2025-10-11,Potatoes,12.928
+2025-10-11,Lettuce,1.9
+2025-10-11,Eggs,54.0
+2025-10-11,Onions,1.8
+2025-10-11,Beef Steak,0.3
+2025-10-12,Rice (Bomba),69.69
+2025-10-12,Seafood Mix,119.4
+2025-10-12,Olive Oil,26.55
+2025-10-12,Beer Keg (30L),33.0
+2025-10-12,Sangria Mix,92.0
+2025-10-12,Wine Bottle (Red),14.55
+2025-10-12,Coffee Beans,1.7574
+2025-10-12,Chicken,8.08
+2025-10-12,Potatoes,12.928
+2025-10-12,Lettuce,2.0
+2025-10-12,Eggs,27.0
+2025-10-12,Onions,0.9
+2025-10-12,Beef Steak,0.9
+2025-10-13,Sangria Mix,57.0
+2025-10-13,Rice (Bomba),33.33
+2025-10-13,Seafood Mix,58.2
+2025-10-13,Olive Oil,14.35
+2025-10-13,Coffee Beans,0.803
+2025-10-13,Wine Bottle (Red),9.3
+2025-10-13,Beer Keg (30L),18.3
+2025-10-13,Eggs,27.0
+2025-10-13,Potatoes,12.524
+2025-10-13,Onions,0.9
+2025-10-13,Chicken,3.838
+2025-10-13,Lettuce,1.0
+2025-10-13,Beef Steak,0.6
+2025-10-14,Coffee Beans,0.6969
+2025-10-14,Rice (Bomba),28.9365
+2025-10-14,Seafood Mix,49.95
+2025-10-14,Olive Oil,11.45
+2025-10-14,Beer Keg (30L),22.2
+2025-10-14,Wine Bottle (Red),8.4
+2025-10-14,Sangria Mix,44.0
+2025-10-14,Chicken,5.454
+2025-10-14,Potatoes,7.979
+2025-10-14,Lettuce,1.8
+2025-10-14,Eggs,21.0
+2025-10-14,Onions,0.7
+2025-10-14,Beef Steak,0.3
+2025-10-15,Rice (Bomba),33.1785
+2025-10-15,Seafood Mix,58.75
+2025-10-15,Olive Oil,14.05
+2025-10-15,Wine Bottle (Red),10.5
+2025-10-15,Sangria Mix,53.0
+2025-10-15,Beer Keg (30L),22.8
+2025-10-15,Coffee Beans,0.8787
+2025-10-15,Chicken,6.363
+2025-10-15,Potatoes,10.908
+2025-10-15,Lettuce,1.7
+2025-10-15,Eggs,24.0
+2025-10-15,Onions,0.8
+2025-10-15,Beef Steak,1.5
+2025-10-16,Rice (Bomba),46.965
+2025-10-16,Seafood Mix,81.9
+2025-10-16,Olive Oil,19.25
+2025-10-16,Coffee Beans,1.2726
+2025-10-16,Wine Bottle (Red),15.15
+2025-10-16,Chicken,7.07
+2025-10-16,Potatoes,12.928
+2025-10-16,Lettuce,2.2
+2025-10-16,Beer Keg (30L),30.6
+2025-10-16,Sangria Mix,71.0
+2025-10-16,Eggs,45.0
+2025-10-16,Onions,1.5
+2025-10-16,Beef Steak,0.6
+2025-10-17,Beer Keg (30L),41.7
+2025-10-17,Rice (Bomba),66.2055
+2025-10-17,Seafood Mix,112.85
+2025-10-17,Olive Oil,26.05
+2025-10-17,Wine Bottle (Red),13.95
+2025-10-17,Coffee Beans,1.8786
+2025-10-17,Sangria Mix,113.0
+2025-10-17,Chicken,12.221
+2025-10-17,Potatoes,20.301
+2025-10-17,Lettuce,3.5
+2025-10-17,Eggs,69.0
+2025-10-17,Onions,2.3
+2025-10-17,Beef Steak,0.3
+2025-10-18,Rice (Bomba),68.3265
+2025-10-18,Seafood Mix,116.15
+2025-10-18,Olive Oil,26.15
+2025-10-18,Sangria Mix,137.0
+2025-10-18,Beer Keg (30L),45.3
+2025-10-18,Coffee Beans,2.0149
+2025-10-18,Wine Bottle (Red),17.1
+2025-10-18,Chicken,7.272
+2025-10-18,Potatoes,14.544
+2025-10-18,Lettuce,2.0
+2025-10-18,Eggs,60.0
+2025-10-18,Onions,2.0
+2025-10-18,Beef Steak,0.6
+2025-10-19,Wine Bottle (Red),16.05
+2025-10-19,Rice (Bomba),55.6005
+2025-10-19,Seafood Mix,95.35
+2025-10-19,Olive Oil,22.65
+2025-10-19,Coffee Beans,1.3786
+2025-10-19,Beer Keg (30L),36.6
+2025-10-19,Sangria Mix,99.0
+2025-10-19,Chicken,9.797
+2025-10-19,Potatoes,19.19
+2025-10-19,Lettuce,2.7
+2025-10-19,Eggs,72.0
+2025-10-19,Onions,2.4
+2025-10-19,Beef Steak,0.3
+2025-10-20,Rice (Bomba),69.8415
+2025-10-20,Seafood Mix,120.25
+2025-10-20,Olive Oil,28.6
+2025-10-20,Beer Keg (30L),46.8
+2025-10-20,Wine Bottle (Red),16.65
+2025-10-20,Coffee Beans,1.9089
+2025-10-20,Sangria Mix,123.0
+2025-10-20,Chicken,10.201
+2025-10-20,Potatoes,22.422
+2025-10-20,Lettuce,2.7
+2025-10-20,Eggs,99.0
+2025-10-20,Onions,3.3
+2025-10-20,Beef Steak,1.2
+2025-10-21,Beer Keg (30L),18.6
+2025-10-21,Wine Bottle (Red),6.9
+2025-10-21,Rice (Bomba),34.3905
+2025-10-21,Seafood Mix,59.15
+2025-10-21,Olive Oil,14.0
+2025-10-21,Sangria Mix,59.0
+2025-10-21,Coffee Beans,0.6969
+2025-10-21,Chicken,5.252
+2025-10-21,Potatoes,11.413
+2025-10-21,Lettuce,1.6
+2025-10-21,Eggs,30.0
+2025-10-21,Onions,1.0
+2025-10-21,Beef Steak,0.3
+2025-10-22,Beer Keg (30L),39.0
+2025-10-22,Coffee Beans,1.5453
+2025-10-22,Rice (Bomba),66.963
+2025-10-22,Seafood Mix,114.3
+2025-10-22,Olive Oil,26.45
+2025-10-22,Wine Bottle (Red),16.5
+2025-10-22,Sangria Mix,106.0
+2025-10-22,Chicken,9.595
+2025-10-22,Potatoes,19.291
+2025-10-22,Lettuce,2.9
+2025-10-22,Eggs,72.0
+2025-10-22,Onions,2.4
+2025-10-22,Beef Steak,0.9
+2025-10-23,Wine Bottle (Red),14.85
+2025-10-23,Rice (Bomba),56.8125
+2025-10-23,Seafood Mix,95.95
+2025-10-23,Olive Oil,21.45
+2025-10-23,Beer Keg (30L),33.3
+2025-10-23,Eggs,54.0
+2025-10-23,Potatoes,12.726
+2025-10-23,Onions,1.8
+2025-10-23,Sangria Mix,82.0
+2025-10-23,Coffee Beans,1.212
+2025-10-23,Chicken,7.07
+2025-10-23,Lettuce,2.2
+2025-10-23,Beef Steak,0.3
+2025-10-24,Beer Keg (30L),39.0
+2025-10-24,Coffee Beans,1.6513
+2025-10-24,Rice (Bomba),68.3265
+2025-10-24,Seafood Mix,116.15
+2025-10-24,Olive Oil,26.25
+2025-10-24,Sangria Mix,84.0
+2025-10-24,Wine Bottle (Red),16.65
+2025-10-24,Chicken,7.676
+2025-10-24,Potatoes,16.059
+2025-10-24,Lettuce,2.0
+2025-10-24,Eggs,51.0
+2025-10-24,Onions,1.7
+2025-10-24,Beef Steak,1.2
+2025-10-25,Sangria Mix,51.0
+2025-10-25,Rice (Bomba),38.178
+2025-10-25,Seafood Mix,66.4
+2025-10-25,Olive Oil,15.25
+2025-10-25,Beer Keg (30L),26.4
+2025-10-25,Coffee Beans,1.106
+2025-10-25,Wine Bottle (Red),8.85
+2025-10-25,Chicken,5.555
+2025-10-25,Potatoes,8.282
+2025-10-25,Lettuce,1.7
+2025-10-25,Eggs,33.0
+2025-10-25,Onions,1.1
+2025-10-26,Beer Keg (30L),31.5
+2025-10-26,Wine Bottle (Red),16.05
+2025-10-26,Rice (Bomba),59.691
+2025-10-26,Seafood Mix,101.9
+2025-10-26,Olive Oil,23.3
+2025-10-26,Sangria Mix,103.0
+2025-10-26,Coffee Beans,1.4998
+2025-10-26,Chicken,7.07
+2025-10-26,Potatoes,15.15
+2025-10-26,Lettuce,2.2
+2025-10-26,Beef Steak,0.6
+2025-10-26,Eggs,42.0
+2025-10-26,Onions,1.4
+2025-10-27,Sangria Mix,107.0
+2025-10-27,Rice (Bomba),58.3275
+2025-10-27,Seafood Mix,100.05
+2025-10-27,Olive Oil,22.15
+2025-10-27,Coffee Beans,1.5756
+2025-10-27,Beer Keg (30L),36.9
+2025-10-27,Wine Bottle (Red),13.65
+2025-10-27,Chicken,7.373
+2025-10-27,Potatoes,10.302
+2025-10-27,Lettuce,1.9
+2025-10-27,Eggs,24.0
+2025-10-27,Onions,0.8
+2025-10-27,Beef Steak,0.6
+2025-10-28,Rice (Bomba),73.326
+2025-10-28,Seafood Mix,126.0
+2025-10-28,Olive Oil,29.55
+2025-10-28,Wine Bottle (Red),17.4
+2025-10-28,Beer Keg (30L),43.5
+2025-10-28,Coffee Beans,1.6362
+2025-10-28,Sangria Mix,133.0
+2025-10-28,Chicken,10.908
+2025-10-28,Potatoes,22.523
+2025-10-28,Lettuce,3.2
+2025-10-28,Eggs,72.0
+2025-10-28,Onions,2.4
+2025-10-28,Beef Steak,0.9
+2025-10-29,Beer Keg (30L),37.5
+2025-10-29,Coffee Beans,1.5756
+2025-10-29,Wine Bottle (Red),15.45
+2025-10-29,Rice (Bomba),52.116
+2025-10-29,Seafood Mix,89.6
+2025-10-29,Olive Oil,20.85
+2025-10-29,Sangria Mix,94.0
+2025-10-29,Chicken,9.898
+2025-10-29,Potatoes,16.059
+2025-10-29,Lettuce,2.6
+2025-10-29,Eggs,54.0
+2025-10-29,Onions,1.8
+2025-10-29,Beef Steak,0.6
+2025-10-30,Wine Bottle (Red),11.4
+2025-10-30,Beer Keg (30L),31.5
+2025-10-30,Rice (Bomba),50.4495
+2025-10-30,Seafood Mix,87.25
+2025-10-30,Olive Oil,21.1
+2025-10-30,Sangria Mix,96.0
+2025-10-30,Coffee Beans,1.4241
+2025-10-30,Chicken,8.08
+2025-10-30,Potatoes,17.978
+2025-10-30,Lettuce,2.4
+2025-10-30,Eggs,75.0
+2025-10-30,Onions,2.5
+2025-10-30,Beef Steak,0.6
+2025-10-31,Rice (Bomba),34.9965
+2025-10-31,Seafood Mix,59.55
+2025-10-31,Olive Oil,13.45
+2025-10-31,Wine Bottle (Red),9.9
+2025-10-31,Beer Keg (30L),26.7
+2025-10-31,Coffee Beans,1.0757
+2025-10-31,Sangria Mix,67.0
+2025-10-31,Chicken,4.545
+2025-10-31,Potatoes,8.181
+2025-10-31,Lettuce,1.5
+2025-10-31,Eggs,27.0
+2025-10-31,Onions,0.9
+2025-11-01,Wine Bottle (Red),14.7
+2025-11-01,Coffee Beans,1.6059
+2025-11-01,Beer Keg (30L),38.7
+2025-11-01,Rice (Bomba),62.2665
+2025-11-01,Seafood Mix,106.55
+2025-11-01,Olive Oil,24.4
+2025-11-01,Sangria Mix,111.0
+2025-11-01,Potatoes,14.948
+2025-11-01,Chicken,7.474
+2025-11-01,Lettuce,2.2
+2025-11-01,Eggs,57.0
+2025-11-01,Onions,1.9
+2025-11-01,Beef Steak,0.3
+2025-11-02,Beer Keg (30L),40.8
+2025-11-02,Wine Bottle (Red),15.75
+2025-11-02,Rice (Bomba),58.6305
+2025-11-02,Seafood Mix,100.15
+2025-11-02,Olive Oil,22.95
+2025-11-02,Coffee Beans,1.5604
+2025-11-02,Sangria Mix,114.0
+2025-11-02,Chicken,8.585
+2025-11-02,Potatoes,15.655
+2025-11-02,Lettuce,2.3
+2025-11-02,Beef Steak,0.9
+2025-11-02,Eggs,57.0
+2025-11-02,Onions,1.9
+2025-11-03,Wine Bottle (Red),8.85
+2025-11-03,Sangria Mix,70.0
+2025-11-03,Rice (Bomba),40.905
+2025-11-03,Seafood Mix,73.1
+2025-11-03,Olive Oil,18.2
+2025-11-03,Coffee Beans,0.9696
+2025-11-03,Beer Keg (30L),27.9
+2025-11-03,Chicken,6.06
+2025-11-03,Potatoes,13.332
+2025-11-03,Lettuce,2.0
+2025-11-03,Eggs,72.0
+2025-11-03,Onions,2.4
+2025-11-03,Beef Steak,0.3
+2025-11-04,Rice (Bomba),64.3875
+2025-11-04,Seafood Mix,111.05
+2025-11-04,Olive Oil,25.9
+2025-11-04,Sangria Mix,102.0
+2025-11-04,Wine Bottle (Red),14.4
+2025-11-04,Coffee Beans,1.4544
+2025-11-04,Beer Keg (30L),36.0
+2025-11-04,Chicken,6.565
+2025-11-04,Potatoes,15.352
+2025-11-04,Lettuce,1.9
+2025-11-04,Eggs,75.0
+2025-11-04,Onions,2.5
+2025-11-05,Wine Bottle (Red),17.1
+2025-11-05,Rice (Bomba),61.509
+2025-11-05,Seafood Mix,105.5
+2025-11-05,Olive Oil,25.2
+2025-11-05,Coffee Beans,1.5301
+2025-11-05,Beer Keg (30L),30.6
+2025-11-05,Sangria Mix,110.0
+2025-11-05,Chicken,6.868
+2025-11-05,Potatoes,18.584
+2025-11-05,Lettuce,2.0
+2025-11-05,Eggs,108.0
+2025-11-05,Onions,3.6
+2025-11-05,Beef Steak,0.3
+2025-11-06,Rice (Bomba),58.9335
+2025-11-06,Seafood Mix,100.45
+2025-11-06,Olive Oil,23.0
+2025-11-06,Beer Keg (30L),32.4
+2025-11-06,Coffee Beans,1.3332
+2025-11-06,Wine Bottle (Red),15.15
+2025-11-06,Sangria Mix,110.0
+2025-11-06,Chicken,4.04
+2025-11-06,Potatoes,13.231
+2025-11-06,Lettuce,1.2
+2025-11-06,Eggs,54.0
+2025-11-06,Onions,1.8
+2025-11-06,Beef Steak,0.9
+2025-11-07,Beer Keg (30L),23.1
+2025-11-07,Rice (Bomba),42.117
+2025-11-07,Seafood Mix,73.7
+2025-11-07,Olive Oil,17.3
+2025-11-07,Wine Bottle (Red),12.45
+2025-11-07,Sangria Mix,74.0
+2025-11-07,Coffee Beans,1.1817
+2025-11-07,Chicken,4.646
+2025-11-07,Potatoes,9.494
+2025-11-07,Lettuce,1.4
+2025-11-07,Eggs,42.0
+2025-11-07,Onions,1.4
+2025-11-08,Beer Keg (30L),41.1
+2025-11-08,Rice (Bomba),68.6295
+2025-11-08,Seafood Mix,117.65
+2025-11-08,Olive Oil,26.4
+2025-11-08,Wine Bottle (Red),20.55
+2025-11-08,Sangria Mix,121.0
+2025-11-08,Coffee Beans,1.4847
+2025-11-08,Potatoes,16.665
+2025-11-08,Eggs,36.0
+2025-11-08,Onions,1.2
+2025-11-08,Chicken,12.625
+2025-11-08,Lettuce,3.5
+2025-11-08,Beef Steak,0.6
+2025-11-09,Wine Bottle (Red),17.1
+2025-11-09,Coffee Beans,1.5604
+2025-11-09,Rice (Bomba),56.5095
+2025-11-09,Seafood Mix,97.05
+2025-11-09,Olive Oil,22.75
+2025-11-09,Beer Keg (30L),41.1
+2025-11-09,Sangria Mix,106.0
+2025-11-09,Chicken,8.181
+2025-11-09,Potatoes,17.069
+2025-11-09,Lettuce,2.7
+2025-11-09,Eggs,57.0
+2025-11-09,Onions,1.9
+2025-11-09,Beef Steak,0.3
+2025-11-10,Coffee Beans,1.0151
+2025-11-10,Rice (Bomba),34.9965
+2025-11-10,Seafood Mix,59.55
+2025-11-10,Olive Oil,13.5
+2025-11-10,Sangria Mix,81.0
+2025-11-10,Beer Keg (30L),17.1
+2025-11-10,Wine Bottle (Red),7.95
+2025-11-10,Chicken,4.04
+2025-11-10,Potatoes,7.676
+2025-11-10,Lettuce,1.2
+2025-11-10,Eggs,39.0
+2025-11-10,Onions,1.3
+2025-11-11,Rice (Bomba),50.601
+2025-11-11,Seafood Mix,86.5
+2025-11-11,Olive Oil,19.65
+2025-11-11,Sangria Mix,81.0
+2025-11-11,Wine Bottle (Red),11.1
+2025-11-11,Beer Keg (30L),27.9
+2025-11-11,Coffee Beans,1.1817
+2025-11-11,Chicken,8.686
+2025-11-11,Potatoes,12.928
+2025-11-11,Lettuce,2.6
+2025-11-11,Eggs,51.0
+2025-11-11,Onions,1.7
+2025-11-11,Beef Steak,0.3
+2025-11-12,Beer Keg (30L),36.6
+2025-11-12,Rice (Bomba),66.5085
+2025-11-12,Seafood Mix,113.95
+2025-11-12,Olive Oil,26.35
+2025-11-12,Coffee Beans,1.7271
+2025-11-12,Wine Bottle (Red),16.2
+2025-11-12,Sangria Mix,107.0
+2025-11-12,Chicken,9.494
+2025-11-12,Potatoes,19.19
+2025-11-12,Lettuce,2.6
+2025-11-12,Eggs,60.0
+2025-11-12,Onions,2.0
+2025-11-12,Beef Steak,1.8
+2025-11-13,Chicken,11.312
+2025-11-13,Potatoes,16.261
+2025-11-13,Lettuce,2.8
+2025-11-13,Beer Keg (30L),36.9
+2025-11-13,Rice (Bomba),59.085
+2025-11-13,Seafood Mix,99.9
+2025-11-13,Olive Oil,22.35
+2025-11-13,Coffee Beans,1.3483
+2025-11-13,Sangria Mix,82.0
+2025-11-13,Wine Bottle (Red),14.4
+2025-11-13,Eggs,60.0
+2025-11-13,Onions,2.0
+2025-11-13,Beef Steak,1.8
+2025-11-14,Beer Keg (30L),41.4
+2025-11-14,Sangria Mix,114.0
+2025-11-14,Rice (Bomba),61.9635
+2025-11-14,Seafood Mix,105.65
+2025-11-14,Olive Oil,23.85
+2025-11-14,Wine Bottle (Red),16.35
+2025-11-14,Coffee Beans,1.6513
+2025-11-14,Eggs,63.0
+2025-11-14,Potatoes,13.837
+2025-11-14,Onions,2.1
+2025-11-14,Chicken,8.484
+2025-11-14,Lettuce,2.4
+2025-11-14,Beef Steak,0.3
+2025-11-15,Sangria Mix,115.0
+2025-11-15,Coffee Beans,1.3635
+2025-11-15,Rice (Bomba),66.054
+2025-11-15,Seafood Mix,113.4
+2025-11-15,Olive Oil,26.35
+2025-11-15,Wine Bottle (Red),17.25
+2025-11-15,Beer Keg (30L),44.1
+2025-11-15,Chicken,9.898
+2025-11-15,Potatoes,18.382
+2025-11-15,Lettuce,3.0
+2025-11-15,Eggs,75.0
+2025-11-15,Onions,2.5
+2025-11-15,Beef Steak,0.3
+2025-11-16,Wine Bottle (Red),9.75
+2025-11-16,Sangria Mix,51.0
+2025-11-16,Coffee Beans,0.7575
+2025-11-16,Beer Keg (30L),23.1
+2025-11-16,Rice (Bomba),37.572
+2025-11-16,Seafood Mix,64.8
+2025-11-16,Olive Oil,14.95
+2025-11-16,Chicken,5.858
+2025-11-16,Potatoes,10.403
+2025-11-16,Lettuce,1.8
+2025-11-16,Eggs,30.0
+2025-11-16,Onions,1.0
+2025-11-16,Beef Steak,0.9
+2025-11-17,Sangria Mix,88.0
+2025-11-17,Wine Bottle (Red),12.9
+2025-11-17,Coffee Beans,1.2877
+2025-11-17,Beer Keg (30L),24.6
+2025-11-17,Rice (Bomba),45.147
+2025-11-17,Seafood Mix,76.7
+2025-11-17,Olive Oil,17.95
+2025-11-17,Chicken,6.06
+2025-11-17,Potatoes,14.544
+2025-11-17,Lettuce,2.0
+2025-11-17,Eggs,57.0
+2025-11-17,Onions,1.9
+2025-11-17,Beef Steak,0.9
+2025-11-18,Rice (Bomba),47.571
+2025-11-18,Seafood Mix,83.9
+2025-11-18,Olive Oil,20.85
+2025-11-18,Coffee Beans,1.0757
+2025-11-18,Beer Keg (30L),28.2
+2025-11-18,Sangria Mix,74.0
+2025-11-18,Wine Bottle (Red),12.0
+2025-11-18,Chicken,9.292
+2025-11-18,Potatoes,18.584
+2025-11-18,Lettuce,2.4
+2025-11-18,Eggs,81.0
+2025-11-18,Onions,2.7
+2025-11-18,Beef Steak,0.9
+2025-11-19,Rice (Bomba),54.0855
+2025-11-19,Seafood Mix,93.05
+2025-11-19,Olive Oil,21.45
+2025-11-19,Beer Keg (30L),31.5
+2025-11-19,Coffee Beans,1.3786
+2025-11-19,Wine Bottle (Red),15.15
+2025-11-19,Sangria Mix,89.0
+2025-11-19,Chicken,6.969
+2025-11-19,Potatoes,14.342
+2025-11-19,Lettuce,1.9
+2025-11-19,Eggs,48.0
+2025-11-19,Onions,1.6
+2025-11-19,Beef Steak,1.8
+2025-11-20,Wine Bottle (Red),14.7
+2025-11-20,Rice (Bomba),67.872
+2025-11-20,Seafood Mix,115.8
+2025-11-20,Olive Oil,26.45
+2025-11-20,Coffee Beans,1.8028
+2025-11-20,Beer Keg (30L),38.7
+2025-11-20,Sangria Mix,108.0
+2025-11-20,Chicken,6.868
+2025-11-20,Potatoes,15.655
+2025-11-20,Lettuce,2.0
+2025-11-20,Eggs,60.0
+2025-11-20,Onions,2.0
+2025-11-20,Beef Steak,0.3
+2025-11-21,Wine Bottle (Red),12.6
+2025-11-21,Rice (Bomba),55.9035
+2025-11-21,Seafood Mix,95.25
+2025-11-21,Olive Oil,22.1
+2025-11-21,Sangria Mix,91.0
+2025-11-21,Coffee Beans,1.2574
+2025-11-21,Beer Keg (30L),36.6
+2025-11-21,Chicken,8.989
+2025-11-21,Potatoes,17.574
+2025-11-21,Lettuce,2.7
+2025-11-21,Beef Steak,1.2
+2025-11-21,Eggs,63.0
+2025-11-21,Onions,2.1
+2025-11-22,Wine Bottle (Red),15.3
+2025-11-22,Rice (Bomba),60.297
+2025-11-22,Seafood Mix,102.1
+2025-11-22,Olive Oil,22.65
+2025-11-22,Beer Keg (30L),37.2
+2025-11-22,Coffee Beans,1.3483
+2025-11-22,Sangria Mix,95.0
+2025-11-22,Chicken,5.858
+2025-11-22,Potatoes,11.413
+2025-11-22,Lettuce,1.8
+2025-11-22,Beef Steak,0.6
+2025-11-22,Eggs,48.0
+2025-11-22,Onions,1.6
+2025-11-23,Rice (Bomba),41.814
+2025-11-23,Seafood Mix,70.6
+2025-11-23,Olive Oil,15.55
+2025-11-23,Sangria Mix,76.0
+2025-11-23,Coffee Beans,1.2271
+2025-11-23,Beer Keg (30L),27.6
+2025-11-23,Wine Bottle (Red),9.15
+2025-11-23,Chicken,9.09
+2025-11-23,Potatoes,11.413
+2025-11-23,Lettuce,2.6
+2025-11-23,Eggs,30.0
+2025-11-23,Onions,1.0
+2025-11-23,Beef Steak,1.2
+2025-11-24,Sangria Mix,99.0
+2025-11-24,Rice (Bomba),57.267
+2025-11-24,Seafood Mix,99.3
+2025-11-24,Olive Oil,23.4
+2025-11-24,Beer Keg (30L),38.4
+2025-11-24,Coffee Beans,1.4544
+2025-11-24,Wine Bottle (Red),15.0
+2025-11-24,Chicken,11.716
+2025-11-24,Potatoes,18.483
+2025-11-24,Lettuce,2.8
+2025-11-24,Eggs,57.0
+2025-11-24,Onions,1.9
+2025-11-24,Beef Steak,0.6
+2025-11-25,Rice (Bomba),53.328
+2025-11-25,Seafood Mix,93.4
+2025-11-25,Olive Oil,22.3
+2025-11-25,Sangria Mix,91.0
+2025-11-25,Beer Keg (30L),27.9
+2025-11-25,Wine Bottle (Red),15.15
+2025-11-25,Coffee Beans,1.4089
+2025-11-25,Chicken,5.555
+2025-11-25,Potatoes,14.746
+2025-11-25,Lettuce,1.7
+2025-11-25,Beef Steak,1.2
+2025-11-25,Eggs,54.0
+2025-11-25,Onions,1.8
+2025-11-26,Rice (Bomba),35.754
+2025-11-26,Seafood Mix,61.8
+2025-11-26,Olive Oil,14.4
+2025-11-26,Coffee Beans,0.8636
+2025-11-26,Beer Keg (30L),25.5
+2025-11-26,Sangria Mix,62.0
+2025-11-26,Wine Bottle (Red),8.25
+2025-11-26,Eggs,36.0
+2025-11-26,Potatoes,9.292
+2025-11-26,Onions,1.2
+2025-11-26,Chicken,4.949
+2025-11-26,Lettuce,1.5
+2025-11-27,Coffee Beans,1.6362
+2025-11-27,Rice (Bomba),68.9325
+2025-11-27,Seafood Mix,117.75
+2025-11-27,Olive Oil,26.75
+2025-11-27,Sangria Mix,117.0
+2025-11-27,Beer Keg (30L),43.2
+2025-11-27,Wine Bottle (Red),16.95
+2025-11-27,Chicken,9.999
+2025-11-27,Potatoes,16.867
+2025-11-27,Lettuce,2.9
+2025-11-27,Eggs,57.0
+2025-11-27,Onions,1.9
+2025-11-27,Beef Steak,0.3
+2025-11-28,Rice (Bomba),67.872
+2025-11-28,Seafood Mix,116.2
+2025-11-28,Olive Oil,26.5
+2025-11-28,Coffee Beans,1.7877
+2025-11-28,Sangria Mix,103.0
+2025-11-28,Wine Bottle (Red),15.3
+2025-11-28,Beer Keg (30L),43.5
+2025-11-28,Potatoes,18.18
+2025-11-28,Chicken,11.413
+2025-11-28,Lettuce,3.1
+2025-11-28,Eggs,66.0
+2025-11-28,Onions,2.2
+2025-11-28,Beef Steak,1.5
+2025-11-29,Sangria Mix,101.0
+2025-11-29,Beer Keg (30L),37.5
+2025-11-29,Wine Bottle (Red),16.8
+2025-11-29,Rice (Bomba),56.358
+2025-11-29,Seafood Mix,96.4
+2025-11-29,Olive Oil,22.25
+2025-11-29,Coffee Beans,1.3483
+2025-11-29,Chicken,8.383
+2025-11-29,Potatoes,16.766
+2025-11-29,Lettuce,2.5
+2025-11-29,Eggs,39.0
+2025-11-29,Onions,1.3
+2025-11-29,Beef Steak,1.2
+2025-11-30,Beer Keg (30L),32.4
+2025-11-30,Rice (Bomba),43.7835
+2025-11-30,Seafood Mix,75.25
+2025-11-30,Olive Oil,17.9
+2025-11-30,Wine Bottle (Red),12.6
+2025-11-30,Coffee Beans,1.0302
+2025-11-30,Sangria Mix,82.0
+2025-11-30,Chicken,5.959
+2025-11-30,Potatoes,14.14
+2025-11-30,Lettuce,1.7
+2025-11-30,Eggs,57.0
+2025-11-30,Onions,1.9
+2025-11-30,Beef Steak,0.6
+2025-12-01,Rice (Bomba),52.116
+2025-12-01,Seafood Mix,88.6
+2025-12-01,Olive Oil,20.95
+2025-12-01,Coffee Beans,1.1665
+2025-12-01,Beer Keg (30L),27.3
+2025-12-01,Wine Bottle (Red),11.25
+2025-12-01,Sangria Mix,77.0
+2025-12-01,Chicken,5.959
+2025-12-01,Potatoes,16.463
+2025-12-01,Lettuce,1.7
+2025-12-01,Eggs,72.0
+2025-12-01,Onions,2.4
+2025-12-01,Beef Steak,0.3
+2025-12-02,Rice (Bomba),52.5705
+2025-12-02,Seafood Mix,90.95
+2025-12-02,Olive Oil,21.25
+2025-12-02,Sangria Mix,83.0
+2025-12-02,Coffee Beans,1.4847
+2025-12-02,Wine Bottle (Red),12.15
+2025-12-02,Beer Keg (30L),29.7
+2025-12-02,Eggs,45.0
+2025-12-02,Potatoes,14.443
+2025-12-02,Onions,1.5
+2025-12-02,Chicken,8.08
+2025-12-02,Lettuce,2.0
+2025-12-03,Beer Keg (30L),38.1
+2025-12-03,Wine Bottle (Red),14.55
+2025-12-03,Rice (Bomba),64.6905
+2025-12-03,Seafood Mix,111.35
+2025-12-03,Olive Oil,25.95
+2025-12-03,Coffee Beans,1.4089
+2025-12-03,Sangria Mix,99.0
+2025-12-03,Chicken,6.767
+2025-12-03,Potatoes,17.069
+2025-12-03,Lettuce,1.7
+2025-12-03,Beef Steak,1.8
+2025-12-03,Eggs,69.0
+2025-12-03,Onions,2.3
+2025-12-04,Coffee Beans,1.3483
+2025-12-04,Rice (Bomba),48.177
+2025-12-04,Seafood Mix,81.7
+2025-12-04,Olive Oil,18.2
+2025-12-04,Wine Bottle (Red),11.25
+2025-12-04,Sangria Mix,72.0
+2025-12-04,Beer Keg (30L),27.6
+2025-12-04,Chicken,5.757
+2025-12-04,Potatoes,10.1
+2025-12-04,Lettuce,1.9
+2025-12-04,Eggs,36.0
+2025-12-04,Onions,1.2
+2025-12-04,Beef Steak,0.3
+2025-12-05,Rice (Bomba),70.902
+2025-12-05,Seafood Mix,122.2
+2025-12-05,Olive Oil,28.7
+2025-12-05,Beer Keg (30L),39.0
+2025-12-05,Coffee Beans,1.8331
+2025-12-05,Wine Bottle (Red),17.7
+2025-12-05,Sangria Mix,140.0
+2025-12-05,Chicken,11.211
+2025-12-05,Potatoes,21.412
+2025-12-05,Lettuce,2.9
+2025-12-05,Eggs,72.0
+2025-12-05,Onions,2.4
+2025-12-05,Beef Steak,0.6
+2025-12-06,Rice (Bomba),36.057
+2025-12-06,Seafood Mix,61.3
+2025-12-06,Olive Oil,14.15
+2025-12-06,Wine Bottle (Red),11.25
+2025-12-06,Coffee Beans,0.7727
+2025-12-06,Beer Keg (30L),21.3
+2025-12-06,Sangria Mix,54.0
+2025-12-06,Chicken,4.545
+2025-12-06,Potatoes,9.494
+2025-12-06,Lettuce,1.1
+2025-12-06,Eggs,45.0
+2025-12-06,Onions,1.5
+2025-12-07,Rice (Bomba),59.994
+2025-12-07,Seafood Mix,102.6
+2025-12-07,Olive Oil,22.8
+2025-12-07,Wine Bottle (Red),15.45
+2025-12-07,Sangria Mix,104.0
+2025-12-07,Beer Keg (30L),35.4
+2025-12-07,Coffee Beans,1.5604
+2025-12-07,Chicken,6.767
+2025-12-07,Potatoes,11.413
+2025-12-07,Lettuce,2.1
+2025-12-07,Beef Steak,0.9
+2025-12-07,Eggs,27.0
+2025-12-07,Onions,0.9
+2025-12-08,Coffee Beans,0.9696
+2025-12-08,Rice (Bomba),51.9645
+2025-12-08,Seafood Mix,88.15
+2025-12-08,Olive Oil,19.85
+2025-12-08,Wine Bottle (Red),12.0
+2025-12-08,Beer Keg (30L),33.6
+2025-12-08,Sangria Mix,77.0
+2025-12-08,Chicken,6.969
+2025-12-08,Potatoes,12.221
+2025-12-08,Lettuce,2.3
+2025-12-08,Eggs,51.0
+2025-12-08,Onions,1.7
+2025-12-08,Beef Steak,0.3
+2025-12-09,Rice (Bomba),62.418
+2025-12-09,Seafood Mix,106.4
+2025-12-09,Olive Oil,24.45
+2025-12-09,Sangria Mix,101.0
+2025-12-09,Beer Keg (30L),42.9
+2025-12-09,Coffee Beans,1.2877
+2025-12-09,Wine Bottle (Red),16.05
+2025-12-09,Chicken,9.191
+2025-12-09,Potatoes,17.372
+2025-12-09,Lettuce,2.9
+2025-12-09,Eggs,81.0
+2025-12-09,Onions,2.7
+2025-12-09,Beef Steak,1.5
+2025-12-10,Beer Keg (30L),33.9
+2025-12-10,Wine Bottle (Red),15.45
+2025-12-10,Sangria Mix,99.0
+2025-12-10,Coffee Beans,1.5756
+2025-12-10,Rice (Bomba),61.812
+2025-12-10,Seafood Mix,105.2
+2025-12-10,Olive Oil,24.3
+2025-12-10,Chicken,6.161
+2025-12-10,Potatoes,15.958
+2025-12-10,Lettuce,1.5
+2025-12-10,Eggs,72.0
+2025-12-10,Onions,2.4
+2025-12-10,Beef Steak,0.9
+2025-12-11,Wine Bottle (Red),6.15
+2025-12-11,Rice (Bomba),34.239
+2025-12-11,Seafood Mix,59.7
+2025-12-11,Olive Oil,14.05
+2025-12-11,Beer Keg (30L),23.7
+2025-12-11,Sangria Mix,69.0
+2025-12-11,Coffee Beans,0.9393
+2025-12-11,Chicken,3.939
+2025-12-11,Potatoes,8.08
+2025-12-11,Lettuce,0.9
+2025-12-11,Eggs,45.0
+2025-12-11,Onions,1.5
+2025-12-11,Beef Steak,0.3
+2025-12-12,Rice (Bomba),60.4485
+2025-12-12,Seafood Mix,102.35
+2025-12-12,Olive Oil,22.65
+2025-12-12,Beer Keg (30L),36.6
+2025-12-12,Sangria Mix,96.0
+2025-12-12,Wine Bottle (Red),14.25
+2025-12-12,Coffee Beans,1.7574
+2025-12-12,Chicken,11.009
+2025-12-12,Potatoes,15.251
+2025-12-12,Lettuce,3.5
+2025-12-12,Eggs,51.0
+2025-12-12,Onions,1.7
+2025-12-12,Beef Steak,1.8
+2025-12-13,Rice (Bomba),42.2685
+2025-12-13,Seafood Mix,72.35
+2025-12-13,Olive Oil,16.5
+2025-12-13,Wine Bottle (Red),11.55
+2025-12-13,Beer Keg (30L),31.2
+2025-12-13,Sangria Mix,72.0
+2025-12-13,Coffee Beans,1.2271
+2025-12-13,Chicken,5.858
+2025-12-13,Potatoes,10.302
+2025-12-13,Lettuce,1.8
+2025-12-13,Eggs,51.0
+2025-12-13,Onions,1.7
+2025-12-13,Beef Steak,0.9
+2025-12-14,Beer Keg (30L),25.2
+2025-12-14,Coffee Beans,1.3332
+2025-12-14,Rice (Bomba),42.117
+2025-12-14,Seafood Mix,71.5
+2025-12-14,Olive Oil,15.55
+2025-12-14,Sangria Mix,77.0
+2025-12-14,Wine Bottle (Red),10.05
+2025-12-14,Chicken,3.636
+2025-12-14,Potatoes,6.767
+2025-12-14,Lettuce,1.2
+2025-12-14,Eggs,6.0
+2025-12-14,Onions,0.2
+2025-12-14,Beef Steak,0.9
+2025-12-15,Sangria Mix,97.0
+2025-12-15,Rice (Bomba),60.6
+2025-12-15,Seafood Mix,103.8
+2025-12-15,Olive Oil,23.0
+2025-12-15,Beer Keg (30L),37.8
+2025-12-15,Coffee Beans,1.4847
+2025-12-15,Wine Bottle (Red),17.1
+2025-12-15,Chicken,10.1
+2025-12-15,Potatoes,12.423
+2025-12-15,Lettuce,3.2
+2025-12-15,Eggs,33.0
+2025-12-15,Onions,1.1
+2025-12-15,Beef Steak,0.3
+2025-12-16,Coffee Beans,0.8181
+2025-12-16,Wine Bottle (Red),8.25
+2025-12-16,Beer Keg (30L),19.2
+2025-12-16,Rice (Bomba),34.0875
+2025-12-16,Seafood Mix,58.45
+2025-12-16,Olive Oil,12.9
+2025-12-16,Sangria Mix,47.0
+2025-12-16,Chicken,7.272
+2025-12-16,Potatoes,7.777
+2025-12-16,Lettuce,2.0
+2025-12-16,Eggs,12.0
+2025-12-16,Onions,0.4
+2025-12-16,Beef Steak,0.3
+2025-12-17,Rice (Bomba),64.3875
+2025-12-17,Seafood Mix,109.25
+2025-12-17,Olive Oil,24.65
+2025-12-17,Beer Keg (30L),44.1
+2025-12-17,Sangria Mix,95.0
+2025-12-17,Wine Bottle (Red),14.7
+2025-12-17,Coffee Beans,1.3029
+2025-12-17,Beef Steak,0.6
+2025-12-17,Potatoes,15.554
+2025-12-17,Eggs,78.0
+2025-12-17,Onions,2.6
+2025-12-17,Chicken,9.393
+2025-12-17,Lettuce,3.1
+2025-12-18,Rice (Bomba),60.1455
+2025-12-18,Seafood Mix,102.25
+2025-12-18,Olive Oil,23.35
+2025-12-18,Sangria Mix,80.0
+2025-12-18,Beer Keg (30L),33.0
+2025-12-18,Wine Bottle (Red),16.8
+2025-12-18,Coffee Beans,1.5453
+2025-12-18,Chicken,7.272
+2025-12-18,Potatoes,15.655
+2025-12-18,Lettuce,2.4
+2025-12-18,Eggs,57.0
+2025-12-18,Onions,1.9
+2025-12-18,Beef Steak,0.9
+2025-12-19,Rice (Bomba),65.145
+2025-12-19,Seafood Mix,110.1
+2025-12-19,Olive Oil,24.5
+2025-12-19,Wine Bottle (Red),15.9
+2025-12-19,Sangria Mix,112.0
+2025-12-19,Coffee Beans,1.3029
+2025-12-19,Beer Keg (30L),46.2
+2025-12-19,Chicken,9.797
+2025-12-19,Potatoes,15.554
+2025-12-19,Lettuce,3.1
+2025-12-19,Beef Steak,0.6
+2025-12-19,Eggs,48.0
+2025-12-19,Onions,1.6
+2025-12-20,Sangria Mix,107.0
+2025-12-20,Wine Bottle (Red),13.5
+2025-12-20,Rice (Bomba),58.0245
+2025-12-20,Seafood Mix,98.55
+2025-12-20,Olive Oil,21.7
+2025-12-20,Beer Keg (30L),35.1
+2025-12-20,Chicken,8.383
+2025-12-20,Potatoes,11.413
+2025-12-20,Lettuce,2.5
+2025-12-20,Coffee Beans,1.515
+2025-12-20,Eggs,42.0
+2025-12-20,Onions,1.4
+2025-12-20,Beef Steak,0.6
+2025-12-21,Wine Bottle (Red),12.45
+2025-12-21,Rice (Bomba),62.418
+2025-12-21,Seafood Mix,105.4
+2025-12-21,Olive Oil,24.0
+2025-12-21,Sangria Mix,81.0
+2025-12-21,Coffee Beans,1.5907
+2025-12-21,Beer Keg (30L),39.9
+2025-12-21,Chicken,11.211
+2025-12-21,Potatoes,19.493
+2025-12-21,Lettuce,3.3
+2025-12-21,Eggs,45.0
+2025-12-21,Onions,1.5
+2025-12-21,Beef Steak,0.6
+2025-12-22,Sangria Mix,102.0
+2025-12-22,Rice (Bomba),65.751
+2025-12-22,Seafood Mix,113.3
+2025-12-22,Olive Oil,26.25
+2025-12-22,Wine Bottle (Red),15.75
+2025-12-22,Beer Keg (30L),35.1
+2025-12-22,Coffee Beans,1.515
+2025-12-22,Beef Steak,1.8
+2025-12-22,Potatoes,16.564
+2025-12-22,Eggs,57.0
+2025-12-22,Onions,1.9
+2025-12-22,Chicken,6.767
+2025-12-22,Lettuce,1.7
+2025-12-23,Rice (Bomba),52.2675
+2025-12-23,Seafood Mix,90.25
+2025-12-23,Olive Oil,21.65
+2025-12-23,Sangria Mix,85.0
+2025-12-23,Beer Keg (30L),41.7
+2025-12-23,Coffee Beans,1.2877
+2025-12-23,Wine Bottle (Red),15.45
+2025-12-23,Chicken,8.282
+2025-12-23,Potatoes,17.776
+2025-12-23,Lettuce,2.6
+2025-12-23,Eggs,66.0
+2025-12-23,Onions,2.2
+2025-12-24,Sangria Mix,57.0
+2025-12-24,Wine Bottle (Red),8.25
+2025-12-24,Rice (Bomba),30.906
+2025-12-24,Seafood Mix,52.0
+2025-12-24,Olive Oil,11.2
+2025-12-24,Coffee Beans,0.909
+2025-12-24,Beer Keg (30L),19.5
+2025-12-24,Chicken,6.666
+2025-12-24,Potatoes,6.868
+2025-12-24,Lettuce,1.8
+2025-12-24,Beef Steak,0.6
+2025-12-24,Eggs,24.0
+2025-12-24,Onions,0.8
+2025-12-25,Rice (Bomba),68.3265
+2025-12-25,Seafood Mix,116.35
+2025-12-25,Olive Oil,26.55
+2025-12-25,Beer Keg (30L),33.9
+2025-12-25,Wine Bottle (Red),18.0
+2025-12-25,Sangria Mix,102.0
+2025-12-25,Coffee Beans,1.8634
+2025-12-25,Eggs,69.0
+2025-12-25,Potatoes,16.867
+2025-12-25,Onions,2.3
+2025-12-25,Chicken,8.383
+2025-12-25,Lettuce,2.5
+2025-12-25,Beef Steak,0.6
+2025-12-26,Sangria Mix,130.0
+2025-12-26,Wine Bottle (Red),19.35
+2025-12-26,Beer Keg (30L),42.6
+2025-12-26,Coffee Beans,1.3786
+2025-12-26,Rice (Bomba),63.327
+2025-12-26,Seafood Mix,110.1
+2025-12-26,Olive Oil,26.15
+2025-12-26,Eggs,90.0
+2025-12-26,Potatoes,18.281
+2025-12-26,Onions,3.0
+2025-12-26,Chicken,9.595
+2025-12-26,Lettuce,2.9
+2025-12-26,Beef Steak,0.3
+2025-12-27,Rice (Bomba),33.027
+2025-12-27,Seafood Mix,56.7
+2025-12-27,Olive Oil,13.15
+2025-12-27,Wine Bottle (Red),9.45
+2025-12-27,Sangria Mix,63.0
+2025-12-27,Beer Keg (30L),25.2
+2025-12-27,Coffee Beans,0.8333
+2025-12-27,Chicken,4.747
+2025-12-27,Potatoes,9.09
+2025-12-27,Lettuce,1.3
+2025-12-27,Eggs,39.0
+2025-12-27,Onions,1.3
+2025-12-27,Beef Steak,0.6
+2025-12-28,Sangria Mix,100.0
+2025-12-28,Beer Keg (30L),43.8
+2025-12-28,Rice (Bomba),62.418
+2025-12-28,Seafood Mix,107.8
+2025-12-28,Olive Oil,25.15
+2025-12-28,Coffee Beans,1.1817
+2025-12-28,Wine Bottle (Red),15.45
+2025-12-28,Chicken,10.807
+2025-12-28,Potatoes,18.584
+2025-12-28,Lettuce,3.3
+2025-12-28,Eggs,57.0
+2025-12-28,Onions,1.9
+2025-12-28,Beef Steak,0.6
+2025-12-29,Rice (Bomba),41.9655
+2025-12-29,Seafood Mix,72.25
+2025-12-29,Olive Oil,16.7
+2025-12-29,Wine Bottle (Red),9.6
+2025-12-29,Chicken,4.949
+2025-12-29,Potatoes,11.312
+2025-12-29,Lettuce,1.5
+2025-12-29,Beer Keg (30L),20.4
+2025-12-29,Sangria Mix,69.0
+2025-12-29,Coffee Beans,1.1514
+2025-12-29,Eggs,33.0
+2025-12-29,Onions,1.1
+2025-12-29,Beef Steak,1.5
+2025-12-30,Chicken,8.888
+2025-12-30,Potatoes,20.907
+2025-12-30,Lettuce,2.4
+2025-12-30,Beer Keg (30L),39.0
+2025-12-30,Sangria Mix,111.0
+2025-12-30,Coffee Beans,1.5453
+2025-12-30,Rice (Bomba),70.4475
+2025-12-30,Seafood Mix,120.85
+2025-12-30,Olive Oil,28.45
+2025-12-30,Wine Bottle (Red),17.4
+2025-12-30,Eggs,87.0
+2025-12-30,Onions,2.9
+2025-12-30,Beef Steak,0.9
+2025-12-31,Coffee Beans,1.4998
+2025-12-31,Beer Keg (30L),44.4
+2025-12-31,Sangria Mix,133.0
+2025-12-31,Wine Bottle (Red),16.35
+2025-12-31,Rice (Bomba),61.509
+2025-12-31,Seafood Mix,105.7
+2025-12-31,Olive Oil,24.65
+2025-12-31,Potatoes,19.695
+2025-12-31,Chicken,11.918
+2025-12-31,Lettuce,3.4
+2025-12-31,Eggs,60.0
+2025-12-31,Onions,2.0
+2025-12-31,Beef Steak,0.6

@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, validator, ConfigDict
 from typing import List, Optional
 from enum import Enum
 from decimal import Decimal
@@ -33,13 +33,15 @@ class MenuRow(BaseModel):
     price: Decimal = Field(..., ge=0)
 
 class RecipeRow(BaseModel):
-    menu_item: str = Field(..., max_length=100)
-    ingredient: str = Field(..., max_length=100)
+    model_config = ConfigDict(populate_by_name=True)
+    menu_item: str = Field(..., max_length=100, alias="menu_item_name")
+    ingredient: str = Field(..., max_length=100, alias="ingredient_name")
     quantity: Decimal = Field(..., gt=0)
 
 class SalesRow(BaseModel):
-    date: date
-    menu_item: str = Field(..., max_length=100)
+    model_config = ConfigDict(populate_by_name=True)
+    date: datetime = Field(..., alias="timestamp")
+    menu_item: str = Field(..., max_length=100, alias="menu_item_name")
     quantity: int = Field(..., ge=0)
 
 class ValidationResult(BaseModel):

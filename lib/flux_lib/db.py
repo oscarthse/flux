@@ -1,6 +1,9 @@
 import os
+import logging
 import psycopg2
 from contextlib import contextmanager
+
+logger = logging.getLogger(__name__)
 
 DB_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/flux")
 
@@ -14,11 +17,22 @@ def get_db_connection(tenant_id=None):
     try:
         if tenant_id:
             with conn.cursor() as cur:
-                cur.execute(f"SET app.current_tenant = '{tenant_id}';")
+                # Use set_config for safe parameterized tenant context
+                # Third param 'true' = local to transaction
+                cur.execute(
+                    "SELECT set_config('app.current_tenant', %s, true)",
+                    (str(tenant_id),)
+                )
         yield conn
         conn.commit()
     except Exception:
         conn.rollback()
         raise
     finally:
+        # Reset tenant context before closing (safety measure)
+        try:
+            with conn.cursor() as cur:
+                cur.execute("SELECT set_config('app.current_tenant', '', false)")
+        except Exception:
+            pass
         conn.close()

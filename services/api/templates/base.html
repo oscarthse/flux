@@ -32,6 +32,7 @@
       display: none !important;
     }
   </style>
+  {% block extra_head %}{% endblock %}
 </head>
 
 <body class="h-full font-sans antialiased">
@@ -64,14 +65,23 @@
           Dashboard
         </a>
 
-        <a href="/ingestion/upload"
+        <a href="/onboarding"
           class="flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-colors
-                  {% if '/ingestion/upload' in current_path %}bg-slate-800 text-white{% else %}text-slate-400 hover:text-white hover:bg-slate-800/50{% endif %}">
+                  {% if '/onboarding' in current_path %}bg-slate-800 text-white{% else %}text-slate-400 hover:text-white hover:bg-slate-800/50{% endif %}">
+          <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          Setup Wizard
+        </a>
+
+        <a href="/ingestion/hub"
+          class="flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-colors
+                  {% if '/ingestion' in current_path %}bg-slate-800 text-white{% else %}text-slate-400 hover:text-white hover:bg-slate-800/50{% endif %}">
           <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
           </svg>
-          Import Data
+          Data Hub
         </a>
 
         <a href="/analytics/forecasts"
@@ -165,8 +175,10 @@
       {% block content %}{% endblock %}
     </main>
 
+
   </div>
 
+  {% block scripts %}{% endblock %}
 </body>
 
 </html>

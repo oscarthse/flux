@@ -1,0 +1,53 @@
+# Development and test files - do not include in production image
+scripts/
+tests/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+*.py[cod]
+
+# Git and IDE
+.git/
+.github/
+.gitignore
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Documentation and artifacts
+docs/
+*.md
+!README.md
+
+# Virtual environments
+.venv/
+venv/
+env/
+.python-version
+
+# Test and coverage
+.pytest_cache/
+htmlcov/
+.coverage
+*.cover
+.hypothesis/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+output_data/
+test_data/
+
+# Local development
+.env
+.env.local
+*.log
+Makefile
+docker-compose.yml
+
+# IDE and OS
+.DS_Store
+Thumbs.db

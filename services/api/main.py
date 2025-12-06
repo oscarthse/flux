@@ -9,8 +9,9 @@ from contextlib import asynccontextmanager
 import dramatiq
 from dramatiq.brokers.redis import RedisBroker
 
-from services.api.routers import triage, analytics, inventory, dashboard, staff, auth, ingestion, debug, account, menu
+from services.api.routers import analytics, inventory, dashboard, staff, auth, ingestion, debug, account, menu, onboarding
 from services.api.routers import settings as settings_router
+from services.api.routers import optimization
 from services.api.logging_config import setup_logging, get_logger
 from services.api.database import db_service
 from services.api.config import settings
@@ -32,7 +33,7 @@ async def lifespan(app: FastAPI):
         # Ensure DB pool is ready (optional, but good for fail-fast check)
         # db_service._ensure_pool()
     except Exception as e:
-        print(f"Startup Error: {e}")
+        logger.error(f"Startup Error: {e}")
         # We don't raise here so the app can still start and return 500s
 
     yield
@@ -41,7 +42,7 @@ async def lifespan(app: FastAPI):
     try:
         db_service.close_all_connections()
     except Exception as e:
-        print(f"Shutdown Error: {e}")
+        logger.error(f"Shutdown Error: {e}")
 
 
 app = FastAPI(
@@ -69,10 +70,15 @@ app.include_router(analytics.router)
 app.include_router(inventory.router)
 app.include_router(staff.router)
 app.include_router(ingestion.router)
-app.include_router(debug.router)
 app.include_router(account.router)
 app.include_router(menu.router)
+app.include_router(onboarding.router)
 app.include_router(settings_router.router)
+app.include_router(optimization.router)  # Profit Protection Suite
+
+# Debug router - only mount in debug mode
+if settings.API_DEBUG:
+    app.include_router(debug.router)
 
 from services.api import security
 from services.api.context import tenant_context
@@ -94,10 +100,8 @@ async def auth_middleware(request: Request, call_next):
     try:
         # Verify and decode signed cookie
         payload = security.verify_session_cookie(session_token)
-        logger.info(f"Middleware DEBUG - Decoded payload: {payload}")
 
         tenant_id = payload.get("tenant_id")
-        logger.info(f"Middleware DEBUG - Extracted tenant_id: {tenant_id}")
 
         if not tenant_id:
             logger.error("Auth Middleware: Missing tenant_id in session payload")
@@ -105,7 +109,6 @@ async def auth_middleware(request: Request, call_next):
 
         # Set ContextVar for RLS (DatabaseService will pick this up)
         token = tenant_context.set(tenant_id)
-        logger.info(f"Middleware DEBUG - Set tenant_context to: {tenant_id}")
 
         # Fetch User and Tenant details for UI
         try:

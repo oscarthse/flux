@@ -35,7 +35,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Helper function for RLS
--- Usage: SET LOCAL app.current_tenant_id = 'uuid';
+-- Usage: SET LOCAL app.current_tenant = 'uuid';
 CREATE OR REPLACE FUNCTION current_tenant_id() RETURNS UUID AS $$
 BEGIN
     RETURN current_setting('app.current_tenant')::UUID;

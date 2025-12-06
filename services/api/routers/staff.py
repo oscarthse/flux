@@ -227,15 +227,21 @@ def _build_hourly_comparison(
         actual_cooks = actual_staff["cooks"]
 
         # Determine status
-        server_diff = actual_servers - int(req.required_servers)
-        cook_diff = actual_cooks - int(req.required_cooks)
+        required_servers = int(req.required_servers)
+        required_cooks = int(req.required_cooks)
 
-        if abs(server_diff) <= 1 and abs(cook_diff) <= 1:
-            status = "optimal"
+        server_diff = actual_servers - required_servers
+        cook_diff = actual_cooks - required_cooks
+
+        # If we have 0 staff when any are required, that's definitely understaffed
+        if (actual_servers == 0 and required_servers > 0) or (actual_cooks == 0 and required_cooks > 0):
+            status = "under"
+        elif server_diff < -1 or cook_diff < -1:
+            status = "under"
         elif server_diff > 1 or cook_diff > 1:
             status = "over"
         else:
-            status = "under"
+            status = "optimal"
 
         # Calculate variance cost (simplified: $15/hour average)
         variance_cost = (server_diff + cook_diff) * 15.0 if status == "over" else 0.0

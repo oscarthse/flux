@@ -161,9 +161,21 @@ def get_draft_orders(tenant_id: str, conn) -> List[PurchaseOrder]:
 
 @router.get("/smart-order")
 async def redirect_smart_order():
-    """Redirect legacy URL to new dashboard."""
+    """Redirect legacy URL to new optimization dashboard."""
     from fastapi.responses import RedirectResponse
-    return RedirectResponse(url="/inventory/")
+    return RedirectResponse(url="/inventory/optimization")
+
+@router.get("/optimization", response_class=HTMLResponse)
+async def smart_inventory_optimization(request: Request):
+    """Render the Smart Inventory Optimization page (Newsvendor-based)."""
+    from services.api.context import tenant_context
+    tenant_id = tenant_context.get()
+    if not tenant_id:
+        return HTMLResponse("<div>Error: Not authenticated</div>", status_code=401)
+
+    return templates.TemplateResponse("inventory/smart_order.html", {
+        "request": request
+    })
 
 @router.get("/", response_class=HTMLResponse)
 async def inventory_dashboard(request: Request):

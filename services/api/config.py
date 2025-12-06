@@ -36,6 +36,7 @@ Configuration File:
 import os
 from typing import Optional
 from pydantic_settings import BaseSettings
+from pydantic import field_validator
 from functools import lru_cache
 
 
@@ -94,9 +95,24 @@ class Settings(BaseSettings):
     # API Configuration
     API_HOST: str = "0.0.0.0"
     API_PORT: int = 8000
-    API_DEBUG: bool = True
-    API_RELOAD: bool = True
-    SECRET_KEY: str = "dev-secret-key-change-in-prod"
+    API_DEBUG: bool = False  # Must be explicitly enabled
+    API_RELOAD: bool = False  # Must be explicitly enabled
+    SECRET_KEY: str = ""  # REQUIRED - must be set via environment variable
+
+    @field_validator("SECRET_KEY")
+    @classmethod
+    def validate_secret_key(cls, v: str) -> str:
+        """Ensure SECRET_KEY is set in production."""
+        if not v or v == "dev-secret-key-change-in-prod":
+            import os
+            if os.getenv("API_DEBUG", "false").lower() != "true":
+                raise ValueError(
+                    "SECRET_KEY must be set via environment variable. "
+                    "Generate one with: openssl rand -base64 32"
+                )
+            # Allow empty in debug mode for local dev
+            return "dev-secret-key-for-local-only"
+        return v
 
     # Logging Configuration
     LOG_LEVEL: str = "INFO"

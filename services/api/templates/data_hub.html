@@ -1,0 +1,313 @@
+{% extends "base.html" %}
+
+{% block title %}Data Hub - Flux Platform{% endblock %}
+
+{% block content %}
+<div class="p-8 max-w-7xl mx-auto" x-data="{ currentTab: 'overview', showChart: false }">
+
+  <!-- Header -->
+  <div class="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+      <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Data Hub</h1>
+      <p class="mt-2 text-lg text-slate-500 max-w-3xl">
+        The central command for your restaurant's digital twin. Monitor data integrity, perform bulk updates, or inspect
+        granular records.
+      </p>
+    </div>
+
+    <!-- Professional Tab Navigation -->
+    <div class="flex bg-white p-1 rounded-xl shadow-sm border border-slate-200">
+      <button @click="currentTab = 'overview'"
+        :class="{ 'bg-slate-100 text-slate-900 font-semibold': currentTab === 'overview', 'text-slate-500 hover:text-slate-700': currentTab !== 'overview' }"
+        class="px-5 py-2.5 rounded-lg text-sm transition-all focus:outline-none">
+        Overview
+      </button>
+      <button @click="currentTab = 'upload'"
+        :class="{ 'bg-slate-100 text-slate-900 font-semibold': currentTab === 'upload', 'text-slate-500 hover:text-slate-700': currentTab !== 'upload' }"
+        class="px-5 py-2.5 rounded-lg text-sm transition-all focus:outline-none">
+        Upload Center
+      </button>
+      <button @click="currentTab = 'explorer'"
+        :class="{ 'bg-slate-100 text-slate-900 font-semibold': currentTab === 'explorer', 'text-slate-500 hover:text-slate-700': currentTab !== 'explorer' }"
+        class="px-5 py-2.5 rounded-lg text-sm transition-all focus:outline-none">
+        Data Explorer
+      </button>
+    </div>
+  </div>
+
+  <!-- TAB 1: OVERVIEW -->
+  <div x-show="currentTab === 'overview'" class="space-y-8 animate-fade-in">
+
+    <!-- Explanation Section -->
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
+      <h3 class="text-lg font-bold text-slate-900 mb-4">Understanding Your Data Model</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="relative pl-6 border-l-2 border-green-500">
+          <h4 class="font-semibold text-slate-900">1. Ingredients</h4>
+          <p class="text-sm text-slate-500 mt-1">Raw materials. The atomic units of your inventory and cost structure.
+          </p>
+        </div>
+        <div class="relative pl-6 border-l-2 border-purple-500">
+          <h4 class="font-semibold text-slate-900">2. Menu Items</h4>
+          <p class="text-sm text-slate-500 mt-1">Sellable goods. What customers see on the POS and order.</p>
+        </div>
+        <div class="relative pl-6 border-l-2 border-orange-500">
+          <h4 class="font-semibold text-slate-900">3. Recipes</h4>
+          <p class="text-sm text-slate-500 mt-1">The bridge. Links Menu Items to Ingredients to calculate margins.</p>
+        </div>
+        <div class="relative pl-6 border-l-2 border-blue-500">
+          <h4 class="font-semibold text-slate-900">4. Sales History</h4>
+          <p class="text-sm text-slate-500 mt-1">The pulse. Historical transactions that drive the Forecasting Engine.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Grid (Loaded via HTMX) -->
+    <div hx-get="/ingestion/api/stats" hx-trigger="load" hx-swap="innerHTML">
+      <!-- Skeleton Loading State -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-white h-32 rounded-xl shadow-sm border border-slate-200 animate-pulse"></div>
+        <div class="bg-white h-32 rounded-xl shadow-sm border border-slate-200 animate-pulse"></div>
+        <div class="bg-white h-32 rounded-xl shadow-sm border border-slate-200 animate-pulse"></div>
+        <div class="bg-white h-32 rounded-xl shadow-sm border border-slate-200 animate-pulse"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- TAB 2: UPLOAD CENTER -->
+  <div x-show="currentTab === 'upload'" style="display: none;" class="animate-fade-in">
+    <!-- Content reused from previous step, preserving functionality -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Left: Guide -->
+      <div class="space-y-6">
+        <h2 class="text-xl font-bold text-slate-900">Data Formatting Guide</h2>
+        <div class="bg-blue-50 border border-blue-100 p-4 rounded-lg flex items-start">
+          <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <p class="text-sm text-blue-800">
+            <strong>Pro Tip:</strong> Ensure your <code>ingredient_name</code> in Recipes matches exactly with the Name
+            in your Ingredients file. This is the most common cause of "0 Cost" errors.
+          </p>
+        </div>
+
+        <!-- Accordions -->
+        <div class="space-y-4" x-data="{ active: null }">
+          <!-- Ingredients -->
+          <div class="border border-slate-200 rounded-lg overflow-hidden">
+            <button @click="active = active === 'ingredients' ? null : 'ingredients'"
+              class="w-full px-6 py-4 bg-white flex justify-between items-center hover:bg-slate-50 text-left">
+              <span class="font-semibold text-slate-900">1. Ingredients File</span>
+              <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="active === 'ingredients'" class="bg-slate-50 px-6 py-4 border-t border-slate-200">
+              <p class="text-sm text-slate-600 mb-2">Required: name, category, cost_per_unit, unit</p>
+              <a href="/static/templates/ingredients_template.csv" download
+                class="text-sm text-blue-600 font-medium hover:underline">Download Template</a>
+            </div>
+          </div>
+          <!-- Menu -->
+          <div class="border border-slate-200 rounded-lg overflow-hidden">
+            <button @click="active = active === 'menu' ? null : 'menu'"
+              class="w-full px-6 py-4 bg-white flex justify-between items-center hover:bg-slate-50 text-left">
+              <span class="font-semibold text-slate-900">2. Menu Items File</span>
+              <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="active === 'menu'" class="bg-slate-50 px-6 py-4 border-t border-slate-200">
+              <p class="text-sm text-slate-600 mb-2">Required: name, category, price</p>
+              <a href="/static/templates/menu_template.csv" download
+                class="text-sm text-blue-600 font-medium hover:underline">Download Template</a>
+            </div>
+          </div>
+          <!-- Recipes -->
+          <div class="border border-slate-200 rounded-lg overflow-hidden">
+            <button @click="active = active === 'recipes' ? null : 'recipes'"
+              class="w-full px-6 py-4 bg-white flex justify-between items-center hover:bg-slate-50 text-left">
+              <span class="font-semibold text-slate-900">3. Recipes File</span>
+              <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="active === 'recipes'" class="bg-slate-50 px-6 py-4 border-t border-slate-200">
+              <p class="text-sm text-slate-600 mb-2">Required: menu_item_name, ingredient_name, quantity</p>
+              <a href="/static/templates/recipes_template.csv" download
+                class="text-sm text-blue-600 font-medium hover:underline">Download Template</a>
+            </div>
+          </div>
+          <!-- Sales -->
+          <div class="border border-slate-200 rounded-lg overflow-hidden">
+            <button @click="active = active === 'sales' ? null : 'sales'"
+              class="w-full px-6 py-4 bg-white flex justify-between items-center hover:bg-slate-50 text-left">
+              <span class="font-semibold text-slate-900">4. Sales File</span>
+              <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="active === 'sales'" class="bg-slate-50 px-6 py-4 border-t border-slate-200">
+              <p class="text-sm text-slate-600 mb-2">Required: timestamp, menu_item_name, quantity</p>
+              <a href="/static/templates/sales_template.csv" download
+                class="text-sm text-blue-600 font-medium hover:underline">Download Template</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 h-fit">
+        <h2 class="text-xl font-bold text-slate-900 mb-6">Bulk Upload</h2>
+        <form hx-post="/ingestion/upload" hx-encoding="multipart/form-data" hx-target="#upload-result"
+          class="space-y-6">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Ingredients</label>
+            <input type="file" name="ingredients_file" accept=".csv"
+              class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Menu Items</label>
+            <input type="file" name="menu_file" accept=".csv"
+              class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Recipes</label>
+            <input type="file" name="recipes_file" accept=".csv"
+              class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Sales
+              History</label>
+            <input type="file" name="sales_file" accept=".csv"
+              class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 transition-colors" />
+          </div>
+
+          <div class="pt-6 border-t border-slate-100">
+            <button type="submit"
+              class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900 transition-colors">
+              Process Files
+            </button>
+          </div>
+        </form>
+        <div id="upload-result" class="mt-6 text-sm"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: DATA EXPLORER -->
+  <div x-show="currentTab === 'explorer'" style="display: none;" class="space-y-6 animate-fade-in">
+
+    <!-- Explorer Toolbar -->
+    <div
+      class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex flex-col md:flex-row gap-4 justify-between items-center">
+
+      <div class="flex flex-1 gap-4 w-full md:w-auto">
+        <!-- Table Selector -->
+        <div class="w-48">
+          <select id="table-select" name="table"
+            class="block w-full rounded-lg border-slate-300 py-2.5 pl-3 pr-10 text-sm focus:border-slate-500 focus:outline-none focus:ring-slate-500 bg-slate-50"
+            hx-get="/ingestion/api/table/view" hx-target="#table-view" hx-trigger="change, load, refreshTable from:body"
+            @change="showChart = false">
+            <option value="sales_orders">Sales History</option>
+            <option value="ingredients">Ingredients</option>
+            <option value="menu_items">Menu Items</option>
+            <option value="recipes">Recipes</option>
+          </select>
+        </div>
+
+        <!-- Dynamic Filter Dropdown -->
+        <div class="w-48" hx-get="/ingestion/api/table/filters" hx-trigger="load, change from:#table-select"
+          hx-target="#category-filter" hx-include="#table-select">
+          <select id="category-filter" name="filter_category"
+            class="block w-full rounded-lg border-slate-300 py-2.5 pl-3 pr-10 text-sm focus:border-slate-500 focus:outline-none focus:ring-slate-500 bg-slate-50"
+            hx-get="/ingestion/api/table/view" hx-trigger="change" hx-target="#table-view"
+            hx-include="#table-select, [name='search']">
+            <option value="">All Categories</option>
+          </select>
+        </div>
+
+        <!-- Search Filter -->
+        <div class="flex-1 relative">
+          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <svg class="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <input type="text" name="search"
+            class="block w-full rounded-lg border-slate-300 py-2.5 pl-10 pr-3 text-sm focus:border-slate-500 focus:outline-none focus:ring-slate-500 bg-slate-50"
+            placeholder="Search records..." hx-get="/ingestion/api/table/view" hx-trigger="keyup changed delay:500ms"
+            hx-target="#table-view" hx-include="#table-select, #category-filter">
+        </div>
+      </div>
+
+      <div class="flex gap-3">
+        <!-- Visualize Toggle -->
+        <button @click="showChart = !showChart"
+          class="flex items-center px-4 py-2 bg-white border border-slate-300 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-colors">
+          <svg class="w-4 h-4 mr-2 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+          </svg>
+          <span x-text="showChart ? 'Hide Chart' : 'Visualize'">Visualize</span>
+        </button>
+
+        <!-- Clear Table -->
+        <button hx-delete="/ingestion/api/table/truncate" hx-include="#table-select" hx-target="#table-view"
+          hx-swap="innerHTML"
+          hx-confirm="DANGER: This will permanently delete ALL records in this table. This cannot be undone. Are you sure?"
+          class="flex items-center px-4 py-2 bg-white border border-red-200 rounded-lg text-sm font-medium text-red-600 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors">
+          <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+          </svg>
+          Clear Table
+        </button>
+      </div>
+    </div>
+
+    <!-- Visualization Container -->
+    <div x-show="showChart" x-transition class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+      <div hx-get="/ingestion/api/table/chart" hx-trigger="showChart from:body, refreshTable from:body, load"
+        hx-target="#chart-container" hx-include="#table-select">
+        <div id="chart-container"
+          class="h-64 flex items-center justify-center text-slate-400 bg-slate-50 rounded-lg border border-dashed border-slate-200">
+          Loading visualization...
+        </div>
+      </div>
+    </div>
+
+    <!-- Table Container -->
+    <div id="table-view" class="bg-white shadow-sm border border-slate-200 rounded-xl overflow-hidden min-h-[400px]">
+      <!-- HTMX will swap table content here -->
+      <div class="p-12 text-center">
+        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+{% endblock %}

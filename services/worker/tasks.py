@@ -1,7 +1,11 @@
 import dramatiq
 from dramatiq.brokers.redis import RedisBroker
 import os
+import logging
 from lib.flux_lib.db import get_db_connection
+
+# Configure worker logger
+logger = logging.getLogger(__name__)
 
 # Setup Broker (Must match API)
 redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
@@ -13,14 +17,14 @@ def ingest_pos_data(tenant_id: str, source: str, payload: dict):
     """
     Worker task to process POS data.
     """
-    print(f"[Worker] Received ingestion task for tenant {tenant_id} from {source}")
+    logger.info("Received ingestion task", extra={"tenant_id": tenant_id, "source": source})
 
     # 1. DB Context
     with get_db_connection(tenant_id=tenant_id) as conn:
         from services.worker.engines.ingestion import process_ingestion
         process_ingestion(tenant_id, source, payload, conn)
 
-    print(f"[Worker] Ingestion complete for {tenant_id}")
+    logger.info("Ingestion complete", extra={"tenant_id": tenant_id})
 
 @dramatiq.actor(queue_name="default")
 def generate_daily_forecast(tenant_id: str):
@@ -30,14 +34,14 @@ def generate_daily_forecast(tenant_id: str):
     from services.worker.engines.forecasting import generate_forecast
     from datetime import date, timedelta
 
-    print(f"[Worker] Starting forecast generation for {tenant_id}")
+    logger.info("Starting forecast generation", extra={"tenant_id": tenant_id})
 
     with get_db_connection(tenant_id=tenant_id) as conn:
         # Generate for tomorrow
         tomorrow = date.today() + timedelta(days=1)
         generate_forecast(tenant_id, tomorrow, conn)
 
-    print(f"[Worker] Forecast generation complete for {tenant_id}")
+    logger.info("Forecast generation complete", extra={"tenant_id": tenant_id})
 
 @dramatiq.actor(queue_name="default")
 def generate_draft_orders(tenant_id: str):
@@ -46,9 +50,9 @@ def generate_draft_orders(tenant_id: str):
     """
     from services.worker.engines.inventory import generate_draft_orders
 
-    print(f"[Worker] Starting inventory optimization for {tenant_id}")
+    logger.info("Starting inventory optimization", extra={"tenant_id": tenant_id})
 
     with get_db_connection(tenant_id=tenant_id) as conn:
         generate_draft_orders(tenant_id, conn)
 
-    print(f"[Worker] Inventory optimization complete for {tenant_id}")
+    logger.info("Inventory optimization complete", extra={"tenant_id": tenant_id})

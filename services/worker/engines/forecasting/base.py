@@ -6,9 +6,29 @@ Provides abstract base classes and main orchestration for multi-model forecastin
 from abc import ABC, abstractmethod
 from datetime import date, timedelta
 from typing import List, Tuple, Dict, Optional
+from dataclasses import dataclass
 import logging
 
 logger = logging.getLogger(__name__)
+
+
+@dataclass
+class ForecastResult:
+    """
+    Forecast output with uncertainty and explainability.
+
+    Required by downstream Newsvendor model for stochastic optimization.
+    """
+    date: date
+    qty: float              # Point estimate (yhat)
+    sigma: float            # Standard deviation for Newsvendor
+    trend_impact: float     # Contribution from trend component
+    day_impact: float       # Contribution from weekly seasonality
+    explanation: str        # Plain English summary
+
+    def to_tuple(self) -> Tuple[date, float]:
+        """Backward compatible tuple output."""
+        return (self.date, self.qty)
 
 
 class ForecastModel(ABC):

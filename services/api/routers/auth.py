@@ -108,11 +108,10 @@ async def login(
                 cur.callproc('get_user_by_email', (email,))
                 user = cur.fetchone()
 
-                logger.info(f"Login DEBUG - user result: {user}")
+                logger.debug(f"Login successful for email: {email}")
 
                 if user and security.verify_password(password, user[2]):
                     user_id, tenant_id = user[0], user[1]
-                    logger.info(f"Login DEBUG - Extracted user_id: {user_id}, tenant_id: {tenant_id}")
 
                     # HTMX Redirect Support
                     if request.headers.get("HX-Request"):
@@ -122,7 +121,6 @@ async def login(
                         response = RedirectResponse(url="/dashboard", status_code=303)
 
                     session_data = {"user_id": str(user_id), "tenant_id": str(tenant_id)}
-                    logger.info(f"Login DEBUG - session_data: {session_data}")
                     token = security.sign_session_cookie(session_data)
 
                     response.set_cookie(

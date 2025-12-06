@@ -115,8 +115,12 @@ class DatabaseService:
             # Set tenant context for RLS if enabled and we have a tenant
             if settings.ENABLE_RLS and current_tenant:
                 with conn.cursor() as cur:
-                    # Using app.current_tenant as requested
-                    cur.execute("SET app.current_tenant = %s", (current_tenant,))
+                    # Use set_config for safe parameterized tenant context
+                    # Third param 'true' = local to transaction
+                    cur.execute(
+                        "SELECT set_config('app.current_tenant', %s, true)",
+                        (str(current_tenant),)
+                    )
 
             yield conn
 
@@ -144,11 +148,11 @@ class DatabaseService:
             )
         finally:
             if conn:
-                # Reset tenant context
+                # Reset tenant context before returning to pool
                 if settings.ENABLE_RLS:
                     try:
                         with conn.cursor() as cur:
-                            cur.execute("RESET app.current_tenant")
+                            cur.execute("SELECT set_config('app.current_tenant', '', false)")
                     except:
                         pass
 

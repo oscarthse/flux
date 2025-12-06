@@ -1,7 +1,10 @@
 from typing import Dict, Any
 import json
+import logging
 from datetime import datetime
 from lib.flux_lib.domain.ingestion import NormalizedOrder, NormalizedLineItem
+
+logger = logging.getLogger(__name__)
 
 def normalize_payload(source: str, payload: Dict[str, Any]) -> NormalizedOrder:
     """
@@ -51,7 +54,7 @@ def process_ingestion(tenant_id: str, source: str, payload: Dict[str, Any], conn
 
         row = cur.fetchone()
         if not row:
-            print(f"Order {order.external_id} already exists. Skipping.")
+            logger.debug("Order already exists, skipping", extra={"order_id": order.external_id})
             return
 
         order_uuid = row[0]
@@ -67,7 +70,7 @@ def process_ingestion(tenant_id: str, source: str, payload: Dict[str, Any], conn
 
             if not menu_item_row:
                 # GHOST ITEM -> Triage
-                print(f"Ghost Item detected: {item.name} ({item.external_id})")
+                logger.info("Ghost item detected", extra={"item_name": item.name, "external_id": item.external_id})
                 cur.execute("""
                     INSERT INTO triage_items (tenant_id, external_id, external_name, source, status)
                     VALUES (%s, %s, %s, %s, 'pending')
@@ -121,5 +124,5 @@ def process_ingestion(tenant_id: str, source: str, payload: Dict[str, Any], conn
                     remaining_needed -= deduct
 
                 if remaining_needed > 0:
-                    print(f"WARNING: Insufficient stock for ingredient {ing_id}. Deficit: {remaining_needed}")
+                    logger.warning("Insufficient stock for ingredient", extra={"ingredient_id": str(ing_id), "deficit": remaining_needed})
                     # TODO: Log to a 'stockout_log' or similar
