@@ -56,8 +56,8 @@ async def get_dashboard(request: Request):
                 """, (tenant_id, tenant_id))
 
                 error_row = cur.fetchone()
-                total_error = error_row[0] or 0
-                total_actual = error_row[1] or 0
+                total_error = float(error_row[0] or 0)
+                total_actual = float(error_row[1] or 0)
 
                 if total_actual == 0:
                     accuracy = 100.0
@@ -109,7 +109,7 @@ async def get_dashboard(request: Request):
 
                 stock_row = cur.fetchone()
                 low_stock_count = stock_row[0] or 0
-                financial_impact = stock_row[1] or 0.0
+                financial_impact = float(stock_row[1] or 0)
 
                 # 3. Revenue Forecast (Next 7 Days)
                 # Use the start of the forecast period to handle cases where data might be in the past/future relative to system time
@@ -127,7 +127,7 @@ async def get_dashboard(request: Request):
                       AND f.forecast_date >= fs.start_date
                       AND f.forecast_date < fs.start_date + INTERVAL '7 days'
                 """, (tenant_id, tenant_id, tenant_id))
-                revenue_forecast = cur.fetchone()[0]
+                revenue_forecast = float(cur.fetchone()[0] or 0)
 
                 # 4. Draft Orders & Estimated Savings (Value of Draft POs)
                 cur.execute("""
@@ -142,7 +142,7 @@ async def get_dashboard(request: Request):
 
                 po_row = cur.fetchone()
                 draft_orders_count = po_row[0] or 0
-                draft_po_value = po_row[1]
+                draft_po_value = float(po_row[1] or 0)
 
                 # 5. Total Menu Items (for link text)
                 cur.execute("SELECT COUNT(*) FROM menu_items WHERE tenant_id = %s", (tenant_id,))
